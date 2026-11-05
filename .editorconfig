@@ -1,0 +1,17 @@
+# .editorconfig
+# danielgarcia.it — editor settings shared by every workstation
+# ─────────────────────────────────────────────────────────────────────────────
+# Read by any editor with EditorConfig support (in VS Code, the EditorConfig
+# extension).
+
+# Top-level file: editors stop looking in parent folders
+root = true
+
+# Every file
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2

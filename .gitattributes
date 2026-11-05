@@ -1,0 +1,8 @@
+# .gitattributes
+# danielgarcia.it — how Git stores and checks out text files
+# ─────────────────────────────────────────────────────────────────────────────
+# Every text file is stored and checked out with LF line endings, on Windows
+# as on Linux, so that scripts run unchanged in the Linux containers.
+
+# Text files: detected by Git, LF line endings (decision of 05.11.2026)
+* text=auto eol=lf

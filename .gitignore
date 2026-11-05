@@ -1,0 +1,13 @@
+# .gitignore
+# danielgarcia.it — files and folders that Git must never track
+# ─────────────────────────────────────────────────────────────────────────────
+# Private working files live next to the code but are never published.
+
+# Assistant context file, kept private
+/CLAUDE.md
+
+# Dated working documents, kept private
+/private_doc/
+
+# VS Code settings: paths specific to each workstation
+/.vscode/
