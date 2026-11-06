@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{!
+  templates/layouts/page.html
+  danielgarcia.it — Page skeleton shared by every page, in both languages
+  ───────────────────────────────────────────────────────────────────────────
+  Replaces the "page" layout of Roq's built-in theme. Each page gives, in its
+  front matter, title, description, lang (fr or en) and translation (address
+  of the same page in the other language), then only its own content.
+  Interface texts come from data/i18n/<lang>.yml.
+!}
+{#let t=cdi:i18n.get(page.data.lang)}
+<html lang="{page.data.lang}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{page.title} — {t.role}</title>
+  <meta name="description" content="{page.description}">
+</head>
+<body>
+  <nav aria-label="{t.languageSwitch}">
+    {#if page.data.lang == 'fr'}
+    <a href="{page.url}" aria-current="page">FR</a> / <a href="{page.data.translation}" hreflang="en" lang="en">EN</a>
+    {#else}
+    <a href="{page.data.translation}" hreflang="fr" lang="fr">FR</a> / <a href="{page.url}" aria-current="page">EN</a>
+    {/if}
+  </nav>
+  <main>
+    {#insert /}
+  </main>
+</body>
+</html>
+{/let}
