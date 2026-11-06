@@ -1,27 +1,15 @@
 ---
 title: Daniel Garcia
 description: "CV et portfolio de Daniel Garcia, développeur full stack et DevOps à Genève : applications web, conteneurs et déploiement en production. Plusieurs années en support et administration système, diplômé de la HEG (Bachelor en informatique de gestion, 2026)."
+lang: fr
+translation: /en/
 ---
-<!DOCTYPE html>
 {!
   content/index.html
-  danielgarcia.it — French home page (minimal skeleton)
+  danielgarcia.it — French home page
   ───────────────────────────────────────────────────────────────────────────
-  A full HTML page: Roq serves it as it is, without a layout, only if
-  <!DOCTYPE html> comes right after the front matter.
+  Page content only: the page skeleton and the language switch come from
+  templates/layouts/page.html, the interface texts from data/i18n/fr.yml.
 !}
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{page.title} — Développeur Full Stack &amp; DevOps</title>
-  <meta name="description" content="{page.description}">
-</head>
-<body>
-  <nav aria-label="Langue">
-    <a href="/" aria-current="page">FR</a> / <a href="/en/" hreflang="en" lang="en">EN</a>
-  </nav>
-  <h1>Daniel Garcia</h1>
-  <p>Développeur Full Stack &amp; DevOps à Genève : applications web, conteneurs et déploiement en production. Site en construction.</p>
-</body>
-</html>
+<h1>Daniel Garcia</h1>
+<p>Développeur Full Stack &amp; DevOps à Genève : applications web, conteneurs et déploiement en production. Site en construction.</p>
