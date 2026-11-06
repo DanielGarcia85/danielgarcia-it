@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="930" viewBox="0 0 1400 930" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>danielgarcia.it: how a page is rendered and how its language is chosen</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1400" height="930" fill="#ffffff"/>
+<text x="40" y="48" font-size="24" font-weight="bold" fill="#0f172a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">How a page is rendered, and how its language is chosen</text>
+<text x="40" y="74" font-size="14" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Example: the French home page /. The English page /en/ follows exactly the same path with lang: en.</text>
+<rect x="40" y="110" width="400" height="330" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="54" y="136" font-size="15" font-weight="bold" fill="#1e3a8a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">content/index.html</text>
+<text x="54" y="155" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the page: front matter + its own content</text>
+<text x="54" y="187" font-size="12.5" font-weight="bold" fill="#1e3a8a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Front matter (between the --- lines)</text>
+<text x="54" y="211" font-size="13" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">title: Daniel Garcia</text>
+<text x="54" y="235" font-size="13" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">description: "CV et portfolio…"</text>
+<text x="54" y="259" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">lang: fr</text>
+<text x="54" y="283" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">translation: /en/</text>
+<text x="54" y="307" font-size="12.5" font-weight="bold" fill="#1e3a8a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Body (the page's own content)</text>
+<text x="54" y="331" font-size="13" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;h1&gt;Daniel Garcia&lt;/h1&gt;</text>
+<text x="54" y="355" font-size="13" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;p&gt;Développeur Full Stack…&lt;/p&gt;</text>
+<text x="54" y="379" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">No &lt;!DOCTYPE at the start: a fragment,</text>
+<text x="54" y="403" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">so Roq wraps it in the "page" layout.</text>
+<rect x="40" y="470" width="400" height="120" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="54" y="496" font-size="15" font-weight="bold" fill="#1e3a8a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">content/en/index.html</text>
+<text x="54" y="515" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">same structure, English text</text>
+<text x="54" y="545" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">lang: en</text>
+<text x="54" y="567" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">translation: /</text>
+<rect x="520" y="110" width="400" height="260" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="534" y="136" font-size="15" font-weight="bold" fill="#14532d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">data/i18n/</text>
+<text x="534" y="155" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">interface texts, one file per language</text>
+<text x="534" y="184" font-size="13" font-weight="bold" fill="#14532d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">fr.yml</text>
+<text x="534" y="205" font-size="13" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">role: "Développeur Full Stack &amp; DevOps"</text>
+<text x="534" y="226" font-size="13" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">languageSwitch: "Langue"</text>
+<text x="534" y="247" font-size="13" font-weight="bold" fill="#14532d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">en.yml</text>
+<text x="534" y="268" font-size="13" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">role: "Full Stack &amp; DevOps Developer"</text>
+<text x="534" y="289" font-size="13" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">languageSwitch: "Language"</text>
+<text x="534" y="310" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq Data turns the folder into one object:</text>
+<text x="534" y="331" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">cdi:i18n = { fr: …, en: … }</text>
+<rect x="520" y="430" width="400" height="330" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="534" y="456" font-size="15" font-weight="bold" fill="#4c1d95" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">templates/layouts/page.html</text>
+<text x="534" y="475" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the layout: written once, used by every page</text>
+<text x="534" y="505" font-size="12.5" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">{#let t=cdi:i18n.get(page.data.lang)}</text>
+<text x="534" y="527" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;html lang="{page.data.lang}"&gt;</text>
+<text x="534" y="549" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;title&gt;{page.title} — {t.role}&lt;/title&gt;</text>
+<text x="534" y="571" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;meta name="description"</text>
+<text x="550" y="593" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">content="{page.description}"&gt;</text>
+<text x="534" y="615" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;nav aria-label="{t.languageSwitch}"&gt;</text>
+<text x="550" y="637" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">FR → {page.url}</text>
+<text x="550" y="659" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">EN → {page.data.translation}</text>
+<text x="534" y="681" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;main&gt;</text>
+<text x="550" y="703" font-size="12.5" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">{#insert /}</text>
+<text x="534" y="725" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;/main&gt;</text>
+<rect x="1000" y="430" width="360" height="330" rx="10" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="1014" y="456" font-size="15" font-weight="bold" fill="#111827" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">target/roq/index.html</text>
+<text x="1014" y="475" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the HTML sent to the browser for /</text>
+<text x="1014" y="503" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;html lang="fr"&gt;</text>
+<text x="1014" y="523" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;title&gt;Daniel Garcia —</text>
+<text x="1030" y="543" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">Développeur Full Stack &amp;amp; DevOps</text>
+<text x="1014" y="563" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;/title&gt;</text>
+<text x="1014" y="583" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;meta name="description"</text>
+<text x="1030" y="603" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">content="CV et portfolio…"&gt;</text>
+<text x="1014" y="623" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;nav aria-label="Langue"&gt;</text>
+<text x="1030" y="643" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">FR → /   (current page)</text>
+<text x="1030" y="663" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">EN → /en/</text>
+<text x="1014" y="683" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;main&gt;</text>
+<text x="1030" y="703" font-size="12.5" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;h1&gt;Daniel Garcia&lt;/h1&gt; &lt;p&gt;…&lt;/p&gt;</text>
+<text x="1014" y="723" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">&lt;/main&gt;</text>
+<rect x="1000" y="110" width="360" height="260" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="1014" y="136" font-size="15" font-weight="bold" fill="#7c2d12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq and Qute</text>
+<text x="1014" y="155" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the engine that assembles the page</text>
+<text x="1014" y="184" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq reads the page, its front matter</text>
+<text x="1014" y="205" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">and the layout; Qute replaces every</text>
+<text x="1014" y="226" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">{…} with its value and escapes</text>
+<text x="1014" y="247" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">HTML characters (&amp; becomes &amp;amp;).</text>
+<text x="1014" y="268" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">page = the page being rendered</text>
+<text x="1014" y="289" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">page.title, page.description:</text>
+<text x="1014" y="310" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">  shortcuts for the front matter keys</text>
+<text x="1014" y="331" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">page.data.&lt;key&gt;: any front matter key</text>
+<path d="M440,200 L480,200 L480,560 L516,560" fill="none" stroke="#334155" stroke-width="2.2" marker-end="url(#arr)"/>
+<circle cx="480" cy="380" r="13" fill="#0f172a"/>
+<text x="480" y="385" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">1</text>
+<path d="M720,370 L720,426" fill="none" stroke="#334155" stroke-width="2.2" marker-end="url(#arr)"/>
+<circle cx="720" cy="398" r="13" fill="#0f172a"/>
+<text x="720" y="403" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">2</text>
+<text x="740" y="394" font-size="12.5" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">t = fr.yml</text>
+<text x="740" y="410" font-size="12.5" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">(lang: fr)</text>
+<path d="M920,595 L996,595" fill="none" stroke="#334155" stroke-width="2.2" marker-end="url(#arr)"/>
+<circle cx="958" cy="595" r="13" fill="#0f172a"/>
+<text x="958" y="600" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">3</text>
+<text x="958" y="628" font-size="12.5" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">Qute fills</text>
+<text x="958" y="644" font-size="12.5" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">every {…}</text>
+<path d="M1180,370 L1180,426" fill="none" stroke="#334155" stroke-width="2.2" marker-end="url(#arr)"/>
+<text x="40" y="800" font-size="16" font-weight="bold" fill="#0f172a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">The steps</text>
+<circle cx="54" cy="821" r="13" fill="#0f172a"/>
+<text x="54" y="826" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">1</text>
+<text x="78" y="826" font-size="13.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq reads content/index.html: the front matter becomes page (title, description, data.lang, data.translation), the body goes to {#insert /}.</text>
+<circle cx="54" cy="849" r="13" fill="#0f172a"/>
+<text x="54" y="854" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">2</text>
+<text x="78" y="854" font-size="13.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">The layout reads page.data.lang (fr) and takes the matching file: t = the content of fr.yml, so t.role and t.languageSwitch are in French.</text>
+<circle cx="54" cy="877" r="13" fill="#0f172a"/>
+<text x="54" y="882" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">3</text>
+<text x="78" y="882" font-size="13.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Qute replaces every {…} of the layout and inserts the body. The result is a complete HTML page, written to target/roq/index.html.</text>
+<text x="1160" y="790" font-size="14" font-weight="bold" fill="#111827" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Legend</text>
+<rect x="1160" y="804" width="22" height="16" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="1192" y="817" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">page (content/)</text>
+<rect x="1160" y="828" width="22" height="16" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="1192" y="841" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">data (data/)</text>
+<rect x="1160" y="852" width="22" height="16" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="1192" y="865" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">layout (templates/)</text>
+<rect x="1160" y="876" width="22" height="16" rx="4" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="1192" y="889" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">engine (Roq, Qute)</text>
+<rect x="1160" y="900" width="22" height="16" rx="4" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="1192" y="913" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">generated HTML</text>
+</svg>
