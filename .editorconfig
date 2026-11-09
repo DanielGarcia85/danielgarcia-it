@@ -19,3 +19,7 @@ indent_size = 2
 # Windows command scripts: CRLF, as in .gitattributes
 [*.cmd]
 end_of_line = crlf
+
+# Java sources: 4 spaces, the usual Java convention
+[*.java]
+indent_size = 4
