@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="960" viewBox="0 0 1400 960" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>danielgarcia.it: from the command to the HTML pages</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1400" height="960" fill="#ffffff"/>
+<text x="40" y="48" font-size="24" font-weight="bold" fill="#0f172a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">From one command to the HTML pages: Maven, Java, Quarkus and Roq</text>
+<text x="40" y="74" font-size="14" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">What starts when a command is typed in the VS Code terminal, and what each piece does.</text>
+<rect x="40" y="110" width="300" height="170" rx="10" fill="#eef2f7" stroke="#475569" stroke-width="2"/>
+<text x="54" y="136" font-size="15" font-weight="bold" fill="#1e293b" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">VS Code terminal</text>
+<text x="54" y="155" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">where every command is typed</text>
+<text x="54" y="183" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">.\mvnw.cmd quarkus:dev</text>
+<text x="54" y="203" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">or, to generate:</text>
+<text x="54" y="223" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">.\mvnw.cmd -B package quarkus:run</text>
+<text x="54" y="243" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">JAVA_HOME → Temurin 25</text>
+<text x="54" y="263" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">(.vscode/settings.json)</text>
+<rect x="400" y="110" width="300" height="170" rx="10" fill="#eef2f7" stroke="#475569" stroke-width="2"/>
+<text x="414" y="136" font-size="15" font-weight="bold" fill="#1e293b" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Maven Wrapper → Maven</text>
+<text x="414" y="155" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the build tool, at the version of the repo</text>
+<text x="414" y="184" font-size="13" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">mvnw.cmd and .mvn/wrapper/</text>
+<text x="414" y="205" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">downloads Maven 3.9.16 once,</text>
+<text x="414" y="226" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">checks its SHA-256, then runs it</text>
+<text x="414" y="247" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">on Java 25 (JAVA_HOME)</text>
+<rect x="760" y="110" width="300" height="170" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+<text x="774" y="136" font-size="15" font-weight="bold" fill="#713f12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">pom.xml</text>
+<text x="774" y="155" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">what the project needs</text>
+<text x="774" y="184" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Quarkus BOM 3.40.1.1</text>
+<text x="774" y="205" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">quarkus-roq 2.2.0</text>
+<text x="774" y="226" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">quarkus-maven-plugin</text>
+<text x="774" y="247" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">libraries: Maven Central → ~/.m2</text>
+<rect x="400" y="340" width="660" height="340" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="414" y="366" font-size="15" font-weight="bold" fill="#0f172a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">JVM: Java 25 (Eclipse Temurin)</text>
+<text x="414" y="385" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the application runs in its own JVM, next to the one of Maven</text>
+<rect x="420" y="410" width="620" height="250" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="434" y="436" font-size="15" font-weight="bold" fill="#7c2d12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Quarkus 3.40.1.1 application</text>
+<text x="434" y="455" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">started by quarkus-maven-plugin</text>
+<rect x="440" y="480" width="270" height="160" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="454" y="506" font-size="15" font-weight="bold" fill="#7c2d12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq 2.2.0 (extension)</text>
+<text x="454" y="535" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">front matter, layouts</text>
+<text x="454" y="556" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq Data (data/)</text>
+<text x="454" y="577" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">generator (target/roq)</text>
+<text x="454" y="598" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">finds the project root</text>
+<rect x="730" y="480" width="140" height="160" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="744" y="506" font-size="15" font-weight="bold" fill="#7c2d12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Qute</text>
+<text x="744" y="535" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">template</text>
+<text x="744" y="556" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">engine:</text>
+<text x="744" y="577" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">fills {…}</text>
+<rect x="890" y="480" width="130" height="160" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="904" y="506" font-size="15" font-weight="bold" fill="#7c2d12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Vert.x</text>
+<text x="904" y="535" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">HTTP</text>
+<text x="904" y="556" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">server</text>
+<text x="904" y="577" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">port 8080</text>
+<text x="40" y="330" font-size="14" font-weight="bold" fill="#1e3a8a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Project sources read by Roq</text>
+<rect x="40" y="345" width="300" height="74" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+<text x="54" y="371" font-size="15" font-weight="bold" fill="#713f12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">config/application.properties</text>
+<text x="54" y="399" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">settings; marks the project root</text>
+<rect x="40" y="431" width="300" height="74" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="54" y="457" font-size="15" font-weight="bold" fill="#1e3a8a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">content/</text>
+<text x="54" y="485" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">the pages: one file = one address</text>
+<rect x="40" y="517" width="300" height="74" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="54" y="543" font-size="15" font-weight="bold" fill="#4c1d95" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">templates/layouts/</text>
+<text x="54" y="571" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">the page skeleton</text>
+<rect x="40" y="603" width="300" height="74" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="54" y="629" font-size="15" font-weight="bold" fill="#14532d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">data/</text>
+<text x="54" y="657" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">shared data: data/i18n/*.yml</text>
+<rect x="1110" y="110" width="250" height="250" rx="10" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="1124" y="136" font-size="15" font-weight="bold" fill="#111827" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Development mode</text>
+<text x="1124" y="155" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">quarkus:dev</text>
+<text x="1124" y="184" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">serves the site live on</text>
+<text x="1124" y="205" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">http://localhost:8080</text>
+<text x="1124" y="226" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">a saved file is visible</text>
+<text x="1124" y="247" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">after F5 (hot reload)</text>
+<text x="1124" y="268" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">stop: click in the</text>
+<text x="1124" y="289" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">terminal, then q</text>
+<rect x="1110" y="410" width="250" height="330" rx="10" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="1124" y="436" font-size="15" font-weight="bold" fill="#111827" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Generation</text>
+<text x="1124" y="455" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">batch mode, then the app stops</text>
+<text x="1124" y="484" font-size="11.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">QUARKUS_ROQ_GENERATOR_BATCH</text>
+<text x="1124" y="505" font-size="11.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">= true, then package quarkus:run</text>
+<text x="1124" y="526" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq requests every page and</text>
+<text x="1124" y="547" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">writes it as a static file:</text>
+<text x="1124" y="568" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">target/roq/</text>
+<text x="1140" y="589" font-size="13" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">index.html</text>
+<text x="1140" y="610" font-size="13" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">en/index.html</text>
+<text x="1124" y="631" font-size="13" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">plain HTML files:</text>
+<text x="1124" y="652" font-size="13" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">no Java needed to serve them</text>
+<path d="M340,195 L396,195" fill="none" stroke="#334155" stroke-width="2.2" marker-end="url(#arr)"/>
+<circle cx="368" cy="195" r="13" fill="#0f172a"/>
+<text x="368" y="200" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">1</text>
+<path d="M700,195 L756,195" fill="none" stroke="#334155" stroke-width="2.2" marker-end="url(#arr)"/>
+<circle cx="728" cy="195" r="13" fill="#0f172a"/>
+<text x="728" y="200" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">2</text>
+<path d="M910,280 L910,336" fill="none" stroke="#334155" stroke-width="2.2" marker-end="url(#arr)"/>
+<circle cx="910" cy="308" r="13" fill="#0f172a"/>
+<text x="910" y="313" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">3</text>
+<path d="M340,560 L436,560" fill="none" stroke="#334155" stroke-width="2.2" marker-end="url(#arr)"/>
+<circle cx="388" cy="560" r="13" fill="#0f172a"/>
+<text x="388" y="565" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">4</text>
+<path d="M1060,400 L1085,400 L1085,235 L1106,235" fill="none" stroke="#334155" stroke-width="2.2" marker-end="url(#arr)"/>
+<circle cx="1085" cy="318" r="13" fill="#0f172a"/>
+<text x="1085" y="323" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">5a</text>
+<path d="M1060,600 L1106,600" fill="none" stroke="#334155" stroke-width="2.2" marker-end="url(#arr)"/>
+<circle cx="1085" cy="600" r="13" fill="#0f172a"/>
+<text x="1085" y="605" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">5b</text>
+<text x="40" y="760" font-size="16" font-weight="bold" fill="#0f172a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">The steps</text>
+<circle cx="56" cy="781" r="13" fill="#0f172a"/>
+<text x="56" y="786" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">1</text>
+<text x="82" y="786" font-size="13.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">The terminal runs the Maven Wrapper, which starts Maven on Temurin 25 (JAVA_HOME of the VS Code terminals).</text>
+<circle cx="56" cy="809" r="13" fill="#0f172a"/>
+<text x="56" y="814" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">2</text>
+<text x="82" y="814" font-size="13.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Maven reads pom.xml and downloads Quarkus and Roq into ~/.m2 the first time.</text>
+<circle cx="56" cy="837" r="13" fill="#0f172a"/>
+<text x="56" y="842" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">3</text>
+<text x="82" y="842" font-size="13.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">The Quarkus plugin builds the application and starts it in the JVM, with Roq, Qute and the Vert.x server.</text>
+<circle cx="56" cy="865" r="13" fill="#0f172a"/>
+<text x="56" y="870" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">4</text>
+<text x="82" y="870" font-size="13.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq finds the project root (config/application.properties), then reads content/, templates/layouts/ and data/.</text>
+<circle cx="56" cy="893" r="13" fill="#0f172a"/>
+<text x="56" y="898" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">5a</text>
+<text x="82" y="898" font-size="13.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">quarkus:dev keeps the site running and reloads it when a file changes.</text>
+<circle cx="56" cy="921" r="13" fill="#0f172a"/>
+<text x="56" y="926" font-size="14" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">5b</text>
+<text x="82" y="926" font-size="13.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">With the batch variable, Roq writes every page to target/roq/ and the application stops.</text>
+<text x="1160" y="790" font-size="14" font-weight="bold" fill="#111827" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Legend</text>
+<rect x="1160" y="804" width="22" height="16" rx="4" fill="#eef2f7" stroke="#475569" stroke-width="2"/>
+<text x="1192" y="817" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">tool (terminal, Maven)</text>
+<rect x="1160" y="828" width="22" height="16" rx="4" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+<text x="1192" y="841" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">configuration</text>
+<rect x="1160" y="852" width="22" height="16" rx="4" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="1192" y="865" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Quarkus and its extensions</text>
+<rect x="1160" y="876" width="22" height="16" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="1192" y="889" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Java runtime (JVM)</text>
+<rect x="1160" y="900" width="22" height="16" rx="4" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="1192" y="913" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">result</text>
+</svg>

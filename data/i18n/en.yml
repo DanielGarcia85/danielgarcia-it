@@ -1,0 +1,11 @@
+# data/i18n/en.yml
+# danielgarcia.it — English interface texts
+# ─────────────────────────────────────────────────────────────────────────────
+# Texts shared by every page, read by templates/layouts/page.html through
+# cdi:i18n. fr.yml has exactly the same keys. Page content stays in content/.
+
+# Job title, shown after the name in the browser tab
+role: "Full Stack & DevOps Developer"
+
+# Accessible name of the language switch, read aloud by screen readers
+languageSwitch: "Language"

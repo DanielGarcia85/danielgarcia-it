@@ -6,3 +6,6 @@
 
 # Text files: detected by Git, LF line endings (decision of 05.11.2026)
 * text=auto eol=lf
+
+# Windows command scripts (mvnw.cmd): CRLF, the line ending cmd.exe expects
+*.cmd text eol=crlf

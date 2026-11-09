@@ -11,3 +11,10 @@
 
 # VS Code settings: paths specific to each workstation
 /.vscode/
+
+# Maven build output, including the generated site (target/roq)
+/target/
+
+# Front-end packages that the Quarkus Web Bundler installs (mvnpm, no Node).
+# No leading slash: the Web Bundler's own check only accepts this form.
+node_modules/
