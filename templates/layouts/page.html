@@ -13,7 +13,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{page.title} — {t.role}</title>
+  {! Home page (its title is the site title): name and role. Other pages: page, then name. !}
+  <title>{#if page.title == site.title}{page.title} — {t.role}{#else}{page.title} — {site.title}{/if}</title>
   <meta name="description" content="{page.description}">
 </head>
 <body>
