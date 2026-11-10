@@ -1,0 +1,27 @@
+# .dockerignore
+# danielgarcia.it — what Docker may read from this folder to build the image
+# ─────────────────────────────────────────────────────────────────────────────
+# Everything is refused first, then only what the build needs is let in.
+# A new folder is therefore never sent by mistake; it must be added here.
+
+# Refuse everything at the root of the project
+*
+
+# Maven Wrapper for Linux and its settings (Maven version and checksum)
+!mvnw
+!.mvn
+
+# Maven build: dependencies, plugins, tests
+!pom.xml
+
+# Site sources read by Roq
+!config
+!content
+!data
+!templates
+
+# Tests of the generated site, run during the build
+!src
+
+# Nginx configuration of the final image
+!nginx.conf
