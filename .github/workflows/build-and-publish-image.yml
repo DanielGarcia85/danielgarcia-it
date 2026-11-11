@@ -1,0 +1,120 @@
+# .github/workflows/build-and-publish-image.yml
+#
+# GitHub Actions — tests the site, builds its image and publishes it
+# ─────────────────────────────────────────────────────────────────────────────
+# Runs on GitHub's own machines at every push on "develop" or "main" that
+# changes what goes into the image, or a workflow. First the tests: if one
+# fails, nothing else runs. Then the image is built: on "develop", only to
+# check that it still builds; on "main", it is also published to the GitHub
+# container registry (ghcr.io), where the production server fetches it.
+
+name: Test, build and publish the image
+
+# Branches whose pushes start this workflow
+on:
+  push:
+    branches:
+      - develop
+      - main
+    # Only what goes into the image, the Dockerfile and the workflows start a
+    # run: the same list as .dockerignore. Markdown files are not excluded,
+    # because Roq can turn them into pages.
+    paths:
+      - "mvnw"
+      - ".mvn/**"
+      - "pom.xml"
+      - "config/**"
+      - "content/**"
+      - "data/**"
+      - "templates/**"
+      - "src/**"
+      - "nginx.conf"
+      - "Dockerfile"
+      - ".dockerignore"
+      - ".github/workflows/**"
+
+# Rights of the temporary token GitHub gives to this workflow: read the code.
+# Nothing else. A job that needs more declares it itself.
+permissions:
+  contents: read
+
+jobs:
+  test:
+    # Virtual machine provided by GitHub, created for this run and then
+    # destroyed
+    runs-on: ubuntu-latest
+
+    # Every action is designated by the full identifier of a commit, with its
+    # version in a comment: a version tag could be moved to other code.
+    steps:
+      # Copy the repository onto the virtual machine
+      - name: Check out the code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # Same Java as the image: Eclipse Temurin 25. Maven's downloads are kept
+      # from one run to the next, as long as pom.xml does not change.
+      - name: Set up Java
+        uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
+        with:
+          distribution: temurin
+          java-version: "25"
+          cache: maven
+
+      # Compilation, then every test. One failure fails this step, this job,
+      # and so the whole workflow.
+      - name: Run the tests
+        run: ./mvnw -B verify
+
+  build:
+    # Only once the tests have passed
+    needs: test
+
+    # Virtual machine provided by GitHub, created for this run and then
+    # destroyed
+    runs-on: ubuntu-latest
+
+    # Rights of the token for this job only: read the code, and write to the
+    # container registry to publish the image
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      # Copy the repository onto the virtual machine
+      - name: Check out the code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # Sign in to the registry with the temporary token of the workflow
+      - name: Log in to the container registry
+        uses: docker/login-action@8aa5831fb8d48d8f76594c7ddde61ae58019f550 # v4.8.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Work out the name and the tags of the image: one tag made of the
+      # commit, never reused, and "latest" for the most recent image of main
+      - name: Compute the image name and tags
+        id: meta
+        uses: docker/metadata-action@dc802804100637a589fabce1cb79ff13a1411302 # v6.2.0
+        with:
+          images: ghcr.io/danielgarcia85/danielgarcia-it
+          tags: |
+            type=sha
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      # Build the image from the Dockerfile, without running the tests again:
+      # the "test" job has just run them on the same commit. The image is sent
+      # to the registry only when the push was made on main.
+      - name: Build the image, and publish it from main
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        # Do not attach the record of the build to the run as a downloadable
+        # file: it is not used here
+        env:
+          DOCKER_BUILD_RECORD_UPLOAD: false
+        with:
+          context: .
+          build-args: SKIP_TESTS=true
+          push: ${{ github.ref_name == 'main' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
