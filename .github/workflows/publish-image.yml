@@ -1,0 +1,64 @@
+# .github/workflows/publish-image.yml
+#
+# GitHub Actions — tests the site, builds its image and publishes it
+# ─────────────────────────────────────────────────────────────────────────────
+# Runs on GitHub's own machines at every push on "develop" or "main" that
+# changes what goes into the image, or a workflow. For now, only the tests:
+# building and publishing the image come next.
+
+name: Test and publish the image
+
+# Branches whose pushes start this workflow
+on:
+  push:
+    branches:
+      - develop
+      - main
+    # Only what goes into the image, the Dockerfile and the workflows start a
+    # run: the same list as .dockerignore. Markdown files are not excluded,
+    # because Roq can turn them into pages.
+    paths:
+      - "mvnw"
+      - ".mvn/**"
+      - "pom.xml"
+      - "config/**"
+      - "content/**"
+      - "data/**"
+      - "templates/**"
+      - "src/**"
+      - "nginx.conf"
+      - "Dockerfile"
+      - ".dockerignore"
+      - ".github/workflows/**"
+
+# Rights of the temporary token GitHub gives to this workflow: read the code.
+# Nothing else.
+permissions:
+  contents: read
+
+jobs:
+  test:
+    # Virtual machine provided by GitHub, created for this run and then
+    # destroyed
+    runs-on: ubuntu-latest
+
+    # Every action is designated by the full identifier of a commit, with its
+    # version in a comment: a version tag could be moved to other code.
+    steps:
+      # Copy the repository onto the virtual machine
+      - name: Check out the code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # Same Java as the image: Eclipse Temurin 25. Maven's downloads are kept
+      # from one run to the next, as long as pom.xml does not change.
+      - name: Set up Java
+        uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
+        with:
+          distribution: temurin
+          java-version: "25"
+          cache: maven
+
+      # Compilation, then every test. One failure fails this step, this job,
+      # and so the whole workflow.
+      - name: Run the tests
+        run: ./mvnw -B verify
