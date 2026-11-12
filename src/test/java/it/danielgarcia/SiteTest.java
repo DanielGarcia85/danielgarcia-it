@@ -59,9 +59,8 @@ class SiteTest {
 
     @Test
     void noBrokenInternalLink() {
-        // The link checker builds file URIs without encoding '#', so under a folder whose
-        // path contains '#' (the OneDrive folder) every link looks broken: skipped there,
-        // run in Docker and in CI.
+        // The link checker builds file URIs without encoding '#', so under a path that
+        // contains '#' every link looks broken: the check is skipped there.
         assumeFalse(System.getProperty("user.dir").contains("#"),
                 "Project path contains '#': the link checker cannot read it");
         assertTrue(RoqLinks.checkInternal().isEmpty(), "Broken internal links: see the test log");

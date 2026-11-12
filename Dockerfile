@@ -7,8 +7,8 @@
 
 # ── Stage 1: test and generate the site ───────────────────────────────────────
 
-# Official Eclipse Temurin image: Java 25 JDK on Ubuntu 24.04, the same major
-# version as the workstations. The tag follows the fixes of Java 25.
+# Official Eclipse Temurin image: Java 25 JDK on Ubuntu 24.04, the Java version
+# the project is compiled for. The tag follows the fixes of Java 25.
 FROM eclipse-temurin:25-jdk-noble AS build
 
 # The Maven Wrapper checks the SHA-256 of the Maven .zip, but downloads the
@@ -24,10 +24,11 @@ WORKDIR /app
 # Sources, limited to what .dockerignore lets in
 COPY . .
 
-# Tests, then packaging of the Quarkus application. The link check runs here:
-# this path has no "#". The cache mount keeps Maven's downloads between builds
-# on this machine, without putting them in the image.
-RUN --mount=type=cache,target=/root/.m2 ./mvnw -B package
+# Tests, then packaging of the Quarkus application. SKIP_TESTS=true skips the
+# tests, for a pipeline that has already run them on the same commit. The cache
+# mount keeps Maven's downloads between builds, outside the image.
+ARG SKIP_TESTS=false
+RUN --mount=type=cache,target=/root/.m2 ./mvnw -B -DskipTests=${SKIP_TESTS} package
 
 # Generation. Roq's batch mode is fixed when the application is built, not when
 # it starts: the application is built again with it, without running the tests
