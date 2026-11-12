@@ -7,10 +7,13 @@
 # fails, nothing else runs. Then the image is built: on "develop", only to
 # check that it still builds; on "main", it is also published to the GitHub
 # container registry (ghcr.io), where the production server fetches it.
+# Every week, the image of "main" is also built and published again, to pick
+# up the security fixes of its base images.
 
 name: Test, build and publish the image
 
-# Branches whose pushes start this workflow
+# Events that start this workflow: a push on one of the branches below, or
+# the weekly schedule
 on:
   push:
     branches:
@@ -32,6 +35,13 @@ on:
       - "Dockerfile"
       - ".dockerignore"
       - ".github/workflows/**"
+
+  # Every Monday at 03:17 UTC. GitHub runs it on the default branch (main)
+  # only, even when the site has not changed: the new image then includes the
+  # latest fixes of Nginx and Alpine. The minute avoids the top of the hour,
+  # when GitHub delays many scheduled runs.
+  schedule:
+    - cron: "17 3 * * 1"
 
 # Rights of the temporary token GitHub gives to this workflow: read the code.
 # Nothing else. A job that needs more declares it itself.
@@ -92,15 +102,19 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Work out the name and the tags of the image: one tag made of the
-      # commit, never reused, and "latest" for the most recent image of main
+      # Work out the name and the tags of the image:
+      # - "sha-<commit>" after a push: one per commit, never reused. Not after
+      #   the weekly rebuild, which would give that tag to a different image.
+      # - the date after the weekly rebuild, such as 20261116 (UTC)
+      # - "latest" for the most recent image of main, rebuilds included
       - name: Compute the image name and tags
         id: meta
         uses: docker/metadata-action@dc802804100637a589fabce1cb79ff13a1411302 # v6.2.0
         with:
           images: ghcr.io/danielgarcia85/danielgarcia-it
           tags: |
-            type=sha
+            type=sha,enable=${{ github.event_name != 'schedule' }}
+            type=schedule,pattern={{date 'YYYYMMDD'}}
             type=raw,value=latest,enable={{is_default_branch}}
 
       # Build the image from the Dockerfile, without running the tests again:
@@ -115,6 +129,9 @@ jobs:
         with:
           context: .
           build-args: SKIP_TESTS=true
+          # Always fetch the newest version of the base images, even if the
+          # machine already holds an older one
+          pull: true
           push: ${{ github.ref_name == 'main' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
