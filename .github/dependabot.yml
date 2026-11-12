@@ -1,0 +1,34 @@
+# .github/dependabot.yml
+#
+# Dependabot — proposes updates of the dependencies, as pull requests
+# ─────────────────────────────────────────────────────────────────────────────
+# Once a week, Dependabot checks whether a newer version exists for the Maven
+# dependencies and plugins of pom.xml, and for the actions of the workflows.
+# For each one, it opens a pull request towards "develop": the workflow tests
+# it, and it is merged by hand. Nothing reaches "main" without a merge.
+
+version: 2
+
+updates:
+  # Dependencies and plugins of pom.xml (Quarkus, Roq, test libraries, Maven
+  # plugins)
+  - package-ecosystem: maven
+    directory: "/"
+    schedule:
+      interval: weekly
+    target-branch: develop
+    # Title of the pull request and of its commit, in the format of the
+    # repository: build(maven): ...
+    commit-message:
+      prefix: build(maven)
+
+  # Actions used in .github/workflows (checkout, setup-java, docker/...): the
+  # commit identifier and the version comment are updated together
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    target-branch: develop
+    # Title of the pull request and of its commit: ci(workflow): ...
+    commit-message:
+      prefix: ci(workflow)

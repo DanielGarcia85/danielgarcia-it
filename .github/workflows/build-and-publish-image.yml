@@ -12,8 +12,8 @@
 
 name: Test, build and publish the image
 
-# Events that start this workflow: a push on one of the branches below, or
-# the weekly schedule
+# Events that start this workflow: a push on one of the branches below, a
+# pull request towards "develop", or the weekly schedule
 on:
   push:
     branches:
@@ -35,6 +35,13 @@ on:
       - "Dockerfile"
       - ".dockerignore"
       - ".github/workflows/**"
+
+  # Every pull request towards "develop", such as the updates proposed by
+  # Dependabot: the tests and the build run before the merge, nothing is
+  # published
+  pull_request:
+    branches:
+      - develop
 
   # Every Monday at 03:17 UTC. GitHub runs it on the default branch (main)
   # only, even when the site has not changed: the new image then includes the
@@ -94,8 +101,11 @@ jobs:
       - name: Check out the code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      # Sign in to the registry with the temporary token of the workflow
+      # Sign in to the registry with the temporary token of the workflow. Not
+      # for a pull request: nothing is published, and the token of a pull
+      # request opened by Dependabot can only read.
       - name: Log in to the container registry
+        if: github.event_name != 'pull_request'
         uses: docker/login-action@8aa5831fb8d48d8f76594c7ddde61ae58019f550 # v4.8.0
         with:
           registry: ghcr.io
