@@ -24,7 +24,7 @@
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.version>3.40.1.1</quarkus.platform.version>
     <roq.version>2.2.0</roq.version>
-    <!-- Plugin versions of the projects that Quarkus 3.40.1 itself generates -->
+    <!-- Maven plugin versions, kept up to date by Dependabot -->
     <compiler-plugin.version>3.16.0</compiler-plugin.version>
     <surefire-plugin.version>3.6.1</surefire-plugin.version>
   </properties>
