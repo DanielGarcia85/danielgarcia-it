@@ -2,10 +2,14 @@
 # danielgarcia.it — how Git stores and checks out text files
 # ─────────────────────────────────────────────────────────────────────────────
 # Every text file is stored and checked out with LF line endings, on Windows
-# as on Linux, so that scripts run unchanged in the Linux containers.
+# as on Linux, so that scripts run unchanged in the Linux containers. Only
+# exception: the Windows command scripts, kept in CRLF.
 
 # Text files: detected by Git, LF line endings (decision of 05.11.2026)
 * text=auto eol=lf
 
-# Windows command scripts (mvnw.cmd): CRLF, the line ending cmd.exe expects
-*.cmd text eol=crlf
+# Windows command scripts (mvnw.cmd): stored exactly as written, in CRLF, the
+# line ending cmd.exe expects, and never converted. The Maven Wrapper plugin
+# generates mvnw.cmd in CRLF: its updates, by Dependabot among others, then
+# only show real changes.
+*.cmd -text
