@@ -3,15 +3,16 @@
 Source code of my CV and portfolio site, in French and English, generated as static
 HTML by [Roq](https://iamroq.dev/), a static site generator built on Quarkus.
 
-**Status:** work in progress. The site is not online yet; this repository holds the
-skeleton: a shared layout, the home page and the "page not found" page in both
-languages, and the tests of the generated site.
+**Status:** work in progress. The site is online at <https://danielgarcia.it>, still as a
+skeleton: a shared layout, the home page and the "page not found" page in both languages,
+and the tests of the generated site. Every merge into `main` is tested, built into a Docker
+image and deployed automatically.
 
 ## Stack
 
 - Java 25 (Eclipse Temurin)
-- Quarkus 3.40.1.1 and Roq 2.2.0, with Qute templates
-- Maven 3.9.16, through the Maven Wrapper
+- Quarkus and Roq, with Qute templates (versions in `pom.xml`)
+- Maven, through the Maven Wrapper (version in `.mvn/wrapper/maven-wrapper.properties`)
 - Tests: JUnit, RestAssured and the Roq testing library
 
 ## How it works
@@ -27,6 +28,7 @@ Diagrams:
 
 - [From the command to the HTML pages](docs/diagrams/build-and-run.svg)
 - [How a page is rendered, and how its language is chosen](docs/diagrams/page-rendering-and-i18n.svg)
+- [From a commit to the site in production](docs/diagrams/ci-cd-and-deployment.svg)
 
 ## Run it locally
 

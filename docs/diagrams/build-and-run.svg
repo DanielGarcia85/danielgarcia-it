@@ -16,24 +16,24 @@
 <text x="414" y="136" font-size="15" font-weight="bold" fill="#1e293b" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Maven Wrapper → Maven</text>
 <text x="414" y="155" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the build tool, at the version of the repo</text>
 <text x="414" y="184" font-size="13" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">mvnw.cmd and .mvn/wrapper/</text>
-<text x="414" y="205" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">downloads Maven 3.9.16 once,</text>
+<text x="414" y="205" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">downloads the Maven it names, once,</text>
 <text x="414" y="226" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">checks its SHA-256, then runs it</text>
 <text x="414" y="247" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">on Java 25 (JAVA_HOME)</text>
 <rect x="760" y="110" width="300" height="170" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
 <text x="774" y="136" font-size="15" font-weight="bold" fill="#713f12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">pom.xml</text>
 <text x="774" y="155" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">what the project needs</text>
-<text x="774" y="184" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Quarkus BOM 3.40.1.1</text>
-<text x="774" y="205" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">quarkus-roq 2.2.0</text>
+<text x="774" y="184" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Quarkus BOM: the platform versions</text>
+<text x="774" y="205" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">quarkus-roq: the Roq extension</text>
 <text x="774" y="226" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">quarkus-maven-plugin</text>
 <text x="774" y="247" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">libraries: Maven Central → ~/.m2</text>
 <rect x="400" y="340" width="660" height="340" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
 <text x="414" y="366" font-size="15" font-weight="bold" fill="#0f172a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">JVM: Java 25 (Eclipse Temurin)</text>
 <text x="414" y="385" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the application runs in its own JVM, next to the one of Maven</text>
 <rect x="420" y="410" width="620" height="250" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
-<text x="434" y="436" font-size="15" font-weight="bold" fill="#7c2d12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Quarkus 3.40.1.1 application</text>
+<text x="434" y="436" font-size="15" font-weight="bold" fill="#7c2d12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Quarkus application</text>
 <text x="434" y="455" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">started by quarkus-maven-plugin</text>
 <rect x="440" y="480" width="270" height="160" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
-<text x="454" y="506" font-size="15" font-weight="bold" fill="#7c2d12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq 2.2.0 (extension)</text>
+<text x="454" y="506" font-size="15" font-weight="bold" fill="#7c2d12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq (extension)</text>
 <text x="454" y="535" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">front matter, layouts</text>
 <text x="454" y="556" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq Data (data/)</text>
 <text x="454" y="577" font-size="13" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">generator (target/roq)</text>
