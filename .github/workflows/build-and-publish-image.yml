@@ -13,7 +13,7 @@
 name: Test, build and publish the image
 
 # Events that start this workflow: a push on one of the branches below, a
-# pull request towards "develop", or the weekly schedule
+# pull request towards "develop" or "main", or the weekly schedule
 on:
   push:
     branches:
@@ -37,11 +37,13 @@ on:
       - ".github/workflows/**"
 
   # Every pull request towards "develop", such as the updates proposed by
-  # Dependabot: the tests and the build run before the merge, nothing is
-  # published
+  # Dependabot, or towards "main", from "develop": the tests and the build run
+  # before the merge, nothing is published. No path filter here, so that the
+  # checks required to merge into main are always reported.
   pull_request:
     branches:
       - develop
+      - main
 
   # Every Monday at 03:17 UTC. GitHub runs it on the default branch (main)
   # only, even when the site has not changed: the new image then includes the
