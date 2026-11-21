@@ -11,8 +11,9 @@ import java.util.List;
  * @param experience     the positions held, the current position first, then by end date from the most recent to the oldest
  * @param education      the diplomas and completed trainings, from the most recent to the oldest
  * @param certifications the certifications, from the most recent to the oldest
+ * @param projects       the projects, from the most recent to the oldest
  * @param skillGroups    the groups of skills, in display order
  * @param languages      the spoken languages, in display order
  */
-public record CareerContent(List<String> profile, List<Experience> experience, List<Education> education, List<Certification> certifications, List<SkillGroup> skillGroups, List<Language> languages) {
+public record CareerContent(List<String> profile, List<Experience> experience, List<Education> education, List<Certification> certifications, List<Project> projects, List<SkillGroup> skillGroups, List<Language> languages) {
 }
