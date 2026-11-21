@@ -2,9 +2,9 @@
 # Career content — English
 # ─────────────────────────────────────────────────────────────────────────────
 # Content of the career section of the site, in English: profile, experience,
-# education, certifications, skill groups and languages. Read by Roq into the
-# CareerContent record (it.danielgarcia.career); the file name is the language
-# code. A key that does not match a record component fails the build.
+# education, certifications, projects, skill groups and languages. Read by Roq
+# into the CareerContent record (it.danielgarcia.career); the file name is the
+# language code. A key that does not match a record component fails the build.
 
 profile:
   - "Business IT graduate (BSc HES-SO), I have been working in IT for more than ten years: support, systems and networks."
@@ -438,6 +438,41 @@ certifications:
       - "Cisco Networking"
       - "Internet Protocol Suite (TCP/IP)"
     documents: "Certificate and course completion statement available on request."
+
+projects:
+  - id: "ge-trouve"
+    title: "Ge-Trouve"
+    frame: "Bachelor thesis, HEG Geneva"
+    completed: "2026-09"
+    grade: "5.7/6"
+    featured: true
+    summary: "French-language RAG conversational assistant for administrative procedures in Geneva, based on official pages, with a locally run language model."
+    description: "For my Bachelor thesis, I designed, developed, deployed and evaluated an assistant that answers questions about administrative procedures in the canton of Geneva in everyday French. Ge-Trouve relies only on the official pages of the State of Geneva (ge.ch) and the City of Geneva (geneve.ch), and cites its sources so that anyone can check them. Everything runs on a server in Switzerland, with open source models: no question is sent to an external artificial intelligence service. Each component was chosen after a comparison based on primary sources: four frameworks, five language models, three embedding models and three vector databases. I then built the system on a pilot corpus, sized the server from measurements, and evaluated the quality of the answers on twenty hand-written questions. The site is online, and the code, the decision logs and the thesis are public."
+    highlights:
+      - "Corpus: inventory of 4,322 official pages, of which 4,304 were retrieved in line with the sites’ rules (robots.txt, identified crawler, two seconds between requests); the 18 missing ones are one deleted page and restricted-access pages, which were not bypassed. Text extracted with Trafilatura and split into 9,651 chunks of 200 words."
+      - "Reproducible ingestion: the identifier of each chunk is a hash of its content, so reindexing replaces chunks instead of duplicating them."
+      - "Retrieval and generation: explicit Haystack pipeline, embeddings by Qwen3-Embedding-0.6B, Chroma vector database; the five closest chunks are passed to Gemma 4 12B, which writes the answer from these excerpts only."
+      - "Generation prompt refined through successive variants, replayed under identical conditions on a set of questions separate from the evaluation set."
+      - "Measured sizing: the two loaded models take 11.3 GB, which rules out a 12 GB server; I chose 18 GB of memory and 6 virtual CPUs, with no graphics card."
+      - "Evaluation: RAGAS run locally on 20 questions, 4 of them deliberately out of scope, with a judge model from another family and a blind human review of a quarter of the answers. Averages over the 16 questions that have an answer: context precision 0.92, context recall 0.93, faithfulness 0.85, answer relevancy 0.71. No pure fabrication found; relevancy suffers from overly long answers."
+      - "Production: four Docker Compose containers on an Infomaniak server in Switzerland, automatic HTTPS with Caddy, application run without privileges; automatic redeployment on every push to main by a self-hosted GitHub Actions runner."
+      - "Answer displayed word by word as it is generated, to reduce the perceived wait; no account and no history, the question is not stored anywhere."
+      - "Known limitations: without a graphics card, the first word of an answer arrives after 90 to 120 seconds; one question at a time, with no conversation memory."
+    skills:
+      - "Python"
+      - "Retrieval-Augmented Generation (RAG)"
+      - "Haystack"
+      - "Ollama"
+      - "Chroma"
+      - "Trafilatura"
+      - "Streamlit"
+      - "RAGAS"
+      - "Docker Compose"
+      - "Caddy"
+      - "GitHub Actions"
+      - "Linux"
+    site: "https://ge-trouve.ch"
+    repository: "https://github.com/DanielGarcia85/ge-trouve-ch"
 
 skillGroups:
   - label: "Languages"

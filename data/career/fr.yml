@@ -2,9 +2,9 @@
 # Career content — French
 # ─────────────────────────────────────────────────────────────────────────────
 # Content of the career section of the site, in French: profile, experience,
-# education, certifications, skill groups and languages. Read by Roq into the
-# CareerContent record (it.danielgarcia.career); the file name is the language
-# code. A key that does not match a record component fails the build.
+# education, certifications, projects, skill groups and languages. Read by Roq
+# into the CareerContent record (it.danielgarcia.career); the file name is the
+# language code. A key that does not match a record component fails the build.
 
 profile:
   - "Informaticien de gestion HES, je travaille dans l’informatique depuis plus de dix ans : support, systèmes et réseaux."
@@ -438,6 +438,41 @@ certifications:
       - "Cisco Networking"
       - "Suite des protocoles Internet (TCP/IP)"
     documents: "Certificat et attestation de fin de formation disponibles sur demande."
+
+projects:
+  - id: "ge-trouve"
+    title: "Ge-Trouve"
+    frame: "Travail de Bachelor, HEG Genève"
+    completed: "2026-09"
+    grade: "5,7/6"
+    featured: true
+    summary: "Assistant conversationnel RAG en français sur les démarches administratives genevoises, fondé sur les pages officielles, avec un modèle de langage exécuté localement."
+    description: "Pour mon Travail de Bachelor, j’ai conçu, développé, déployé et évalué un assistant qui répond en français courant aux questions sur les démarches administratives du canton de Genève. Ge-Trouve s’appuie uniquement sur les pages officielles de l’État (ge.ch) et de la Ville de Genève (geneve.ch), et cite ses sources pour que chacun puisse vérifier. Tout s’exécute sur un serveur en Suisse, avec des modèles open source : aucune question ne part vers un service d’intelligence artificielle externe. Chaque composant a été choisi après une comparaison sur sources primaires : quatre frameworks, cinq modèles de langage, trois modèles d’embeddings et trois bases vectorielles. J’ai ensuite construit le système sur un corpus pilote, dimensionné le serveur à partir de mesures, puis évalué la qualité des réponses sur vingt questions écrites à la main. Le site est en ligne, et le code, les journaux de décisions et le mémoire sont publics."
+    highlights:
+      - "Corpus : inventaire de 4 322 pages officielles, dont 4 304 récupérées dans le respect des règles des sites (robots.txt, robot identifié, deux secondes entre les requêtes) ; les 18 manquantes sont une page supprimée et des pages d’accès restreint, non contournées. Texte extrait avec Trafilatura et découpé en 9 651 fragments de 200 mots."
+      - "Ingestion reproductible : l’identifiant de chaque fragment est une empreinte de son contenu, si bien qu’une réindexation remplace au lieu de dupliquer."
+      - "Recherche et génération : pipeline Haystack explicite, vectorisation par Qwen3-Embedding-0.6B, base vectorielle Chroma ; les cinq fragments les plus proches sont transmis à Gemma 4 12B, qui rédige la réponse à partir de ces seuls extraits."
+      - "Consigne de génération mise au point par variantes successives, rejouées à conditions égales sur un jeu de questions distinct de celui de l’évaluation."
+      - "Dimensionnement mesuré : les deux modèles chargés occupent 11,3 Go, ce qui exclut un serveur de 12 Go ; j’ai retenu 18 Go de mémoire et 6 processeurs virtuels, sans carte graphique."
+      - "Évaluation : RAGAS en local sur 20 questions, dont 4 volontairement hors périmètre, avec un modèle juge d’une autre famille et un contrôle humain à l’aveugle d’un quart des réponses. Moyennes sur les 16 questions qui ont une réponse : précision du contexte 0,92, rappel du contexte 0,93, fidélité 0,85, pertinence de la réponse 0,71. Aucune invention pure relevée ; la pertinence pâtit de réponses trop longues."
+      - "Production : quatre conteneurs Docker Compose sur un serveur Infomaniak en Suisse, HTTPS automatique avec Caddy, application exécutée sans privilèges ; redéploiement automatique à chaque push sur main par un runner GitHub Actions auto-hébergé."
+      - "Réponse affichée mot à mot pendant sa génération, pour réduire l’attente perçue ; ni compte ni historique, la question n’est enregistrée nulle part."
+      - "Limites assumées : sans carte graphique, le premier mot d’une réponse arrive après 90 à 120 secondes ; une seule question à la fois, sans mémoire de la conversation."
+    skills:
+      - "Python"
+      - "Génération augmentée par récupération (RAG)"
+      - "Haystack"
+      - "Ollama"
+      - "Chroma"
+      - "Trafilatura"
+      - "Streamlit"
+      - "RAGAS"
+      - "Docker Compose"
+      - "Caddy"
+      - "GitHub Actions"
+      - "Linux"
+    site: "https://ge-trouve.ch"
+    repository: "https://github.com/DanielGarcia85/ge-trouve-ch"
 
 skillGroups:
   - label: "Langages"
