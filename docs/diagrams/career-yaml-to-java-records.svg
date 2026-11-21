@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1230" viewBox="0 0 1400 1230" font-family="Segoe UI, Helvetica, Arial, sans-serif" xml:space="preserve" xmlns:c2pa="http://c2pa.org/manifest">
+<title>danielgarcia.it: from the career YAML files to the HTML pages</title><defs>
+<marker id="a_334155" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+<marker id="a_10b981" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#10b981"/></marker>
+<marker id="a_8b5cf6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8b5cf6"/></marker>
+<marker id="a_06b6d4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#06b6d4"/></marker>
+<marker id="a_0ea5e9" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0ea5e9"/></marker>
+<marker id="a_f59e0b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker>
+<marker id="a_22c55e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#22c55e"/></marker>
+<marker id="a_ec4899" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ec4899"/></marker>
+<marker id="a_6366f1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6366f1"/></marker>
+<filter id="sh" x="-5%" y="-5%" width="110%" height="115%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.12"/></filter>
+<linearGradient id="top" x1="0" x2="1"><stop offset="0" stop-color="#1e40af"/><stop offset="0.5" stop-color="#7c3aed"/><stop offset="1" stop-color="#be185d"/></linearGradient>
+<linearGradient id="band" x1="0" x2="1"><stop offset="0" stop-color="#ecfeff"/><stop offset="0.33" stop-color="#f0f9ff"/><stop offset="0.66" stop-color="#fffbeb"/><stop offset="1" stop-color="#f0fdf4"/></linearGradient>
+</defs>
+<rect width="1400" height="1230" fill="#f8fafc"/>
+<rect x="0" y="0" width="1400" height="8" fill="url(#top)"/>
+<text x="40" y="52" font-size="26" font-weight="bold" fill="#0f172a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Career data: from data/career/*.yml to the HTML pages</text>
+<text x="40" y="80" font-size="14" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">How Maven, Quarkus and Roq turn the YAML files into Java records, then into a CDI bean that the Qute templates read.</text>
+<g filter="url(#sh)"><rect x="40" y="110" width="330" height="220" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/></g>
+<path d="M40,122 a12,12 0 0 1 12,-12 h306 a12,12 0 0 1 12,12 v26 h-330 z" fill="#1e40af"/>
+<text x="54" y="135" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">The command</text>
+<text x="54" y="170" font-size="12.5" font-weight="normal" fill="#1e3a8a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">typed in the VS Code terminal</text>
+<text x="54" y="195" font-size="12.5" font-weight="normal" fill="#1e3a8a" font-family="Consolas, Menlo, monospace" text-anchor="start">.\mvnw.cmd -B package</text>
+<text x="54" y="222" font-size="12.5" font-weight="bold" fill="#1e3a8a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">-B  batch mode</text>
+<text x="54" y="241" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">no questions, no colours or progress</text>
+<text x="54" y="260" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">bars, as on the CI server.</text>
+<text x="54" y="279" font-size="12.5" font-weight="bold" fill="#1e3a8a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">package</text>
+<text x="54" y="298" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">run every phase up to package.</text>
+<g filter="url(#sh)"><rect x="430" y="110" width="930" height="220" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/></g>
+<path d="M430,122 a12,12 0 0 1 12,-12 h906 a12,12 0 0 1 12,12 v26 h-930 z" fill="#4338ca"/>
+<text x="444" y="135" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Maven lifecycle (packaging: quarkus)</text>
+<text x="444" y="170" font-size="12.5" font-weight="normal" fill="#312e81" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the phases run by package, in this order</text>
+<circle cx="452" cy="192" r="9" fill="#94a3b8"/>
+<text x="452" y="196" font-size="11" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">1</text>
+<text x="470" y="196" font-size="12.5" font-weight="bold" fill="#312e81" font-family="Consolas, Menlo, monospace" text-anchor="start">resources</text>
+<text x="700" y="196" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">copies src/main/resources (none here)</text>
+<circle cx="452" cy="213" r="9" fill="#94a3b8"/>
+<text x="452" y="217" font-size="11" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">2</text>
+<text x="470" y="217" font-size="12.5" font-weight="bold" fill="#312e81" font-family="Consolas, Menlo, monospace" text-anchor="start">quarkus:generate-code</text>
+<text x="700" y="217" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Quarkus prepares generated sources</text>
+<circle cx="452" cy="234" r="9" fill="#6366f1"/>
+<text x="452" y="238" font-size="11" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">3</text>
+<text x="470" y="238" font-size="12.5" font-weight="bold" fill="#312e81" font-family="Consolas, Menlo, monospace" text-anchor="start">compile</text>
+<text x="700" y="238" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">javac turns the .java records into .class files</text>
+<circle cx="452" cy="255" r="9" fill="#94a3b8"/>
+<text x="452" y="259" font-size="11" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">4</text>
+<text x="470" y="259" font-size="12.5" font-weight="bold" fill="#312e81" font-family="Consolas, Menlo, monospace" text-anchor="start">testResources · testCompile</text>
+<text x="700" y="259" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">same for src/test</text>
+<circle cx="452" cy="276" r="9" fill="#f59e0b"/>
+<text x="452" y="280" font-size="11" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">5</text>
+<text x="470" y="280" font-size="12.5" font-weight="bold" fill="#312e81" font-family="Consolas, Menlo, monospace" text-anchor="start">test (Surefire)</text>
+<text x="700" y="280" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">runs SiteTest, which starts the application: Quarkus runs its build, including Roq</text>
+<circle cx="452" cy="297" r="9" fill="#22c55e"/>
+<text x="452" y="301" font-size="11" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">6</text>
+<text x="470" y="301" font-size="12.5" font-weight="bold" fill="#312e81" font-family="Consolas, Menlo, monospace" text-anchor="start">package (quarkus:build)</text>
+<text x="700" y="301" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">builds the final application; only reached if every test passes</text>
+<path d="M372,220 C400,220 400,220 426,220" fill="none" stroke="#334155" stroke-width="3" stroke-linecap="round" marker-end="url(#a_334155)"/>
+<rect x="20" y="355" width="1360" height="575" rx="16" fill="url(#band)" stroke="#cbd5e1" stroke-dasharray="6 5"/>
+<text x="40" y="382" font-size="13" font-weight="bold" fill="#0f172a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">QUARKUS BUILD</text>
+<text x="160" y="382" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">in the test phase when SiteTest starts the application, then in the package phase · Roq data extension: RoqDataReaderProcessor, RoqDataConverterProcessor</text>
+<path d="M895,332 C895,345 895,345 895,352" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" marker-end="url(#a_f59e0b)"/>
+<g filter="url(#sh)"><rect x="40" y="400" width="560" height="160" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/></g>
+<path d="M40,412 a12,12 0 0 1 12,-12 h536 a12,12 0 0 1 12,12 v26 h-560 z" fill="#047857"/>
+<text x="54" y="425" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Data · data/career/</text>
+<text x="54" y="460" font-size="12.5" font-weight="normal" fill="#064e3b" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">one YAML file per language</text>
+<rect x="54" y="476" width="76" height="26" rx="6" fill="#047857"/>
+<text x="92" y="494" font-size="13" font-weight="bold" fill="#ffffff" font-family="Consolas, Menlo, monospace" text-anchor="middle">fr.yml</text>
+<rect x="140" y="476" width="76" height="26" rx="6" fill="#10b981"/>
+<text x="178" y="494" font-size="13" font-weight="bold" fill="#ffffff" font-family="Consolas, Menlo, monospace" text-anchor="middle">en.yml</text>
+<text x="232" y="494" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">file name without extension = language code</text>
+<text x="54" y="526" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Top-level keys: profile, experience, education, certifications,</text>
+<text x="54" y="545" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">skillGroups, languages.</text>
+<g filter="url(#sh)"><rect x="660" y="400" width="700" height="160" rx="12" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/></g>
+<path d="M660,412 a12,12 0 0 1 12,-12 h676 a12,12 0 0 1 12,12 v26 h-700 z" fill="#7c3aed"/>
+<text x="674" y="425" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Java records · src/main/java/it/danielgarcia/career/</text>
+<text x="674" y="460" font-size="12.5" font-weight="normal" fill="#4c1d95" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">a record is an immutable data class</text>
+<rect x="674" y="480" width="61.2" height="20" rx="10" fill="#7c3aed"/>
+<text x="683" y="494" font-size="12" font-weight="bold" fill="#ffffff" font-family="Consolas, Menlo, monospace" text-anchor="start">Career</text>
+<rect x="741.2" y="480" width="111.60000000000001" height="20" rx="10" fill="#7c3aed"/>
+<text x="750.2" y="494" font-size="12" font-weight="bold" fill="#ffffff" font-family="Consolas, Menlo, monospace" text-anchor="start">CareerContent</text>
+<rect x="858.8000000000001" y="480" width="90.0" height="20" rx="10" fill="#7c3aed"/>
+<text x="867.8000000000001" y="494" font-size="12" font-weight="bold" fill="#ffffff" font-family="Consolas, Menlo, monospace" text-anchor="start">Experience</text>
+<rect x="954.8000000000001" y="480" width="82.8" height="20" rx="10" fill="#7c3aed"/>
+<text x="963.8000000000001" y="494" font-size="12" font-weight="bold" fill="#ffffff" font-family="Consolas, Menlo, monospace" text-anchor="start">Education</text>
+<rect x="1043.6000000000001" y="480" width="111.60000000000001" height="20" rx="10" fill="#7c3aed"/>
+<text x="1052.6000000000001" y="494" font-size="12" font-weight="bold" fill="#ffffff" font-family="Consolas, Menlo, monospace" text-anchor="start">Certification</text>
+<rect x="1161.2" y="480" width="90.0" height="20" rx="10" fill="#7c3aed"/>
+<text x="1170.2" y="494" font-size="12" font-weight="bold" fill="#ffffff" font-family="Consolas, Menlo, monospace" text-anchor="start">SkillGroup</text>
+<rect x="1257.2" y="480" width="75.6" height="20" rx="10" fill="#7c3aed"/>
+<text x="1266.2" y="494" font-size="12" font-weight="bold" fill="#ffffff" font-family="Consolas, Menlo, monospace" text-anchor="start">Language</text>
+<text x="674" y="526" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">One component per YAML key, same name: experience holds Experience records,</text>
+<text x="674" y="545" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">skillGroups holds SkillGroup records… Compact constructors check the dates.</text>
+<g filter="url(#sh)"><rect x="40" y="600" width="310" height="300" rx="12" fill="#ecfeff" stroke="#06b6d4" stroke-width="2"/></g>
+<path d="M40,612 a12,12 0 0 1 12,-12 h286 a12,12 0 0 1 12,12 v26 h-310 z" fill="#0e7490"/>
+<circle cx="64" cy="619" r="12" fill="#ffffff"/>
+<text x="64" y="624" font-size="13" font-weight="bold" fill="#0e7490" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">1</text>
+<text x="84" y="625" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Find the mapping</text>
+<text x="54" y="660" font-size="12.5" font-weight="normal" fill="#164e63" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">Jandex index of the compiled classes</text>
+<text x="54" y="686" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq looks for classes annotated</text>
+<text x="54" y="705" font-size="12.5" font-weight="normal" fill="#164e63" font-family="Consolas, Menlo, monospace" text-anchor="start">@DataMapping</text>
+<text x="54" y="724" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">and finds Career:</text>
+<text x="54" y="743" font-size="12.5" font-weight="normal" fill="#164e63" font-family="Consolas, Menlo, monospace" text-anchor="start">value    = "career"</text>
+<text x="54" y="762" font-size="12.5" font-weight="normal" fill="#164e63" font-family="Consolas, Menlo, monospace" text-anchor="start">type     = OBJECT_DIR</text>
+<text x="54" y="781" font-size="12.5" font-weight="normal" fill="#164e63" font-family="Consolas, Menlo, monospace" text-anchor="start">required = true</text>
+<text x="54" y="808" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">→ read data/career, one entry</text>
+<text x="54" y="827" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">per file, in a Map.</text>
+<text x="54" y="846" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">required: fails if it is empty.</text>
+<g filter="url(#sh)"><rect x="370" y="600" width="310" height="300" rx="12" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="2"/></g>
+<path d="M370,612 a12,12 0 0 1 12,-12 h286 a12,12 0 0 1 12,12 v26 h-310 z" fill="#0369a1"/>
+<circle cx="394" cy="619" r="12" fill="#ffffff"/>
+<text x="394" y="624" font-size="13" font-weight="bold" fill="#0369a1" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">2</text>
+<text x="414" y="625" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Read each file</text>
+<text x="384" y="660" font-size="12.5" font-weight="normal" fill="#0c4a6e" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">first pass · YAML → records</text>
+<text x="384" y="686" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Jackson (YAMLMapper) reads each file</text>
+<text x="384" y="705" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">and builds a CareerContent:</text>
+<text x="384" y="732" font-size="12.5" font-weight="normal" fill="#0c4a6e" font-family="Consolas, Menlo, monospace" text-anchor="start">YAML key   →  component</text>
+<text x="384" y="751" font-size="12.5" font-weight="normal" fill="#0c4a6e" font-family="Consolas, Menlo, monospace" text-anchor="start">YAML list  →  List&lt;Experience&gt;, …</text>
+<text x="384" y="770" font-size="12.5" font-weight="normal" fill="#0c4a6e" font-family="Consolas, Menlo, monospace" text-anchor="start">missing key →  null</text>
+<text x="384" y="797" font-size="12.5" font-weight="bold" fill="#0c4a6e" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Stops the build if a key has no</text>
+<text x="384" y="816" font-size="12.5" font-weight="bold" fill="#0c4a6e" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">component or a date is wrong:</text>
+<text x="384" y="835" font-size="12.5" font-weight="normal" fill="#0c4a6e" font-family="Consolas, Menlo, monospace" text-anchor="start">Failed to process @DataMapping</text>
+<g filter="url(#sh)"><rect x="700" y="600" width="310" height="300" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/></g>
+<path d="M700,612 a12,12 0 0 1 12,-12 h286 a12,12 0 0 1 12,12 v26 h-310 z" fill="#b45309"/>
+<circle cx="724" cy="619" r="12" fill="#ffffff"/>
+<text x="724" y="624" font-size="13" font-weight="bold" fill="#b45309" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">3</text>
+<text x="744" y="625" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Write and read again</text>
+<text x="714" y="660" font-size="12.5" font-weight="normal" fill="#78350f" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">second pass · records → JSON → records</text>
+<text x="714" y="686" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Roq puts the records in a map</text>
+<text x="714" y="705" font-size="12.5" font-weight="normal" fill="#78350f" font-family="Consolas, Menlo, monospace" text-anchor="start">{"en": …, "fr": …}</text>
+<text x="714" y="724" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">writes it as JSON, then reads it</text>
+<text x="714" y="743" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">back as Map&lt;String, CareerContent&gt;.</text>
+<text x="714" y="770" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Jackson also writes get…() and is…()</text>
+<text x="714" y="789" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">methods as JSON properties; on</text>
+<text x="714" y="808" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">reading, they are unknown keys:</text>
+<text x="714" y="827" font-size="12.5" font-weight="normal" fill="#78350f" font-family="Consolas, Menlo, monospace" text-anchor="start">Unable to read data file</text>
+<text x="714" y="846" font-size="12.5" font-weight="normal" fill="#78350f" font-family="Consolas, Menlo, monospace" text-anchor="start">[career]</text>
+<g filter="url(#sh)"><rect x="1030" y="600" width="310" height="300" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/></g>
+<path d="M1030,612 a12,12 0 0 1 12,-12 h286 a12,12 0 0 1 12,12 v26 h-310 z" fill="#15803d"/>
+<circle cx="1054" cy="619" r="12" fill="#ffffff"/>
+<text x="1054" y="624" font-size="13" font-weight="bold" fill="#15803d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">4</text>
+<text x="1074" y="625" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Build the bean</text>
+<text x="1044" y="660" font-size="12.5" font-weight="normal" fill="#14532d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">CDI bean, created at build time</text>
+<text x="1044" y="686" font-size="12.5" font-weight="normal" fill="#14532d" font-family="Consolas, Menlo, monospace" text-anchor="start">new Career(map)</text>
+<text x="1044" y="713" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Career has one component,</text>
+<text x="1044" y="732" font-size="12.5" font-weight="normal" fill="#14532d" font-family="Consolas, Menlo, monospace" text-anchor="start">Map&lt;String, CareerContent&gt;</text>
+<text x="1044" y="751" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">so the map goes into byLanguage.</text>
+<text x="1044" y="778" font-size="12.5" font-weight="bold" fill="#14532d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">The bean is named career,</text>
+<text x="1044" y="797" font-size="12.5" font-weight="bold" fill="#14532d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">after the mapping.</text>
+<text x="1044" y="816" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">It holds both languages.</text>
+<path d="M352,750 L366,750" fill="none" stroke="#0ea5e9" stroke-width="3" stroke-linecap="round" marker-end="url(#a_0ea5e9)"/>
+<path d="M682,750 L696,750" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" marker-end="url(#a_f59e0b)"/>
+<path d="M1012,750 L1026,750" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" marker-end="url(#a_22c55e)"/>
+<path d="M320,562 C320,582 200,556 200,574 L200,594" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" marker-end="url(#a_10b981)"/>
+<path d="M1010,562 C1010,582 525,556 525,574 L525,594" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-linecap="round" marker-end="url(#a_8b5cf6)"/>
+<g filter="url(#sh)"><rect x="40" y="965" width="820" height="215" rx="12" fill="#fdf2f8" stroke="#ec4899" stroke-width="2"/></g>
+<path d="M40,977 a12,12 0 0 1 12,-12 h796 a12,12 0 0 1 12,12 v26 h-820 z" fill="#be185d"/>
+<circle cx="64" cy="984" r="12" fill="#ffffff"/>
+<text x="64" y="989" font-size="13" font-weight="bold" fill="#be185d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">5</text>
+<text x="84" y="990" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Qute templates read the bean</text>
+<text x="54" y="1025" font-size="12.5" font-weight="normal" fill="#831843" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">when Roq generates the HTML pages</text>
+<rect x="54" y="1037" width="440" height="28" rx="6" fill="#831843"/>
+<text x="64" y="1056" font-size="13" font-weight="bold" fill="#ffffff" font-family="Consolas, Menlo, monospace" text-anchor="start">{#let content = cdi:career.get(page.data.lang)}</text>
+<text x="54" y="1090" font-size="12.5" font-weight="bold" fill="#be185d" font-family="Consolas, Menlo, monospace" text-anchor="start">cdi:career</text>
+<text x="230" y="1090" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">the bean built at step 4</text>
+<text x="54" y="1110" font-size="12.5" font-weight="bold" fill="#be185d" font-family="Consolas, Menlo, monospace" text-anchor="start">.get("fr")</text>
+<text x="230" y="1110" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Career.get(), i.e. byLanguage.get("fr")</text>
+<text x="54" y="1130" font-size="12.5" font-weight="bold" fill="#be185d" font-family="Consolas, Menlo, monospace" text-anchor="start">content.experience</text>
+<text x="230" y="1130" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">the List&lt;Experience&gt; of fr.yml, used in {#for} loops</text>
+<text x="54" y="1160" font-size="12.5" font-weight="normal" fill="#831843" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">Same template for both languages: only lang in the front matter of the page changes.</text>
+<path d="M1185,902 C1185,935 700,905 700,934 L700,956" fill="none" stroke="#ec4899" stroke-width="3" stroke-linecap="round" marker-end="url(#a_ec4899)"/>
+<g filter="url(#sh)"><rect x="900" y="965" width="460" height="215" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/></g>
+<rect x="900" y="965" width="8" height="215" rx="4" fill="#ea580c"/>
+<text x="922" y="992" font-size="15" font-weight="bold" fill="#9a3412" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Why current() and not isCurrent()</text>
+<text x="922" y="1020" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">At step 3, Jackson treats a method named</text>
+<text x="922" y="1039" font-size="12.5" font-weight="normal" fill="#9a3412" font-family="Consolas, Menlo, monospace" text-anchor="start">isCurrent()</text>
+<text x="922" y="1058" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">as a property and writes "current" in the JSON.</text>
+<text x="922" y="1077" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">On reading, "current" is not a component</text>
+<text x="922" y="1096" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">of Experience, and failOnUnknownProperties rejects it.</text>
+<text x="922" y="1115" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Without the is/get prefix, the method stays</text>
+<text x="922" y="1134" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">out of the JSON: current(), hasReference().</text>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTplY2IyMDc5NS0yNWY3LTRhYmEtODEwZi1lNzc3MTY0NDU1NWUAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaFH1NVdC7jzzGVrlvOB8AckAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoxYmM0ZGQ1My1lNGIxLTQ1ZTAtYWE4Ni1hMWQxYTYwNmU0ZTNscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNouVWWi9pQmJkD3FpYVj9GqwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggXm4ElOihZef122zLGrXqr1b13Ti/3j/DGyS9GCRnWLukZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaIi8uIYGwd7WKJN82ILn0VQAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIJNhCztgTH84+4VBvR6gPVfG7ClpkBcEzAf9mtTlODWxZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GW1zZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmVjYjIwNzk1LTI1ZjctNGFiYS04MTBmLWU3NzcxNjQ0NTU1ZS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjlkZWZlNmU5LTViZmYtNDc4Zi1iOTVkLWU5Mjk2YTMyOTIxZXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBebgSU6KFl5/XbbMsateqvVvXdOL/eP8MbJL0YJGdYu6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggF3XSElrPD0eJW+50DJZ3h6UD3YNejU1L37yKSFtckBuiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggu0Bup5+wdP47DGTTTQtnqgLE3qnFbq7tB47GoU7IzR90Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQNnFiHeR4H5CmkmzmBM1jdZgT31lyZIM1h+EsksjRteDwI7WIGlXhHJswxO9yOXdLEIZt3joys/hQj6yN964T8o=</c2pa:manifest></metadata></svg>
