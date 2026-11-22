@@ -618,6 +618,45 @@ projects:
       - "TextMeshPro"
     repository: "https://github.com/DanielGarcia85/SkyBurst"
 
+  - id: "reservecut"
+    title: "ReserveCut"
+    frame: "Projet individuel, HEG Genève"
+    role: "Conception, modélisation de la base de données, développement de l’API et du client de bureau, de bout en bout."
+    completed: "2024-06"
+    grade: "5,8/6"
+    featured: true
+    summary: "Système de réservation pour salon de coiffure : une API REST en Laravel, sécurisée par jeton et par rôles, consommée par un client de bureau en C# (.NET)."
+    description: "Projet individuel du module Architecture de la HEG Genève. ReserveCut gère l’activité d’un salon de coiffure : clients, coiffeurs et leurs absences, prestations, réservations et comptes utilisateurs. Le back-end est une API REST en Laravel, organisée en couches et protégée par jeton et par rôles. Le front-end est un client de bureau en C# qui s’authentifie auprès de l’API et en consomme les données."
+    highlights:
+      - "API REST en Laravel 11 sur six ressources (utilisateurs, coiffeurs, absences, prestations, clients, réservations), organisée en couches : contrôleurs, services, ressources et middleware."
+      - "Sécurité : authentification par jeton avec Laravel Sanctum ; deux rôles, administrateur et utilisateur, et onze permissions gérées avec spatie/laravel-permission, vérifiées sur chaque route."
+      - "Modélisation de la base de données : modèle logique, puis modèle physique et script SQL, repris ensuite en migrations Laravel."
+      - "Client de bureau en C# WinForms (.NET 8), 16 fenêtres : connexion par jeton, consultation des données et gestion complète des six ressources par l’API (réservations, clients, coiffeurs et leurs absences, prestations, utilisateurs)."
+      - "API documentée et testée avec une collection Postman de 76 requêtes ; données de démonstration générées par des factories et un seeder."
+      - "Démarche en cinq rendus successifs : flyer de présentation de l’idée, modélisation, prototype horizontal de l’interface, API, puis application finale."
+      - "Client de bureau terminé après le module, sur la base de la version rendue."
+    skills:
+      - "Conception d’API REST"
+      - "Architecture en couches"
+      - "Modélisation de bases de données"
+      - "Authentification et autorisation"
+      - "PHP"
+      - "Laravel"
+      - "C#"
+      - ".NET"
+    stack:
+      - "PHP"
+      - "Laravel"
+      - "Laravel Sanctum"
+      - "spatie/laravel-permission"
+      - "MySQL"
+      - "C#"
+      - ".NET"
+      - "WinForms"
+      - "Newtonsoft.Json"
+      - "Postman"
+    repository: "https://github.com/DanielGarcia85/ReserveCut"
+
 skillGroups:
   - label: "Langages"
     skills:
