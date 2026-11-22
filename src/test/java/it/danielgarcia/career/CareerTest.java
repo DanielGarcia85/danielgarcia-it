@@ -82,6 +82,7 @@ class CareerTest {
             assertEquals(a.completed(), b.completed(), "project " + a.id() + ": completed");
             assertEquals(a.featured(), b.featured(), "project " + a.id() + ": featured");
             assertEquals(a.grade() == null, b.grade() == null, "project " + a.id() + ": grade in one language only");
+            assertEquals(a.client() == null, b.client() == null, "project " + a.id() + ": client in one language only");
             assertEquals(a.site(), b.site(), "project " + a.id() + ": site");
             assertEquals(a.repository(), b.repository(), "project " + a.id() + ": repository");
             assertEquals(a.highlights().size(), b.highlights().size(), "project " + a.id() + ": highlights");
