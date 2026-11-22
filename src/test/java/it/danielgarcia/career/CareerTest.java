@@ -4,6 +4,7 @@ package it.danielgarcia.career;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.YearMonth;
@@ -22,10 +23,11 @@ import io.quarkus.test.junit.QuarkusTest;
  * <p>
  * ───────────────────────────────────────────────────────────────────────────
  * <p>
- * Each record already checks its own dates when Roq builds it. These tests check
- * what a single record cannot see: both languages, the same entries in each, the
- * length of the summaries, the order of the entries and the identifiers of the
- * projects.
+ * Each record already checks its own dates, and a project its own addresses, when
+ * Roq builds it. These tests check what a single record cannot see: both languages,
+ * the same entries in each, the length of the summaries, the order of the entries
+ * and the identifiers of the projects. One test also makes sure that the address
+ * check of a project really rejects a wrong address.
  */
 @QuarkusTest
 class CareerTest {
@@ -85,6 +87,7 @@ class CareerTest {
             assertEquals(a.client() == null, b.client() == null, "project " + a.id() + ": client in one language only");
             assertEquals(a.site(), b.site(), "project " + a.id() + ": site");
             assertEquals(a.repository(), b.repository(), "project " + a.id() + ": repository");
+            assertEquals(a.download(), b.download(), "project " + a.id() + ": download");
             assertEquals(a.highlights().size(), b.highlights().size(), "project " + a.id() + ": highlights");
             assertEquals(a.skills().size(), b.skills().size(), "project " + a.id() + ": skills");
             assertEquals(a.stack(), b.stack(), "project " + a.id() + ": stack");
@@ -152,6 +155,13 @@ class CareerTest {
         for (Project project : career.get("fr").projects()) {
             assertTrue(seen.add(project.id()), "project id used twice: " + project.id());
         }
+    }
+
+    @Test
+    void projectAddressWithoutHttpsIsRejected() {
+        assertThrows(IllegalArgumentException.class, () -> new Project("test", "Test", "frame", null, "role",
+                "2026-01", null, false, "summary", "", List.of(), List.of(), List.of(),
+                null, "http://github.com/DanielGarcia85/test", null));
     }
 
     private static void assertSummary(String summary, String entry) {

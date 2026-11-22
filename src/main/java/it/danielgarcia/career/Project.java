@@ -23,13 +23,18 @@ import java.util.List;
  * @param stack       the technologies of the project, as shown on its card
  * @param site        the address of the project online, or {@code null} if there is none
  * @param repository  the address of the public source code, or {@code null} if it is not public
+ * @param download    the address of the installer or executable to download, or {@code null} if there is none
  */
-public record Project(String id, String title, String frame, String client, String role, String completed, String grade, boolean featured, String summary, String description, List<String> highlights, List<String> skills, List<String> stack, String site, String repository) {
+public record Project(String id, String title, String frame, String client, String role, String completed, String grade, boolean featured, String summary, String description, List<String> highlights, List<String> skills, List<String> stack, String site, String repository, String download) {
     /**
-     * Checks that the month is a valid ISO month, so that a wrong date fails the build.
+     * Checks that the month is a valid ISO month and that every address starts with https://,
+     * so that a wrong date or a broken link fails the build.
      */
     public Project {
         YearMonth.parse(completed);
+        checkAddress(id, "site", site);
+        checkAddress(id, "repository", repository);
+        checkAddress(id, "download", download);
     }
 
     /**
@@ -39,5 +44,18 @@ public record Project(String id, String title, String frame, String client, Stri
      */
     public YearMonth completedMonth() {
         return YearMonth.parse(completed);
+    }
+
+    /**
+     * Rejects an address that does not start with https://; a missing address is allowed.
+     *
+     * @param id      the identifier of the project, for the error message
+     * @param field   the name of the field, for the error message
+     * @param address the address to check, or {@code null}
+     */
+    private static void checkAddress(String id, String field, String address) {
+        if (address != null && !address.startsWith("https://")) {
+            throw new IllegalArgumentException(id + ": " + field + " must start with https:// (" + address + ")");
+        }
     }
 }

@@ -617,6 +617,7 @@ projects:
       - "C#"
       - "TextMeshPro"
     repository: "https://github.com/DanielGarcia85/SkyBurst"
+    download: "https://github.com/DanielGarcia85/SkyBurst/releases/latest/download/SkyBurst-Windows.zip"
 
   - id: "reservecut"
     title: "ReserveCut"
@@ -656,6 +657,7 @@ projects:
       - "Newtonsoft.Json"
       - "Postman"
     repository: "https://github.com/DanielGarcia85/ReserveCut"
+    download: "https://github.com/DanielGarcia85/ReserveCut/releases/latest/download/ReserveCut-Setup.exe"
 
 skillGroups:
   - label: "Langages"
