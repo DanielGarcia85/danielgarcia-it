@@ -590,6 +590,34 @@ projects:
       - "Bitbucket Pipelines"
       - "Jira"
 
+  - id: "skyburst"
+    title: "SkyBurst"
+    frame: "Projet individuel, HEG Genève"
+    role: "Conception, game design, développement et build Windows, de bout en bout."
+    completed: "2026-01"
+    grade: "6,0/6"
+    featured: true
+    summary: "Jeu d’arcade 2D en défilement horizontal sous Unity : un avion bimoteur soumis à la physique, des oiseaux qui détruisent ses moteurs et l’oxygène qui s’épuise en altitude."
+    description: "Projet individuel du module Programmation de jeux vidéo de la HEG Genève. SkyBurst est un jeu d’arcade en défilement horizontal : le joueur pilote un avion léger à deux moteurs et doit survivre le plus longtemps possible à des oiseaux de plus en plus nombreux et rapides. Chaque moteur est une vie : un oiseau aspiré le détruit et rend l’avion plus difficile à tenir. En montant vers l’espace, l’avion échappe aux oiseaux, mais son oxygène s’épuise. J’ai d’abord rédigé le document de conception du jeu, puis développé le jeu en C# sous Unity, en suivant l’avancement sur un tableau Trello, jusqu’à un exécutable Windows autonome."
+    highlights:
+      - "Game design : document de conception (caméra, personnage, contrôles, mécaniques, plateforme) rédigé avant le développement."
+      - "Vol entièrement physique : l’avion n’est déplacé que par des forces appliquées à son Rigidbody2D ; la gravité augmente jusqu’à dix fois quand la vitesse tombe sous celle du défilement, pour simuler la perte de portance, et disparaît dans l’espace."
+      - "Architecture en systèmes découplés, 18 scripts C# : contrôle de l’avion, dommages et réparation des moteurs, oxygène, altitude, apparition des oiseaux, caméra, défilement du décor, score, son, fin de partie ; tous les réglages regroupés dans un singleton GameConfig."
+      - "Difficulté progressive : les oiseaux apparaissent de plus en plus souvent et de plus en plus vite, des oiseaux spéciaux arrivent après vingt secondes, et une bande d’apparition protège l’accès à l’espace."
+      - "Mécaniques : looping d’esquive avec invulnérabilité et temps de recharge, moteur récupérable grâce à un objet de réparation, jauge d’oxygène dans l’espace, score au temps de vol."
+      - "Suivi du développement sur un tableau Trello de 21 tâches, toutes terminées."
+    skills:
+      - "Unity"
+      - "C#"
+      - "Game design"
+      - "Programmation orientée objet"
+      - "Trello"
+    stack:
+      - "Unity"
+      - "C#"
+      - "TextMeshPro"
+    repository: "https://github.com/DanielGarcia85/SkyBurst"
+
 skillGroups:
   - label: "Langages"
     skills:

@@ -590,6 +590,34 @@ projects:
       - "Bitbucket Pipelines"
       - "Jira"
 
+  - id: "skyburst"
+    title: "SkyBurst"
+    frame: "Individual project, HEG Geneva"
+    role: "Design, game design, development and Windows build, end to end."
+    completed: "2026-01"
+    grade: "6.0/6"
+    featured: true
+    summary: "2D side-scrolling arcade game in Unity: a twin-engine plane governed by physics, birds that destroy its engines, and oxygen running out at high altitude."
+    description: "Individual project for the video game programming module at HEG Geneva. SkyBurst is a side-scrolling arcade game: the player flies a light twin-engine plane and must survive as long as possible against birds that keep getting more numerous and faster. Each engine is a life: a bird sucked into it destroys it and makes the plane harder to control. By climbing towards space, the plane escapes the birds, but its oxygen runs out. I first wrote the game design document, then developed the game in C# with Unity, tracking progress on a Trello board, up to a standalone Windows executable."
+    highlights:
+      - "Game design: a design document (camera, character, controls, mechanics, platform) written before development."
+      - "Fully physics-based flight: the plane is moved only by forces applied to its Rigidbody2D; gravity rises up to ten times when its speed drops below the scrolling speed, to simulate the loss of lift, and disappears in space."
+      - "Architecture in decoupled systems, 18 C# scripts: plane control, engine damage and repair, oxygen, altitude, bird spawning, camera, background scrolling, score, sound, game over; all settings kept in a single GameConfig singleton."
+      - "Progressive difficulty: birds appear more and more often and faster, special birds arrive after twenty seconds, and a spawning band guards the way to space."
+      - "Mechanics: a dodge loop with invulnerability and a cooldown, an engine that can be recovered with a repair item, an oxygen gauge in space, a score based on flight time."
+      - "Development tracked on a Trello board of 21 tasks, all completed."
+    skills:
+      - "Unity"
+      - "C#"
+      - "Game design"
+      - "Object-oriented programming"
+      - "Trello"
+    stack:
+      - "Unity"
+      - "C#"
+      - "TextMeshPro"
+    repository: "https://github.com/DanielGarcia85/SkyBurst"
+
 skillGroups:
   - label: "Languages"
     skills:
