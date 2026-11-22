@@ -11,7 +11,7 @@ import java.util.List;
  * @param id          the identifier of the project, in lower case with hyphens (ge-trouve)
  * @param title       the name of the project
  * @param frame       the frame of the project: client, Bachelor thesis or school project, and the team if there is one
- * @param role        my exact role in a team project, or {@code null} for a project done alone
+ * @param role        my role in the project; for a team project, my exact part in it
  * @param completed   the month the project was completed, in ISO format (yyyy-MM)
  * @param grade       the grade obtained, or {@code null} if there is none
  * @param featured    {@code true} for a featured project, {@code false} for a project shown only in the archive
@@ -19,10 +19,11 @@ import java.util.List;
  * @param description the full text of the project, empty for a project shown only in the archive
  * @param highlights  the main points of the project, empty for a project shown only in the archive
  * @param skills      the skills used in the project
+ * @param stack       the technologies of the project, as shown on its card
  * @param site        the address of the project online, or {@code null} if there is none
  * @param repository  the address of the public source code, or {@code null} if it is not public
  */
-public record Project(String id, String title, String frame, String role, String completed, String grade, boolean featured, String summary, String description, List<String> highlights, List<String> skills, String site, String repository) {
+public record Project(String id, String title, String frame, String role, String completed, String grade, boolean featured, String summary, String description, List<String> highlights, List<String> skills, List<String> stack, String site, String repository) {
 
     /**
      * Checks that the month is a valid ISO month, so that a wrong date fails the build.

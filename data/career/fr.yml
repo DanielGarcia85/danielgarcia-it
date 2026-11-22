@@ -440,9 +440,66 @@ certifications:
     documents: "Certificat et attestation de fin de formation disponibles sur demande."
 
 projects:
+  - id: "marketech"
+    title: "MarkeTech"
+    frame: "Réécriture personnelle, à partir d’un projet inter-écoles HEG en équipe de quatre"
+    role: "Dans le projet d’équipe : Scrum Master ; mise en place des environnements, inscription, connexion, profils, contrôle d’accès et affichage des offres. La réécriture est entièrement de moi."
+    completed: "2026-11"
+    grade: "5,6/6 (projet d’équipe d’origine)"
+    featured: true
+    summary: "Plateforme d’emploi en informatique pour étudiants et jeunes diplômés, réécrite du code au déploiement : Django, Vue, temps réel, Docker et déploiement continu."
+    description: "MarkeTech part d’un projet d’équipe du module inter-écoles de la HEG Genève, de la HEG Arc Neuchâtel et de la HES-SO Valais, au printemps 2025 : à quatre étudiants des trois écoles, en anglais et à distance, nous devions réaliser en Scrum une plateforme d’emploi en Vue.js et Django REST, à partir d’un cahier des charges fourni par les enseignants. J’étais le Scrum Master de l’équipe. En octobre 2026, j’ai repris ce cahier des charges et réécrit entièrement la plateforme dans un nouveau dépôt, sans l’équipe d’origine et sans reprendre son code, du code jusqu’au déploiement. J’y ai ajouté tout ce que le projet scolaire n’avait pas : le serveur, les conteneurs, le reverse proxy et le HTTPS, la publication des images, la mise à jour automatique, les sauvegardes, le temps réel et une interface en deux langues. La plateforme est en ligne, avec deux comptes de démonstration ouverts à tous et remis à zéro chaque nuit."
+    highlights:
+      - "Gestion de projet, dans le projet d’équipe : Scrum Master d’une équipe de quatre étudiants de trois écoles ; product backlog avec critères d’acceptation et story points, sprints conclus par une revue avec l’enseignant dans le rôle de Product Owner."
+      - "Fonctionnalités : offres avec filtres et pagination côté serveur, candidatures avec suivi de statut et historique, messagerie par candidature, rendez-vous dans un calendrier exportables en .ics, avis, favoris, modération, e-mails de notification dans la langue de chaque utilisateur."
+      - "Back-end : API REST avec Django REST Framework, une application Django par domaine (onze) ; authentification par cookie de session et jeton CSRF (django-allauth en mode headless), aucun jeton stocké dans le navigateur."
+      - "Temps réel : WebSocket avec Channels et Redis ; le serveur n’envoie qu’un signal, et la page relit les données par l’API, qui reste seule juge des droits d’accès."
+      - "Front-end : application Vue 3 en TypeScript strict (Vite), sans bibliothèque de composants ni de gestion d’état, en français et en anglais."
+      - "Sécurité : accès refusé par défaut, propriété vérifiée dans la requête elle-même, fichiers privés jamais servis par une adresse directe, origine du WebSocket contrôlée, écritures limitées par compte."
+      - "Qualité : 162 tests du back-end ; toutes les dépendances épinglées à une version exacte, actions GitHub épinglées par commit."
+      - "CI/CD : GitHub Actions teste puis construit les deux images, publiées sur ghcr.io depuis main seulement ; le serveur vérifie les nouvelles images toutes les deux minutes et redémarre ce qui a changé, sans que GitHub ne s’y connecte jamais ; retour en arrière en une ligne."
+      - "Exploitation : serveur Linux chez Infomaniak en Suisse, quatre conteneurs Docker Compose sur trois réseaux, reverse proxy Nginx avec HTTPS ; sauvegardes chiffrées chaque nuit vers Swiss Backup avec restic, surveillées, et restauration testée chaque trimestre."
+    skills:
+      - "Python"
+      - "Django"
+      - "Django REST Framework"
+      - "Channels"
+      - "WebSocket"
+      - "Vue.js"
+      - "TypeScript"
+      - "Vite"
+      - "PostgreSQL"
+      - "Redis"
+      - "Docker Compose"
+      - "GitHub Actions"
+      - "Nginx"
+      - "Linux"
+      - "restic"
+      - "Scrum"
+    stack:
+      - "Python"
+      - "Django"
+      - "DRF"
+      - "django-allauth"
+      - "Channels"
+      - "Vue 3"
+      - "TypeScript"
+      - "Vite"
+      - "PostgreSQL"
+      - "Redis"
+      - "Docker Compose"
+      - "GitHub Actions"
+      - "ghcr.io"
+      - "Nginx"
+      - "restic"
+      - "VPS Infomaniak"
+    site: "https://marketech.ch"
+    repository: "https://github.com/DanielGarcia85/MarkeTech"
+
   - id: "ge-trouve"
     title: "Ge-Trouve"
     frame: "Travail de Bachelor, HEG Genève"
+    role: "Conception, développement, déploiement et évaluation, de bout en bout."
     completed: "2026-09"
     grade: "5,7/6"
     featured: true
@@ -471,6 +528,18 @@ projects:
       - "Caddy"
       - "GitHub Actions"
       - "Linux"
+    stack:
+      - "Python"
+      - "Haystack"
+      - "Ollama"
+      - "Chroma"
+      - "Trafilatura"
+      - "Streamlit"
+      - "RAGAS"
+      - "Docker Compose"
+      - "Caddy"
+      - "GitHub Actions"
+      - "VPS Infomaniak"
     site: "https://ge-trouve.ch"
     repository: "https://github.com/DanielGarcia85/ge-trouve-ch"
 
@@ -487,6 +556,7 @@ skillGroups:
       - "PL/SQL"
       - "PowerShell"
       - "HTML / CSS"
+
   - label: "Frameworks"
     skills:
       - "Quarkus"
@@ -497,6 +567,7 @@ skillGroups:
       - "Laravel"
       - ".NET"
       - "Unity"
+
   - label: "Données"
     skills:
       - "PostgreSQL"
@@ -507,12 +578,14 @@ skillGroups:
       - "MongoDB"
       - "Neo4j"
       - "Redis"
+
   - label: "IA"
     skills:
       - "RAG"
       - "modèles de langage locaux (Ollama)"
       - "Haystack"
       - "évaluation RAGAS"
+
   - label: "DevOps"
     skills:
       - "Docker"
@@ -524,6 +597,7 @@ skillGroups:
       - "Nginx"
       - "Caddy"
       - "notions de Kubernetes et Ansible"
+
   - label: "Systèmes"
     skills:
       - "Windows Server"
@@ -536,6 +610,7 @@ skillGroups:
       - "VMware vSphere"
       - "Nutanix"
       - "Microsoft 365"
+
   - label: "Réseaux"
     skills:
       - "Cisco (modules CCNAv7)"
@@ -545,6 +620,7 @@ skillGroups:
       - "VPN"
       - "pare-feu Fortinet"
       - "Wi-Fi"
+
   - label: "Méthodes"
     skills:
       - "Scrum"
@@ -556,7 +632,9 @@ skillGroups:
 languages:
   - name: "Français"
     level: "langue maternelle"
+
   - name: "Espagnol"
     level: "langue maternelle"
+
   - name: "Anglais"
     level: "B2"

@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.YearMonth;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -23,7 +24,8 @@ import io.quarkus.test.junit.QuarkusTest;
  * <p>
  * Each record already checks its own dates when Roq builds it. These tests check
  * what a single record cannot see: both languages, the same entries in each, the
- * length of the summaries and the order of the entries.
+ * length of the summaries, the order of the entries and the identifiers of the
+ * projects.
  */
 @QuarkusTest
 class CareerTest {
@@ -47,6 +49,7 @@ class CareerTest {
         assertEquals(fr.experience().size(), en.experience().size(), "experience");
         assertEquals(fr.education().size(), en.education().size(), "education");
         assertEquals(fr.certifications().size(), en.certifications().size(), "certifications");
+        assertEquals(fr.projects().size(), en.projects().size(), "projects");
         assertEquals(fr.skillGroups().size(), en.skillGroups().size(), "skill groups");
         assertEquals(fr.languages().size(), en.languages().size(), "languages");
 
@@ -71,6 +74,19 @@ class CareerTest {
             assertEquals(a.obtained(), b.obtained(), "certification " + i + ": obtained");
             assertEquals(a.highlights().size(), b.highlights().size(), "certification " + i + ": highlights");
             assertEquals(a.skills().size(), b.skills().size(), "certification " + i + ": skills");
+        }
+        for (int i = 0; i < fr.projects().size(); i++) {
+            Project a = fr.projects().get(i);
+            Project b = en.projects().get(i);
+            assertEquals(a.id(), b.id(), "project " + i + ": id");
+            assertEquals(a.completed(), b.completed(), "project " + a.id() + ": completed");
+            assertEquals(a.featured(), b.featured(), "project " + a.id() + ": featured");
+            assertEquals(a.grade() == null, b.grade() == null, "project " + a.id() + ": grade in one language only");
+            assertEquals(a.site(), b.site(), "project " + a.id() + ": site");
+            assertEquals(a.repository(), b.repository(), "project " + a.id() + ": repository");
+            assertEquals(a.highlights().size(), b.highlights().size(), "project " + a.id() + ": highlights");
+            assertEquals(a.skills().size(), b.skills().size(), "project " + a.id() + ": skills");
+            assertEquals(a.stack(), b.stack(), "project " + a.id() + ": stack");
         }
         for (int i = 0; i < fr.skillGroups().size(); i++) {
             assertEquals(fr.skillGroups().get(i).skills().size(), en.skillGroups().get(i).skills().size(),
@@ -99,6 +115,19 @@ class CareerTest {
                 assertNotNull(certification.highlights(), certification.title() + ": no highlight list");
                 assertNotNull(certification.skills(), certification.title() + ": no skill list");
             }
+            for (Project project : content.projects()) {
+                assertSummary(project.summary(), project.id());
+                assertNotNull(project.role(), project.id() + ": no role");
+                assertFalse(project.role().isBlank(), project.id() + ": empty role");
+                assertNotNull(project.description(), project.id() + ": no description");
+                assertNotNull(project.highlights(), project.id() + ": no highlight list");
+                assertNotNull(project.skills(), project.id() + ": no skill list");
+                assertNotNull(project.stack(), project.id() + ": no stack list");
+                if (project.featured()) {
+                    assertFalse(project.description().isBlank(), project.id() + ": featured without a description");
+                    assertFalse(project.highlights().isEmpty(), project.id() + ": featured without highlights");
+                }
+            }
         }
     }
 
@@ -112,6 +141,15 @@ class CareerTest {
             assertNewestFirst(content.education().stream().map(Education::completedMonth).toList(), "education");
             assertNewestFirst(content.certifications().stream().map(Certification::obtainedMonth).toList(),
                     "certifications");
+            assertNewestFirst(content.projects().stream().map(Project::completedMonth).toList(), "projects");
+        }
+    }
+
+    @Test
+    void projectIdentifiersAreUnique() {
+        Set<String> seen = new HashSet<>();
+        for (Project project : career.get("fr").projects()) {
+            assertTrue(seen.add(project.id()), "project id used twice: " + project.id());
         }
     }
 

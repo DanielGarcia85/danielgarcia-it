@@ -440,9 +440,66 @@ certifications:
     documents: "Certificate and course completion statement available on request."
 
 projects:
+  - id: "marketech"
+    title: "MarkeTech"
+    frame: "Personal rewrite, based on an HEG inter-school project in a team of four"
+    role: "In the team project: Scrum Master; setup of the environments, sign-up, login, profiles, access control and display of the job offers. The rewrite is entirely my own work."
+    completed: "2026-11"
+    grade: "5.6/6 (original team project)"
+    featured: true
+    summary: "IT job platform for students and recent graduates, rewritten from the code to the deployment: Django, Vue, real time, Docker and continuous deployment."
+    description: "MarkeTech started as a team project in the inter-school module of HEG Geneva, HEG Arc Neuchâtel and HES-SO Valais, in spring 2025: four students from the three schools, working in English and remotely, had to build a job platform in Vue.js and Django REST with Scrum, from specifications provided by the lecturers. I was the team’s Scrum Master. In October 2026, I took up these specifications again and fully rewrote the platform in a new repository, without the original team and without reusing its code, from the code to the deployment. I added everything the school project did not have: the server, the containers, the reverse proxy and HTTPS, image publishing, automatic updates, backups, real time and a bilingual interface. The platform is online, with two demo accounts open to everyone and reset every night."
+    highlights:
+      - "Project management, in the team project: Scrum Master of a team of four students from three schools; product backlog with acceptance criteria and story points, sprints closed by a review with the lecturer acting as Product Owner."
+      - "Features: job offers with server-side filters and pagination, applications with status tracking and history, messaging for each application, appointments in a calendar exportable as .ics, reviews, favourites, moderation, notification e-mails in each user’s language."
+      - "Back end: REST API with Django REST Framework, one Django app per domain (eleven); authentication by session cookie and CSRF token (django-allauth in headless mode), no token stored in the browser."
+      - "Real time: WebSocket with Channels and Redis; the server only sends a signal, and the page fetches the data again through the API, which remains the sole judge of access rights."
+      - "Front end: Vue 3 application in strict TypeScript (Vite), with no component or state management library, in French and English."
+      - "Security: access denied by default, ownership checked in the query itself, private files never served by a direct address, WebSocket origin checked, writes rate-limited per account."
+      - "Quality: 162 back-end tests; all dependencies pinned to an exact version, GitHub Actions pinned by commit."
+      - "CI/CD: GitHub Actions tests and then builds the two images, published to ghcr.io from main only; the server checks for new images every two minutes and restarts what changed, without GitHub ever connecting to it; rollback in one line."
+      - "Operations: Linux server at Infomaniak in Switzerland, four Docker Compose containers on three networks, Nginx reverse proxy with HTTPS; encrypted nightly backups to Swiss Backup with restic, monitored, with a restore tested every quarter."
+    skills:
+      - "Python"
+      - "Django"
+      - "Django REST Framework"
+      - "Channels"
+      - "WebSocket"
+      - "Vue.js"
+      - "TypeScript"
+      - "Vite"
+      - "PostgreSQL"
+      - "Redis"
+      - "Docker Compose"
+      - "GitHub Actions"
+      - "Nginx"
+      - "Linux"
+      - "restic"
+      - "Scrum"
+    stack:
+      - "Python"
+      - "Django"
+      - "DRF"
+      - "django-allauth"
+      - "Channels"
+      - "Vue 3"
+      - "TypeScript"
+      - "Vite"
+      - "PostgreSQL"
+      - "Redis"
+      - "Docker Compose"
+      - "GitHub Actions"
+      - "ghcr.io"
+      - "Nginx"
+      - "restic"
+      - "VPS Infomaniak"
+    site: "https://marketech.ch"
+    repository: "https://github.com/DanielGarcia85/MarkeTech"
+
   - id: "ge-trouve"
     title: "Ge-Trouve"
     frame: "Bachelor thesis, HEG Geneva"
+    role: "Design, development, deployment and evaluation, end to end."
     completed: "2026-09"
     grade: "5.7/6"
     featured: true
@@ -471,6 +528,18 @@ projects:
       - "Caddy"
       - "GitHub Actions"
       - "Linux"
+    stack:
+      - "Python"
+      - "Haystack"
+      - "Ollama"
+      - "Chroma"
+      - "Trafilatura"
+      - "Streamlit"
+      - "RAGAS"
+      - "Docker Compose"
+      - "Caddy"
+      - "GitHub Actions"
+      - "VPS Infomaniak"
     site: "https://ge-trouve.ch"
     repository: "https://github.com/DanielGarcia85/ge-trouve-ch"
 
@@ -487,6 +556,7 @@ skillGroups:
       - "PL/SQL"
       - "PowerShell"
       - "HTML / CSS"
+
   - label: "Frameworks"
     skills:
       - "Quarkus"
@@ -497,6 +567,7 @@ skillGroups:
       - "Laravel"
       - ".NET"
       - "Unity"
+
   - label: "Data"
     skills:
       - "PostgreSQL"
@@ -507,12 +578,14 @@ skillGroups:
       - "MongoDB"
       - "Neo4j"
       - "Redis"
+
   - label: "AI"
     skills:
       - "RAG"
       - "local language models (Ollama)"
       - "Haystack"
       - "RAGAS evaluation"
+
   - label: "DevOps"
     skills:
       - "Docker"
@@ -524,6 +597,7 @@ skillGroups:
       - "Nginx"
       - "Caddy"
       - "basic Kubernetes and Ansible"
+
   - label: "Systems"
     skills:
       - "Windows Server"
@@ -536,6 +610,7 @@ skillGroups:
       - "VMware vSphere"
       - "Nutanix"
       - "Microsoft 365"
+
   - label: "Networks"
     skills:
       - "Cisco (CCNAv7 modules)"
@@ -545,6 +620,7 @@ skillGroups:
       - "VPN"
       - "Fortinet firewall"
       - "Wi-Fi"
+
   - label: "Methods"
     skills:
       - "Scrum"
@@ -556,7 +632,9 @@ skillGroups:
 languages:
   - name: "French"
     level: "native language"
+
   - name: "Spanish"
     level: "native language"
+
   - name: "English"
     level: "B2"
