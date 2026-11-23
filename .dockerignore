@@ -20,6 +20,9 @@
 !data
 !templates
 
+# Files served as they are by Roq (the PDF of the CV)
+!public
+
 # Tests of the generated site, run during the build
 !src
 
