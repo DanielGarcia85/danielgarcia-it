@@ -1,0 +1,33 @@
+# data/contact/fr.yml
+# danielgarcia.it — French contact details
+# ─────────────────────────────────────────────────────────────────────────────
+# Public contact details and the positions sought, read into the Contact
+# record. en.yml has exactly the same keys. No phone number and no postal
+# address here: the phone number only appears in the CV in PDF.
+
+# Full name, as on the CV
+name: "Daniel Garcia"
+
+# City only, never the postal address
+location: "Genève"
+
+# Nationality, as on the CV
+nationality: "Suisse"
+
+# Public e-mail address
+email: "contact@danielgarcia.it"
+
+# Profiles, full https addresses
+github: "https://github.com/DanielGarcia85"
+linkedin: "https://www.linkedin.com/in/<profile>"
+
+# Path of the CV in PDF in this language, served from public/cv/
+cv: "/cv/daniel-garcia-cv-fr.pdf"
+
+# Positions sought, from the most wanted to the least
+roles:
+  - "Développeur full stack"
+  - "Ingénieur DevOps"
+
+# Way of working sought
+workMode: "Sur site ou hybride"
