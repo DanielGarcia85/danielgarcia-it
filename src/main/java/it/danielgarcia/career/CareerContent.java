@@ -11,7 +11,7 @@ import java.util.List;
  * @param experience     the positions held, the current position first, then by end date from the most recent to the oldest
  * @param education      the diplomas and completed trainings, from the most recent to the oldest
  * @param certifications the certifications, from the most recent to the oldest
- * @param projects       the projects, from the most recent to the oldest
+ * @param projects       the featured projects, from the most recent to the oldest, then the other projects, from the most important to the least important
  * @param skillGroups    the groups of skills, in display order
  * @param languages      the spoken languages, in display order
  */

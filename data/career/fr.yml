@@ -255,6 +255,8 @@ education:
     summary: "Bachelor en informatique de gestion : développement, architecture, intégration et industrialisation des services, données, gestion de projet."
     description: "J’ai suivi ce Bachelor à temps partiel, en parallèle de mon emploi. La formation porte sur les systèmes d’information, la gestion et la communication, et les technologies informatiques : analyser, concevoir, mettre en œuvre, intégrer et exploiter le système d’information d’une organisation, en collaboration avec le client. J’y ai mené plusieurs projets de l’analyse jusqu’à la mise en production, seul ou en équipe, dont un mandat réel pour un cabinet de cardiologie et mon Travail de Bachelor, Ge-Trouve."
     highlights:
+      - "Travaux pratiques en DevOps : Docker, CI/CD GitLab, Kubernetes, Ansible, Prometheus et Grafana."
+      - "Travaux pratiques en Java : JPA et Hibernate, JDBC, servlets, Spring Boot et Spring Data JPA, Spring AI, Quarkus, tests JUnit."
       - "Travail de Bachelor (5,7/6) : Ge-Trouve, assistant conversationnel (chatbot) RAG en français sur les démarches administratives du canton de Genève, avec un modèle de langage exécuté localement."
       - "Projet sur mandat (5,9/6) : Zebra-Girafe, logiciel médical de bureau pour un cabinet de cardiologie, en équipe de quatre ; Scrum Master et pipeline CI/CD."
       - "Projet inter-écoles (5,6/6) : MarkeTech, plateforme d’emploi, en équipe de quatre ; Scrum Master."
@@ -658,6 +660,135 @@ projects:
       - "Postman"
     repository: "https://github.com/DanielGarcia85/ReserveCut"
     download: "https://github.com/DanielGarcia85/ReserveCut/releases/latest/download/ReserveCut-Setup.exe"
+
+  - id: "projet-bi-covid"
+    title: "Projet BI : le COVID-19 en Suisse"
+    frame: "Projet individuel, HEG Genève"
+    role: "Conception et réalisation de toute la chaîne décisionnelle, de l’ETL aux rapports."
+    completed: "2026-01"
+    featured: false
+    summary: "Chaîne décisionnelle sur les données COVID-19 de l’OFSP : ETL avec Pentaho, entrepôt Oracle en étoile, cube OLAP sous Analysis Services et rapports Excel."
+    description: ""
+    highlights: []
+    skills:
+      - "Business Intelligence"
+      - "ETL"
+      - "Modélisation dimensionnelle"
+      - "OLAP"
+      - "SQL"
+    stack:
+      - "Pentaho Data Integration"
+      - "Oracle Database"
+      - "Microsoft Analysis Services"
+      - "Visual Studio"
+      - "Excel"
+
+  - id: "sap-cours-cuisine"
+    title: "Projet SAP : gestion des cours de cuisine"
+    frame: "Projet individuel, HEG Genève"
+    role: "Modélisation de la base de données, création des objets SAP et développement des écrans de saisie en ABAP."
+    completed: "2025-05"
+    featured: false
+    summary: "Extension SAP pour un restaurant (étude de cas) : trois tables, écrans de saisie des cours, des participants et des inscriptions, et contrôles métier en ABAP."
+    description: ""
+    highlights: []
+    skills:
+      - "ABAP"
+      - "SAP"
+      - "Modélisation de bases de données"
+      - "Conception d’écrans de saisie"
+    stack:
+      - "SAP GUI"
+      - "ABAP"
+      - "ABAP Dictionary"
+
+  - id: "analyse-on-chain"
+    title: "AnalyseOnChain : le pool ETH/USDC d’Uniswap V2"
+    frame: "Projet en binôme, HEG Genève"
+    role: "Requêtes SQL et visualisations du prix moyen journalier et du slippage par taille de transaction."
+    completed: "2025-12"
+    featured: false
+    summary: "Analyse du pool ETH/USDC d’Uniswap V2 à partir des données brutes d’Ethereum : requêtes DuneSQL et tableau de bord public de quatre visualisations."
+    description: ""
+    highlights: []
+    skills:
+      - "SQL"
+      - "Analyse de données"
+      - "Visualisation de données"
+      - "Optimisation de requêtes"
+    stack:
+      - "Dune Analytics"
+      - "DuneSQL (Trino)"
+      - "Ethereum"
+    site: "https://dune.com/analyseonchain/analyse-on-chain-eth-udsc"
+
+  - id: "audit-accessibilite-seniors"
+    title: "Audit d’accessibilité numérique pour les seniors"
+    frame: "Projet sur mandat, HEG Genève, en binôme"
+    client: "UNI3, Université des Seniors de Genève"
+    role: "Travail mené à deux, de l’état de l’art aux recommandations : audit technique du site, préparation et conduite d’un entretien avec la coopérative, analyse comparative."
+    completed: "2026-06"
+    featured: false
+    summary: "Audit de l’accessibilité et de l’utilisabilité numériques d’une coopérative d’habitation genevoise pour son public senior : outils WCAG, entretien et recommandations."
+    description: ""
+    highlights: []
+    skills:
+      - "Accessibilité numérique"
+      - "Audit WCAG"
+      - "Conduite d’entretien"
+      - "Responsabilité numérique des entreprises"
+    stack:
+      - "Google Lighthouse"
+      - "WAVE"
+      - "WCAG Contrast Checker"
+
+  - id: "bpm-suivi-stock"
+    title: "Projet BPM : automatisation du suivi du stock"
+    frame: "Projet en binôme, HEG Genève"
+    role: "Travail mené à deux : modélisation BPMN du processus actuel et du processus cible, analyse SWOT, carte des capacités fonctionnelles, comparaison de solutions et calcul de rentabilité."
+    completed: "2025-05"
+    featured: false
+    summary: "Automatisation du suivi du stock d’un restaurant (étude de cas) : processus actuel et cible en BPMN, analyse SWOT, carte des capacités et choix d’une solution chiffrée."
+    description: ""
+    highlights: []
+    skills:
+      - "Modélisation BPMN"
+      - "Analyse de processus métier"
+      - "Analyse SWOT"
+      - "Étude de rentabilité"
+    stack:
+      - "Camunda Modeler"
+      - "draw.io"
+
+  - id: "registre-traitements-cff"
+    title: "Registre des activités de traitement : simulation pour les CFF"
+    frame: "Projet en groupe de trois, HEG Genève"
+    role: "Rédaction de trois des dix fiches de registre (facturation et paiements, programmes de fidélité, objets trouvés) ; description et justification des activités menées à trois."
+    completed: "2023-11"
+    featured: false
+    summary: "Simulation du registre des activités de traitement des CFF selon la LPD : dix activités décrites et justifiées, avec une fiche de registre par activité."
+    description: ""
+    highlights: []
+    skills:
+      - "Protection des données (LPD)"
+      - "Registre des activités de traitement"
+      - "Analyse juridique"
+    stack: []
+
+  - id: "recherche-lpd-entreprise"
+    title: "Travail de recherche : la nouvelle LPD en entreprise"
+    frame: "Projet en groupe de trois, HEG Genève"
+    role: "Choix de l’entreprise, prise de contact et organisation des entretiens ; entretiens, analyse et rapport menés à trois."
+    completed: "2025-06"
+    featured: false
+    summary: "Analyse des pratiques de traitement des données personnelles d’une entreprise du commerce de détail au regard de la nouvelle LPD : deux entretiens, risques et recommandations."
+    description: ""
+    highlights: []
+    skills:
+      - "Protection des données (LPD)"
+      - "Conduite d’entretien"
+      - "Analyse des risques"
+    stack: []
 
 skillGroups:
   - label: "Langages"

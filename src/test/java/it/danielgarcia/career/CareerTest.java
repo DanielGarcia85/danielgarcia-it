@@ -26,8 +26,9 @@ import io.quarkus.test.junit.QuarkusTest;
  * Each record already checks its own dates, and a project its own addresses, when
  * Roq builds it. These tests check what a single record cannot see: both languages,
  * the same entries in each, the length of the summaries, the order of the entries
- * and the identifiers of the projects. One test also makes sure that the address
- * check of a project really rejects a wrong address.
+ * (for the projects, only the featured ones) and the identifiers of the projects.
+ * One test also makes sure that the address check of a project really rejects a
+ * wrong address.
  */
 @QuarkusTest
 class CareerTest {
@@ -145,7 +146,8 @@ class CareerTest {
             assertNewestFirst(content.education().stream().map(Education::completedMonth).toList(), "education");
             assertNewestFirst(content.certifications().stream().map(Certification::obtainedMonth).toList(),
                     "certifications");
-            assertNewestFirst(content.projects().stream().map(Project::completedMonth).toList(), "projects");
+            assertNewestFirst(content.projects().stream().filter(Project::featured).map(Project::completedMonth).toList(),
+                    "featured projects");
         }
     }
 

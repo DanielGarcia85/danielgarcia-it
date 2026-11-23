@@ -255,6 +255,8 @@ education:
     summary: "Bachelor in business information technology: development, architecture, service integration and industrialisation, data, project management."
     description: "I completed this Bachelor part-time, alongside my job. The programme covers information systems, management and communication, and information technologies: analysing, designing, implementing, integrating and operating an organisation’s information system, in collaboration with the client. I delivered several projects from analysis through to production, on my own or in a team, including a real client project for a cardiology practice and my Bachelor thesis, Ge-Trouve."
     highlights:
+      - "Hands-on work in DevOps: Docker, GitLab CI/CD, Kubernetes, Ansible, Prometheus and Grafana."
+      - "Hands-on work in Java: JPA and Hibernate, JDBC, servlets, Spring Boot and Spring Data JPA, Spring AI, Quarkus, JUnit tests."
       - "Bachelor thesis (5.7/6): Ge-Trouve, a French RAG chatbot for administrative procedures in the canton of Geneva, with a locally run language model."
       - "Client project (5.9/6): Zebra-Girafe, desktop medical software for a cardiology practice, in a team of four; Scrum Master and CI/CD pipeline."
       - "Inter-school project (5.6/6): MarkeTech, a job platform, in a team of four; Scrum Master."
@@ -658,6 +660,135 @@ projects:
       - "Postman"
     repository: "https://github.com/DanielGarcia85/ReserveCut"
     download: "https://github.com/DanielGarcia85/ReserveCut/releases/latest/download/ReserveCut-Setup.exe"
+
+  - id: "projet-bi-covid"
+    title: "BI project: COVID-19 in Switzerland"
+    frame: "Individual project, HEG Geneva"
+    role: "Design and implementation of the whole business intelligence pipeline, from ETL to reports."
+    completed: "2026-01"
+    featured: false
+    summary: "Business intelligence pipeline on the Swiss COVID-19 data of the FOPH: ETL with Pentaho, Oracle star-schema data warehouse, OLAP cube in Analysis Services and Excel reports."
+    description: ""
+    highlights: []
+    skills:
+      - "Business intelligence"
+      - "ETL"
+      - "Dimensional modelling"
+      - "OLAP"
+      - "SQL"
+    stack:
+      - "Pentaho Data Integration"
+      - "Oracle Database"
+      - "Microsoft Analysis Services"
+      - "Visual Studio"
+      - "Excel"
+
+  - id: "sap-cours-cuisine"
+    title: "SAP project: cooking class management"
+    frame: "Individual project, HEG Geneva"
+    role: "Database modelling, creation of the SAP objects and development of the entry screens in ABAP."
+    completed: "2025-05"
+    featured: false
+    summary: "SAP extension for a restaurant (case study): three tables, entry screens for classes, participants and registrations, and business checks written in ABAP."
+    description: ""
+    highlights: []
+    skills:
+      - "ABAP"
+      - "SAP"
+      - "Database modelling"
+      - "Entry screen design"
+    stack:
+      - "SAP GUI"
+      - "ABAP"
+      - "ABAP Dictionary"
+
+  - id: "analyse-on-chain"
+    title: "AnalyseOnChain: the Uniswap V2 ETH/USDC pool"
+    frame: "Project in a pair, HEG Geneva"
+    role: "SQL queries and visualisations of the daily average price and of the slippage by trade size."
+    completed: "2025-12"
+    featured: false
+    summary: "Analysis of the Uniswap V2 ETH/USDC pool from raw Ethereum data: DuneSQL queries and a public dashboard with four visualisations."
+    description: ""
+    highlights: []
+    skills:
+      - "SQL"
+      - "Data analysis"
+      - "Data visualisation"
+      - "Query optimisation"
+    stack:
+      - "Dune Analytics"
+      - "DuneSQL (Trino)"
+      - "Ethereum"
+    site: "https://dune.com/analyseonchain/analyse-on-chain-eth-udsc"
+
+  - id: "audit-accessibilite-seniors"
+    title: "Digital accessibility audit for seniors"
+    frame: "Client project, HEG Geneva, in a pair"
+    client: "UNI3, University of the Seniors of Geneva"
+    role: "Work carried out together, from the state of the art to the recommendations: technical audit of the website, preparation and conduct of an interview with the cooperative, comparative analysis."
+    completed: "2026-06"
+    featured: false
+    summary: "Audit of the digital accessibility and usability of a Geneva housing cooperative for its senior users: WCAG tools, an interview and prioritised recommendations."
+    description: ""
+    highlights: []
+    skills:
+      - "Digital accessibility"
+      - "WCAG audit"
+      - "Interviewing"
+      - "Corporate digital responsibility"
+    stack:
+      - "Google Lighthouse"
+      - "WAVE"
+      - "WCAG Contrast Checker"
+
+  - id: "bpm-suivi-stock"
+    title: "BPM project: automating stock tracking"
+    frame: "Project in a pair, HEG Geneva"
+    role: "Work carried out together: BPMN modelling of the current and target processes, SWOT analysis, functional capability map, comparison of solutions and profitability calculation."
+    completed: "2025-05"
+    featured: false
+    summary: "Automation of stock tracking for a restaurant (case study): current and target processes in BPMN, SWOT analysis, capability map and a costed choice of software."
+    description: ""
+    highlights: []
+    skills:
+      - "BPMN modelling"
+      - "Business process analysis"
+      - "SWOT analysis"
+      - "Profitability analysis"
+    stack:
+      - "Camunda Modeler"
+      - "draw.io"
+
+  - id: "registre-traitements-cff"
+    title: "Record of processing activities: a simulation for the Swiss Federal Railways"
+    frame: "Project in a group of three, HEG Geneva"
+    role: "Wrote three of the ten record sheets (billing and payments, loyalty programmes, lost property); description and justification of the activities done as a group of three."
+    completed: "2023-11"
+    featured: false
+    summary: "Simulated record of processing activities for the Swiss Federal Railways under the Swiss data protection act: ten activities described, justified and documented."
+    description: ""
+    highlights: []
+    skills:
+      - "Data protection (Swiss FADP)"
+      - "Record of processing activities"
+      - "Legal analysis"
+    stack: []
+
+  - id: "recherche-lpd-entreprise"
+    title: "Research project: the new Swiss data protection act in a company"
+    frame: "Project in a group of three, HEG Geneva"
+    role: "Choice of the company, first contact and organisation of the interviews; interviews, analysis and report done as a group of three."
+    completed: "2025-06"
+    featured: false
+    summary: "Analysis of how a retail company processes personal data under the new Swiss data protection act: two interviews, a risk assessment and recommendations."
+    description: ""
+    highlights: []
+    skills:
+      - "Data protection (Swiss FADP)"
+      - "Interviewing"
+      - "Risk analysis"
+    stack: []
 
 skillGroups:
   - label: "Languages"
