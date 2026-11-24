@@ -6,3 +6,6 @@
 
 # Accessible name of the language switch, read aloud by screen readers
 languageSwitch: "Langue"
+
+# Label of the button that opens the CV in PDF
+cv: "CV (PDF)"

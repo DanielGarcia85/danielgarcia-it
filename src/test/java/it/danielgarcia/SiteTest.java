@@ -30,7 +30,9 @@ class SiteTest {
         given().get("/").then()
                 .statusCode(200)
                 .body(containsString("<html lang=\"fr\">"))
-                .body(containsString("<title>Daniel Garcia — Développeur Full Stack &amp; DevOps</title>"));
+                .body(containsString("<title>Daniel Garcia — Développeur Full Stack &amp; DevOps</title>"))
+                .body(containsString("<h1 id=\"profile-name\">Daniel Garcia</h1>"))
+                .body(containsString("href=\"/cv/daniel-garcia-cv-fr.pdf\""));
     }
 
     @Test
@@ -38,7 +40,9 @@ class SiteTest {
         given().get("/en/").then()
                 .statusCode(200)
                 .body(containsString("<html lang=\"en\">"))
-                .body(containsString("<title>Daniel Garcia — Full Stack &amp; DevOps Developer</title>"));
+                .body(containsString("<title>Daniel Garcia — Full Stack &amp; DevOps Developer</title>"))
+                .body(containsString("<h1 id=\"profile-name\">Daniel Garcia</h1>"))
+                .body(containsString("href=\"/cv/daniel-garcia-cv-en.pdf\""));
     }
 
     @Test
