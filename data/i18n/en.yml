@@ -28,3 +28,7 @@ grade: "Grade"
 highlights: "Highlights"
 skills: "Skills"
 download: "Download"
+
+# Titles of the two groups of the projects page
+featuredProjects: "Main projects"
+otherProjects: "Other projects"

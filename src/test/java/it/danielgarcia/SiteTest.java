@@ -52,6 +52,24 @@ class SiteTest {
     }
 
     @Test
+    void frenchProjectsPage() {
+        given().get("/projets/").then()
+                .statusCode(200)
+                .body(containsString("<html lang=\"fr\">"))
+                .body(containsString("<title>Projets — Daniel Garcia</title>"))
+                .body(containsString("<h3 id=\"project-marketech\">MarkeTech</h3>"))
+                .body(containsString("<h3 id=\"project-projet-bi-covid\">"));
+    }
+
+    @Test
+    void englishProjectsPage() {
+        given().get("/en/projects/").then()
+                .statusCode(200)
+                .body(containsString("<html lang=\"en\">"))
+                .body(containsString("<title>Projects — Daniel Garcia</title>"));
+    }
+
+    @Test
     void frenchNotFoundPage() {
         given().get("/404.html").then()
                 .statusCode(200)

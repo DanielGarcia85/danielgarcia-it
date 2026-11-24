@@ -29,3 +29,7 @@ grade: "Note"
 highlights: "Points forts"
 skills: "Compétences"
 download: "Télécharger"
+
+# Titles of the two groups of the projects page
+featuredProjects: "Projets principaux"
+otherProjects: "Autres projets"

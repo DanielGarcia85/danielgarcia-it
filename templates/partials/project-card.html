@@ -1,20 +1,46 @@
 {!
   templates/partials/project-card.html
-  danielgarcia.it — Card of one project, with the dialog of its details
+  danielgarcia.it — Card of one project
   ───────────────────────────────────────────────────────────────────────────
   Included once per project, with the project as parameter:
-  {#include partials/project-card project=project /}. Used by the projects
-  section of the home page and, later, by the projects page.
+  {#include partials/project-card project=project /}. A featured project has
+  an Open button and a dialog with all its details; a project of the archive
+  has a compact card, with its context, role and date shown directly.
 !}
 {#let t=cdi:i18n.get(page.data.lang)}
 <article aria-labelledby="project-{project.id}">
   <h3 id="project-{project.id}">{project.title}</h3>
   <p>{project.summary}</p>
+  {#if !project.featured}
+  <dl>
+    <dt>{t.frame}</dt>
+    <dd>{project.frame}</dd>
+    {#if project.client}
+    <dt>{t.client}</dt>
+    <dd>{project.client}</dd>
+    {/if}
+    <dt>{t.role}</dt>
+    <dd>{project.role}</dd>
+    <dt>{t.completed}</dt>
+    <dd>{project.completedLabel}</dd>
+  </dl>
+  {#if project.skills}
+  <h4>{t.skills}</h4>
+  <ul>
+    {#for skill in project.skills}
+    <li>{skill}</li>
+    {/for}
+  </ul>
+  {/if}
+  {/if}
+  {#if project.stack}
   <ul>
     {#for technology in project.stack}
     <li>{technology}</li>
     {/for}
   </ul>
+  {/if}
+  {#if project.repository || project.site}
   <ul>
     {#if project.repository}
     <li><a href="{project.repository}">{#include partials/icons/github /} {t.code}</a></li>
@@ -23,6 +49,8 @@
     <li><a href="{project.site}">{#include partials/icons/globe /} {t.site}</a></li>
     {/if}
   </ul>
+  {/if}
+  {#if project.featured}
   <button type="button" aria-haspopup="dialog" aria-controls="details-{project.id}">{t.open}</button>
   <dialog id="details-{project.id}" aria-labelledby="details-title-{project.id}">
     <h3 id="details-title-{project.id}">{project.title}</h3>
@@ -70,5 +98,6 @@
       <button>{t.close}</button>
     </form>
   </dialog>
+  {/if}
 </article>
 {/let}
