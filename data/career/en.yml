@@ -7,11 +7,8 @@
 # language code. A key that does not match a record component fails the build.
 
 profile:
-  - "Business IT graduate (BSc HES-SO), I have been working in IT for more than ten years: support, systems and networks."
-  - "I went back to studying alongside my job and earned my Bachelor of Science HES-SO in Business Information Technology from HEG Geneva in 2026."
-  - "During my studies, I delivered several projects from analysis through to production, on my own or in a team, including a real client project for a cardiology practice."
-  - "I am now moving into full stack development and DevOps. I design and build applications, then run them in production: Docker containers, continuous testing and deployment, Linux server, HTTPS, backups."
-  - "My years in support and system administration taught me how an application lives in production: what breaks, how to diagnose it, and what users really need."
+  - "I have been working in IT for more than ten years. I progressed to system and network administration, then went back to studying to move into software engineering, alongside an IT support position at the University of Geneva."
+  - "In 2026, I earned my Bachelor of Science HES-SO in Business Information Technology from HEG Geneva."
   - "I am looking for a full stack developer or DevOps engineer position in Geneva."
 
 experience:

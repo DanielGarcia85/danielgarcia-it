@@ -7,11 +7,8 @@
 # language code. A key that does not match a record component fails the build.
 
 profile:
-  - "Informaticien de gestion HES, je travaille dans l’informatique depuis plus de dix ans : support, systèmes et réseaux."
-  - "J’ai repris mes études en parallèle de mon emploi et obtenu en 2026 mon Bachelor of Science HES-SO en Informatique de gestion à la HEG Genève."
-  - "Pendant ces études, j’ai mené à bien plusieurs projets, de l’analyse jusqu’à la mise en production, seul ou en équipe, dont un mandat réel pour un cabinet de cardiologie."
-  - "Aujourd’hui, je m’oriente vers le développement full stack et DevOps. Je conçois et développe des applications, puis je les mets en production : conteneurs Docker, tests et déploiement continus, serveur Linux, HTTPS, sauvegardes."
-  - "Mes années en support et en administration système m’ont appris comment une application vit en production : ce qui tombe en panne, comment le diagnostiquer, et ce dont les utilisateurs ont réellement besoin."
+  - "Je travaille dans l’informatique depuis plus de dix ans. J’ai évolué jusqu’à l’administration des systèmes et des réseaux, puis j’ai repris mes études pour me réorienter vers l’ingénierie logicielle, en parallèle d’un poste en support informatique à l’Université de Genève."
+  - "En 2026, j’ai obtenu mon Bachelor of Science HES-SO en Informatique de gestion à la HEG Genève."
   - "Je cherche actuellement un poste de développeur full stack ou d’ingénieur DevOps, à Genève."
 
 experience:
