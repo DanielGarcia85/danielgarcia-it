@@ -74,8 +74,8 @@ Every text of the home page comes from `data/contact/<lang>.yml` and `data/caree
 1. **Profile**, visible without scrolling, on a band with the gradient (see [Style](#style)):
    - on the left, the round photo (156 px, `--accent-fill` border), and next to it the name in
      large type;
-   - under them, the title in `--accent`, the degree and the city in `--muted`, and three
-     buttons: GitHub, LinkedIn, CV (PDF) in yellow;
+   - under them, the title in `--accent`, the three paragraphs of the profile (with their
+     links), and three buttons: GitHub, LinkedIn, CV (PDF) in yellow;
    - on the right, a console window, as high as the whole profile: a title bar
      `daniel@vps: ~`, then these commands and their results:
 
@@ -136,6 +136,10 @@ Shapes common to both themes:
 - Buttons with a 2 px border: outlined in `--ink` (GitHub, LinkedIn, theme, language), filled in
   yellow (CV), or filled in `--accent-fill` with white text and an `--accent-edge` border (main
   action of a section, current language).
+- Icons before the text of the GitHub, LinkedIn and CV buttons, 20 px: the official GitHub mark
+  and the LinkedIn "In" icon, untouched except for their size, and a document icon drawn for the
+  site. They are decoration (`aria-hidden`): the text of the button gives its name. The GitHub
+  mark and the document icon take the color of the text (`currentColor`).
 - Project cards and the "How this site is built" panel on `--surface`, with a thin `--line`
   border and a 6 px `--accent-fill` rule at the top.
 - Technologies as square tags (14 px, `--line` border), in the normal font.
@@ -252,6 +256,9 @@ The console looks the same in both themes.
 
 ### Rules
 
+- One exception: the colors of a brand logo stay those of the brand, written in the logo itself
+  (the LinkedIn blue `#0A66C2` and white). The test of the color values skips
+  `templates/partials/icons/`.
 - **No color value outside the file of the color tokens.** The rest of the CSS uses only the
   roles (`var(--accent)`), never a code such as `#0B6878`. A test fails if a color value appears
   anywhere else, so that the CI enforces it on every push.
