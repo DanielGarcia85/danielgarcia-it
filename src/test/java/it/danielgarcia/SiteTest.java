@@ -3,6 +3,7 @@ package it.danielgarcia;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.not;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assumptions.assumeFalse;
 
@@ -32,7 +33,9 @@ class SiteTest {
                 .body(containsString("<html lang=\"fr\">"))
                 .body(containsString("<title>Daniel Garcia — Développeur Full Stack &amp; DevOps</title>"))
                 .body(containsString("<h1 id=\"profile-name\">Daniel Garcia</h1>"))
-                .body(containsString("href=\"/cv/daniel-garcia-cv-fr.pdf\""));
+                .body(containsString("href=\"/cv/daniel-garcia-cv-fr.pdf\""))
+                .body(containsString("<h3 id=\"project-marketech\">MarkeTech</h3>"))
+                .body(not(containsString("id=\"project-projet-bi-covid\"")));
     }
 
     @Test
@@ -42,7 +45,8 @@ class SiteTest {
                 .body(containsString("<html lang=\"en\">"))
                 .body(containsString("<title>Daniel Garcia — Full Stack &amp; DevOps Developer</title>"))
                 .body(containsString("<h1 id=\"profile-name\">Daniel Garcia</h1>"))
-                .body(containsString("href=\"/cv/daniel-garcia-cv-en.pdf\""));
+                .body(containsString("href=\"/cv/daniel-garcia-cv-en.pdf\""))
+                .body(containsString("<h3 id=\"project-marketech\">MarkeTech</h3>"));
     }
 
     @Test

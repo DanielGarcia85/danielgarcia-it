@@ -9,3 +9,10 @@ languageSwitch: "Langue"
 
 # Label of the button that opens the CV in PDF
 cv: "CV (PDF)"
+
+# Title of the projects section of the home page
+projects: "Projets"
+
+# Labels of the links of a project card
+code: "Code"
+site: "Site"

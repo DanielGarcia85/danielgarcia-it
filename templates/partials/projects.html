@@ -1,0 +1,34 @@
+{!
+  templates/partials/projects.html
+  danielgarcia.it — Projects section of the home page, in both languages
+  ───────────────────────────────────────────────────────────────────────────
+  Included by content/index.html and content/en/index.html. One card per
+  featured project of data/career/<lang>.yml, in the order of the file; the
+  other projects go to the archive page.
+!}
+{#let career=cdi:career.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
+<section id="projects" aria-labelledby="projects-title">
+  <h2 id="projects-title">{t.projects}</h2>
+  {#for project in career.projects}
+  {#if project.featured}
+  <article aria-labelledby="project-{project.id}">
+    <h3 id="project-{project.id}">{project.title}</h3>
+    <p>{project.summary}</p>
+    <ul>
+      {#for technology in project.stack}
+      <li>{technology}</li>
+      {/for}
+    </ul>
+    <ul>
+      {#if project.repository}
+      <li><a href="{project.repository}">{#include partials/icons/github /} {t.code}</a></li>
+      {/if}
+      {#if project.site}
+      <li><a href="{project.site}">{#include partials/icons/globe /} {t.site}</a></li>
+      {/if}
+    </ul>
+  </article>
+  {/if}
+  {/for}
+</section>
+{/let}
