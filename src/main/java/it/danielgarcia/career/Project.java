@@ -47,6 +47,16 @@ public record Project(String id, String title, String frame, String client, Stri
     }
 
     /**
+     * Returns the month the project was completed, as shown on the site and the CV (11/2026).
+     *
+     * @return the month and the year, separated by a slash
+     */
+    public String completedLabel() {
+        YearMonth month = completedMonth();
+        return String.format("%02d/%d", month.getMonthValue(), month.getYear());
+    }
+
+    /**
      * Rejects an address that does not start with https://; a missing address is allowed.
      *
      * @param id      the identifier of the project, for the error message

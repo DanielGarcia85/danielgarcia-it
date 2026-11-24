@@ -16,3 +16,17 @@ projects: "Projets"
 # Labels of the links of a project card
 code: "Code"
 site: "Site"
+
+
+# Labels of the details of a project, shown in its dialog
+open: "Ouvrir"
+close: "Fermer"
+frame: "Cadre"
+client: "Mandant"
+role: "Rôle"
+completed: "Réalisé"
+grade: "Note"
+highlights: "Points forts"
+skills: "Compétences"
+stack: "Technologies"
+download: "Télécharger"

@@ -16,3 +16,16 @@ projects: "Projects"
 # Labels of the links of a project card
 code: "Code"
 site: "Website"
+
+# Labels of the details of a project, shown in its dialog
+open: "Open"
+close: "Close"
+frame: "Context"
+client: "Client"
+role: "Role"
+completed: "Built"
+grade: "Grade"
+highlights: "Highlights"
+skills: "Skills"
+stack: "Technologies"
+download: "Download"
