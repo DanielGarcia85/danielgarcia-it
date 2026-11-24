@@ -30,6 +30,7 @@
         <button type="button" aria-haspopup="dialog" aria-controls="details-{project.id}">{t.open}</button>
     <dialog id="details-{project.id}" aria-labelledby="details-title-{project.id}">
       <h3 id="details-title-{project.id}">{project.title}</h3>
+      <p>{project.description}</p>
       <dl>
         <dt>{t.frame}</dt>
         <dd>{project.frame}</dd>
@@ -46,7 +47,6 @@
         <dd>{project.grade}</dd>
         {/if}
       </dl>
-      <p>{project.description}</p>
       <h4>{t.highlights}</h4>
       <ul>
         {#for highlight in project.highlights}
@@ -57,12 +57,6 @@
       <ul>
         {#for skill in project.skills}
         <li>{skill}</li>
-        {/for}
-      </ul>
-      <h4>{t.stack}</h4>
-      <ul>
-        {#for technology in project.stack}
-        <li>{technology}</li>
         {/for}
       </ul>
       <ul>
