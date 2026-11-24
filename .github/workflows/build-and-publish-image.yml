@@ -30,6 +30,7 @@ on:
       - "content/**"
       - "data/**"
       - "templates/**"
+      - "web/**"
       - "public/**"
       - "src/**"
       - "nginx.conf"

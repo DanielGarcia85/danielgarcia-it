@@ -20,6 +20,9 @@
 !data
 !templates
 
+# Scripts bundled by the Web Bundler (dialogs of the projects)
+!web
+
 # Files served as they are by Roq (the PDF of the CV)
 !public
 
