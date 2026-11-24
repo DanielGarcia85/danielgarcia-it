@@ -17,6 +17,7 @@
   {! Home page (its title is the site title): name and job title. Other pages: page, then name. !}
   <title>{#if page.title == site.title}{page.title} — {contact.title}{#else}{page.title} — {site.title}{/if}</title>
   <meta name="description" content="{page.description}">
+  {#bundle /}
 </head>
 <body>
   <nav aria-label="{t.languageSwitch}">

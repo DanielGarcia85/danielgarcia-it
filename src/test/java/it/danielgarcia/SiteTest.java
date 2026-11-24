@@ -36,7 +36,8 @@ class SiteTest {
                 .body(containsString("href=\"/cv/daniel-garcia-cv-fr.pdf\""))
                 .body(containsString("<h3 id=\"project-marketech\">MarkeTech</h3>"))
                 .body(not(containsString("id=\"project-projet-bi-covid\"")))
-                .body(containsString("<dialog id=\"details-marketech\""));
+                .body(containsString("<dialog id=\"details-marketech\""))
+                .body(containsString("/static/bundle/app-"));
     }
 
     @Test
