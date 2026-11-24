@@ -8,6 +8,20 @@
 # Full name, as on the CV
 name: "Daniel Garcia"
 
+# Job title, shown after the name in the browser tab and at the top of the home page
+title: "Développeur Full Stack & DevOps"
+
+# Degree, shown under the title on the home page, followed by the location
+degree: "Informaticien de gestion HES"
+
+# Positions sought, from the most wanted to the least
+roles:
+  - "Développeur full stack"
+  - "Ingénieur DevOps"
+
+# Way of working sought
+workMode: "Sur site ou hybride"
+
 # City only, never the postal address
 location: "Genève"
 
@@ -19,15 +33,7 @@ email: "contact@danielgarcia.it"
 
 # Profiles, full https addresses
 github: "https://github.com/DanielGarcia85"
-linkedin: "https://www.linkedin.com/in/danielgarcia85/"
+linkedin: "https://www.linkedin.com/in/danielgarcia85"
 
 # Path of the CV in PDF in this language, served from public/cv/
 cv: "/cv/daniel-garcia-cv-fr.pdf"
-
-# Positions sought, from the most wanted to the least
-roles:
-  - "Développeur full stack"
-  - "Ingénieur DevOps"
-
-# Way of working sought
-workMode: "Sur site ou hybride"

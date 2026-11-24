@@ -5,16 +5,16 @@
   ───────────────────────────────────────────────────────────────────────────
   Replaces the "page" layout of Roq's built-in theme. Each page gives, in its
   front matter, title, description, lang (fr or en) and translation (address
-  of the same page in the other language), then only its own content.
-  Interface texts come from data/i18n/<lang>.yml.
+  Interface texts come from data/i18n/<lang>.yml, the job title from
+  data/contact/<lang>.yml.
 !}
-{#let t=cdi:i18n.get(page.data.lang)}
+{#let t=cdi:i18n.get(page.data.lang) contact=cdi:contact.get(page.data.lang)}
 <html lang="{page.data.lang}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {! Home page (its title is the site title): name and role. Other pages: page, then name. !}
-  <title>{#if page.title == site.title}{page.title} — {t.role}{#else}{page.title} — {site.title}{/if}</title>
+  <title>{#if page.title == site.title}{page.title} — {contact.title}{#else}{page.title} — {site.title}{/if}</title>
   <meta name="description" content="{page.description}">
 </head>
 <body>
