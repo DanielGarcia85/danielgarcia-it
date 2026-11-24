@@ -4,7 +4,8 @@ The rules of the look of danielgarcia.it. Every style of the site follows them; 
 look starts here, then goes into the CSS.
 
 The mockups of `docs/mockups/` show these rules applied: `home.html` for the home page, and the
-two ideas kept for later (see [Kept for later](#kept-for-later)).
+two ideas kept for later (see [Kept for later](#kept-for-later)). Their texts are examples: the
+content of the site comes from `data/contact/` and `data/career/`, which are authoritative.
 
 ## Direction
 
@@ -68,43 +69,49 @@ the commit in the mono font, linked to GitHub), its build date, then GitHub and 
 
 ### Home page, in this order
 
+Every text of the home page comes from `data/contact/<lang>.yml` and `data/career/<lang>.yml`.
+
 1. **Profile**, visible without scrolling, on a band with the gradient (see [Style](#style)):
    - on the left, the round photo (156 px, `--accent-fill` border), and next to it the name in
      large type;
-   - under them, the title in `--accent`, two lines of introduction, and three buttons: GitHub,
-     LinkedIn, CV (PDF) in yellow;
+   - under them, the title in `--accent`, the degree and the city in `--muted`, and three
+     buttons: GitHub, LinkedIn, CV (PDF) in yellow;
    - on the right, a console window, as high as the whole profile: a title bar
      `daniel@vps: ~`, then these commands and their results:
 
      ```
      $ whoami                          daniel-garcia
-     $ cat role.txt                    Full Stack & DevOps Developer
-     $ ls -la projets/                 total 16, then one line per featured project
+     $ cat role.txt                    the title
+     $ ls -la projets/                 total, then one line per featured project
      $ cat stack.txt                   java quarkus python django / vue docker linux nginx
      $ git log -1 --oneline            the commit in production
      $ curl -sI https://danielgarcia.it   HTTP/2 200
      $ _
      ```
 
-     The commit and the answer of the server are real data of the site. The console is a
-     picture of the site, not a terminal: it is read as text, and its title bar is hidden from
-     screen readers.
+     The commit and the answer of the server are real data of the site, built last. The console
+     is a picture of the site, not a terminal: it is read as text, and its title bar is hidden
+     from screen readers.
    - Under 940 px wide, the console goes away, so that it never covers the name; the photo, the
      name and the text stay. Under 640 px, the photo shrinks to 96 px.
-2. **Projects**, the largest section: the four featured projects, **two per row**. Each card has
-   its social preview image (1280 × 640), its name, its context (team projects always give the
-   size of the team and my exact role), its stack as tags, and its links (Code, Demo).
-   SkyBurst has a filled "Play" button that opens its player. Under the cards, a link to the
-   archive page, where all the other projects are listed as a table.
-3. **Career**, in two parts with their own titles: **Professional experience** first, then
-   **Education**. Each part is a list, most recent first; each line has its years in `--accent`
-   and in bold, the position or the degree in bold, the employer or the school in `--muted`.
-   One menu entry (Career) leads to both.
-4. **Skills**: a named list in four columns (two under 900 px), each skill linked to the project
-   that proves it. No levels, no bars, no percentages.
+2. **Projects**, the largest section: the five featured projects, **two per row**, the last one
+   alone on its row. Each card has its social preview image (1280 × 640), its name, its context
+   (team projects always give the size of the team and my exact role), its stack as tags, and
+   its links (Code, Site, Download), only those that exist. SkyBurst has a filled "Play" button
+   that opens its player. Under the cards, a link to the archive page, where the other projects
+   are listed as a table, in their order of importance.
+3. **Career**, in three parts with their own titles: **Professional experience** first, then
+   **Education**, then **Certifications**. Each part is a list, most recent first; each line has
+   its years in `--accent` and in bold, the position, the degree or the certification in bold,
+   the employer, the school or the issuer in `--muted`. One menu entry (Career) leads to all
+   three.
+4. **Skills**: the groups of skills, in their order, as a named list in four columns (two under
+   900 px), then the spoken languages with their level. No levels for the skills, no bars, no
+   percentages.
 5. **How this site is built**: a panel on `--surface`, with the rule of the cards at the top,
    the pipeline in one sentence, and a filled button to the About page.
-6. **Contact**: LinkedIn and GitHub.
+6. **Contact**: the positions sought and the way of working, the city and the nationality, then
+   the e-mail address, LinkedIn, GitHub and the CV (PDF). No phone number, no postal address.
 
 ## Style
 
