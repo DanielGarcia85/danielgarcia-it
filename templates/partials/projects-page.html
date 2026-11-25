@@ -11,17 +11,17 @@
 <section aria-labelledby="featured-projects">
   <h2 id="featured-projects">{t.featuredProjects}</h2>
   {#for project in career.projects}
-  {#if project.featured}
-  {#include partials/project-card project=project /}
-  {/if}
+    {#if project.featured}
+      {#include partials/project-card project=project /}
+    {/if}
   {/for}
 </section>
 <section aria-labelledby="other-projects">
   <h2 id="other-projects">{t.otherProjects}</h2>
   {#for project in career.projects}
-  {#if !project.featured}
-  {#include partials/project-card project=project /}
-  {/if}
+    {#if !project.featured}
+      {#include partials/project-card project=project /}
+    {/if}
   {/for}
 </section>
 {/let}

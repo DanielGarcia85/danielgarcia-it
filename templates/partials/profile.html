@@ -11,7 +11,7 @@
   <h1 id="profile-name">{contact.name}</h1>
   <p>{contact.title}</p>
   {#for paragraph in career.profile}
-  {paragraph.markdownify}
+    {paragraph.markdownify}
   {/for}
   <ul>
     <li><a href="{contact.github}">{#include partials/icons/github /} GitHub</a></li>

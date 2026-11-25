@@ -22,9 +22,9 @@
 <body>
   <nav aria-label="{t.languageSwitch}">
     {#if page.data.lang == 'fr'}
-    <a href="{page.url}" aria-current="page">FR</a> / <a href="{page.data.translation}" hreflang="en" lang="en">EN</a>
+      <a href="{page.url}" aria-current="page">FR</a> / <a href="{page.data.translation}" hreflang="en" lang="en">EN</a>
     {#else}
-    <a href="{page.data.translation}" hreflang="fr" lang="fr">FR</a> / <a href="{page.url}" aria-current="page">EN</a>
+      <a href="{page.data.translation}" hreflang="fr" lang="fr">FR</a> / <a href="{page.url}" aria-current="page">EN</a>
     {/if}
   </nav>
   <main>
