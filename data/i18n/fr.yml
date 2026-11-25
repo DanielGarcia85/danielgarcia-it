@@ -33,3 +33,7 @@ download: "Télécharger"
 # Titles of the two groups of the projects page
 featuredProjects: "Projets principaux"
 otherProjects: "Autres projets"
+
+# Link from the projects section of the home page to the projects page
+allProjects: "Voir tous les projets"
+allProjectsUrl: "/projets/"

@@ -11,9 +11,10 @@
 <section id="projects" aria-labelledby="projects-title">
   <h2 id="projects-title">{t.projects}</h2>
   {#for project in career.projects}
-  {#if project.featured}
-  {#include partials/project-card project=project /}
-  {/if}
+    {#if project.featured}
+      {#include partials/project-card project=project /}
+    {/if}
   {/for}
+  <p><a href="{t.allProjectsUrl}">{t.allProjects}</a></p>
 </section>
 {/let}
