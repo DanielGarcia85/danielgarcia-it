@@ -10,7 +10,7 @@
 {#let contact=cdi:contact.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
 <a href="#content">{t.skipLink}</a>
 <header>
-  <div id="compact-profile">
+  <div id="compact-profile"{#if page.title == site.title} hidden{/if}>
     <p><a href="{t.homeUrl}">{contact.name}</a></p>
     <p>{contact.title}</p>
     {#include partials/profile-links /}
