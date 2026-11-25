@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assumptions.assumeFalse;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import io.quarkiverse.roq.testing.RoqAndRoll;
 import io.quarkiverse.roq.testing.RoqLinks;
@@ -21,70 +23,58 @@ import io.quarkus.test.junit.QuarkusTest;
  * {@code @RoqAndRoll} generates the site into target/roq, serves those files on
  * port 8082 and points RestAssured at that server: every test reads the real
  * output, not the running Quarkus application.
+ * <p>
+ * The tests check the structure of the pages, by the identifiers of their
+ * sections and the addresses of their links, never the texts of the data: the
+ * data have their own tests. Each test runs once per language.
  */
 @QuarkusTest
 @RoqAndRoll
 class SiteTest {
 
-    @Test
-    void frenchHomePage() {
-        given().get("/").then()
+    @ParameterizedTest
+    @CsvSource({
+            "/,    fr, /cv/daniel-garcia-cv-fr.pdf, /projets/",
+            "/en/, en, /cv/daniel-garcia-cv-en.pdf, /en/projects/"
+    })
+    void homePage(String path, String language, String cv, String projectsPage) {
+        given().get(path).then()
                 .statusCode(200)
-                .body(containsString("<html lang=\"fr\">"))
-                .body(containsString("<title>Daniel Garcia — Développeur Full Stack &amp; DevOps</title>"))
-                .body(containsString("<h1 id=\"profile-name\">Daniel Garcia</h1>"))
-                .body(containsString("href=\"/cv/daniel-garcia-cv-fr.pdf\""))
-                .body(containsString("<h3 id=\"project-marketech\">MarkeTech</h3>"))
+                .body(containsString("<html lang=\"" + language + "\">"))
+                .body(containsString("id=\"profile-name\""))
+                .body(containsString("href=\"" + cv + "\""))
+                .body(containsString("id=\"projects\""))
+                .body(containsString("id=\"details-marketech\""))
                 .body(not(containsString("id=\"project-projet-bi-covid\"")))
-                .body(containsString("<dialog id=\"details-marketech\""))
-                .body(containsString("/static/bundle/app-"))
-                .body(containsString("<a href=\"/projets/\">Voir tous les projets</a>"))
-                .body(containsString("<h4 id=\"experience-1\">Technicien support informatique</h4>"));
+                .body(containsString("<a href=\"" + projectsPage + "\">"))
+                .body(containsString("id=\"career\""))
+                .body(containsString("/static/bundle/app-"));
     }
 
-    @Test
-    void englishHomePage() {
-        given().get("/en/").then()
+    @ParameterizedTest
+    @CsvSource({
+            "/projets/,     fr",
+            "/en/projects/, en"
+    })
+    void projectsPage(String path, String language) {
+        given().get(path).then()
                 .statusCode(200)
-                .body(containsString("<html lang=\"en\">"))
-                .body(containsString("<title>Daniel Garcia — Full Stack &amp; DevOps Developer</title>"))
-                .body(containsString("<h1 id=\"profile-name\">Daniel Garcia</h1>"))
-                .body(containsString("href=\"/cv/daniel-garcia-cv-en.pdf\""))
-                .body(containsString("<h3 id=\"project-marketech\">MarkeTech</h3>"));
+                .body(containsString("<html lang=\"" + language + "\">"))
+                .body(containsString("id=\"featured-projects\""))
+                .body(containsString("id=\"project-marketech\""))
+                .body(containsString("id=\"other-projects\""))
+                .body(containsString("id=\"project-projet-bi-covid\""));
     }
 
-    @Test
-    void frenchProjectsPage() {
-        given().get("/projets/").then()
+    @ParameterizedTest
+    @CsvSource({
+            "/404.html,    fr",
+            "/en/404.html, en"
+    })
+    void notFoundPage(String path, String language) {
+        given().get(path).then()
                 .statusCode(200)
-                .body(containsString("<html lang=\"fr\">"))
-                .body(containsString("<title>Projets — Daniel Garcia</title>"))
-                .body(containsString("<h3 id=\"project-marketech\">MarkeTech</h3>"))
-                .body(containsString("<h3 id=\"project-projet-bi-covid\">"));
-    }
-
-    @Test
-    void englishProjectsPage() {
-        given().get("/en/projects/").then()
-                .statusCode(200)
-                .body(containsString("<html lang=\"en\">"))
-                .body(containsString("<title>Projects — Daniel Garcia</title>"));
-    }
-
-    @Test
-    void frenchNotFoundPage() {
-        given().get("/404.html").then()
-                .statusCode(200)
-                .body(containsString("<html lang=\"fr\">"))
-                .body(containsString("<title>Page introuvable — Daniel Garcia</title>"));
-    }
-
-    @Test
-    void englishNotFoundPage() {
-        given().get("/en/404.html").then()
-                .statusCode(200)
-                .body(containsString("<html lang=\"en\">"))
-                .body(containsString("<title>Page not found — Daniel Garcia</title>"));
+                .body(containsString("<html lang=\"" + language + "\">"));
     }
 
     @Test
