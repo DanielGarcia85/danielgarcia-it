@@ -52,6 +52,7 @@ class SiteTest {
                 .body(containsString("id=\"education\""))
                 .body(containsString("id=\"certifications\""))
                 .body(containsString("id=\"skills\""))
+                .body(containsString("id=\"languages\""))
                 .body(containsString("id=\"about\""))
                 .body(containsString("<a href=\"" + aboutPage + "\">"))
                 .body(containsString("id=\"contact\""))
