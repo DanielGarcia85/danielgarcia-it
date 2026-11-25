@@ -34,6 +34,9 @@
     {/if}
   {/if}
   {#if project.stack}
+    {#if !project.featured}
+      <h4>{t.stack}</h4>
+    {/if}
     <ul>
       {#for technology in project.stack}
         <li>{technology}</li>
