@@ -14,6 +14,10 @@ mainMenu: "Main menu"
 profile: "Profile"
 homeUrl: "/en/"
 
+# Menu entry of the panel "How this site is built", and address of the About page
+about: "About"
+aboutUrl: "/en/about/"
+
 # Label of the button that opens the CV in PDF
 cv: "Resume (PDF)"
 

@@ -1,0 +1,15 @@
+{!
+  templates/partials/about-panel.html
+  danielgarcia.it — Panel "How this site is built" of the home page, in both languages
+  ───────────────────────────────────────────────────────────────────────────
+  Included by content/index.html and content/en/index.html, between the
+  skills and the contact. The texts come from the panel of
+  data/about/<lang>.yml, the address of the About page from data/i18n/<lang>.yml.
+!}
+{#let about=cdi:about.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
+<section id="about" aria-labelledby="about-title">
+  <h2 id="about-title">{about.panel.title}</h2>
+  {about.panel.text.markdownify}
+  <p><a href="{t.aboutUrl}">{about.panel.button}</a></p>
+</section>
+{/let}

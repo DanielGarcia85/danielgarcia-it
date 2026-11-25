@@ -34,10 +34,10 @@ class SiteTest {
 
     @ParameterizedTest
     @CsvSource({
-            "/,    fr, /cv/daniel-garcia-cv-fr.pdf, /projets/",
-            "/en/, en, /cv/daniel-garcia-cv-en.pdf, /en/projects/"
+            "/,    fr, /cv/daniel-garcia-cv-fr.pdf, /projets/,     /a-propos/",
+            "/en/, en, /cv/daniel-garcia-cv-en.pdf, /en/projects/, /en/about/"
     })
-    void homePage(String path, String language, String cv, String projectsPage) {
+    void homePage(String path, String language, String cv, String projectsPage, String aboutPage) {
         given().get(path).then()
                 .statusCode(200)
                 .body(containsString("<html lang=\"" + language + "\">"))
@@ -52,7 +52,8 @@ class SiteTest {
                 .body(containsString("id=\"education\""))
                 .body(containsString("id=\"certifications\""))
                 .body(containsString("id=\"skills\""))
-                .body(containsString("id=\"languages\""))
+                .body(containsString("id=\"about\""))
+                .body(containsString("<a href=\"" + aboutPage + "\">"))
                 .body(containsString("id=\"contact\""))
                 .body(containsString("href=\"mailto:"))
                 .body(containsString("/static/bundle/app-"));
