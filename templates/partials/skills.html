@@ -1,0 +1,28 @@
+{!
+  templates/partials/skills.html
+  danielgarcia.it — Skills section of the home page, in both languages
+  ───────────────────────────────────────────────────────────────────────────
+  Included by content/index.html and content/en/index.html. The groups of
+  skills of data/career/<lang>.yml, in the order of the file, then the spoken
+  languages with their level. No level for the skills, no bar, no percentage.
+!}
+{#let career=cdi:career.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
+<section id="skills" aria-labelledby="skills-title">
+  <h2 id="skills-title">{t.skills}</h2>
+  {#for group in career.skillGroups}
+    <h3>{group.label}</h3>
+    <ul>
+      {#for skill in group.skills}
+        <li>{skill}</li>
+      {/for}
+    </ul>
+  {/for}
+  <h3 id="languages">{t.languages}</h3>
+  <dl>
+    {#for language in career.languages}
+      <dt>{language.name}</dt>
+      <dd>{language.level}</dd>
+    {/for}
+  </dl>
+</section>
+{/let}

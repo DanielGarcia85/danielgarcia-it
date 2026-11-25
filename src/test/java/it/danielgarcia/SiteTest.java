@@ -50,6 +50,8 @@ class SiteTest {
                 .body(containsString("id=\"career\""))
                 .body(containsString("id=\"education\""))
                 .body(containsString("id=\"certifications\""))
+                .body(containsString("id=\"skills\""))
+                .body(containsString("id=\"languages\""))
                 .body(containsString("/static/bundle/app-"));
     }
 
