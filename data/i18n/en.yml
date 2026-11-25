@@ -37,3 +37,9 @@ otherProjects: "Other projects"
 # Link from the projects section of the home page to the projects page
 allProjects: "See all projects"
 allProjectsUrl: "/en/projects/"
+
+# Career section of the home page
+career: "Career"
+experience: "Professional experience"
+present: "present"
+tasks: "Tasks"

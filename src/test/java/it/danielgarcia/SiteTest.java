@@ -38,7 +38,8 @@ class SiteTest {
                 .body(not(containsString("id=\"project-projet-bi-covid\"")))
                 .body(containsString("<dialog id=\"details-marketech\""))
                 .body(containsString("/static/bundle/app-"))
-                .body(containsString("<a href=\"/projets/\">Voir tous les projets</a>"));
+                .body(containsString("<a href=\"/projets/\">Voir tous les projets</a>"))
+                .body(containsString("<h4 id=\"experience-1\">Technicien support informatique</h4>"));
     }
 
     @Test
