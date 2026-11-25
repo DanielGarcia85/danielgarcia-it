@@ -3,20 +3,16 @@
   danielgarcia.it — Profile section of the home page, in both languages
   ───────────────────────────────────────────────────────────────────────────
   Included by content/index.html and content/en/index.html. Every text comes
-  from data/contact/<lang>.yml and data/career/<lang>.yml, the label of the
-  CV button from data/i18n/<lang>.yml.
+  from data/contact/<lang>.yml and data/career/<lang>.yml; the GitHub,
+  LinkedIn and CV links from templates/partials/profile-links.html.
 !}
-{#let contact=cdi:contact.get(page.data.lang) career=cdi:career.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
+{#let contact=cdi:contact.get(page.data.lang) career=cdi:career.get(page.data.lang)}
 <section id="profile" aria-labelledby="profile-name">
   <h1 id="profile-name">{contact.name}</h1>
   <p>{contact.title}</p>
   {#for paragraph in career.profile}
     {paragraph.markdownify}
   {/for}
-  <ul>
-    <li><a href="{contact.github}">{#include partials/icons/github /} GitHub</a></li>
-    <li><a href="{contact.linkedin}">{#include partials/icons/linkedin /} LinkedIn</a></li>
-    <li><a href="{contact.cv}" type="application/pdf">{#include partials/icons/document /} {t.cv}</a></li>
-  </ul>
+  {#include partials/profile-links /}
 </section>
 {/let}
