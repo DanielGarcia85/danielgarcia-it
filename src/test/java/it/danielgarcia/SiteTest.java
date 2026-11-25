@@ -83,6 +83,25 @@ class SiteTest {
                 .body(containsString("<html lang=\"" + language + "\">"));
     }
 
+    @ParameterizedTest
+    @CsvSource({
+            "/,             /",
+            "/projets/,     /",
+            "/404.html,     /",
+            "/en/,          /en/",
+            "/en/projects/, /en/",
+            "/en/404.html,  /en/"
+    })
+    void header(String path, String home) {
+        given().get(path).then()
+                .statusCode(200)
+                .body(containsString("<a href=\"#content\">"))
+                .body(containsString("<main id=\"content\">"))
+                .body(containsString("id=\"compact-profile\""))
+                .body(containsString("id=\"menu\""))
+                .body(containsString("href=\"" + home + "#projects\""));
+    }
+
     @Test
     void noBrokenInternalLink() {
         // The link checker builds file URIs without encoding '#', so under a path that

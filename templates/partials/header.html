@@ -1,0 +1,35 @@
+{!
+  templates/partials/header.html
+  danielgarcia.it — Header shared by every page, in both languages
+  ───────────────────────────────────────────────────────────────────────────
+  Included by templates/layouts/page.html. A link that skips to the content,
+  then the compact profile (name, title, GitHub, LinkedIn, CV), the menu of
+  the sections of the home page and the language switch. Texts come from
+  data/contact/<lang>.yml and data/i18n/<lang>.yml.
+!}
+{#let contact=cdi:contact.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
+<a href="#content">{t.skipLink}</a>
+<header>
+  <div id="compact-profile">
+    <p><a href="{t.homeUrl}">{contact.name}</a></p>
+    <p>{contact.title}</p>
+    {#include partials/profile-links /}
+  </div>
+  <nav id="menu" aria-label="{t.mainMenu}">
+    <ul>
+      <li><a href="{t.homeUrl}#profile">{t.profile}</a></li>
+      <li><a href="{t.homeUrl}#projects">{t.projects}</a></li>
+      <li><a href="{t.homeUrl}#career">{t.career}</a></li>
+      <li><a href="{t.homeUrl}#skills">{t.skills}</a></li>
+      <li><a href="{t.homeUrl}#contact">{t.contact}</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="{t.languageSwitch}">
+    {#if page.data.lang == 'fr'}
+      <a href="{page.url}" aria-current="page">FR</a> / <a href="{page.data.translation}" hreflang="en" lang="en">EN</a>
+    {#else}
+      <a href="{page.data.translation}" hreflang="fr" lang="fr">FR</a> / <a href="{page.url}" aria-current="page">EN</a>
+    {/if}
+  </nav>
+</header>
+{/let}

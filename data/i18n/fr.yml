@@ -7,6 +7,13 @@
 # Accessible name of the language switch, read aloud by screen readers
 languageSwitch: "Langue"
 
+# Header: link that skips to the content, accessible name of the menu, first
+# entry of the menu, address of the home page (target of the menu entries)
+skipLink: "Aller au contenu"
+mainMenu: "Menu principal"
+profile: "Profil"
+homeUrl: "/"
+
 # Label of the button that opens the CV in PDF
 cv: "CV (PDF)"
 
