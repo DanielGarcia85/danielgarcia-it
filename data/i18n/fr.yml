@@ -61,3 +61,6 @@ rolesSought: "Postes recherchés"
 workMode: "Mode de travail"
 location: "Lieu"
 nationality: "Nationalité"
+
+# Footer: link to the source code of the site
+siteSource: "Code source du site"

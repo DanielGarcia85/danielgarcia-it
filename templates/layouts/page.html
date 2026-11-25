@@ -6,8 +6,8 @@
   Replaces the "page" layout of Roq's built-in theme. Each page gives, in its
   front matter, title, description, lang (fr or en) and translation (address
   of the same page in the other language), then only its own content.
-  The header comes from templates/partials/header.html, the job title of the
-  home page title from data/contact/<lang>.yml.
+  The header and the footer come from templates/partials/, the job title of
+  the home page title from data/contact/<lang>.yml.
 !}
 {#let contact=cdi:contact.get(page.data.lang)}
 <html lang="{page.data.lang}">
@@ -24,6 +24,7 @@
   <main id="content">
     {#insert /}
   </main>
+  {#include partials/footer /}
 </body>
 </html>
 {/let}

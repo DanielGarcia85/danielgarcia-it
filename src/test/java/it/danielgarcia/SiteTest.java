@@ -94,14 +94,15 @@ class SiteTest {
             "/en/projects/, /en/",
             "/en/404.html,  /en/"
     })
-    void header(String path, String home) {
+    void headerAndFooter(String path, String home) {
         given().get(path).then()
                 .statusCode(200)
                 .body(containsString("<a href=\"#content\">"))
                 .body(containsString("<main id=\"content\">"))
                 .body(containsString("id=\"compact-profile\""))
                 .body(containsString("id=\"menu\""))
-                .body(containsString("href=\"" + home + "#projects\""));
+                .body(containsString("href=\"" + home + "#projects\""))
+                .body(containsString("<footer>"));
     }
 
     @Test
