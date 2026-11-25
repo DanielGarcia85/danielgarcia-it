@@ -77,6 +77,7 @@ class CareerTest {
             assertEquals(a.obtained(), b.obtained(), "certification " + i + ": obtained");
             assertEquals(a.highlights().size(), b.highlights().size(), "certification " + i + ": highlights");
             assertEquals(a.skills().size(), b.skills().size(), "certification " + i + ": skills");
+            assertEquals(a.site(), b.site(), "certification " + i + ": site");
         }
         for (int i = 0; i < fr.projects().size(); i++) {
             Project a = fr.projects().get(i);

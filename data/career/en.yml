@@ -382,6 +382,7 @@ certifications:
   - obtained: "2024-06"
     title: "CCNAv7: Enterprise Networking, Security, and Automation"
     issuer: "Cisco Networking Academy"
+    site: "https://heg.hesge.ch/formations/formation-continue/formations-courtes/cisco#modules?cursus-ccna"
     summary: "Enterprise networks: OSPF, access control lists, NAT, WAN and VPN, QoS, network management, virtualisation and automation."
     description: "Third and final CCNAv7 module of the Cisco continuing education course at HEG Geneva. This hands-on, lab-oriented course, validated by a theory and practical exam, covers enterprise networking, security and automation."
     highlights:
@@ -403,6 +404,7 @@ certifications:
   - obtained: "2023-04"
     title: "CCNAv7: Switching, Routing, and Wireless Essentials"
     issuer: "Cisco Networking Academy"
+    site: "https://heg.hesge.ch/formations/formation-continue/formations-courtes/cisco#modules?cursus-ccna"
     summary: "Switching, routing and wireless: VLANs and inter-VLAN routing, STP and EtherChannel, static routing, WLAN, switch security."
     description: "Second CCNAv7 module of the Cisco continuing education course at HEG Geneva. This hands-on, lab-oriented course, validated by a theory and practical exam, covers switching, routing and wireless networks."
     highlights:
@@ -423,6 +425,7 @@ certifications:
   - obtained: "2022-11"
     title: "CCNAv7: Introduction to Networks"
     issuer: "Cisco Networking Academy"
+    site: "https://heg.hesge.ch/formations/formation-continue/formations-courtes/cisco#modules?cursus-ccna"
     summary: "Networking fundamentals: Ethernet, OSI model, IPv4 and IPv6 addressing, switch and router configuration, troubleshooting."
     description: "First CCNAv7 module of the Cisco continuing education course at HEG Geneva. This hands-on, lab-oriented course, validated by a theory and practical exam, lays the foundations of networking, from the physical layer up to applications."
     highlights:

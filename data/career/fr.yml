@@ -382,6 +382,7 @@ certifications:
   - obtained: "2024-06"
     title: "CCNAv7 : Enterprise Networking, Security, and Automation"
     issuer: "Cisco Networking Academy"
+    site: "https://heg.hesge.ch/formations/formation-continue/formations-courtes/cisco#modules?cursus-ccna"
     summary: "Réseaux d’entreprise : OSPF, listes de contrôle d’accès, NAT, WAN et VPN, QoS, gestion du réseau, virtualisation et automatisation."
     description: "Troisième et dernier module CCNAv7 de la formation continue Cisco de la HEG Genève. Ce cours pratique, axé sur les laboratoires et validé par un examen théorique et pratique, porte sur la mise en réseau, la sécurité et l’automatisation des réseaux d’entreprise."
     highlights:
@@ -403,6 +404,7 @@ certifications:
   - obtained: "2023-04"
     title: "CCNAv7 : Switching, Routing, and Wireless Essentials"
     issuer: "Cisco Networking Academy"
+    site: "https://heg.hesge.ch/formations/formation-continue/formations-courtes/cisco#modules?cursus-ccna"
     summary: "Commutation, routage et sans-fil : VLAN et routage inter-VLAN, STP et EtherChannel, routage statique, WLAN, sécurité des commutateurs."
     description: "Deuxième module CCNAv7 de la formation continue Cisco de la HEG Genève. Ce cours pratique, axé sur les laboratoires et validé par un examen théorique et pratique, porte sur la commutation, le routage et les réseaux sans fil."
     highlights:
@@ -423,6 +425,7 @@ certifications:
   - obtained: "2022-11"
     title: "CCNAv7 : Introduction to Networks"
     issuer: "Cisco Networking Academy"
+    site: "https://heg.hesge.ch/formations/formation-continue/formations-courtes/cisco#modules?cursus-ccna"
     summary: "Bases des réseaux : Ethernet, modèle OSI, adressage IPv4 et IPv6, configuration des commutateurs et des routeurs, dépannage."
     description: "Premier module CCNAv7 de la formation continue Cisco de la HEG Genève. Ce cours pratique, axé sur les laboratoires et validé par un examen théorique et pratique, pose les bases des réseaux, de la couche physique jusqu’aux applications."
     highlights:
