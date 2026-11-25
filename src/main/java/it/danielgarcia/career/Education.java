@@ -51,4 +51,22 @@ public record Education(String institution, String place, String degree, String 
     public YearMonth completedMonth() {
         return YearMonth.parse(completed);
     }
+
+     /**
+     * Returns the month the studies started, as shown on the site and the CV (09/2023), or null if unknown.
+     *
+     * @return the month and the year, separated by a slash, or {@code null}
+     */
+    public String startedLabel() {
+        return started == null ? null : Months.label(startedMonth());
+    }
+
+    /**
+     * Returns the month the studies were completed, as shown on the site and the CV (09/2026).
+     *
+     * @return the month and the year, separated by a slash
+     */
+    public String completedLabel() {
+        return Months.label(completedMonth());
+    }
 }
