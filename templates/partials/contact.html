@@ -1,0 +1,36 @@
+{!
+  templates/partials/contact.html
+  danielgarcia.it — Contact section of the home page, in both languages
+  ───────────────────────────────────────────────────────────────────────────
+  Included by content/index.html and content/en/index.html. Everything comes
+  from data/contact/<lang>.yml: the positions sought and the way of working,
+  the city and the nationality, then the e-mail address, the profiles and the
+  CV. No phone number and no postal address on the pages.
+!}
+{#let contact=cdi:contact.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
+<section id="contact" aria-labelledby="contact-title">
+  <h2 id="contact-title">{t.contact}</h2>
+  <dl>
+    <dt>{t.rolesSought}</dt>
+    <dd>
+      <ul>
+        {#for role in contact.roles}
+          <li>{role}</li>
+        {/for}
+      </ul>
+    </dd>
+    <dt>{t.workMode}</dt>
+    <dd>{contact.workMode}</dd>
+    <dt>{t.location}</dt>
+    <dd>{contact.location}</dd>
+    <dt>{t.nationality}</dt>
+    <dd>{contact.nationality}</dd>
+  </dl>
+  <ul>
+    <li><a href="mailto:{contact.email}">{#include partials/icons/email /} {contact.email}</a></li>
+    <li><a href="{contact.linkedin}">{#include partials/icons/linkedin /} LinkedIn</a></li>
+    <li><a href="{contact.github}">{#include partials/icons/github /} GitHub</a></li>
+    <li><a href="{contact.cv}" type="application/pdf">{#include partials/icons/document /} {t.cv}</a></li>
+  </ul>
+</section>
+{/let}

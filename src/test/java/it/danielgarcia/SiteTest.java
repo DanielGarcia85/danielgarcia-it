@@ -52,6 +52,8 @@ class SiteTest {
                 .body(containsString("id=\"certifications\""))
                 .body(containsString("id=\"skills\""))
                 .body(containsString("id=\"languages\""))
+                .body(containsString("id=\"contact\""))
+                .body(containsString("href=\"mailto:"))
                 .body(containsString("/static/bundle/app-"));
     }
 

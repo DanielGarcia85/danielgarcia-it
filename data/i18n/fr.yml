@@ -48,3 +48,10 @@ education: "Formation"
 certifications: "Certifications"
 training: "Voir la formation"
 languages: "Langues"
+
+# Contact section of the home page
+contact: "Contact"
+rolesSought: "Postes recherchés"
+workMode: "Mode de travail"
+location: "Lieu"
+nationality: "Nationalité"
