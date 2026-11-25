@@ -3,13 +3,13 @@
   danielgarcia.it — Career section of the home page, in both languages
   ───────────────────────────────────────────────────────────────────────────
   Included by content/index.html and content/en/index.html. One entry per
-  position of data/career/<lang>.yml, most recent first, each with a dialog
-  of its details. The name of the referee is never shown.
+  position and per degree of data/career/<lang>.yml, most recent first, each
+  with a dialog of its details. The name of the referee is never shown.
 !}
 {#let career=cdi:career.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
 <section id="career" aria-labelledby="career-title">
   <h2 id="career-title">{t.career}</h2>
-  <h3>{t.experience}</h3>
+  <h3 id="experience">{t.experience}</h3>
   {#for experience in career.experience}
     <article aria-labelledby="experience-{experience_count}">
       <h4 id="experience-{experience_count}">{experience.role}</h4>
@@ -43,6 +43,53 @@
         {/if}
         {#if experience.documents}
           <p>{experience.documents}</p>
+        {/if}
+        <form method="dialog">
+          <button>{t.close}</button>
+        </form>
+      </dialog>
+    </article>
+  {/for}
+    <h3 id="education">{t.education}</h3>
+  {#for education in career.education}
+    <article aria-labelledby="education-{education_count}">
+      <h4 id="education-{education_count}">{education.degree}</h4>
+      <p>{#if education.started}{education.startedLabel} – {/if}{education.completedLabel} · {education.institution}</p>
+      <p>{education.summary}</p>
+      <button type="button" aria-haspopup="dialog" aria-controls="details-education-{education_count}">{t.open}</button>
+      <dialog id="details-education-{education_count}" aria-labelledby="details-title-education-{education_count}">
+        <h4 id="details-title-education-{education_count}">{education.degree}</h4>
+        <p>{#if education.started}{education.startedLabel} – {/if}{education.completedLabel} · {education.institution}, {education.place}</p>
+        {#if education.mention}
+          <p>{education.mention}</p>
+        {/if}
+        {#if education.grade}
+          <dl>
+            <dt>{t.grade}</dt>
+            <dd>{education.grade}</dd>
+          </dl>
+        {/if}
+        {#if education.description}
+          <p>{education.description}</p>
+        {/if}
+        {#if education.highlights}
+          <h5>{t.highlights}</h5>
+          <ul>
+            {#for highlight in education.highlights}
+              <li>{highlight}</li>
+            {/for}
+          </ul>
+        {/if}
+        {#if education.skills}
+          <h5>{t.skills}</h5>
+          <ul>
+            {#for skill in education.skills}
+              <li>{skill}</li>
+            {/for}
+          </ul>
+        {/if}
+        {#if education.documents}
+          <p>{education.documents}</p>
         {/if}
         <form method="dialog">
           <button>{t.close}</button>

@@ -48,6 +48,7 @@ class SiteTest {
                 .body(not(containsString("id=\"project-projet-bi-covid\"")))
                 .body(containsString("<a href=\"" + projectsPage + "\">"))
                 .body(containsString("id=\"career\""))
+                .body(containsString("id=\"education\""))
                 .body(containsString("/static/bundle/app-"));
     }
 
