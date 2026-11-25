@@ -65,7 +65,9 @@ terminal (my DevOps side), never as decoration alone.
 ### Footer
 
 Above a thin line, in small text: the version in production ("Live version: commit `ef92dfc`",
-the commit in the mono font, linked to GitHub), its build date, then GitHub and LinkedIn again.
+the commit in the mono font, linked to that commit on GitHub), its build date, and a link to the
+source code of the site. No LinkedIn there: the footer is about the site itself; the profiles
+are in the header and in Contact.
 
 ### Home page, in this order
 
