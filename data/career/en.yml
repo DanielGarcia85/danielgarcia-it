@@ -380,7 +380,7 @@ education:
 
 certifications:
   - obtained: "2024-06"
-    title: "CCNAv7: Enterprise Networking, Security, and Automation"
+    title: "CCNAv7 module: Enterprise Networking, Security, and Automation"
     issuer: "Cisco Networking Academy"
     site: "https://heg.hesge.ch/formations/formation-continue/formations-courtes/cisco#modules?cursus-ccna"
     summary: "Enterprise networks: OSPF, access control lists, NAT, WAN and VPN, QoS, network management, virtualisation and automation."
@@ -402,7 +402,7 @@ certifications:
     documents: "Certificate and course completion statement available on request."
 
   - obtained: "2023-04"
-    title: "CCNAv7: Switching, Routing, and Wireless Essentials"
+    title: "CCNAv7 module: Switching, Routing, and Wireless Essentials"
     issuer: "Cisco Networking Academy"
     site: "https://heg.hesge.ch/formations/formation-continue/formations-courtes/cisco#modules?cursus-ccna"
     summary: "Switching, routing and wireless: VLANs and inter-VLAN routing, STP and EtherChannel, static routing, WLAN, switch security."
@@ -423,7 +423,7 @@ certifications:
     documents: "Certificate and course completion statement available on request."
 
   - obtained: "2022-11"
-    title: "CCNAv7: Introduction to Networks"
+    title: "CCNAv7 module: Introduction to Networks"
     issuer: "Cisco Networking Academy"
     site: "https://heg.hesge.ch/formations/formation-continue/formations-courtes/cisco#modules?cursus-ccna"
     summary: "Networking fundamentals: Ethernet, OSI model, IPv4 and IPv6 addressing, switch and router configuration, troubleshooting."
