@@ -128,6 +128,3 @@ sections:
     title: "Source code"
     paragraphs:
       - "All of the site’s code is public: templates, data, tests, workflow and Docker configuration, with its full history."
-
-# Label of the link to the repository, shown at the end of the page
-repositoryLink: "See the repository on GitHub"

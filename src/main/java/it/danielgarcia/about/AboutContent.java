@@ -7,13 +7,13 @@ import java.util.Objects;
 
 /**
  * The texts of the About page and of its panel on the home page, in one language.
+ * The link to the repository is not here: the footer of every page gives it.
  *
- * @param panel          the panel "How this site is built" of the home page
- * @param intro          the paragraphs under the title of the About page
- * @param sections       the sections of the About page, in display order
- * @param repositoryLink the label of the link to the repository, at the end of the page
+ * @param panel    the panel "How this site is built" of the home page
+ * @param intro    the paragraphs under the title of the About page
+ * @param sections the sections of the About page, in display order
  */
-public record AboutContent(Panel panel, List<String> intro, List<Section> sections, String repositoryLink) {
+public record AboutContent(Panel panel, List<String> intro, List<Section> sections) {
     /**
      * Checks that every part is present, so that a missing key fails the build.
      */
@@ -25,6 +25,5 @@ public record AboutContent(Panel panel, List<String> intro, List<Section> sectio
         if (sections == null || sections.isEmpty()) {
             throw new IllegalArgumentException("about: sections must list at least one section");
         }
-        Objects.requireNonNull(repositoryLink, "about: repositoryLink is missing");
     }
 }

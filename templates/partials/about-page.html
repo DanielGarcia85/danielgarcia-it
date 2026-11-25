@@ -1,0 +1,39 @@
+{!
+  templates/partials/about-page.html
+  danielgarcia.it — About page, in both languages
+  ───────────────────────────────────────────────────────────────────────────
+  Included by content/a-propos/index.html and content/en/about/index.html.
+  Every text comes from data/about/<lang>.yml: the introduction, then each
+  section in the order of the file, with its paragraphs, its list and its
+  groups of technologies. The link to the repository is in the footer.
+!}
+{#let about=cdi:about.get(page.data.lang)}
+<h1>{page.title}</h1>
+{#for paragraph in about.intro}
+  {paragraph.markdownify}
+{/for}
+{#for section in about.sections}
+  <section id="{section.id}" aria-labelledby="{section.id}-title">
+    <h2 id="{section.id}-title">{section.title}</h2>
+    {#for paragraph in section.paragraphs}
+      {paragraph.markdownify}
+    {/for}
+    {#if section.items}
+      <ul>
+        {#for item in section.items}
+          <li>{item}</li>
+        {/for}
+      </ul>
+    {/if}
+    {#for group in section.groups}
+      <h3>{group.title}</h3>
+      <dl>
+        {#for technology in group.technologies}
+          <dt>{technology.name}</dt>
+          <dd>{technology.role}</dd>
+        {/for}
+      </dl>
+    {/for}
+  </section>
+{/for}
+{/let}

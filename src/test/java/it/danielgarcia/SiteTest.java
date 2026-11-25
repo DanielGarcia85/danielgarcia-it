@@ -76,6 +76,21 @@ class SiteTest {
 
     @ParameterizedTest
     @CsvSource({
+            "/a-propos/, fr",
+            "/en/about/, en"
+    })
+    void aboutPage(String path, String language) {
+        given().get(path).then()
+                .statusCode(200)
+                .body(containsString("<html lang=\"" + language + "\">"))
+                .body(containsString("id=\"technologies\""))
+                .body(containsString("id=\"delivery\""))
+                .body(containsString("id=\"backups\""))
+                .body(containsString("id=\"source-code\""));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
             "/404.html,    fr",
             "/en/404.html, en"
     })
@@ -90,9 +105,11 @@ class SiteTest {
             "/,             /",
             "/projets/,     /",
             "/404.html,     /",
+            "/a-propos/,    /",
             "/en/,          /en/",
             "/en/projects/, /en/",
-            "/en/404.html,  /en/"
+            "/en/404.html,  /en/",
+            "/en/about/,    /en/"
     })
     void headerAndFooter(String path, String home) {
         given().get(path).then()

@@ -128,6 +128,3 @@ sections:
     title: "Le code source"
     paragraphs:
       - "Tout le code du site est public : gabarits, données, tests, workflow et configuration Docker, avec son historique complet."
-
-# Label of the link to the repository, shown at the end of the page
-repositoryLink: "Voir le dépôt sur GitHub"
