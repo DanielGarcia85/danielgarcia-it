@@ -39,4 +39,13 @@ public record Certification(String obtained, String title, String issuer, String
     public YearMonth obtainedMonth() {
         return YearMonth.parse(obtained);
     }
+
+     /**
+     * Returns the month it was obtained, as shown on the site and the CV (06/2024).
+     *
+     * @return the month and the year, separated by a slash
+     */
+    public String obtainedLabel() {
+        return Months.label(obtainedMonth());
+    }
 }
