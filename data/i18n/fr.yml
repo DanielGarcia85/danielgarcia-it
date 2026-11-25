@@ -17,7 +17,6 @@ projects: "Projets"
 code: "Code"
 site: "Site"
 
-
 # Labels of the details of a project, shown in its dialog
 open: "Ouvrir"
 close: "Fermer"
