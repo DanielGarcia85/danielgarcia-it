@@ -3,8 +3,9 @@
   danielgarcia.it — Career section of the home page, in both languages
   ───────────────────────────────────────────────────────────────────────────
   Included by content/index.html and content/en/index.html. One entry per
-  position and per degree of data/career/<lang>.yml, most recent first, each
-  with a dialog of its details. The name of the referee is never shown.
+  position, per degree and per certification of data/career/<lang>.yml, most
+  recent first, each with a dialog of its details. The name of the referee is
+  never shown.
 !}
 {#let career=cdi:career.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
 <section id="career" aria-labelledby="career-title">
@@ -90,6 +91,47 @@
         {/if}
         {#if education.documents}
           <p>{education.documents}</p>
+        {/if}
+        <form method="dialog">
+          <button>{t.close}</button>
+        </form>
+      </dialog>
+    </article>
+  {/for}
+    <h3 id="certifications">{t.certifications}</h3>
+  {#for certification in career.certifications}
+    <article aria-labelledby="certification-{certification_count}">
+      <h4 id="certification-{certification_count}">{certification.title}</h4>
+      <p>{certification.obtainedLabel} · {certification.issuer}</p>
+      <p>{certification.summary}</p>
+      <button type="button" aria-haspopup="dialog" aria-controls="details-certification-{certification_count}">{t.open}</button>
+      <dialog id="details-certification-{certification_count}" aria-labelledby="details-title-certification-{certification_count}">
+        <h4 id="details-title-certification-{certification_count}">{certification.title}</h4>
+        <p>{certification.obtainedLabel} · {certification.issuer}</p>
+        {#if certification.description}
+          <p>{certification.description}</p>
+        {/if}
+        {#if certification.highlights}
+          <h5>{t.highlights}</h5>
+          <ul>
+            {#for highlight in certification.highlights}
+              <li>{highlight}</li>
+            {/for}
+          </ul>
+        {/if}
+        {#if certification.skills}
+          <h5>{t.skills}</h5>
+          <ul>
+            {#for skill in certification.skills}
+              <li>{skill}</li>
+            {/for}
+          </ul>
+        {/if}
+        {#if certification.site}
+          <p><a href="{certification.site}">{#include partials/icons/globe /} {t.training}</a></p>
+        {/if}
+        {#if certification.documents}
+          <p>{certification.documents}</p>
         {/if}
         <form method="dialog">
           <button>{t.close}</button>

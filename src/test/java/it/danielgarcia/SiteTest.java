@@ -49,6 +49,7 @@ class SiteTest {
                 .body(containsString("<a href=\"" + projectsPage + "\">"))
                 .body(containsString("id=\"career\""))
                 .body(containsString("id=\"education\""))
+                .body(containsString("id=\"certifications\""))
                 .body(containsString("/static/bundle/app-"));
     }
 
