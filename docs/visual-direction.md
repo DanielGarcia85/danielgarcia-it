@@ -94,16 +94,23 @@ Every text of the home page comes from `data/contact/<lang>.yml` and `data/caree
      from screen readers.
    - Under 940 px wide, the console goes away, so that it never covers the name; the photo, the
      name and the text stay. Under 640 px, the photo shrinks to 96 px.
-2. **Projects**, the largest section: the five featured projects, **two per row**, the last one
-   alone on its row. Each card has its social preview image (1280 × 640), its name, its context
-   (team projects always give the size of the team and my exact role), its stack as tags, and
-   its links (Code, Site, Download), only those that exist. SkyBurst has a filled "Play" button
-   that opens its player. Under the cards, a link to the archive page, where the other projects
-   are listed as a table, in their order of importance.
+2. **Projects**, the largest section: the five featured projects as cards, **two per row**, the
+   last one alone on its row. Each card has its social preview image (1280 × 640, from
+   `public/images/projects/<id>.png`, once it exists), its name, its summary, its stack as tags,
+   and its links (Code, Site), only those that exist. On hover, the card lifts slightly; hovering
+   never opens anything. A click anywhere on the card, or on its "Open" button, opens a **large
+   card** (a native modal `<dialog>`) on the same page: the description first, then the context
+   (team projects always give the size of the team and my exact role), the client, the date
+   ("Built"), the grade, the highlights, the skills and the links (Code, Site, Download). It
+   closes with Escape or its "Close" button. SkyBurst gets a filled "Play" button that opens its
+   player only once its Web build exists. Under the cards, a link to the projects page.
 3. **Career**, in three parts with their own titles: **Professional experience** first, then
    **Education**, then **Certifications**. Each part is a list, most recent first; each line has
-   its years in `--accent` and in bold, the position, the degree or the certification in bold,
-   the employer, the school or the issuer in `--muted`. One menu entry (Career) leads to all
+   its dates (as on the CV, 11/2026) in `--accent` and in bold, the position, the degree or the
+   certification in bold, the employer, the school or the issuer in `--muted`. A click on a line
+   opens the same large card as the projects: the mention, the description, the tasks or the
+   highlights, the skills, the documents available on request and, for a certification, a link
+   to the training. The name of a referee is never shown. One menu entry (Career) leads to all
    three.
 4. **Skills**: the groups of skills, in their order, as a named list in four columns (two under
    900 px), then the spoken languages with their level. No levels for the skills, no bars, no
@@ -112,6 +119,17 @@ Every text of the home page comes from `data/contact/<lang>.yml` and `data/caree
    the pipeline in one sentence, and a filled button to the About page.
 6. **Contact**: the positions sought and the way of working, the city and the nationality, then
    the e-mail address, LinkedIn, GitHub and the CV (PDF). No phone number, no postal address.
+
+### Projects page
+
+`/projets/` and `/en/projects/`, in two groups:
+
+- **Featured projects**: the same cards and large cards as on the home page;
+- **Other projects**, in their order of importance: compact cards, without a large card, with
+  the context, the role, the date, then the skills and the stack under their own headings.
+
+Later, after the CSS: a filter by technology at the top of the page. Later still: one detailed
+page per project (screenshots, videos, quotes), opened from a "More" button in its large card.
 
 ## Style
 
