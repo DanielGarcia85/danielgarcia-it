@@ -69,4 +69,22 @@ public record Experience(String employer, String role, String place, String star
     public boolean hasReference() {
         return reference != null;
     }
+
+    /**
+     * Returns the month the position started, as shown on the site and the CV (09/2023).
+     *
+     * @return the month and the year, separated by a slash
+     */
+    public String startedLabel() {
+        return Months.label(startedMonth());
+    }
+
+    /**
+     * Returns the month the position ended, as shown on the site and the CV, or null for the current position.
+     *
+     * @return the month and the year, separated by a slash, or {@code null}
+     */
+    public String endedLabel() {
+        return ended == null ? null : Months.label(endedMonth());
+    }
 }

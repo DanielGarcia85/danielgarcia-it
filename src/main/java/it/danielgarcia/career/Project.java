@@ -52,8 +52,7 @@ public record Project(String id, String title, String frame, String client, Stri
      * @return the month and the year, separated by a slash
      */
     public String completedLabel() {
-        YearMonth month = completedMonth();
-        return String.format("%02d/%d", month.getMonthValue(), month.getYear());
+        return Months.label(completedMonth());
     }
 
     /**
