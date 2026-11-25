@@ -1,5 +1,5 @@
-// web/projects.js
-// danielgarcia.it — Opens the dialog of a featured project
+// web/dialogs.js
+// danielgarcia.it — Opens the dialog of a card: a project or a career entry
 // ─────────────────────────────────────────────────────────────────────────────
 // The dialog and all its content are already in the HTML: this script only
 // opens it, from the Open button or from a click anywhere on the card, except
