@@ -1,0 +1,200 @@
+/*
+  web/_header.scss
+  danielgarcia.it — The header of every page: compact profile, menu, languages
+  ───────────────────────────────────────────────────────────────────────────
+  Rules of docs/visual-direction.md ("Header"). At the top of the screen,
+  68 px high, on one line: the compact profile on the left, then the menu and
+  the language switch on the right, which never move. The compact profile
+  gives up its title, then its buttons, when the room gets short.
+  Markup: templates/partials/header.html. Behavior: web/header.js (compact
+  profile) and web/menu.js (section being read).
+*/
+
+/* A link to an anchor, or the focus, never ends up under the header (WCAG 2.4.11) */
+html {
+  scroll-padding-top: calc(var(--header-height) + 16px);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: var(--header-height);
+  /* Full-width background and line; content aligned with the content of the page */
+  padding-inline: max(var(--gutter), (100% - var(--max-width)) / 2 + var(--gutter));
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+/* Compact profile: name and title, then the GitHub, LinkedIn and CV buttons */
+#compact-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  overflow: hidden;
+  /* The only animation of the site: a fade when the compact profile appears */
+  transition: opacity 0.2s;
+}
+
+@starting-style {
+  #compact-profile {
+    opacity: 0;
+  }
+}
+
+#compact-profile p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+#compact-profile p:first-child a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#compact-profile p:first-child a:hover {
+  text-decoration: underline;
+}
+
+#compact-profile p:last-child {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+#compact-profile ul {
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#compact-profile ul a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#compact-profile ul a[type="application/pdf"] {
+  background: var(--sun);
+  border-color: var(--sun);
+  color: var(--on-sun);
+}
+
+/* Menu: pushed to the right; the section being read is underlined and bold */
+#menu {
+  margin-left: auto;
+}
+
+#menu ul {
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1rem;
+}
+
+#menu a {
+  padding-block: 2px;
+  border-bottom: 2px solid transparent;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+#menu a:hover {
+  border-bottom-color: var(--line);
+}
+
+#menu a[aria-current] {
+  border-bottom-color: var(--accent);
+  font-weight: 700;
+}
+
+/* Language switch: two buttons of fixed width in one frame, the current one filled */
+.language-switch {
+  display: flex;
+  border: 2px solid var(--ink);
+}
+
+.language-switch a {
+  width: 2.625rem;
+  padding-block: 2px;
+  color: var(--ink);
+  font-size: 0.9375rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.language-switch a:hover {
+  text-decoration: underline;
+}
+
+.language-switch a[aria-current] {
+  background: var(--accent-fill);
+  box-shadow: inset 0 0 0 2px var(--accent-edge);
+  color: var(--on-accent-fill);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* When the room gets short, the compact profile gives up its title, then its buttons */
+@media (max-width: 1280px) {
+  #compact-profile p:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 1190px) {
+  #compact-profile ul {
+    display: none;
+  }
+}
+
+/*
+  Until the "Menu" button of small screens: the header may take two lines,
+  so it scrolls with the page instead of covering it.
+*/
+@media (max-width: 910px) {
+  header {
+    position: static;
+    flex-wrap: wrap;
+    padding-block: 8px;
+  }
+
+  #menu ul {
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+}
+
+/* Low screen or strong zoom: the header scrolls with the page */
+@media (max-width: 910px), (max-height: 500px) {
+  html {
+    scroll-padding-top: 0;
+  }
+}
+
+@media (max-height: 500px) {
+  header {
+    position: static;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #compact-profile {
+    transition: none;
+  }
+}

@@ -11,8 +11,10 @@
 <a class="skip-link" href="#content">{t.skipLink}</a>
 <header>
   <div id="compact-profile"{#if page.title == site.title} hidden{/if}>
-    <p><a href="{t.homeUrl}">{contact.name}</a></p>
-    <p>{contact.title}</p>
+    <div>
+      <p><a href="{t.homeUrl}">{contact.name}</a></p>
+      <p>{contact.title}</p>
+    </div>
     {#include partials/profile-links /}
   </div>
   <nav id="menu" aria-label="{t.mainMenu}">
@@ -25,7 +27,7 @@
       <li><a href="{t.homeUrl}#contact">{t.contact}</a></li>
     </ul>
   </nav>
-  <nav aria-label="{t.languageSwitch}">
+    <nav class="language-switch" aria-label="{t.languageSwitch}">
     {#if page.data.lang == 'fr'}
       <a href="{page.url}" aria-current="page">FR</a> / <a href="{page.data.translation}" hreflang="en" lang="en">EN</a>
     {#else}
