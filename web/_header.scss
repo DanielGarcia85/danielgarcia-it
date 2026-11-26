@@ -75,30 +75,16 @@ header {
   font-size: 0.875rem;
 }
 
-#compact-profile ul {
-  display: flex;
+/* The buttons of web/_buttons.scss, smaller in the header */
+#compact-profile .button-list {
+  flex-wrap: nowrap;
   gap: 6px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
-#compact-profile ul a {
-  display: inline-flex;
-  align-items: center;
+#compact-profile .button {
   gap: 6px;
   padding: 3px 10px;
-  border: 2px solid var(--ink);
-  color: var(--ink);
   font-size: 0.9375rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-#compact-profile ul a[type="application/pdf"] {
-  background: var(--sun);
-  border-color: var(--sun);
-  color: var(--on-sun);
 }
 
 /* Menu: pushed to the right; the section being read is underlined and bold */

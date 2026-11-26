@@ -3,13 +3,13 @@
   danielgarcia.it — GitHub, LinkedIn and CV links, in both languages
   ───────────────────────────────────────────────────────────────────────────
   Included by templates/partials/profile.html (large profile of the home page)
-  and, later, by the compact profile of the header. The addresses come from
+  and templates/partials/header.html (compact profile). The addresses come from
   data/contact/<lang>.yml, the label of the CV link from data/i18n/<lang>.yml.
 !}
 {#let contact=cdi:contact.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
-<ul>
-  <li><a href="{contact.github}">{#include partials/icons/github /} GitHub</a></li>
-  <li><a href="{contact.linkedin}">{#include partials/icons/linkedin /} LinkedIn</a></li>
-  <li><a href="{contact.cv}" type="application/pdf">{#include partials/icons/document /} {t.cv}</a></li>
+<ul class="button-list">
+  <li><a class="button" href="{contact.github}">{#include partials/icons/github /} GitHub</a></li>
+  <li><a class="button" href="{contact.linkedin}">{#include partials/icons/linkedin /} LinkedIn</a></li>
+  <li><a class="button button-cv" href="{contact.cv}" type="application/pdf">{#include partials/icons/document /} {t.cv}</a></li>
 </ul>
 {/let}

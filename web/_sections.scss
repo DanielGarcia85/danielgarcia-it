@@ -1,0 +1,76 @@
+/*
+  web/_sections.scss
+  danielgarcia.it — The sections of the pages and the profile of the home page
+  ───────────────────────────────────────────────────────────────────────────
+  Rules of docs/visual-direction.md ("Home page", "Style"). Section titles
+  start with ## in the mono font, as a Markdown heading: decoration only,
+  hidden from screen readers (the text after the slash is what they read).
+  The profile is a band across the whole width, with a horizontal gradient
+  towards the dark petrol halo on the right, where the console will go.
+*/
+
+main > section {
+  padding-block: 48px;
+}
+
+section > h2::before {
+  content: "## " / "";
+  color: var(--accent);
+  font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
+}
+
+/*
+  Profile of the home page. The right part of the band (the halo) stays free
+  for the console: 512 px at most, 40 % of the screen on smaller ones, so
+  that it narrows smoothly with the screen. The gradient starts a little
+  before the end of the text and overlaps its last words lightly; the text
+  and the links keep a contrast of at least 4.5:1 there.
+*/
+#profile {
+  /* Width of the halo on the right */
+  --halo-width: min(512px, 40vw);
+  /* Overlap of the gradient on the text: a smaller divisor gives a larger overlap */
+  --overlap: calc(var(--halo-width) / 8);
+  /* Side margin of the content, and width of the text column */
+  --side: max(var(--gutter), (100% - var(--max-width)) / 2 + var(--gutter));
+  --text: min(80ch, 100% - 2 * var(--side) - var(--halo-width));
+
+  max-width: none;
+  padding-block: 64px;
+  /* Content aligned with the rest of the page, background across the whole width */
+  padding-inline: var(--side);
+  background: linear-gradient(to right, var(--paper) calc(var(--side) + var(--text) - var(--overlap)), var(--halo) 100%);
+}
+
+#profile > * {
+  max-width: min(80ch, 100% - var(--halo-width));
+}
+
+#profile h1 {
+  margin-bottom: 0.25em;
+}
+
+/* The job title, right under the name */
+#profile h1 + p {
+  margin-top: 0;
+  color: var(--accent);
+  font-size: 1.625rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+#profile .button-list {
+  margin-top: 24px;
+}
+
+/* On a phone, the text takes the whole width: no gradient */
+@media (max-width: 640px) {
+  #profile {
+    padding-block: 40px;
+    padding-inline: var(--gutter);
+  }
+
+  #profile > * {
+    max-width: none;
+  }
+}

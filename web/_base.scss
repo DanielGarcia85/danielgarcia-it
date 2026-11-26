@@ -36,8 +36,12 @@ pre {
   font-size: 1em;
 }
 
-/* Content of the page and footer: centered, 1320 px at most */
-main,
+/*
+  Content of the page and footer: centered, 1320 px at most. Set on each
+  child of <main>, not on <main>, so that a section can have a background
+  across the whole width (the profile of the home page).
+*/
+main > *,
 footer {
   max-width: var(--max-width);
   margin-inline: auto;
