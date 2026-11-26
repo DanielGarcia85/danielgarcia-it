@@ -198,8 +198,10 @@ Braille Institute for legibility: every character differs from the others, even 
 - Version 2.001, SIL Open Font License 1.1, no Reserved Font Name. Sources:
   `googlefonts/atkinson-hyperlegible-next` and `googlefonts/atkinson-hyperlegible-next-mono` on
   GitHub.
-- Self-hosted, as variable WOFF2 files (weights 200 to 800): `AtkinsonHyperlegibleNext[wght]`
-  and `AtkinsonHyperlegibleMono[wght]`, plus their italics only if the content needs them.
+- Self-hosted, as variable WOFF2 files (weights 200 to 800), in `web/_fonts/`: the files
+  `AtkinsonHyperlegibleNext[wght]` and `AtkinsonHyperlegibleMono[wght]` of the sources, renamed
+  `AtkinsonHyperlegibleNext-Variable.woff2` and `AtkinsonHyperlegibleMono-Variable.woff2` (no
+  brackets in the names), plus their italics only if the content needs them.
 - The license travels with the files: `OFL.txt` next to them in the repository. The fonts are
   credited on the About page and in the License section of the README. The name of the Braille
   Institute is never used to promote the site, only to credit its work.
@@ -279,9 +281,10 @@ The console looks the same in both themes.
 - One exception: the colors of a brand logo stay those of the brand, written in the logo itself
   (the LinkedIn blue `#0A66C2` and white). The test of the color values skips
   `templates/partials/icons/`.
-- **No color value outside the file of the color tokens.** The rest of the CSS uses only the
-  roles (`var(--accent)`), never a code such as `#0B6878`. A test fails if a color value appears
-  anywhere else, so that the CI enforces it on every push.
+- **No color value outside the file of the color tokens, `web/_tokens.scss`.** The rest of the
+  CSS uses only the roles (`var(--accent)`), never a code such as `#0B6878`. A test
+  (`ColorTokensTest`) fails if a color value appears anywhere else in `web/` or `templates/`, so
+  that the CI enforces it on every push.
 - Changing the palette means changing the values of this file only, in both themes, after
   checking their contrasts. Then, by hand, the elements that do not read the CSS:
   - the diagrams of `docs/diagrams/`;
