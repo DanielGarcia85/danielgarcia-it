@@ -60,10 +60,10 @@
   {#if project.repository || project.site}
     <ul class="card-links">
       {#if project.repository}
-        <li><a href="{project.repository}">{#include partials/icons/github /} {t.code}</a></li>
+        <li><a href="{project.repository}" target="_blank" rel="noopener">{#include partials/icons/github /} {t.code}{#include partials/new-tab /}</a></li>
       {/if}
       {#if project.site}
-        <li><a href="{project.site}">{#include partials/icons/globe /} {t.site}</a></li>
+        <li><a href="{project.site}" target="_blank" rel="noopener">{#include partials/icons/globe /} {t.site}{#include partials/new-tab /}</a></li>
       {/if}
     </ul>
   {/if}
@@ -82,7 +82,7 @@
       <div class="large-card-body">
         <div>
           <h4>{t.overview}</h4>
-          <p>{project.description}</p>
+          {project.description.markdownify}
           <h4>{t.highlights}</h4>
           <ul class="highlights">
             {#for highlight in project.highlights}
@@ -115,13 +115,13 @@
           </ul>
           <ul class="button-list">
             {#if project.repository}
-              <li><a class="button button-primary" href="{project.repository}">{#include partials/icons/github /} {t.code}</a></li>
+              <li><a class="button button-primary" href="{project.repository}" target="_blank" rel="noopener">{#include partials/icons/github /} {t.code}{#include partials/new-tab /}</a></li>
             {/if}
             {#if project.site}
-              <li><a class="button button-primary" href="{project.site}">{#include partials/icons/globe /} {t.site}</a></li>
+              <li><a class="button button-primary" href="{project.site}" target="_blank" rel="noopener">{#include partials/icons/globe /} {t.site}{#include partials/new-tab /}</a></li>
             {/if}
             {#if project.download}
-              <li><a class="button button-primary" href="{project.download}">{#include partials/icons/download /} {t.download}</a></li>
+              <li><a class="button button-primary" href="{project.download}" download>{#include partials/icons/download /} {t.download}</a></li>
             {/if}
           </ul>
         </aside>
