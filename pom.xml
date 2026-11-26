@@ -23,7 +23,7 @@
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.version>3.40.1.2</quarkus.platform.version>
-    <roq.version>2.2.0</roq.version>
+    <roq.version>2.2.1</roq.version>
     <!-- Maven plugin versions, kept up to date by Dependabot -->
     <compiler-plugin.version>3.16.0</compiler-plugin.version>
     <surefire-plugin.version>3.6.1</surefire-plugin.version>
