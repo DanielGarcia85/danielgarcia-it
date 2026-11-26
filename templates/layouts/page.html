@@ -14,6 +14,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   {! Home page (its title is the site title): name and job title. Other pages: page, then name. !}
   <title>{#if page.title == site.title}{page.title} — {contact.title}{#else}{page.title} — {site.title}{/if}</title>
   <meta name="description" content="{page.description}">

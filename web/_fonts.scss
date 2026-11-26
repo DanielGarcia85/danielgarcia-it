@@ -1,0 +1,28 @@
+/*
+  web/_fonts.scss
+  danielgarcia.it — The two fonts of the site, hosted with it
+  ───────────────────────────────────────────────────────────────────────────
+  Atkinson Hyperlegible Next and Atkinson Hyperlegible Mono, version 2.001,
+  by the Braille Institute of America, under the SIL Open Font License 1.1
+  (web/_fonts/OFL.txt). One variable file per font, every weight from 200 to
+  800. The Web Bundler copies them next to the CSS, with a hash in the name.
+  font-display: swap shows the text at once in a fallback font.
+  The folder starts with _: the Web Bundler then copies the fonts for the url()
+  below without trying to import them as scripts, which only gave warnings.
+*/
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("./_fonts/AtkinsonHyperlegibleNext-Variable.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("./_fonts/AtkinsonHyperlegibleMono-Variable.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}

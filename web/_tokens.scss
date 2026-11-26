@@ -1,0 +1,66 @@
+/*
+  web/_tokens.scss
+  danielgarcia.it — The named values of the style: colors and grid
+  ───────────────────────────────────────────────────────────────────────────
+  The only file of the site with color values (docs/visual-direction.md,
+  "Colors"): ColorTokensTest fails if one appears anywhere else. The rest of
+  the CSS reads the roles, var(--accent), never a color code.
+  Light theme by default. Dark theme when the system of the visitor asks for
+  it, or when the theme button sets data-theme="dark" on <html>; the button
+  wins over the system, in both directions.
+*/
+
+/* Dark theme: only the values that change, written once, used twice below */
+@mixin dark {
+  color-scheme: dark;
+  --paper: #0E1418;
+  --surface: #162027;
+  --ink: #E4ECF0;
+  --muted: #A7B4BC;
+  --line: #6B7B85;
+  --accent: #4BA0AF;
+}
+
+:root {
+  color-scheme: light;
+
+  /* Palette Leman, light theme */
+  --paper: #F7F9FA;
+  --surface: #ECF0F2;
+  --ink: #0F1B22;
+  --muted: #4E5A61;
+  --line: #77858E;
+  --accent: #0B6878;
+
+  /* Filled elements, the same in both themes */
+  --accent-fill: #0B6878;
+  --on-accent-fill: #FFFFFF;
+  --accent-edge: #4BA0AF;
+
+  /* Outside the palette, the same in both themes */
+  --sun: #F2C14E;
+  --on-sun: #0F1B22;
+  --halo: #12313A;
+  --console: #0E1418;
+  --console-ink: #E4ECF0;
+  --console-out: #C9D4DA;
+  --console-prompt: #4BA0AF;
+  --console-command: #F2C14E;
+  --console-ok: #7FE0A0;
+  --console-dim: #A7B4BC;
+  --console-line: #2E3D47;
+
+  /* Grid */
+  --max-width: 1320px;
+  --gutter: 24px;
+}
+
+:root[data-theme="dark"] {
+  @include dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    @include dark;
+  }
+}

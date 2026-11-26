@@ -133,7 +133,7 @@ class SiteTest {
     void headerAndFooter(String path, String home, String privacy) {
         given().get(path).then()
                 .statusCode(200)
-                .body(containsString("<a href=\"#content\">"))
+                .body(containsString("<a class=\"skip-link\" href=\"#content\">"))
                 .body(containsString("<main id=\"content\">"))
                 .body(containsString("id=\"compact-profile\""))
                 .body(containsString("id=\"menu\""))

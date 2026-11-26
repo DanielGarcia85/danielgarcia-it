@@ -1,0 +1,15 @@
+/*
+  web/style.scss
+  danielgarcia.it — The style of the site, in one entry point
+  ───────────────────────────────────────────────────────────────────────────
+  The Web Bundler bundles the scripts and the styles of the root of web/ into
+  static/bundle/app-<hash>.js and app-<hash>.css, linked by {#bundle /} in
+  templates/layouts/page.html. Files whose name starts with _ are Sass
+  partials: never bundled on their own, only through the @use lines below,
+  in this order. The partials are plain CSS; Sass only splits the style into
+  files, keeps their order, and writes the dark colors once (_tokens.scss).
+*/
+
+@use "tokens";
+@use "fonts";
+@use "base";

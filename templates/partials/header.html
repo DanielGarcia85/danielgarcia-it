@@ -8,7 +8,7 @@
   data/contact/<lang>.yml and data/i18n/<lang>.yml.
 !}
 {#let contact=cdi:contact.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
-<a href="#content">{t.skipLink}</a>
+<a class="skip-link" href="#content">{t.skipLink}</a>
 <header>
   <div id="compact-profile"{#if page.title == site.title} hidden{/if}>
     <p><a href="{t.homeUrl}">{contact.name}</a></p>

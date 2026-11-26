@@ -1,0 +1,108 @@
+/*
+  web/_base.scss
+  danielgarcia.it — What every page shares: page, text, headings, links, focus
+  ───────────────────────────────────────────────────────────────────────────
+  Rules of docs/visual-direction.md ("Grid", "Typography", "Accessibility").
+  Sizes in rem (1rem = 16 px by default), so that they follow the text size
+  chosen in the browser: 1.125rem = 18 px, 2.5rem = 40 px.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* The hidden attribute always wins, even over a display set by another rule */
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* The mono font only where there is real code */
+code,
+kbd,
+samp,
+pre {
+  font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
+  font-size: 1em;
+}
+
+/* Content of the page and footer: centered, 1320 px at most */
+main,
+footer {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Running text: never wider than 80 characters */
+p {
+  max-width: 80ch;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Headings: page name 40 to 72 px, section titles 40 px, card titles 22 px */
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 4.6vw, 4.5rem);
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+/* Links: always underlined, 3 px below the text */
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+/* Focus: always visible, 3 px outline in the accent, 3 px away */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* "Skip to content": the first element of the page, shown only with the focus */
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  z-index: 100;
+  padding: 8px 12px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+}
+
+.skip-link:not(:focus) {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
