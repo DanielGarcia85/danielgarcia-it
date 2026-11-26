@@ -30,7 +30,7 @@ sections:
   - id: "recipients"
     title: "Who receives your data"
     paragraphs:
-      - "Nobody. The log stays on my server, at Infomaniak, in Switzerland. GitHub, which hosts the source code of the site, and the other services I use to run it receive no data about the visitors."
+      - "Nobody. The log stays on a server, at Infomaniak, in Switzerland. GitHub, which hosts the source code of the site, and the other services I use to run it receive no data about the visitors."
       - "The links to GitHub, LinkedIn or the HEG lead to other sites, whose own rules apply as soon as you follow them."
 
   - id: "cookies"

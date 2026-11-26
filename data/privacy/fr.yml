@@ -30,7 +30,7 @@ sections:
   - id: "recipients"
     title: "Qui reçoit vos données"
     paragraphs:
-      - "Personne. Le journal reste sur mon serveur, chez Infomaniak, en Suisse. GitHub, qui héberge le code source du site, et les autres services que j’utilise pour l’exploiter ne reçoivent aucune donnée des visiteurs."
+      - "Personne. Le journal reste sur un serveur, chez Infomaniak, en Suisse. GitHub, qui héberge le code source du site, et les autres services que j’utilise pour l’exploiter ne reçoivent aucune donnée des visiteurs."
       - "Les liens vers GitHub, LinkedIn ou la HEG mènent à d’autres sites, qui appliquent leurs propres règles dès que vous les suivez."
 
   - id: "cookies"
