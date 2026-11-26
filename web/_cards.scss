@@ -1,0 +1,320 @@
+/*
+  web/_cards.scss
+  danielgarcia.it — Project cards, their large cards (dialogs), and tags
+  ───────────────────────────────────────────────────────────────────────────
+  Rules of docs/visual-direction.md ("Home page", "Projects page", "Style").
+  Cards on the surface color, with a thin border and a 6 px accent rule at
+  the top, two per row (one under 760 px). A featured card lifts off the page
+  with a shadow on hover and opens its large card on a click (web/dialogs.js); hovering never
+  opens anything. The large cards of the career use the same dialog style.
+  Markup: templates/partials/project-card.html.
+*/
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 24px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--accent-fill);
+}
+
+/* The gap of the card spaces its blocks; the dialog keeps the margins that center it */
+.card > :not(dialog) {
+  margin: 0;
+}
+
+/* Name of the project, in the accent, on the card as on its large card */
+.card > h3,
+.large-card-head h3 {
+  color: var(--accent);
+}
+
+/*
+  Compact card of another project: under the summary, two columns, the
+  context, role and date on the left, the skills and technologies on the
+  right. On a narrow card, the second column goes under the first.
+*/
+.card-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px 32px;
+}
+
+.card-columns > *,
+.card-columns .tags {
+  margin: 0;
+}
+
+/* Titles of the second column: the same style as in the large card, their rule level with the first label */
+.card-columns h4 {
+  margin: 0 0 10px;
+  padding-bottom: 3px;
+  line-height: 1.25;
+  border-bottom: 2px solid var(--accent-fill);
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.card-columns .tags + h4 {
+  margin-top: 20px;
+}
+
+/* A featured card opens its large card: the whole card is clickable */
+.card:has(> [aria-haspopup="dialog"]) {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* On hover, the card lifts off the page: it rises and casts a soft shadow */
+.card:has(> [aria-haspopup="dialog"]):hover {
+  border-color: var(--accent-edge);
+  border-top-color: var(--accent-fill);
+  box-shadow: 0 24px 40px -14px var(--shadow), 0 8px 16px -8px var(--shadow);
+  transform: translateY(-8px);
+}
+
+/* The Open button stays at the bottom right, aligned from one card to the next */
+.card > [aria-haspopup="dialog"] {
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+/* Technologies and skills: square tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 1px 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  font-size: 0.875rem;
+}
+
+/* Links of a card: Code, Site, Download */
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.card-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/*
+  Context, role, date: on a compact card as in the facts of a large card,
+  a label in small accent capitals with a rule, its value under it
+*/
+.card-columns dt,
+.large-card-body aside dt {
+  margin-bottom: 4px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--accent-edge);
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.card-columns dd,
+.large-card-body aside dd {
+  margin: 0 0 14px;
+}
+
+/* Large card: a native modal dialog, closed with Escape, the cross or its Close button */
+dialog {
+  width: min(1000px, 100% - 2 * var(--gutter));
+  max-height: calc(100% - 48px);
+  padding: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--accent-fill);
+  color: var(--ink);
+  cursor: auto;
+}
+
+dialog::backdrop {
+  background: var(--halo);
+  opacity: 0.8;
+}
+
+/* Header: stays at the top while the rest scrolls, so that the cross is always there */
+.large-card-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.large-card-head h3 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.large-card-head p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.large-card-head form {
+  flex: none;
+}
+
+.close-button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 2px solid var(--close);
+  color: var(--close);
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background: var(--close);
+  color: var(--paper);
+}
+
+/* Body: the text on the left, the facts on the right */
+.large-card-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+  gap: 32px;
+  padding: 28px 32px 32px;
+}
+
+.large-card-body p {
+  margin: 0;
+}
+
+/* Titles of the large card (Highlights, Skills): accent, with a rule across the column */
+.large-card-body h4 {
+  margin: 28px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent-fill);
+  color: var(--accent);
+  font-size: 1.25rem;
+}
+
+/* The first title of the text: its rule at the level of the rule of the first fact */
+.large-card-body > div > h4:first-child {
+  margin-top: 5px;
+}
+
+.highlights {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.highlights li + li {
+  margin-top: 10px;
+}
+
+.highlights li::marker {
+  color: var(--accent);
+}
+
+/* markdownify puts each highlight in a paragraph */
+.highlights p {
+  margin: 0;
+}
+
+/* The words set in bold in the data (**…**): the lead of each highlight */
+.highlights strong {
+  color: var(--accent);
+}
+
+.large-card-body aside {
+  position: sticky;
+  /* Stays in view under the header (its height is set by web/dialogs.js) */
+  top: calc(var(--head-height, 0px) + 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-self: start;
+  padding: 20px;
+  background: var(--surface);
+  border-left: 4px solid var(--accent-fill);
+}
+
+.large-card-body aside > * {
+  margin: 0;
+}
+
+.large-card-body aside h4 {
+  font-size: 1rem;
+}
+
+/* Code, Site, Download: filled buttons across the column */
+.large-card-body aside .button-list {
+  flex-direction: column;
+}
+
+.large-card-body aside .button {
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .large-card-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* One column: the facts follow the text and scroll with it */
+  .large-card-body aside {
+    position: static;
+  }
+}
+
+@media (max-width: 760px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .large-card-head,
+  .large-card-body {
+    padding-inline: var(--gutter);
+  }
+
+  /* The header stays short on a phone: the summary is already on the card */
+  .large-card-head p {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:has(> [aria-haspopup="dialog"]) {
+    transition: none;
+  }
+
+  .card:has(> [aria-haspopup="dialog"]):hover {
+    transform: none;
+  }
+}

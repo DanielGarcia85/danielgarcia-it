@@ -23,6 +23,14 @@
   white-space: nowrap;
 }
 
+/* A real <button> with the look of the links above */
+button.button {
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
 .button:hover {
   text-decoration: underline;
 }

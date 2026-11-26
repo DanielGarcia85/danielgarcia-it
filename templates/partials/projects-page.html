@@ -10,18 +10,22 @@
 <h1>{t.projects}</h1>
 <section aria-labelledby="featured-projects">
   <h2 id="featured-projects">{t.featuredProjects}</h2>
-  {#for project in career.projects}
-    {#if project.featured}
-      {#include partials/project-card project=project /}
-    {/if}
-  {/for}
+  <div class="cards">
+    {#for project in career.projects}
+      {#if project.featured}
+        {#include partials/project-card project=project /}
+      {/if}
+    {/for}
+  </div>
 </section>
 <section aria-labelledby="other-projects">
   <h2 id="other-projects">{t.otherProjects}</h2>
-  {#for project in career.projects}
-    {#if !project.featured}
-      {#include partials/project-card project=project /}
-    {/if}
-  {/for}
+  <div class="cards">
+    {#for project in career.projects}
+      {#if !project.featured}
+        {#include partials/project-card project=project /}
+      {/if}
+    {/for}
+  </div>
 </section>
 {/let}

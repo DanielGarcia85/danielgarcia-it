@@ -10,11 +10,13 @@
 {#let career=cdi:career.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
 <section id="projects" aria-labelledby="projects-title">
   <h2 id="projects-title">{t.projects}</h2>
-  {#for project in career.projects}
-    {#if project.featured}
-      {#include partials/project-card project=project /}
-    {/if}
-  {/for}
-  <p><a href="{t.allProjectsUrl}">{t.allProjects}</a></p>
+  <div class="cards">
+    {#for project in career.projects}
+      {#if project.featured}
+        {#include partials/project-card project=project /}
+      {/if}
+    {/for}
+  </div>
+  <p><a class="button button-primary" href="{t.allProjectsUrl}">{t.allProjects}</a></p>
 </section>
 {/let}

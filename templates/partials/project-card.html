@@ -4,60 +4,20 @@
   ───────────────────────────────────────────────────────────────────────────
   Included once per project, with the project as parameter:
   {#include partials/project-card project=project /}. A featured project has
-  an Open button and a dialog with all its details; a project of the archive
-  has a compact card, with its context, role and date shown directly.
+  an Open button and a large card (a dialog) with all its details: a header
+  that stays at the top with the name and the close cross, then the
+  description and the highlights on the left, the facts, the skills and the
+  links on the right, in a column that stays in view while the text scrolls.
+  A project of the archive has a compact card: under its summary, its
+  context, role and date in a first column, its skills and technologies in a
+  second one. Style: web/_cards.scss.
 !}
 {#let t=cdi:i18n.get(page.data.lang)}
-<article aria-labelledby="project-{project.id}">
+<article class="card" aria-labelledby="project-{project.id}">
   <h3 id="project-{project.id}">{project.title}</h3>
   <p>{project.summary}</p>
   {#if !project.featured}
-    <dl>
-      <dt>{t.frame}</dt>
-      <dd>{project.frame}</dd>
-      {#if project.client}
-        <dt>{t.client}</dt>
-        <dd>{project.client}</dd>
-      {/if}
-      <dt>{t.role}</dt>
-      <dd>{project.role}</dd>
-      <dt>{t.completed}</dt>
-      <dd>{project.completedLabel}</dd>
-    </dl>
-    {#if project.skills}
-      <h4>{t.skills}</h4>
-      <ul>
-        {#for skill in project.skills}
-          <li>{skill}</li>
-        {/for}
-      </ul>
-    {/if}
-  {/if}
-  {#if project.stack}
-    {#if !project.featured}
-      <h4>{t.stack}</h4>
-    {/if}
-    <ul>
-      {#for technology in project.stack}
-        <li>{technology}</li>
-      {/for}
-    </ul>
-  {/if}
-  {#if project.repository || project.site}
-    <ul>
-      {#if project.repository}
-        <li><a href="{project.repository}">{#include partials/icons/github /} {t.code}</a></li>
-      {/if}
-      {#if project.site}
-        <li><a href="{project.site}">{#include partials/icons/globe /} {t.site}</a></li>
-      {/if}
-    </ul>
-  {/if}
-  {#if project.featured}
-    <button type="button" aria-haspopup="dialog" aria-controls="details-{project.id}">{t.open}</button>
-    <dialog id="details-{project.id}" aria-labelledby="details-title-{project.id}">
-      <h3 id="details-title-{project.id}">{project.title}</h3>
-      <p>{project.description}</p>
+    <div class="card-columns">
       <dl>
         <dt>{t.frame}</dt>
         <dd>{project.frame}</dd>
@@ -69,38 +29,104 @@
         <dd>{project.role}</dd>
         <dt>{t.completed}</dt>
         <dd>{project.completedLabel}</dd>
-        {#if project.grade}
-          <dt>{t.grade}</dt>
-          <dd>{project.grade}</dd>
-        {/if}
       </dl>
-      <h4>{t.highlights}</h4>
-      <ul>
-        {#for highlight in project.highlights}
-          <li>{highlight}</li>
-        {/for}
-      </ul>
-      <h4>{t.skills}</h4>
-      <ul>
-        {#for skill in project.skills}
-          <li>{skill}</li>
-        {/for}
-      </ul>
-      <ul>
-        {#if project.repository}
-          <li><a href="{project.repository}">{#include partials/icons/github /} {t.code}</a></li>
+      <div>
+        {#if project.skills}
+          <h4>{t.skills}</h4>
+          <ul class="tags">
+            {#for skill in project.skills}
+              <li>{skill}</li>
+            {/for}
+          </ul>
         {/if}
-        {#if project.site}
-          <li><a href="{project.site}">{#include partials/icons/globe /} {t.site}</a></li>
+        {#if project.stack}
+          <h4>{t.stack}</h4>
+          <ul class="tags">
+            {#for technology in project.stack}
+              <li>{technology}</li>
+            {/for}
+          </ul>
         {/if}
-        {#if project.download}
-          <li><a href="{project.download}">{#include partials/icons/download /} {t.download}</a></li>
-        {/if}
-      </ul>
-      <form method="dialog">
-        <button>{t.close}</button>
-      </form>
-  </dialog>
+      </div>
+    </div>
+  {/if}
+  {#if project.featured && project.stack}
+    <ul class="tags">
+      {#for technology in project.stack}
+        <li>{technology}</li>
+      {/for}
+    </ul>
+  {/if}
+  {#if project.repository || project.site}
+    <ul class="card-links">
+      {#if project.repository}
+        <li><a href="{project.repository}">{#include partials/icons/github /} {t.code}</a></li>
+      {/if}
+      {#if project.site}
+        <li><a href="{project.site}">{#include partials/icons/globe /} {t.site}</a></li>
+      {/if}
+    </ul>
+  {/if}
+  {#if project.featured}
+    <button class="button" type="button" aria-haspopup="dialog" aria-controls="details-{project.id}">{t.open}</button>
+    <dialog id="details-{project.id}" class="large-card" aria-labelledby="details-title-{project.id}">
+      <div class="large-card-head">
+        <div>
+          <h3 id="details-title-{project.id}">{project.title}</h3>
+          <p>{project.summary}</p>
+        </div>
+        <form method="dialog">
+          <button class="close-button" aria-label="{t.close}" autofocus>{#include partials/icons/close /}</button>
+        </form>
+      </div>
+      <div class="large-card-body">
+        <div>
+          <h4>{t.overview}</h4>
+          <p>{project.description}</p>
+          <h4>{t.highlights}</h4>
+          <ul class="highlights">
+            {#for highlight in project.highlights}
+              <li>{highlight.markdownify}</li>
+            {/for}
+          </ul>
+        </div>
+        <aside>
+          <dl>
+            <dt>{t.frame}</dt>
+            <dd>{project.frame}</dd>
+            {#if project.client}
+              <dt>{t.client}</dt>
+              <dd>{project.client}</dd>
+            {/if}
+            <dt>{t.role}</dt>
+            <dd>{project.role}</dd>
+            <dt>{t.completed}</dt>
+            <dd>{project.completedLabel}</dd>
+            {#if project.grade}
+              <dt>{t.grade}</dt>
+              <dd>{project.grade}</dd>
+            {/if}
+          </dl>
+          <h4>{t.skills}</h4>
+          <ul class="tags">
+            {#for skill in project.skills}
+              <li>{skill}</li>
+            {/for}
+          </ul>
+          <ul class="button-list">
+            {#if project.repository}
+              <li><a class="button button-primary" href="{project.repository}">{#include partials/icons/github /} {t.code}</a></li>
+            {/if}
+            {#if project.site}
+              <li><a class="button button-primary" href="{project.site}">{#include partials/icons/globe /} {t.site}</a></li>
+            {/if}
+            {#if project.download}
+              <li><a class="button button-primary" href="{project.download}">{#include partials/icons/download /} {t.download}</a></li>
+            {/if}
+          </ul>
+        </aside>
+      </div>
+    </dialog>
   {/if}
 </article>
 {/let}

@@ -19,10 +19,16 @@
   --muted: #A7B4BC;
   --line: #6B7B85;
   --accent: #4BA0AF;
+  --close: #FF8A80;
+  --shadow: rgba(0, 0, 0, 0.55);
 }
 
 :root {
-  color-scheme: light;
+  /*
+    only light: a browser that darkens pages on its own (forced dark mode)
+    leaves the light theme as it is, instead of turning it into a mix
+  */
+  color-scheme: only light;
 
   /* Palette Leman, light theme */
   --paper: #F7F9FA;
@@ -31,6 +37,10 @@
   --muted: #4E5A61;
   --line: #77858E;
   --accent: #0B6878;
+
+  /* Close cross of the large cards; shadow of a card lifted on hover */
+  --close: #B3261E;
+  --shadow: rgba(15, 27, 34, 0.28);
 
   /* Filled elements, the same in both themes */
   --accent-fill: #0B6878;

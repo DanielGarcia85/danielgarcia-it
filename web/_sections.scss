@@ -13,6 +13,15 @@ main > section {
   padding-block: 48px;
 }
 
+/* Title of a page other than the home page */
+main > h1 {
+  margin-top: 48px;
+}
+
+main > h1 + section {
+  padding-top: 16px;
+}
+
 section > h2::before {
   content: "## " / "";
   color: var(--accent);
@@ -35,7 +44,7 @@ section > h2::before {
   --side: max(var(--gutter), (100% - var(--max-width)) / 2 + var(--gutter));
   --text: min(80ch, 100% - 2 * var(--side) - var(--halo-width));
 
-  max-width: none;
+  grid-column: full;
   padding-block: 64px;
   /* Content aligned with the rest of the page, background across the whole width */
   padding-inline: var(--side);
@@ -63,7 +72,7 @@ section > h2::before {
   margin-top: 24px;
 }
 
-/* On a phone, the text takes the whole width: no gradient */
+/* On a phone, the text takes the whole width and runs over the halo */
 @media (max-width: 640px) {
   #profile {
     padding-block: 40px;

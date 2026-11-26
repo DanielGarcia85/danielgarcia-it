@@ -47,7 +47,7 @@ class SiteTest {
                 .body(containsString("id=\"projects\""))
                 .body(containsString("id=\"details-marketech\""))
                 .body(not(containsString("id=\"project-projet-bi-covid\"")))
-                .body(containsString("<a href=\"" + projectsPage + "\">"))
+                .body(containsString("<a class=\"button button-primary\" href=\"" + projectsPage + "\">"))
                 .body(containsString("id=\"career\""))
                 .body(containsString("id=\"education\""))
                 .body(containsString("id=\"certifications\""))

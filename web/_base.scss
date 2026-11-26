@@ -37,15 +37,27 @@ pre {
 }
 
 /*
-  Content of the page and footer: centered, 1320 px at most. Set on each
-  child of <main>, not on <main>, so that a section can have a background
-  across the whole width (the profile of the home page).
+  Content of the page: a grid with a central column of 1320 px at most
+  (gutters included) and a margin column on each side. Every child of <main>
+  goes in the central column; a section with a background across the whole
+  width (the profile of the home page) spans the three columns.
 */
-main > *,
+main {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--gutter), 1fr)
+    [content-start] min(100% - 2 * var(--gutter), var(--max-width) - 2 * var(--gutter))
+    [content-end] minmax(var(--gutter), 1fr) [full-end];
+}
+
+main > * {
+  grid-column: content;
+  min-width: 0;
+}
+
+/* Footer: the same alignment, with a padding computed like the columns above */
 footer {
-  max-width: var(--max-width);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-inline: max(var(--gutter), (100% - var(--max-width)) / 2 + var(--gutter));
 }
 
 /* Running text: never wider than 80 characters */
