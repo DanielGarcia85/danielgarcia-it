@@ -138,17 +138,15 @@ page per project (screenshots, videos, quotes), opened from a "More" button in i
 One style, two themes, switched by the button in the header. Both themes share every shape and
 every layout; the button only changes the values of the color tokens.
 
-- **Light theme**: light page, Leman blue accent, CV button in yellow.
-- **Dark theme**: night page, lighter Leman blue accent for the text, same filled buttons, same
-  yellow.
-- **The gradient of the profile is horizontal only**: from `--paper` at 40 % of the width to the
-  dark petrol halo (`#12313A`) at the right edge, the same halo in both themes. It ends on a
-  straight line at the bottom of the band, with no vertical fade. It moves to the right when the
-  room gets short, so that it never runs behind the text:
-  - under 940 px wide, it starts at 72 % of the width (and, between 641 and 940 px, the text
-    keeps a right margin of 16 %);
-  - under 900 px, at 86 %;
-  - under 640 px, there is no gradient.
+- **The gradient of the profile is horizontal only**: from `--paper` to the dark petrol halo
+  (`#12313A`) at the right edge, the same halo in both themes. It ends on a straight line at the
+  bottom of the band, with no vertical fade. The halo is 512 px wide at most, 40 % of the screen
+  at most, so that it narrows smoothly with the screen; on large screens, it is where the
+  console goes. The gradient starts a little before the end of the text (an eighth of the width
+  of the halo) and overlaps its last words lightly; the text and the links keep a contrast of
+  at least 4.5:1 there. Under 640 px, the text takes the whole width and runs over the halo:
+  a deliberate exception to the contrast rule, accepted for the look (the end of some lines
+  falls to about 2:1, the links to about 1.5:1).
 
 Shapes common to both themes:
 
