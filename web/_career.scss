@@ -1,0 +1,80 @@
+/*
+  web/_career.scss
+  danielgarcia.it — The career of the home page: one line per entry
+  ───────────────────────────────────────────────────────────────────────────
+  Rules of docs/visual-direction.md ("Home page", 3. Career). Three parts,
+  each a list of lines, most recent first, separated by a thin rule: the
+  dates in the accent and in bold, the position in bold, the employer in
+  the muted color, the summary, and the Open button on the right. A click
+  anywhere on a line opens its large card (web/dialogs.js), styled by
+  web/_cards.scss. Markup: templates/partials/career.html.
+*/
+
+/* Space between the three parts: Professional experience, Education, Certifications */
+.timeline {
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr) auto;
+  gap: 4px 24px;
+  align-items: start;
+  padding: 18px 20px;
+  border-top: 1px solid var(--line);
+  cursor: pointer;
+}
+
+/* The gap of the line spaces its blocks; the dialog keeps the margins that center it */
+.timeline-entry > :not(dialog),
+.timeline-entry > div > * {
+  margin: 0;
+}
+
+/* On hover, the line takes the surface color and an accent rule on the left, without animation */
+.timeline-entry:hover {
+  background: var(--surface);
+  box-shadow: inset 4px 0 0 var(--accent-fill);
+}
+
+/* Same width for every digit, so that the dates line up from one line to the next */
+.timeline-dates {
+  color: var(--accent);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The position, the degree or the certification: bold, at the size of the text (not the h4 of its large card) */
+.timeline-entry > div > h4 {
+  font-size: 1.125rem;
+}
+
+.timeline-place {
+  color: var(--muted);
+}
+
+.timeline-entry > div > p:last-child {
+  margin-top: 6px;
+}
+
+.timeline-entry > [aria-haspopup="dialog"] {
+  align-self: center;
+}
+
+/* On a phone: the dates above the position, the Open button under the summary, on the right */
+@media (max-width: 640px) {
+  .timeline-entry {
+    grid-template-columns: minmax(0, 1fr);
+    padding-inline: 12px;
+  }
+
+  .timeline-entry > [aria-haspopup="dialog"] {
+    justify-self: end;
+    margin-top: 8px;
+  }
+}

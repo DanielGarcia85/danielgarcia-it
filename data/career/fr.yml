@@ -248,7 +248,9 @@ education:
     started: "2023-09"
     completed: "2026-09"
     mention: "Temps partiel, en parallèle de mon emploi"
-    grade: "Travail de Bachelor 5,7/6 ; Projet sur mandat 5,9/6"
+    grade: |-
+      Travail de Bachelor 5,7/6\
+      Projet sur mandat 5,9/6
     summary: "Bachelor en informatique de gestion : développement, architecture, intégration et industrialisation des services, données, gestion de projet."
     description: "J’ai suivi ce Bachelor à temps partiel, en parallèle de mon emploi. La formation porte sur les systèmes d’information, la gestion et la communication, et les technologies informatiques : analyser, concevoir, mettre en œuvre, intégrer et exploiter le système d’information d’une organisation, en collaboration avec le client. J’y ai mené plusieurs projets de l’analyse jusqu’à la mise en production, seul ou en équipe, dont un mandat réel pour un cabinet de cardiologie et mon Travail de Bachelor, Ge-Trouve."
     highlights:
@@ -340,7 +342,9 @@ education:
     started: "2006-09"
     completed: "2008-06"
     mention: "Plein temps"
-    grade: "Moyenne générale 5,0/6, mention Bien"
+    grade: |-
+      Moyenne générale 5,0/6\
+      Mention Bien
     summary: "Formation d’informaticien de gestion ES : systèmes d’information, bases de données, génie logiciel, programmation, réseaux."
     description: "Formation à plein temps de deux ans, reconnue à hauteur de 60 crédits ECTS dans mon Bachelor à la HEG Genève. Elle couvre l’analyse et la conception de systèmes d’information, les bases de données, le génie logiciel, l’algorithmique et la programmation procédurale, modulaire et orientée objet, les systèmes d’exploitation, les télécommunications et réseaux, ainsi que la gestion de projet et la gestion d’entreprise. Mon travail de diplôme était un stage chez New Access, éditeur de logiciels bancaires, en C# sur .NET avec SQL Server."
     highlights:

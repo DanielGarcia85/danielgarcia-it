@@ -248,7 +248,9 @@ education:
     started: "2023-09"
     completed: "2026-09"
     mention: "Part-time, alongside my job"
-    grade: "Bachelor thesis 5.7/6; client project 5.9/6"
+    grade: |-
+      Bachelor thesis 5.7/6\
+      Client project 5.9/6
     summary: "Bachelor in business information technology: development, architecture, service integration and industrialisation, data, project management."
     description: "I completed this Bachelor part-time, alongside my job. The programme covers information systems, management and communication, and information technologies: analysing, designing, implementing, integrating and operating an organisation’s information system, in collaboration with the client. I delivered several projects from analysis through to production, on my own or in a team, including a real client project for a cardiology practice and my Bachelor thesis, Ge-Trouve."
     highlights:
@@ -340,7 +342,9 @@ education:
     started: "2006-09"
     completed: "2008-06"
     mention: "Full-time"
-    grade: "Overall average 5.0/6, grade Good"
+    grade: |-
+      Overall average 5.0/6\
+      Grade Good
     summary: "Business IT diploma (ES): information systems, databases, software engineering, programming, networks."
     description: "Two-year full-time programme, recognised for 60 ECTS credits in my Bachelor at HEG Geneva. It covers the analysis and design of information systems, databases, software engineering, algorithms and procedural, modular and object-oriented programming, operating systems, telecommunications and networks, as well as project management and business management. My diploma work was an internship at New Access, a banking software publisher, in C# on .NET with SQL Server."
     highlights:

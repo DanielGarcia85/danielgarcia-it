@@ -32,9 +32,9 @@
   margin: 0;
 }
 
-/* Name of the project, in the accent, on the card as on its large card */
+/* Name of the project or of the career entry, in the accent, on the card as on its large card */
 .card > h3,
-.large-card-head h3 {
+.large-card-head :is(h3, h4) {
   color: var(--accent);
 }
 
@@ -140,7 +140,7 @@
   margin: 0 0 14px;
 }
 
-/* Large card: a native modal dialog, closed with Escape, the cross or its Close button */
+/* Large card: a native modal dialog, closed with Escape, the cross or a click around it */
 dialog {
   width: min(1000px, 100% - 2 * var(--gutter));
   max-height: calc(100% - 48px);
@@ -171,7 +171,7 @@ dialog::backdrop {
   border-bottom: 1px solid var(--line);
 }
 
-.large-card-head h3 {
+.large-card-head :is(h3, h4) {
   margin: 0;
   font-size: clamp(1.75rem, 3vw, 2.5rem);
 }
@@ -214,8 +214,12 @@ dialog::backdrop {
   margin: 0;
 }
 
-/* Titles of the large card (Highlights, Skills): accent, with a rule across the column */
-.large-card-body h4 {
+/*
+  Titles of the large card (Overview, Highlights, Skills): accent, with a rule
+  across the column. h4 in a project, h5 in a career entry, one level under
+  its name.
+*/
+.large-card-body :is(h4, h5) {
   margin: 28px 0 12px;
   padding-bottom: 6px;
   border-bottom: 2px solid var(--accent-fill);
@@ -224,7 +228,7 @@ dialog::backdrop {
 }
 
 /* The first title of the text: its rule at the level of the rule of the first fact */
-.large-card-body > div > h4:first-child {
+.large-card-body > div > :is(h4, h5):first-child {
   margin-top: 5px;
 }
 
@@ -239,6 +243,11 @@ dialog::backdrop {
 
 .highlights li::marker {
   color: var(--accent);
+}
+
+/* The skills of a career entry, under its highlights: they can be many */
+.large-card-body > div > .tags {
+  margin: 0;
 }
 
 /* markdownify puts each highlight in a paragraph */
@@ -270,6 +279,12 @@ dialog::backdrop {
 
 .large-card-body aside h4 {
   font-size: 1rem;
+}
+
+/* Documents available on request, under the facts of a career entry */
+.documents {
+  color: var(--muted);
+  font-size: 0.9375rem;
 }
 
 /* Code, Site, Download: filled buttons across the column */

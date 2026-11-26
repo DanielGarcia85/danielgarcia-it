@@ -66,10 +66,12 @@ allProjectsUrl: "/en/projects/"
 # Career section of the home page
 career: "Career"
 experience: "Professional experience"
+period: "Period"
 present: "present"
 tasks: "Tasks"
 education: "Education"
 certifications: "Certifications"
+obtained: "Obtained"
 training: "See the training"
 languages: "Languages"
 

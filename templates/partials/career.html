@@ -2,142 +2,212 @@
   templates/partials/career.html
   danielgarcia.it — Career section of the home page, in both languages
   ───────────────────────────────────────────────────────────────────────────
-  Included by content/index.html and content/en/index.html. One entry per
+  Included by content/index.html and content/en/index.html. One line per
   position, per degree and per certification of data/career/<lang>.yml, most
-  recent first, each with a dialog of its details. The name of the referee is
-  never shown.
+  recent first: the dates, the position in bold, the employer, the summary
+  and an Open button. A click on the line opens its large card (a dialog,
+  web/dialogs.js), in the style of the projects: the description, the tasks
+  or the highlights and the skills on the left, the facts on the right. The
+  name of the referee is never shown. Style: web/_career.scss and
+  web/_cards.scss.
 !}
 {#let career=cdi:career.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
 <section id="career" aria-labelledby="career-title">
   <h2 id="career-title">{t.career}</h2>
   <h3 id="experience">{t.experience}</h3>
-  {#for experience in career.experience}
-    <article aria-labelledby="experience-{experience_count}">
-      <h4 id="experience-{experience_count}">{experience.role}</h4>
-      <p>{experience.startedLabel} – {#if experience.current}{t.present}{#else}{experience.endedLabel}{/if} · {experience.employer}</p>
-      <p>{experience.summary}</p>
-      <button type="button" aria-haspopup="dialog" aria-controls="details-experience-{experience_count}">{t.open}</button>
-      <dialog id="details-experience-{experience_count}" aria-labelledby="details-title-experience-{experience_count}">
-        <h4 id="details-title-experience-{experience_count}">{experience.role}</h4>
-        <p>{experience.startedLabel} – {#if experience.current}{t.present}{#else}{experience.endedLabel}{/if} · {experience.employer}, {experience.place}</p>
-        {#if experience.mention}
-          <p>{experience.mention}</p>
-        {/if}
-        {#if experience.description}
-          <p>{experience.description}</p>
-        {/if}
-        {#if experience.tasks}
-          <h5>{t.tasks}</h5>
-          <ul>
-            {#for task in experience.tasks}
-              <li>{task}</li>
-            {/for}
-          </ul>
-        {/if}
-        {#if experience.skills}
-          <h5>{t.skills}</h5>
-          <ul>
-            {#for skill in experience.skills}
-              <li>{skill}</li>
-            {/for}
-          </ul>
-        {/if}
-        {#if experience.documents}
-          <p>{experience.documents}</p>
-        {/if}
-        <form method="dialog">
-          <button>{t.close}</button>
-        </form>
-      </dialog>
-    </article>
-  {/for}
+  <div class="timeline">
+    {#for experience in career.experience}
+      <article class="timeline-entry" aria-labelledby="experience-{experience_count}">
+        <p class="timeline-dates">{experience.startedLabel} – {#if experience.current}{t.present}{#else}{experience.endedLabel}{/if}</p>
+        <div>
+          <h4 id="experience-{experience_count}">{experience.role}</h4>
+          <p class="timeline-place">{experience.employer}</p>
+          <p>{experience.summary}</p>
+        </div>
+        <button class="button" type="button" aria-haspopup="dialog" aria-controls="details-experience-{experience_count}">{t.open}</button>
+        <dialog id="details-experience-{experience_count}" class="large-card" aria-labelledby="details-title-experience-{experience_count}">
+          <div class="large-card-head">
+            <div>
+              <h4 id="details-title-experience-{experience_count}">{experience.role}</h4>
+              <p>{experience.employer}</p>
+            </div>
+            <form method="dialog">
+              <button class="close-button" aria-label="{t.close}" autofocus>{#include partials/icons/close /}</button>
+            </form>
+          </div>
+          <div class="large-card-body">
+            <div>
+              {#if experience.description}
+                <h5>{t.overview}</h5>
+                {experience.description.markdownify}
+              {/if}
+              {#if experience.tasks}
+                <h5>{t.tasks}</h5>
+                <ul class="highlights">
+                  {#for task in experience.tasks}
+                    <li>{task.markdownify}</li>
+                  {/for}
+                </ul>
+              {/if}
+              {#if experience.skills}
+                <h5>{t.skills}</h5>
+                <ul class="tags">
+                  {#for skill in experience.skills}
+                    <li>{skill}</li>
+                  {/for}
+                </ul>
+              {/if}
+            </div>
+            <aside>
+              <dl>
+                <dt>{t.period}</dt>
+                <dd>{experience.startedLabel} – {#if experience.current}{t.present}{#else}{experience.endedLabel}{/if}</dd>
+                <dt>{t.location}</dt>
+                <dd>{experience.place}</dd>
+                {#if experience.mention}
+                  <dt>{t.frame}</dt>
+                  <dd>{experience.mention}</dd>
+                {/if}
+              </dl>
+              {#if experience.documents}
+                <p class="documents">{experience.documents}</p>
+              {/if}
+            </aside>
+          </div>
+        </dialog>
+      </article>
+    {/for}
+  </div>
   <h3 id="education">{t.education}</h3>
-  {#for education in career.education}
-    <article aria-labelledby="education-{education_count}">
-      <h4 id="education-{education_count}">{education.degree}</h4>
-      <p>{#if education.started}{education.startedLabel} – {/if}{education.completedLabel} · {education.institution}</p>
-      <p>{education.summary}</p>
-      <button type="button" aria-haspopup="dialog" aria-controls="details-education-{education_count}">{t.open}</button>
-      <dialog id="details-education-{education_count}" aria-labelledby="details-title-education-{education_count}">
-        <h4 id="details-title-education-{education_count}">{education.degree}</h4>
-        <p>{#if education.started}{education.startedLabel} – {/if}{education.completedLabel} · {education.institution}, {education.place}</p>
-        {#if education.mention}
-          <p>{education.mention}</p>
-        {/if}
-        {#if education.grade}
-          <dl>
-            <dt>{t.grade}</dt>
-            <dd>{education.grade}</dd>
-          </dl>
-        {/if}
-        {#if education.description}
-          <p>{education.description}</p>
-        {/if}
-        {#if education.highlights}
-          <h5>{t.highlights}</h5>
-          <ul>
-            {#for highlight in education.highlights}
-              <li>{highlight}</li>
-            {/for}
-          </ul>
-        {/if}
-        {#if education.skills}
-          <h5>{t.skills}</h5>
-          <ul>
-            {#for skill in education.skills}
-              <li>{skill}</li>
-            {/for}
-          </ul>
-        {/if}
-        {#if education.documents}
-          <p>{education.documents}</p>
-        {/if}
-        <form method="dialog">
-          <button>{t.close}</button>
-        </form>
-      </dialog>
-    </article>
-  {/for}
+  <div class="timeline">
+    {#for education in career.education}
+      <article class="timeline-entry" aria-labelledby="education-{education_count}">
+        <p class="timeline-dates">{#if education.started}{education.startedLabel} – {/if}{education.completedLabel}</p>
+        <div>
+          <h4 id="education-{education_count}">{education.degree}</h4>
+          <p class="timeline-place">{education.institution}</p>
+          <p>{education.summary}</p>
+        </div>
+        <button class="button" type="button" aria-haspopup="dialog" aria-controls="details-education-{education_count}">{t.open}</button>
+        <dialog id="details-education-{education_count}" class="large-card" aria-labelledby="details-title-education-{education_count}">
+          <div class="large-card-head">
+            <div>
+              <h4 id="details-title-education-{education_count}">{education.degree}</h4>
+              <p>{education.institution}</p>
+            </div>
+            <form method="dialog">
+              <button class="close-button" aria-label="{t.close}" autofocus>{#include partials/icons/close /}</button>
+            </form>
+          </div>
+          <div class="large-card-body">
+            <div>
+              {#if education.description}
+                <h5>{t.overview}</h5>
+                {education.description.markdownify}
+              {/if}
+              {#if education.highlights}
+                <h5>{t.highlights}</h5>
+                <ul class="highlights">
+                  {#for highlight in education.highlights}
+                    <li>{highlight.markdownify}</li>
+                  {/for}
+                </ul>
+              {/if}
+              {#if education.skills}
+                <h5>{t.skills}</h5>
+                <ul class="tags">
+                  {#for skill in education.skills}
+                    <li>{skill}</li>
+                  {/for}
+                </ul>
+              {/if}
+            </div>
+            <aside>
+              <dl>
+                <dt>{t.period}</dt>
+                <dd>{#if education.started}{education.startedLabel} – {/if}{education.completedLabel}</dd>
+                <dt>{t.location}</dt>
+                <dd>{education.place}</dd>
+                {#if education.mention}
+                  <dt>{t.frame}</dt>
+                  <dd>{education.mention}</dd>
+                {/if}
+                {#if education.grade}
+                  <dt>{t.grade}</dt>
+                  <dd>{education.grade.markdownify}</dd>
+                {/if}
+              </dl>
+              {#if education.documents}
+                <p class="documents">{education.documents}</p>
+              {/if}
+            </aside>
+          </div>
+        </dialog>
+      </article>
+    {/for}
+  </div>
   <h3 id="certifications">{t.certifications}</h3>
-  {#for certification in career.certifications}
-    <article aria-labelledby="certification-{certification_count}">
-      <h4 id="certification-{certification_count}">{certification.title}</h4>
-      <p>{certification.obtainedLabel} · {certification.issuer}</p>
-      <p>{certification.summary}</p>
-      <button type="button" aria-haspopup="dialog" aria-controls="details-certification-{certification_count}">{t.open}</button>
-      <dialog id="details-certification-{certification_count}" aria-labelledby="details-title-certification-{certification_count}">
-        <h4 id="details-title-certification-{certification_count}">{certification.title}</h4>
-        <p>{certification.obtainedLabel} · {certification.issuer}</p>
-        {#if certification.description}
-          <p>{certification.description}</p>
-        {/if}
-        {#if certification.highlights}
-          <h5>{t.highlights}</h5>
-          <ul>
-            {#for highlight in certification.highlights}
-              <li>{highlight}</li>
-            {/for}
-          </ul>
-        {/if}
-        {#if certification.skills}
-          <h5>{t.skills}</h5>
-          <ul>
-            {#for skill in certification.skills}
-              <li>{skill}</li>
-            {/for}
-          </ul>
-        {/if}
-        {#if certification.site}
-          <p><a href="{certification.site}" target="_blank" rel="noopener">{#include partials/icons/globe /} {t.training}{#include partials/new-tab /}</a></p>
-        {/if}
-        {#if certification.documents}
-          <p>{certification.documents}</p>
-        {/if}
-        <form method="dialog">
-          <button>{t.close}</button>
-        </form>
-      </dialog>
-    </article>
-  {/for}
+  <div class="timeline">
+    {#for certification in career.certifications}
+      <article class="timeline-entry" aria-labelledby="certification-{certification_count}">
+        <p class="timeline-dates">{certification.obtainedLabel}</p>
+        <div>
+          <h4 id="certification-{certification_count}">{certification.title}</h4>
+          <p class="timeline-place">{certification.issuer}</p>
+          <p>{certification.summary}</p>
+        </div>
+        <button class="button" type="button" aria-haspopup="dialog" aria-controls="details-certification-{certification_count}">{t.open}</button>
+        <dialog id="details-certification-{certification_count}" class="large-card" aria-labelledby="details-title-certification-{certification_count}">
+          <div class="large-card-head">
+            <div>
+              <h4 id="details-title-certification-{certification_count}">{certification.title}</h4>
+              <p>{certification.issuer}</p>
+            </div>
+            <form method="dialog">
+              <button class="close-button" aria-label="{t.close}" autofocus>{#include partials/icons/close /}</button>
+            </form>
+          </div>
+          <div class="large-card-body">
+            <div>
+              {#if certification.description}
+                <h5>{t.overview}</h5>
+                {certification.description.markdownify}
+              {/if}
+              {#if certification.highlights}
+                <h5>{t.highlights}</h5>
+                <ul class="highlights">
+                  {#for highlight in certification.highlights}
+                    <li>{highlight.markdownify}</li>
+                  {/for}
+                </ul>
+              {/if}
+              {#if certification.skills}
+                <h5>{t.skills}</h5>
+                <ul class="tags">
+                  {#for skill in certification.skills}
+                    <li>{skill}</li>
+                  {/for}
+                </ul>
+              {/if}
+            </div>
+            <aside>
+              <dl>
+                <dt>{t.obtained}</dt>
+                <dd>{certification.obtainedLabel}</dd>
+              </dl>
+              {#if certification.documents}
+                <p class="documents">{certification.documents}</p>
+              {/if}
+              {#if certification.site}
+                <ul class="button-list">
+                  <li><a class="button button-primary" href="{certification.site}" target="_blank" rel="noopener">{#include partials/icons/globe /} {t.training}{#include partials/new-tab /}</a></li>
+                </ul>
+              {/if}
+            </aside>
+          </div>
+        </dialog>
+      </article>
+    {/for}
+  </div>
 </section>
 {/let}
