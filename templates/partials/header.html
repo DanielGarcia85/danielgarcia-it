@@ -18,6 +18,7 @@
     </div>
     {#include partials/profile-links /}
   </div>
+  <button type="button" id="menu-button" aria-expanded="false" aria-controls="menu">{t.menu}</button>
   <nav id="menu" aria-label="{t.mainMenu}">
     <ul>
       <li><a href="{t.homeUrl}#profile">{t.profile}</a></li>
@@ -35,9 +36,9 @@
       <a href="{page.data.translation}" hreflang="fr" lang="fr">FR</a><a href="{page.url}" aria-current="page">EN</a>
     {/if}
   </nav>
-    <button type="button" id="theme-switch" hidden
-      data-dark="{t.themeDark}" data-dark-label="{t.themeDarkLabel}"
-      data-light="{t.themeLight}" data-light-label="{t.themeLightLabel}">{t.themeDark}
-    </button>
+  <button type="button" id="theme-switch" hidden
+    data-dark="{t.themeDark}" data-dark-label="{t.themeDarkLabel}"
+    data-light="{t.themeLight}" data-light-label="{t.themeLightLabel}">{t.themeDark}
+  </button>
 </header>
 {/let}

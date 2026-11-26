@@ -9,6 +9,10 @@
 
 (() => {
   const root = document.documentElement;
+
+  // Tells the CSS that JavaScript runs, before the page is drawn: the "Menu"
+  // button of small screens only exists with it (web/_header.scss)
+  root.classList.add("js");
   const systemDark = matchMedia("(prefers-color-scheme: dark)");
 
   let choice = null;

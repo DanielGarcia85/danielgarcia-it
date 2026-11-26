@@ -25,6 +25,9 @@ homeUrl: "/en/"
 about: "About"
 aboutUrl: "/en/about/"
 
+# Button of small screens that opens the menu
+menu: "Menu"
+
 # Label of the button that opens the CV in PDF
 cv: "Resume (PDF)"
 

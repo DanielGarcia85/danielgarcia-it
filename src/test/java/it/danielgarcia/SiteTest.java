@@ -140,6 +140,7 @@ class SiteTest {
                 .body(containsString("href=\"" + home + "#projects\""))
                 .body(containsString("<script src=\"/theme.js\"></script>"))
                 .body(containsString("id=\"theme-switch\""))
+                .body(containsString("id=\"menu-button\""))
                 .body(containsString("<footer>"))
                 .body(containsString("href=\"" + privacy + "\""));
     }

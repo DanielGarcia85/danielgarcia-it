@@ -5,9 +5,11 @@
   Rules of docs/visual-direction.md ("Header"). At the top of the screen,
   68 px high, on one line: the compact profile on the left, then the menu and
   the language switch on the right, which never move. The compact profile
-  gives up its title, then its buttons, when the room gets short.
-  Markup: templates/partials/header.html. Behavior: web/header.js (compact
-  profile) and web/menu.js (section being read).
+  gives up its title, then its buttons, when the room gets short; under
+  910 px, the menu folds into a "Menu" button. Markup:
+  templates/partials/header.html. Behavior: web/header.js (compact profile),
+  web/menu.js (section being read), web/menu-button.js (the "Menu" button) and
+  public/theme.js (theme button, and the class js on <html>).
 */
 
 /* A link to an anchor, or the focus, never ends up under the header (WCAG 2.4.11) */
@@ -47,9 +49,15 @@ header {
   }
 }
 
+#compact-profile > div {
+  min-width: 0;
+}
+
 #compact-profile p {
   margin: 0;
+  overflow: hidden;
   line-height: 1.2;
+  text-overflow: ellipsis;
 }
 
 #compact-profile p:first-child a {
@@ -163,33 +171,78 @@ header {
   }
 }
 
-/*
-  Until the "Menu" button of small screens: the header may take two lines,
-  so it scrolls with the page instead of covering it.
-*/
+/* "Menu" button: shown only under 910 px, and only when JavaScript runs */
+#menu-button {
+  display: none;
+  width: 4.5rem;
+  padding-block: 2px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+#menu-button:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 910px) {
   header {
+    gap: 12px;
+  }
+
+  .js #menu-button {
+    display: block;
+    margin-left: auto;
+  }
+
+  /* Closed: the entries are hidden. Open: a list under the header, on the right */
+  .js #menu-button[aria-expanded="false"] + #menu {
+    display: none;
+  }
+
+  .js #menu {
+    position: absolute;
+    top: 100%;
+    right: var(--gutter);
+    padding: 12px 18px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+  }
+
+  .js #menu ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Without JavaScript: no button, the entries stay in the header, on two lines */
+  html:not(.js) header {
     position: static;
     flex-wrap: wrap;
     padding-block: 8px;
   }
 
-  #menu ul {
+  html:not(.js) #menu ul {
     flex-wrap: wrap;
     gap: 4px 14px;
   }
-}
 
-/* Low screen or strong zoom: the header scrolls with the page */
-@media (max-width: 910px), (max-height: 500px) {
-  html {
+  html:not(.js) {
     scroll-padding-top: 0;
   }
 }
 
+/* Low screen or strong zoom: the header scrolls with the page */
 @media (max-height: 500px) {
+  html {
+    scroll-padding-top: 0;
+  }
+
+  /* relative, not static: the open menu list stays placed under the header */
   header {
-    position: static;
+    position: relative;
   }
 }
 

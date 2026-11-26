@@ -25,6 +25,9 @@ homeUrl: "/"
 about: "À propos"
 aboutUrl: "/a-propos/"
 
+# Button of small screens that opens the menu
+menu: "Menu"
+
 # Label of the button that opens the CV in PDF
 cv: "CV (PDF)"
 
