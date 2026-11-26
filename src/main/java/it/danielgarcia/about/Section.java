@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * One section of the About page: a title, then paragraphs, a list, or groups of
- * technologies, in that order. A section has at least one of the three.
+ * One section of a page of text (the About page, the privacy page): a title, then
+ * paragraphs, a list, or groups of technologies, in that order. A section has at
+ * least one of the three.
  *
  * @param id         the anchor of the section, in lower case, words joined by hyphens
  * @param title      the title of the section

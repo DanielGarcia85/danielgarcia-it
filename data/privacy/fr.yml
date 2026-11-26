@@ -1,0 +1,49 @@
+# data/privacy/fr.yml
+# danielgarcia.it — French texts of the privacy page
+# ─────────────────────────────────────────────────────────────────────────────
+# Read into the Privacy record. en.yml has exactly the same keys, the same
+# sections in the same order, and the same number of paragraphs in each.
+# Paragraphs accept Markdown (links). Change the date of the last update
+# with every change of the text.
+
+# Date of the last update, shown under the title
+updated: "Dernière mise à jour : 25 novembre 2026"
+
+# Sections of the page, in display order; id is the anchor of the section
+sections:
+  - id: "summary"
+    title: "En bref"
+    paragraphs:
+      - "Ce site présente mon CV et mes projets. Il n’a ni formulaire, ni compte, ni cookie, ni traceur, ni mesure d’audience : vous ne pouvez y laisser aucune donnée. Seul le serveur garde une trace technique des visites, pour fonctionner et se protéger. Le site est hébergé en Suisse, chez Infomaniak, et rien n’est vendu ni transmis."
+
+  - id: "controller"
+    title: "Qui est responsable"
+    paragraphs:
+      - "Le responsable de ce site, c’est moi : Daniel Garcia, à Genève. Pour toute question sur cette page ou sur vos données, écrivez-moi à [contact@danielgarcia.it](mailto:contact@danielgarcia.it)."
+
+  - id: "logs"
+    title: "Ce que le serveur enregistre"
+    paragraphs:
+      - "Comme tout serveur web, le mien note chaque page demandée dans un journal technique : l’adresse IP, la date et l’heure, la page demandée, la page de provenance et le navigateur. Ce journal sert uniquement à faire fonctionner le serveur et à le protéger, pour comprendre une erreur ou repérer un abus. Je n’en tire aucune statistique."
+      - "Il s’efface automatiquement : le serveur n’en garde qu’un volume limité, les lignes les plus anciennes étant remplacées par les plus récentes. Il n’est pas sauvegardé."
+
+  - id: "recipients"
+    title: "Qui reçoit vos données"
+    paragraphs:
+      - "Personne. Le journal reste sur mon serveur, chez Infomaniak, en Suisse. GitHub, qui héberge le code source du site, et les autres services que j’utilise pour l’exploiter ne reçoivent aucune donnée des visiteurs."
+      - "Les liens vers GitHub, LinkedIn ou la HEG mènent à d’autres sites, qui appliquent leurs propres règles dès que vous les suivez."
+
+  - id: "cookies"
+    title: "Cookies et stockage local"
+    paragraphs:
+      - "Le site ne pose aucun cookie, n’utilise aucun traceur et ne demande donc aucun consentement. Seul votre choix de thème, clair ou sombre, est gardé dans le stockage local de votre navigateur, jusqu’à ce que vous l’effaciez. La langue est dans l’adresse de la page : rien n’est gardé pour elle. La police est servie par le site lui-même, sans aucune requête vers Google ou un autre fournisseur."
+
+  - id: "security"
+    title: "Sécurité"
+    paragraphs:
+      - "Tout le site est servi en HTTPS. Il n’a ni base de données ni compte, donc aucune donnée de visiteur à protéger sur le site lui-même. Le journal reste sur le serveur, dont l’accès est réservé à son administrateur."
+
+  - id: "email"
+    title: "Si vous m’écrivez"
+    paragraphs:
+      - "Votre adresse e-mail et votre message restent dans ma messagerie, chez Infomaniak, uniquement pour vous répondre. Je les supprime sur simple demande."
