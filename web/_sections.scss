@@ -3,8 +3,9 @@
   danielgarcia.it — The sections of the pages and the profile of the home page
   ───────────────────────────────────────────────────────────────────────────
   Rules of docs/visual-direction.md ("Home page", "Style"). Section titles
-  start with ## in the mono font, as a Markdown heading: decoration only,
-  hidden from screen readers (the text after the slash is what they read).
+  start with # in the mono font, as a Markdown heading: decoration only,
+  hidden from screen readers (the text after the slash is what they read),
+  and stand on a thin rule across the content.
   The profile is a band across the whole width, with a horizontal gradient
   towards the dark petrol halo on the right, where the console will go.
 */
@@ -22,26 +23,30 @@ main > h1 + section {
   padding-top: 16px;
 }
 
+section > h2 {
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
 section > h2::before {
-  content: "## " / "";
+  content: "# " / "";
   color: var(--accent);
   font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
 }
 
 /*
   The three parts of the career (Professional experience, Education,
-  Certifications): larger than a card title, with a ### in the accent, one
-  level under the ## of the section, hidden from screen readers.
+  Certifications): a band on the surface color with a thick accent rule on
+  the left, like the facts of a large card, the title in the accent.
 */
 #career > h3 {
   margin: 0 0 16px;
-  font-size: 1.75rem;
-}
-
-#career > h3::before {
-  content: "### " / "";
+  padding: 10px 16px;
+  background: var(--surface);
+  border-left: 6px solid var(--accent-fill);
   color: var(--accent);
-  font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
+  font-size: 1.75rem;
 }
 
 /*
