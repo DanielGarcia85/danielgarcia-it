@@ -141,6 +141,7 @@ class SiteTest {
                 .body(containsString("<script src=\"/theme.js\"></script>"))
                 .body(containsString("id=\"theme-switch\""))
                 .body(containsString("id=\"menu-button\""))
+                .body(containsString("href=\"" + home + "#certifications\""))
                 .body(containsString("<footer>"))
                 .body(containsString("href=\"" + privacy + "\""))
                 .body(containsString("target=\"_blank\" rel=\"noopener\">"))

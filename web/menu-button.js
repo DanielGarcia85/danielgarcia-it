@@ -1,8 +1,9 @@
 // web/menu-button.js
 // danielgarcia.it — The "Menu" button of small screens (under 910 px), which
 // opens the entries of the menu as a list under the header. Its state lives in
-// aria-expanded, which the CSS reads. The list closes after a choice, with
-// Escape (the focus goes back to the button) or with a click outside.
+// aria-expanded, which the CSS reads. The list closes after a choice (not
+// after a click on Career, which opens its submenu), with Escape (the focus
+// goes back to the button) or with a click outside.
 
 const menuButton = document.getElementById("menu-button");
 const menu = document.getElementById("menu");
@@ -14,7 +15,7 @@ if (menuButton && menu) {
   menuButton.addEventListener("click", () => setOpen(!isOpen()));
 
   menu.addEventListener("click", (event) => {
-    if (event.target.closest("a")) {
+    if (event.target.closest("a:not([aria-expanded])")) {
       setOpen(false);
     }
   });

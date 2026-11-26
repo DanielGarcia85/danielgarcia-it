@@ -6,10 +6,11 @@
   68 px high, on one line: the compact profile on the left, then the menu and
   the language switch on the right, which never move. The compact profile
   gives up its title, then its buttons, when the room gets short; under
-  910 px, the menu folds into a "Menu" button. Markup:
-  templates/partials/header.html. Behavior: web/header.js (compact profile),
-  web/menu.js (section being read), web/menu-button.js (the "Menu" button) and
-  public/theme.js (theme button, and the class js on <html>).
+  910 px, the menu folds into a "Menu" button. Career opens a submenu of its
+  three parts. Markup: templates/partials/header.html. Behavior:
+  web/header.js (compact profile), web/menu.js (section being read),
+  web/menu-button.js (the "Menu" button), web/submenu.js (the submenu of
+  Career) and public/theme.js (theme button, and the class js on <html>).
 */
 
 /* A link to an anchor, or the focus, never ends up under the header (WCAG 2.4.11) */
@@ -117,6 +118,57 @@ header {
   font-weight: 700;
 }
 
+/* Career and its submenu: closed by default, also before the script runs and without it */
+.submenu {
+  position: relative;
+}
+
+/* A small arrow after Career, turned up when the submenu is open */
+.submenu > a[aria-expanded]::after {
+  content: "";
+  display: inline-block;
+  margin-left: 6px;
+  border: 5px solid transparent;
+  border-top-color: currentColor;
+  border-bottom-width: 0;
+  vertical-align: middle;
+}
+
+.submenu > a[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+#menu #career-menu {
+  display: none;
+}
+
+/* Open: a panel just under the header, with the rule of the cards at the top */
+#menu .submenu > [aria-expanded="true"] + #career-menu {
+  position: absolute;
+  top: calc(100% + 19px);
+  left: -16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: max-content;
+  padding: 6px 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent-fill);
+  box-shadow: 0 12px 24px -12px var(--shadow);
+}
+
+#menu #career-menu a {
+  display: block;
+  padding: 8px 16px;
+  border-bottom: 0;
+}
+
+#menu #career-menu a:hover {
+  background: var(--surface);
+  text-decoration: underline;
+}
+
 /* Language switch: two buttons of fixed width in one frame, the current one filled */
 .language-switch {
   display: flex;
@@ -201,6 +253,21 @@ header {
   .js #menu ul {
     flex-direction: column;
     gap: 10px;
+  }
+
+  /* In the list of the Menu button, the submenu opens in place, indented under Career */
+  .js #menu .submenu > [aria-expanded="true"] + #career-menu {
+    position: static;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 0 0 0 14px;
+    border: 0;
+    border-left: 2px solid var(--accent-fill);
+    box-shadow: none;
+  }
+
+  .js #menu #career-menu a {
+    padding: 0;
   }
 
   /* Without JavaScript: no button, the entries stay in the header, on two lines */

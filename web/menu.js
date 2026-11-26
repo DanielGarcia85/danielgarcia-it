@@ -1,10 +1,11 @@
 // web/menu.js
 // danielgarcia.it — Marks the menu entry of the section being read with
 // aria-current="location" (home page only). An entry that was clicked stays
-// marked as long as its section is on screen, even a short one.
+// marked as long as its section is on screen, even a short one. Only the
+// entries of the first level: Career stays marked in all three of its parts.
 
 const sections = new Map();
-for (const link of document.querySelectorAll("#menu a")) {
+for (const link of document.querySelectorAll("#menu > ul > li > a")) {
   const address = new URL(link.href);
   const section = document.getElementById(address.hash.slice(1));
   if (address.pathname === location.pathname && section) {

@@ -5,8 +5,9 @@
   Included by templates/layouts/page.html. A link that skips to the content,
   then the compact profile (name, title, GitHub, LinkedIn, CV), the menu of
   the sections of the home page, the language switch and the theme button
-  (public/theme.js). Texts come from data/contact/<lang>.yml and
-  data/i18n/<lang>.yml.
+  (public/theme.js). Career opens a submenu of its three parts
+  (web/submenu.js); without JavaScript, it leads to the section. Texts come
+  from data/contact/<lang>.yml and data/i18n/<lang>.yml.
 !}
 {#let contact=cdi:contact.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
 <a class="skip-link" href="#content">{t.skipLink}</a>
@@ -23,7 +24,14 @@
     <ul>
       <li><a href="{t.homeUrl}#profile">{t.profile}</a></li>
       <li><a href="{t.homeUrl}#projects">{t.projects}</a></li>
-      <li><a href="{t.homeUrl}#career">{t.career}</a></li>
+      <li class="submenu">
+        <a href="{t.homeUrl}#career" aria-controls="career-menu">{t.career}</a>
+        <ul id="career-menu">
+          <li><a href="{t.homeUrl}#experience">{t.experience}</a></li>
+          <li><a href="{t.homeUrl}#education">{t.education}</a></li>
+          <li><a href="{t.homeUrl}#certifications">{t.certifications}</a></li>
+        </ul>
+      </li>
       <li><a href="{t.homeUrl}#skills">{t.skills}</a></li>
       <li><a href="{t.homeUrl}#about">{t.about}</a></li>
       <li><a href="{t.homeUrl}#contact">{t.contact}</a></li>

@@ -29,6 +29,22 @@ section > h2::before {
 }
 
 /*
+  The three parts of the career (Professional experience, Education,
+  Certifications): larger than a card title, with a ### in the accent, one
+  level under the ## of the section, hidden from screen readers.
+*/
+#career > h3 {
+  margin: 0 0 16px;
+  font-size: 1.75rem;
+}
+
+#career > h3::before {
+  content: "### " / "";
+  color: var(--accent);
+  font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
+}
+
+/*
   Profile of the home page. The right part of the band (the halo) stays free
   for the console: 512 px at most, 40 % of the screen on smaller ones, so
   that it narrows smoothly with the screen. The gradient starts a little
