@@ -66,5 +66,7 @@ workMode: "Way of working"
 location: "Location"
 nationality: "Nationality"
 
-# Footer: link to the source code of the site
+# Footer: link to the source code of the site, link to the privacy page
 siteSource: "Source code of this site"
+privacy: "Privacy"
+privacyUrl: "/en/privacy/"

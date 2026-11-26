@@ -3,12 +3,16 @@
   danielgarcia.it — Footer shared by every page, in both languages
   ───────────────────────────────────────────────────────────────────────────
   Included by templates/layouts/page.html. About the site itself: a link to
-  its source code; the version in production and its build date come later,
-  with the real data of the site. The address of the repository comes from
-  the front matter of content/index.html, the label from data/i18n/<lang>.yml.
+  its source code and a link to the privacy page; the version in production
+  and its build date come later, with the real data of the site. The address
+  of the repository comes from the front matter of content/index.html, the
+  labels and the address of the privacy page from data/i18n/<lang>.yml.
 !}
 {#let t=cdi:i18n.get(page.data.lang)}
 <footer>
-  <p><a href="{site.data.repository}">{#include partials/icons/github /} {t.siteSource}</a></p>
+  <ul>
+    <li><a href="{site.data.repository}">{#include partials/icons/github /} {t.siteSource}</a></li>
+    <li><a href="{t.privacyUrl}">{t.privacy}</a></li>
+  </ul>
 </footer>
 {/let}

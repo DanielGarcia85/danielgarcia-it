@@ -93,6 +93,21 @@ class SiteTest {
 
     @ParameterizedTest
     @CsvSource({
+            "/confidentialite/, fr",
+            "/en/privacy/,      en"
+    })
+    void privacyPage(String path, String language) {
+        given().get(path).then()
+                .statusCode(200)
+                .body(containsString("<html lang=\"" + language + "\">"))
+                .body(containsString("id=\"summary\""))
+                .body(containsString("id=\"logs\""))
+                .body(containsString("id=\"email\""))
+                .body(containsString("href=\"mailto:"));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
             "/404.html,    fr",
             "/en/404.html, en"
     })
@@ -104,16 +119,18 @@ class SiteTest {
 
     @ParameterizedTest
     @CsvSource({
-            "/,             /",
-            "/projets/,     /",
-            "/404.html,     /",
-            "/a-propos/,    /",
-            "/en/,          /en/",
-            "/en/projects/, /en/",
-            "/en/404.html,  /en/",
-            "/en/about/,    /en/"
+            "/,                 /,    /confidentialite/",
+            "/projets/,         /,    /confidentialite/",
+            "/a-propos/,        /,    /confidentialite/",
+            "/confidentialite/, /,    /confidentialite/",
+            "/404.html,         /,    /confidentialite/",
+            "/en/,              /en/, /en/privacy/",
+            "/en/projects/,     /en/, /en/privacy/",
+            "/en/about/,        /en/, /en/privacy/",
+            "/en/privacy/,      /en/, /en/privacy/",
+            "/en/404.html,      /en/, /en/privacy/"
     })
-    void headerAndFooter(String path, String home) {
+    void headerAndFooter(String path, String home, String privacy) {
         given().get(path).then()
                 .statusCode(200)
                 .body(containsString("<a href=\"#content\">"))
@@ -121,7 +138,8 @@ class SiteTest {
                 .body(containsString("id=\"compact-profile\""))
                 .body(containsString("id=\"menu\""))
                 .body(containsString("href=\"" + home + "#projects\""))
-                .body(containsString("<footer>"));
+                .body(containsString("<footer>"))
+                .body(containsString("href=\"" + privacy + "\""));
     }
 
     @Test

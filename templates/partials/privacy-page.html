@@ -1,0 +1,20 @@
+{!
+  templates/partials/privacy-page.html
+  danielgarcia.it — Privacy page, in both languages
+  ───────────────────────────────────────────────────────────────────────────
+  Included by content/confidentialite/index.html and content/en/privacy/index.html.
+  Every text comes from data/privacy/<lang>.yml: the date of the last update,
+  then each section in the order of the file, with its paragraphs.
+!}
+{#let privacy=cdi:privacy.get(page.data.lang)}
+<h1>{page.title}</h1>
+<p>{privacy.updated}</p>
+{#for section in privacy.sections}
+  <section id="{section.id}" aria-labelledby="{section.id}-title">
+    <h2 id="{section.id}-title">{section.title}</h2>
+    {#for paragraph in section.paragraphs}
+      {paragraph.markdownify}
+    {/for}
+  </section>
+{/for}
+{/let}
