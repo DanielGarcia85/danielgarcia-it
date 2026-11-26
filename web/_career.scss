@@ -22,7 +22,7 @@
 
 .timeline-entry {
   display: grid;
-  grid-template-columns: 11rem minmax(0, 1fr) auto;
+  grid-template-columns: 12.5rem minmax(0, 1fr) auto;
   gap: 4px 24px;
   align-items: start;
   padding: 18px 20px;
@@ -42,11 +42,12 @@
   box-shadow: inset 4px 0 0 var(--accent-fill);
 }
 
-/* Same width for every digit, so that the dates line up from one line to the next */
+/* Same width for every digit, so that the dates line up from one line to the next; always on one line */
 .timeline-dates {
   color: var(--accent);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 /* The position, the degree or the certification: bold, at the size of the text (not the h4 of its large card) */
