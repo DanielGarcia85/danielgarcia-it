@@ -28,9 +28,9 @@
   </dl>
   <ul>
     <li><a href="mailto:{contact.email}">{#include partials/icons/email /} {contact.email}</a></li>
-    <li><a href="{contact.linkedin}">{#include partials/icons/linkedin /} LinkedIn</a></li>
-    <li><a href="{contact.github}">{#include partials/icons/github /} GitHub</a></li>
-    <li><a href="{contact.cv}" type="application/pdf">{#include partials/icons/document /} {t.cv}</a></li>
+    <li><a href="{contact.linkedin}" target="_blank" rel="noopener">{#include partials/icons/linkedin /} LinkedIn{#include partials/new-tab /}</a></li>
+    <li><a href="{contact.github}" target="_blank" rel="noopener">{#include partials/icons/github /} GitHub{#include partials/new-tab /}</a></li>
+    <li><a href="{contact.cv}" type="application/pdf" target="_blank" rel="noopener">{#include partials/icons/document /} {t.cv}{#include partials/new-tab /}</a></li>
   </ul>
 </section>
 {/let}

@@ -11,7 +11,7 @@
 {#let t=cdi:i18n.get(page.data.lang)}
 <footer>
   <ul>
-    <li><a href="{site.data.repository}">{#include partials/icons/github /} {t.siteSource}</a></li>
+    <li><a href="{site.data.repository}" target="_blank" rel="noopener">{#include partials/icons/github /} {t.siteSource}{#include partials/new-tab /}</a></li>
     <li><a href="{t.privacyUrl}">{t.privacy}</a></li>
   </ul>
 </footer>

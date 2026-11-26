@@ -31,6 +31,9 @@ menu: "Menu"
 # Label of the button that opens the CV in PDF
 cv: "Resume (PDF)"
 
+# Read by screen readers after a link that opens in a new tab
+newTab: "(new tab)"
+
 # Title of the projects section of the home page
 projects: "Projects"
 

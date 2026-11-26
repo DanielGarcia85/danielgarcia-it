@@ -1,0 +1,15 @@
+{!
+  templates/partials/new-tab.html
+  danielgarcia.it — Notice of a link that opens in a new tab
+  ───────────────────────────────────────────────────────────────────────────
+  Included at the end of the text of every link to another site, which opens
+  in a new tab (target="_blank"): the portfolio stays open while the visitor
+  looks at GitHub, LinkedIn or a demo. Nothing is shown on the screen; screen
+  readers read "(new tab)", so that nobody looks in vain for the Back button.
+  Links written in Markdown in the data get the same treatment from
+  web/external-links.js, which copies this notice; download links stay in the
+  same tab.
+!}
+{#let t=cdi:i18n.get(page.data.lang)}
+<span class="visually-hidden"> {t.newTab}</span>
+{/let}

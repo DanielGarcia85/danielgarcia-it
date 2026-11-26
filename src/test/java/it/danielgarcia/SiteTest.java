@@ -142,7 +142,9 @@ class SiteTest {
                 .body(containsString("id=\"theme-switch\""))
                 .body(containsString("id=\"menu-button\""))
                 .body(containsString("<footer>"))
-                .body(containsString("href=\"" + privacy + "\""));
+                .body(containsString("href=\"" + privacy + "\""))
+                .body(containsString("target=\"_blank\" rel=\"noopener\">"))
+                .body(containsString("class=\"visually-hidden\""));
     }
 
     @Test

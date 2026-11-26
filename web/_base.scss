@@ -102,6 +102,16 @@ a {
   outline-offset: 3px;
 }
 
+/* Read by screen readers only: hidden on the screen, kept in the page */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
 /* "Skip to content": the first element of the page, shown only with the focus */
 .skip-link {
   position: absolute;

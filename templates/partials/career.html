@@ -128,7 +128,7 @@
           </ul>
         {/if}
         {#if certification.site}
-          <p><a href="{certification.site}">{#include partials/icons/globe /} {t.training}</a></p>
+          <p><a href="{certification.site}" target="_blank" rel="noopener">{#include partials/icons/globe /} {t.training}{#include partials/new-tab /}</a></p>
         {/if}
         {#if certification.documents}
           <p>{certification.documents}</p>
