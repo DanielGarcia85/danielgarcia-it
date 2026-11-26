@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>danielgarcia.it: how the pages are built from the data</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6366f1"/></marker><filter id="sh" x="-5%" y="-5%" width="110%" height="120%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.12"/></filter><linearGradient id="top" x1="0" x2="1"><stop offset="0" stop-color="#1e40af"/><stop offset="0.5" stop-color="#7c3aed"/><stop offset="1" stop-color="#be185d"/></linearGradient></defs>
+<rect width="1400" height="1000" fill="#f8fafc"/>
+<rect x="0" y="0" width="1400" height="7" fill="url(#top)"/>
+<text x="40" y="48" font-size="24" font-weight="bold" fill="#0f172a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Overview: how the pages are built from the data</text>
+<text x="40" y="74" font-size="14" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Everything happens at build time. Details in two other diagrams: yaml-to-java-records.svg and page-rendering-and-i18n.svg.</text>
+<rect x="40" y="136" width="292" height="424" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#sh)"/>
+<path d="M40,148 a12,12 0 0 1 12,-12 h268 a12,12 0 0 1 12,12 v21 h-292 z" fill="#1d4ed8"/>
+<text x="54" y="162" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">data/</text>
+<text x="54" y="187" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">texts, one YAML file per language</text>
+<text x="54" y="222" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">career/fr.yml, en.yml</text>
+<text x="54" y="243" font-size="12" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">profile, experience, projects…</text>
+<text x="54" y="264" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">contact/fr.yml, en.yml</text>
+<text x="54" y="285" font-size="12" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">title, positions sought, e-mail…</text>
+<text x="54" y="306" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">about/fr.yml, en.yml</text>
+<text x="54" y="327" font-size="12" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">home panel, About page</text>
+<text x="54" y="348" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">privacy/fr.yml, en.yml</text>
+<text x="54" y="369" font-size="12" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">privacy page</text>
+<text x="54" y="390" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">i18n/fr.yml, en.yml</text>
+<text x="54" y="411" font-size="12" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">labels and addresses of the interface</text>
+<rect x="54" y="446" width="264" height="100" rx="8" fill="#ffffff" stroke="#bfdbfe"/>
+<text x="66" y="468" font-size="12" font-weight="bold" fill="#1e3a8a" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Same keys, same entries, same order</text>
+<text x="66" y="486" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">in both languages. Paragraphs accept</text>
+<text x="66" y="504" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Markdown (links, code), rendered by</text>
+<text x="66" y="522" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">markdownify.</text>
+<rect x="376" y="136" width="292" height="424" rx="12" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2" filter="url(#sh)"/>
+<path d="M376,148 a12,12 0 0 1 12,-12 h268 a12,12 0 0 1 12,12 v21 h-292 z" fill="#6d28d9"/>
+<text x="390" y="162" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Java records</text>
+<text x="390" y="187" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">@DataMapping, checked at build time</text>
+<text x="390" y="222" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">Career, CareerContent, Project…</text>
+<text x="390" y="244" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">Contact, ContactContent</text>
+<text x="390" y="266" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">About, AboutContent, Panel,</text>
+<text x="390" y="288" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">Section, TechnologyGroup…</text>
+<text x="390" y="310" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">Privacy, PrivacyContent</text>
+<rect x="390" y="346" width="264" height="96" rx="8" fill="#ffffff" stroke="#ddd6fe"/>
+<text x="402" y="368" font-size="12" font-weight="bold" fill="#4c1d95" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">The constructors check every entry:</text>
+<text x="402" y="386" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">a missing key, a date in the wrong</text>
+<text x="402" y="404" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">order, an address without https://</text>
+<text x="402" y="422" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">make the build fail.</text>
+<text x="390" y="472" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">One record per language, a CDI</text>
+<text x="390" y="493" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">bean read by the templates.</text>
+<text x="390" y="514" font-size="12.5" font-weight="bold" fill="#4c1d95" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">How: yaml-to-java-records.svg.</text>
+<rect x="712" y="136" width="292" height="424" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2" filter="url(#sh)"/>
+<path d="M712,148 a12,12 0 0 1 12,-12 h268 a12,12 0 0 1 12,12 v21 h-292 z" fill="#15803d"/>
+<text x="726" y="162" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">templates/partials/</text>
+<text x="726" y="187" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">Qute templates, one per part of a page</text>
+<text x="726" y="222" font-size="12.5" font-weight="bold" fill="#14532d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Home page sections</text>
+<text x="726" y="243" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">profile, projects, career, skills,</text>
+<text x="726" y="264" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">about-panel, contact</text>
+<text x="726" y="285" font-size="12.5" font-weight="bold" fill="#14532d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Other pages</text>
+<text x="726" y="306" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">projects-page, about-page,</text>
+<text x="726" y="327" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">privacy-page</text>
+<text x="726" y="348" font-size="12.5" font-weight="bold" fill="#14532d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Shared parts</text>
+<text x="726" y="369" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">header, footer, profile-links,</text>
+<text x="726" y="390" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">project-card, icons/</text>
+<rect x="726" y="436" width="264" height="94" rx="8" fill="#ffffff" stroke="#bbf7d0"/>
+<text x="738" y="458" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Each partial reads its data in the</text>
+<text x="738" y="477" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">language of the page, then loops</text>
+<text x="738" y="496" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">on the entries.</text>
+<text x="738" y="515" font-size="12" font-weight="bold" fill="#14532d" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">How: page-rendering-and-i18n.svg.</text>
+<rect x="1048" y="136" width="292" height="424" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2" filter="url(#sh)"/>
+<path d="M1048,148 a12,12 0 0 1 12,-12 h268 a12,12 0 0 1 12,12 v21 h-292 z" fill="#c2410c"/>
+<text x="1062" y="162" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">content/</text>
+<text x="1062" y="187" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the pages: front matter, then includes</text>
+<text x="1062" y="222" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">index.html</text>
+<text x="1062" y="243" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">projets/index.html</text>
+<text x="1062" y="264" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">a-propos/index.html</text>
+<text x="1062" y="285" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">confidentialite/index.html</text>
+<text x="1062" y="306" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">404.html</text>
+<text x="1062" y="327" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">en/…  the same pages in English</text>
+<rect x="1062" y="364" width="264" height="182" rx="8" fill="#ffffff" stroke="#fed7aa"/>
+<text x="1074" y="386" font-size="12" font-weight="bold" fill="#9a3412" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Front matter</text>
+<text x="1074" y="405" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">title, description, lang (fr or en),</text>
+<text x="1074" y="424" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">translation (the same page in</text>
+<text x="1074" y="443" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">the other language)</text>
+<text x="1074" y="462" font-size="12" font-weight="bold" fill="#9a3412" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Body: only includes</text>
+<text x="1074" y="481" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">The home page also holds the</text>
+<text x="1074" y="500" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">site settings: repository: …</text>
+<text x="1074" y="519" font-size="12" font-weight="bold" fill="#9a3412" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Example: page-rendering-and-i18n.svg</text>
+<path d="M334,336 L374,336" fill="none" stroke="#6366f1" stroke-width="2.2" marker-end="url(#arr)"/>
+<text x="354" y="326" font-size="11" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">read</text>
+<path d="M670,336 L710,336" fill="none" stroke="#6366f1" stroke-width="2.2" marker-end="url(#arr)"/>
+<text x="690" y="326" font-size="11" font-weight="normal" fill="#334155" font-family="Consolas, Menlo, monospace" text-anchor="middle">cdi:</text>
+<path d="M1046,336 L1006,336" fill="none" stroke="#6366f1" stroke-width="2.2" marker-end="url(#arr)"/>
+<text x="1026" y="326" font-size="11" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">include</text>
+<path d="M186,134 C186,92 858,92 858,120" fill="none" stroke="#6366f1" stroke-width="2.2" stroke-dasharray="6 5"/>
+<path d="M858,119 L858,133" fill="none" stroke="#6366f1" stroke-width="2.2" marker-end="url(#arr)"/>
+<text x="522" y="96" font-size="12" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle" font-style="italic">i18n: read without a record, straight into the partials</text>
+<rect x="40" y="618" width="292" height="210" rx="12" fill="#f9fafb" stroke="#9ca3af" stroke-width="2" filter="url(#sh)"/>
+<path d="M40,630 a12,12 0 0 1 12,-12 h268 a12,12 0 0 1 12,12 v21 h-292 z" fill="#4b5563"/>
+<text x="54" y="644" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">web/</text>
+<text x="54" y="669" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">hand-written JavaScript, no Node</text>
+<text x="54" y="704" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">dialogs.js</text>
+<text x="54" y="723" font-size="12" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">opens the large card of a card</text>
+<text x="54" y="742" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">header.js</text>
+<text x="54" y="761" font-size="12" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">compact profile once the profile is gone</text>
+<text x="54" y="780" font-size="13" font-weight="bold" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">menu.js</text>
+<text x="54" y="799" font-size="12" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">marks the section being read</text>
+<rect x="376" y="618" width="628" height="210" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2" filter="url(#sh)"/>
+<path d="M376,630 a12,12 0 0 1 12,-12 h604 a12,12 0 0 1 12,12 v21 h-628 z" fill="#4338ca"/>
+<text x="390" y="644" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">templates/layouts/page.html</text>
+<text x="390" y="669" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the one skeleton around every page</text>
+<text x="390" y="704" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">&lt;head&gt;: title (page title — name, or name — job title on the home page), description</text>
+<text x="390" y="724" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">{#bundle /}: the scripts of web/, bundled by the Web Bundler (static/bundle/app-&lt;hash&gt;.js)</text>
+<text x="390" y="744" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">{#include partials/header /}: skip link, compact profile, menu, FR | EN</text>
+<text x="390" y="764" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">&lt;main id="content"&gt;{#insert /}&lt;/main&gt;: the body of the page from content/</text>
+<text x="390" y="784" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">{#include partials/footer /}: source code of the site, privacy page</text>
+<text x="390" y="804" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">&lt;html lang="{page.data.lang}"&gt;: French or English for the browser and screen readers</text>
+<rect x="1048" y="618" width="292" height="210" rx="12" fill="#ecfeff" stroke="#06b6d4" stroke-width="2" filter="url(#sh)"/>
+<path d="M1048,630 a12,12 0 0 1 12,-12 h268 a12,12 0 0 1 12,12 v21 h-292 z" fill="#0e7490"/>
+<text x="1062" y="644" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">target/roq/</text>
+<text x="1062" y="669" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the generated site, static HTML</text>
+<text x="1062" y="704" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">index.html, projets/index.html,</text>
+<text x="1062" y="724" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">a-propos/, confidentialite/,</text>
+<text x="1062" y="744" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">en/…, 404.html, cv/*.pdf,</text>
+<text x="1062" y="764" font-size="12" font-weight="normal" fill="#1f2937" font-family="Consolas, Menlo, monospace" text-anchor="start">static/bundle/app-&lt;hash&gt;.js</text>
+<text x="1062" y="784" font-size="12" font-weight="bold" fill="#155e75" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Copied into the Nginx image:</text>
+<text x="1062" y="804" font-size="12" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">no Java on the server.</text>
+<path d="M1194,562 C1194,600 1000,584 940,614" fill="none" stroke="#6366f1" stroke-width="2.2" marker-end="url(#arr)"/>
+<text x="1206" y="584" font-size="12" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">each page is wrapped</text>
+<text x="1206" y="600" font-size="12" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">in the layout</text>
+<path d="M858,562 C858,590 760,580 760,614" fill="none" stroke="#6366f1" stroke-width="2.2" marker-end="url(#arr)"/>
+<text x="770" y="590" font-size="12" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="end">header, footer</text>
+<path d="M334,723 L374,723" fill="none" stroke="#6366f1" stroke-width="2.2" marker-end="url(#arr)"/>
+<path d="M1006,723 L1046,723" fill="none" stroke="#6366f1" stroke-width="2.2" marker-end="url(#arr)"/>
+<text x="1026" y="713" font-size="11" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">render</text>
+<rect x="40" y="878" width="628" height="110" rx="12" fill="#fef2f2" stroke="#ef4444" stroke-width="2" filter="url(#sh)"/>
+<path d="M40,890 a12,12 0 0 1 12,-12 h604 a12,12 0 0 1 12,12 v21 h-628 z" fill="#b91c1c"/>
+<text x="54" y="904" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Data tests</text>
+<text x="54" y="929" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">CareerTest, ContactTest, AboutTest, PrivacyTest</text>
+<text x="54" y="954" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Both languages exist and have the same shape: same entries, same order, same shared details.</text>
+<text x="54" y="973" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Never the wording: a sentence can change without touching a test.</text>
+<rect x="712" y="878" width="628" height="110" rx="12" fill="#fef2f2" stroke="#ef4444" stroke-width="2" filter="url(#sh)"/>
+<path d="M712,890 a12,12 0 0 1 12,-12 h604 a12,12 0 0 1 12,12 v21 h-628 z" fill="#b91c1c"/>
+<text x="726" y="904" font-size="15" font-weight="bold" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">SiteTest</text>
+<text x="726" y="929" font-size="12.5" font-weight="normal" fill="#475569" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start" font-style="italic">the generated pages, served as in production, in both languages</text>
+<text x="726" y="954" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">Sections by their ids, links to the CV and between pages, header and footer on every page,</text>
+<text x="726" y="973" font-size="12.5" font-weight="normal" fill="#1f2937" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">then every internal link of the generated site. A failure blocks the image and the release.</text>
+<path d="M420,562 C420,590 354,580 354,608 L354,874" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arr)"/>
+<path d="M1194,830 L1194,874" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arr)"/>
+<text x="1206" y="856" font-size="12" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">checked by</text>
+<text x="364" y="862" font-size="12" font-weight="normal" fill="#334155" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="start">checked by</text>
+</svg>
