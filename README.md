@@ -20,14 +20,17 @@ image and deployed automatically.
 - `content/` holds the pages: one file per address, French at the root, English under `/en/`.
   Each page gives its title, description, language (`lang`) and the address of its
   translation (`translation`) in its front matter, then only its own content.
-- `templates/layouts/page.html` is the one page skeleton: `<head>`, language switch and
-  `<main>`, written once for every page.
+- `templates/layouts/page.html` is the one page skeleton: `<head>`, header, `<main>` and
+  footer, written once for every page. The header (menu, language switch) and the footer
+  come from `templates/partials/`.
 - `data/i18n/fr.yml` and `data/i18n/en.yml` hold the interface texts, with the same keys.
 
 Diagrams:
 
-- [From the command to the HTML pages](docs/diagrams/build-and-run.svg)
+- [Overview: how the pages are built from the data](docs/diagrams/pages-from-data.svg)
+- [From the YAML data to Java records, then to the templates](docs/diagrams/yaml-to-java-records.svg)
 - [How a page is rendered, and how its language is chosen](docs/diagrams/page-rendering-and-i18n.svg)
+- [From the command to the HTML pages](docs/diagrams/build-and-run.svg)
 - [From a commit to the site in production](docs/diagrams/ci-cd-and-deployment.svg)
 
 ## Run it locally
