@@ -198,3 +198,19 @@ header {
     transition: none;
   }
 }
+
+/* Theme button: names the theme it switches to, fixed width so that nothing moves */
+#theme-switch {
+  width: 5.25rem;
+  padding-block: 2px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+#theme-switch:hover {
+  text-decoration: underline;
+}

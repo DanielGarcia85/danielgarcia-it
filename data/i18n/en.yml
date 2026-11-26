@@ -7,6 +7,13 @@
 # Accessible name of the language switch, read aloud by screen readers
 languageSwitch: "Language"
 
+# Theme button of the header: visible text (the theme it switches to) and
+# accessible name, read aloud by screen readers
+themeDark: "Dark"
+themeDarkLabel: "Switch to the dark theme"
+themeLight: "Light"
+themeLightLabel: "Switch to the light theme"
+
 # Header: link that skips to the content, accessible name of the menu, first
 # entry of the menu, address of the home page (target of the menu entries)
 skipLink: "Skip to content"

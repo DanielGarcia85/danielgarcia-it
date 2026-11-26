@@ -18,6 +18,8 @@
   {! Home page (its title is the site title): name and job title. Other pages: page, then name. !}
   <title>{#if page.title == site.title}{page.title} — {contact.title}{#else}{page.title} — {site.title}{/if}</title>
   <meta name="description" content="{page.description}">
+  {! Before the page is drawn: applies the theme chosen earlier, without a flash !}
+  <script src="/theme.js"></script>
   {#bundle /}
 </head>
 <body>

@@ -4,8 +4,9 @@
   ───────────────────────────────────────────────────────────────────────────
   Included by templates/layouts/page.html. A link that skips to the content,
   then the compact profile (name, title, GitHub, LinkedIn, CV), the menu of
-  the sections of the home page and the language switch. Texts come from
-  data/contact/<lang>.yml and data/i18n/<lang>.yml.
+  the sections of the home page, the language switch and the theme button
+  (public/theme.js). Texts come from data/contact/<lang>.yml and
+  data/i18n/<lang>.yml.
 !}
 {#let contact=cdi:contact.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
 <a class="skip-link" href="#content">{t.skipLink}</a>
@@ -34,5 +35,9 @@
       <a href="{page.data.translation}" hreflang="fr" lang="fr">FR</a><a href="{page.url}" aria-current="page">EN</a>
     {/if}
   </nav>
+    <button type="button" id="theme-switch" hidden
+      data-dark="{t.themeDark}" data-dark-label="{t.themeDarkLabel}"
+      data-light="{t.themeLight}" data-light-label="{t.themeLightLabel}">{t.themeDark}
+    </button>
 </header>
 {/let}

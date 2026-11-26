@@ -138,6 +138,8 @@ class SiteTest {
                 .body(containsString("id=\"compact-profile\""))
                 .body(containsString("id=\"menu\""))
                 .body(containsString("href=\"" + home + "#projects\""))
+                .body(containsString("<script src=\"/theme.js\"></script>"))
+                .body(containsString("id=\"theme-switch\""))
                 .body(containsString("<footer>"))
                 .body(containsString("href=\"" + privacy + "\""));
     }
