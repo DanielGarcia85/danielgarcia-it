@@ -29,8 +29,8 @@ terminal (my DevOps side), never as decoration alone.
   the page by a thin line (`--line`) across the whole width. It always stays on one line.
 - **On the right, the menu, which never moves**: Profile, Projects, Career, Skills, About,
   Contact, then the FR | EN switch and the light / dark button.
-  - Profile goes back to the top of the page. About goes to the section "How this site is
-    built", which leads to the About page.
+  - Profile goes back to the top of the page. About goes to the panel "About this site", the
+    same name as the About page it leads to.
   - Career opens a small submenu of its three parts (Professional experience, Education,
     Certifications), just under the header, with the rule of the cards at the top. It closes
     after a choice, with Escape, with a click outside or when the focus leaves it. In the list
@@ -129,7 +129,7 @@ Every text of the home page comes from `data/contact/<lang>.yml` and `data/caree
    a narrow phone), each under its name in `--accent` with a rule, the skills as square tags;
    then the spoken languages on one row with their level in `--muted`. No levels for the
    skills, no bars, no percentages.
-5. **How this site is built**: a panel on `--surface`, with the rule of the cards at the top,
+5. **About this site**: a panel on `--surface`, with the rule of the cards at the top,
    the pipeline in one sentence, and a filled button to the About page.
 6. **Contact**: the positions sought and the way of working, the city and the nationality, then
    the e-mail address, LinkedIn, GitHub and the CV (PDF). No phone number, no postal address.
@@ -170,7 +170,7 @@ Shapes common to both themes:
   and the LinkedIn "In" icon, untouched except for their size, and a document icon drawn for the
   site. They are decoration (`aria-hidden`): the text of the button gives its name. The GitHub
   mark and the document icon take the color of the text (`currentColor`).
-- Project cards and the "How this site is built" panel on `--surface`, with a thin `--line`
+- Project cards and the "About this site" panel on `--surface`, with a thin `--line`
   border and a 6 px `--accent-fill` rule at the top.
 - Technologies as square tags (14 px, `--line` border), in the normal font.
 - Section titles preceded by `#`, in the mono font and in `--accent`, as a Markdown heading (a
