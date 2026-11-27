@@ -285,6 +285,7 @@ Colors of the style that are not part of the palette, checked against the same t
 | Console: prompt `$`, commands | `#4BA0AF`, `#F2C14E` | 6.1, 11.1 |
 | Console: success, secondary results | `#7FE0A0`, `#A7B4BC` | 11.5, 8.7 |
 | Word of code in a sentence, light theme (yellow on it; black in the dark theme) | `#3A4852` | 5.6 |
+| Name of a product or a service on the About page: tint behind the text | accent at 14 %, on the card | text keeps its own contrast |
 | Console: title bar, separators | `#2E3D47` | decoration |
 
 The console looks the same in both themes.
