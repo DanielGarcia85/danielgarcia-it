@@ -215,16 +215,24 @@ dialog::backdrop {
 }
 
 /*
-  Titles of the large card (Overview, Highlights, Skills): accent, with a rule
-  across the column. h4 in a project, h5 in a career entry, one level under
+  Titles of the large card (Overview, Highlights, Skills), in the style of
+  the About page: the color of the text on a thin rule across the column;
+  in the text column, a # in the accent and the mono font before them,
+  decoration only. h4 in a project, h5 in a career entry, one level under
   its name.
 */
 .large-card-body :is(h4, h5) {
   margin: 28px 0 12px;
   padding-bottom: 6px;
-  border-bottom: 2px solid var(--accent-fill);
-  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
   font-size: 1.25rem;
+}
+
+.large-card-body > div > :is(h4, h5)::before {
+  content: "# " / "";
+  color: var(--accent);
+  font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
 }
 
 /* The first title of the text: its rule at the level of the rule of the first fact */
@@ -232,17 +240,30 @@ dialog::backdrop {
   margin-top: 5px;
 }
 
+/* Highlights and tasks: the square yellow markers of the About page */
 .highlights {
   margin: 0;
-  padding-left: 1.2em;
+  padding-left: 0;
+  list-style: none;
+}
+
+.highlights li {
+  position: relative;
+  padding-left: 18px;
 }
 
 .highlights li + li {
   margin-top: 10px;
 }
 
-.highlights li::marker {
-  color: var(--accent);
+.highlights li::before {
+  content: "";
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--sun);
 }
 
 /* markdownify puts each highlight in a paragraph */
@@ -250,9 +271,30 @@ dialog::backdrop {
   margin: 0;
 }
 
-/* The words set in bold in the data (**…**): the lead of each highlight */
-.highlights strong {
-  color: var(--accent);
+/*
+  Emphasis in the text of a large card, as on the About page: a key fact in
+  bold, in the color of the text (the lead of a highlight too); a command or
+  a setting in the mono font, in a thin frame; the name of a technology, a
+  product or a service upright on a light tint of the accent (Markdown
+  *italic* in the data).
+*/
+.large-card-body > div strong {
+  color: var(--ink);
+}
+
+.large-card-body > div em {
+  padding: 0 3px;
+  background: var(--name-tint);
+  color: var(--ink);
+  font-style: normal;
+}
+
+.large-card-body > div code {
+  padding: 0 5px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.92em;
 }
 
 /*
@@ -269,7 +311,8 @@ dialog::backdrop {
   align-self: start;
   padding: 20px;
   background: var(--surface);
-  border-left: 4px solid var(--accent-fill);
+  /* The thick yellow rule of the cards of the About page */
+  border-left: 6px solid var(--sun);
 }
 
 .large-card-body aside > * {
@@ -291,6 +334,14 @@ dialog::backdrop {
   border-left: 6px solid var(--sun);
   font-size: 0.9375rem;
   font-weight: 700;
+}
+
+/* The skills of the column: on the light tint of the names, without a frame */
+.large-card-body aside .tags li {
+  padding: 1px 8px;
+  background: var(--name-tint);
+  border: 0;
+  color: var(--ink);
 }
 
 /* Code, Site, Download: filled buttons across the column */
