@@ -7,7 +7,8 @@
   section in the order of the file, with its paragraphs, its list and its
   groups of technologies, then its terminal: open, or folded under a line
   that opens it (a native details element, which needs no JavaScript). The
-  link to the repository is in the footer. Every section is a numbered
+  link to the repository is in the footer, and also, as a button, at the
+  end of the section of the source code. Every section is a numbered
   card; the technologies are cards in the look of the console of the home
   page. Paragraphs, list items and roles of technologies accept Markdown:
   **keywords** in bold, `code` for a command or a setting, *names* of
@@ -57,6 +58,9 @@
       {#else}
         <pre class="console terminal"><code>{#for line in section.terminal.output}<span class="terminal-{line.kind}">{#if line.kind == 'command'}<span class="console-prompt">$</span> {/if}{line.text}{#if line.comment}<span class="terminal-comment">{line.comment}</span>{/if}</span>{/for}</code></pre>
       {/if}
+    {/if}
+    {#if section.id == 'source-code'}
+      <p class="source-link"><a class="button" href="{site.data.repository}" target="_blank" rel="noopener">{#include partials/icons/github /} {t.siteSource}{#include partials/new-tab /}</a></p>
     {/if}
   </section>
 {/for}

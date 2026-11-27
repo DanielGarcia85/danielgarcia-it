@@ -305,3 +305,15 @@ main > .about-section dd > p > code {
   background: none;
   color: var(--console-command);
 }
+
+/* The button to the repository, at the end of the section of the source code */
+.source-link {
+  margin: 20px 0 0;
+}
+
+/* The date of the last update of the privacy page, under its title */
+main > h1 + .updated {
+  margin: -8px 0 24px;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}

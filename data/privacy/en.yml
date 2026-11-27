@@ -3,7 +3,8 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # Read into the Privacy record. fr.yml has exactly the same keys, the same
 # sections in the same order, and the same number of paragraphs in each.
-# Paragraphs accept Markdown (links). Change the date of the last update
+# Paragraphs accept Markdown: links, **keywords** in bold, `code` for a
+# setting, *names* of products and services, as on the About page. Change the date of the last update
 # with every change of the text.
 
 # Date of the last update, shown under the title
@@ -14,7 +15,7 @@ sections:
   - id: "summary"
     title: "In short"
     paragraphs:
-      - "This site presents my resume and my projects. It has no form, no account, no cookie, no tracker and no audience measurement: you cannot leave any data on it. Only the server keeps a technical trace of the visits, to work and to protect itself. The site is hosted in Switzerland, at Infomaniak, and nothing is sold or passed on."
+      - "This site presents my resume and my projects. It has **no form, no account, no cookie, no tracker and no audience measurement**: you cannot leave any data on it. Only the server keeps **a technical trace** of the visits, to work and to protect itself. The site is hosted **in Switzerland**, at *Infomaniak*, and **nothing is sold or passed on**."
 
   - id: "controller"
     title: "Who is responsible"
@@ -24,26 +25,26 @@ sections:
   - id: "logs"
     title: "What the server records"
     paragraphs:
-      - "Like any web server, mine notes every page requested in a technical log: the IP address, the date and time, the page requested, the referring page and the browser. This log is used only to run the server and to protect it, to understand an error or to spot abuse. I draw no statistics from it."
-      - "It is erased automatically: the server keeps only a limited volume of it, the oldest lines being replaced by the newest. It is not backed up."
+      - "Like any web server, mine notes every page requested in a technical log: the **IP address**, the date and time, the page requested, the referring page and the browser. This log is used only to run the server and to protect it, to understand an error or to spot abuse. **I draw no statistics from it.**"
+      - "It is **erased automatically**: the server keeps only a limited volume of it, the oldest lines being replaced by the newest. **It is not backed up.**"
 
   - id: "recipients"
     title: "Who receives your data"
     paragraphs:
-      - "Nobody. The log stays on a server, at Infomaniak, in Switzerland. GitHub, which hosts the source code of the site, and the other services I use to run it receive no data about the visitors."
-      - "The links to GitHub, LinkedIn or the HEG lead to other sites, whose own rules apply as soon as you follow them."
+      - "**Nobody.** The log stays on a server, at *Infomaniak*, in Switzerland. *GitHub*, which hosts the source code of the site, and the other services I use to run it receive no data about the visitors."
+      - "The links to *GitHub*, *LinkedIn* or the *HEG* lead to other sites, whose own rules apply as soon as you follow them."
 
   - id: "cookies"
     title: "Cookies and local storage"
     paragraphs:
-      - "The site sets no cookie and uses no tracker, so it asks for no consent. Only your choice of theme, light or dark, is kept in the local storage of your browser, until you clear it. The language is in the address of the page: nothing is kept for it. The font is served by the site itself, without any request to Google or another provider."
+      - "The site **sets no cookie** and **uses no tracker**, so it asks for no consent. Only your choice of theme, light or dark, is kept in the local storage of your browser (`localStorage`), until you clear it. The language is in the address of the page. When you switch it, the place where you were in the page (the name of the section and an offset in pixels) is kept for a moment in the session storage of the browser (`sessionStorage`), then erased as soon as the page in the other language has opened. The font is served by the site itself, without any request to *Google* or another provider."
 
   - id: "security"
     title: "Security"
     paragraphs:
-      - "The whole site is served over HTTPS. It has no database and no account, so there is no visitor data to protect on the site itself. The log stays on the server, whose access is reserved to its administrator."
+      - "The whole site is served over **HTTPS**. It has no database and no account, so there is **no visitor data to protect** on the site itself. The log stays on the server, whose access is **reserved to its administrator**."
 
   - id: "email"
     title: "If you write to me"
     paragraphs:
-      - "Your e-mail address and your message stay in my mailbox, at Infomaniak, only to answer you. I delete them on request."
+      - "Your e-mail address and your message stay in my mailbox, at *Infomaniak*, **only to answer you**. **I delete them on request.**"
