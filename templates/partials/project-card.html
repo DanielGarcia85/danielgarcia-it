@@ -68,7 +68,7 @@
     </ul>
   {/if}
   {#if project.featured}
-    <button class="button" type="button" aria-haspopup="dialog" aria-controls="details-{project.id}">{t.open}</button>
+    <button class="button button-primary" type="button" aria-haspopup="dialog" aria-controls="details-{project.id}">{t.open}</button>
     <dialog id="details-{project.id}" class="large-card" aria-labelledby="details-title-{project.id}">
       <div class="large-card-head">
         <div>
@@ -115,7 +115,7 @@
           </ul>
           <ul class="button-list">
             {#if project.repository}
-              <li><a class="button button-primary" href="{project.repository}" target="_blank" rel="noopener">{#include partials/icons/github /} {t.code}{#include partials/new-tab /}</a></li>
+              <li><a class="button button-highlight" href="{project.repository}" target="_blank" rel="noopener">{#include partials/icons/github /} {t.code}{#include partials/new-tab /}</a></li>
             {/if}
             {#if project.site}
               <li><a class="button button-primary" href="{project.site}" target="_blank" rel="noopener">{#include partials/icons/globe /} {t.site}{#include partials/new-tab /}</a></li>
