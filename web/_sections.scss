@@ -90,6 +90,22 @@ section > h2::before {
     box-shadow: 0 16px 0 var(--paper);
   }
 
+  /*
+    A link to a section (the menu) puts its title where it sticks, right
+    under the header, and not lower: the scroll padding above counts the
+    title, so the section moves up by the title, the 16 px of the padding
+    and the 36 px of padding above its title (48 px, less the 12 px of the
+    title itself). A link to a part of the career puts its title where it
+    sticks, right under the title of the section.
+  */
+  .js:has(#profile) main > section {
+    scroll-margin-top: calc(-1 * (var(--title-height) + 16px + 36px));
+  }
+
+  .js #career > h3 {
+    scroll-margin-top: -16px;
+  }
+
   /* Under the title of the section and the title of the part: the height of a band */
   .js #career .timeline-entry {
     scroll-margin-top: calc(1.75rem * 1.2 + 20px);
