@@ -456,8 +456,8 @@ projects:
     title: "MarkeTech"
     frame: "Réécriture personnelle, à partir d’un projet inter-écoles HEG en équipe de quatre"
     role: |-
-      - Projet d’équipe : Scrum Master
-      - Projet d’équipe : mise en place des environnements, inscription, connexion, profils, contrôle d’accès et affichage des offres
+      - Scrum Master
+      - Mise en place des environnements, inscription, connexion, profils, contrôle d’accès et affichage des offres
       - Réécriture : entièrement de moi
     completed: "2026-11"
     grade: "5,6/6 (projet d’équipe d’origine)"
@@ -562,8 +562,8 @@ projects:
     title: "Zebra-Girafe"
     frame: "Projet sur mandat, HEG Genève, en équipe de quatre"
     client: |-
-      Métier : Dr Dany Minetto, cardiologue, Centre de Cardiologie des Nations.\
-      Technique : Julien Ribon, CTO, Airel Consulting Sàrl.
+      - Métier : Dr Dany Minetto, cardiologue, Centre de Cardiologie des Nations
+      - Technique : Julien Ribon, CTO, Airel Consulting Sàrl
     role: |-
       - Scrum Master et responsable de la communication avec les mandants et le comité de pilotage
       - Auteur de l’architecture applicative et de l’infrastructure
@@ -907,4 +907,4 @@ languages:
     level: "langue maternelle"
 
   - name: "Anglais"
-    level: "B2"
+    level: "compétence professionnelle"
