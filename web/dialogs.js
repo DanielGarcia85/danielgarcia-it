@@ -3,20 +3,38 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // The dialog and all its content are already in the HTML: this script only
 // opens it, from the Open button or from a click anywhere on the card, except
-// on a link or a button. The browser closes it with Escape, the cross or the
-// Close button; a click on the dimmed page around it closes it too.
+// on a link or a button. The browser closes it with Escape or the cross; a
+// click on the dimmed page around it closes it too. It also tells the CSS
+// where the facts column must stop: once its last button is in view, at the
+// bottom of the card, or under the header if the whole column fits there.
+
+// Where the facts column stops, measured in the dialog, which is what scrolls
+const placeFacts = (dialog) => {
+  const head = dialog.querySelector(".large-card-head");
+  const aside = dialog.querySelector(".large-card-body aside");
+  if (!head || !aside) {
+    return;
+  }
+  const underHead = head.offsetHeight + 16;
+  const lastInView = dialog.clientHeight - aside.offsetHeight - 16;
+  dialog.style.setProperty("--aside-top", `${Math.min(underHead, lastInView)}px`);
+};
+
+// The visible height changes with the window
+window.addEventListener("resize", () => {
+  const dialog = document.querySelector("dialog[open]");
+  if (dialog) {
+    placeFacts(dialog);
+  }
+});
 
 for (const button of document.querySelectorAll("button[aria-controls^='details-']")) {
   const dialog = document.getElementById(button.getAttribute("aria-controls"));
   const card = button.closest("article");
 
-  // The facts column stays in view under the header: it needs the height of the header
   const open = () => {
     dialog.showModal();
-    const head = dialog.querySelector(".large-card-head");
-    if (head) {
-      dialog.style.setProperty("--head-height", `${head.offsetHeight}px`);
-    }
+    placeFacts(dialog);
   };
 
   button.addEventListener("click", open);

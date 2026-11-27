@@ -260,10 +260,14 @@ dialog::backdrop {
   color: var(--accent);
 }
 
+/*
+  The facts column scrolls with the text until its last button is in view,
+  then stays there while the text goes on. web/dialogs.js sets --aside-top:
+  the height of the visible part of the card minus the height of the column.
+*/
 .large-card-body aside {
   position: sticky;
-  /* Stays in view under the header (its height is set by web/dialogs.js) */
-  top: calc(var(--head-height, 0px) + 16px);
+  top: var(--aside-top, 16px);
   display: flex;
   flex-direction: column;
   gap: 16px;
