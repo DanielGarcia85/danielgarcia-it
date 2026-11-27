@@ -280,10 +280,17 @@ dialog::backdrop {
   font-size: 1rem;
 }
 
-/* Documents available on request, under the facts of a career entry */
+/*
+  Documents available on request, between the facts and the skills of a
+  career entry: in bold, with the yellow of the CV as a thick rule on the
+  left. Yellow as a rule, never as text: on the light paper, yellow text
+  would be unreadable; and not as a block, which would look like a button.
+*/
 .documents {
-  color: var(--muted);
+  padding: 2px 0 2px 12px;
+  border-left: 6px solid var(--sun);
   font-size: 0.9375rem;
+  font-weight: 700;
 }
 
 /* Code, Site, Download: filled buttons across the column */

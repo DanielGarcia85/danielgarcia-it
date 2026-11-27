@@ -61,6 +61,9 @@
                   <dd>{experience.mention}</dd>
                 {/if}
               </dl>
+              {#if experience.documents}
+                <p class="documents">{experience.documents}</p>
+              {/if}
               {#if experience.skills}
                 <h5>{t.skills}</h5>
                 <ul class="tags">
@@ -68,9 +71,6 @@
                     <li>{skill}</li>
                   {/for}
                 </ul>
-              {/if}
-              {#if experience.documents}
-                <p class="documents">{experience.documents}</p>
               {/if}
             </aside>
           </div>
@@ -129,6 +129,9 @@
                   <dd>{education.grade.markdownify}</dd>
                 {/if}
               </dl>
+              {#if education.documents}
+                <p class="documents">{education.documents}</p>
+              {/if}
               {#if education.skills}
                 <h5>{t.skills}</h5>
                 <ul class="tags">
@@ -136,9 +139,6 @@
                     <li>{skill}</li>
                   {/for}
                 </ul>
-              {/if}
-              {#if education.documents}
-                <p class="documents">{education.documents}</p>
               {/if}
             </aside>
           </div>
@@ -187,6 +187,9 @@
                 <dt>{t.obtained}</dt>
                 <dd>{certification.obtainedLabel}</dd>
               </dl>
+              {#if certification.documents}
+                <p class="documents">{certification.documents}</p>
+              {/if}
               {#if certification.skills}
                 <h5>{t.skills}</h5>
                 <ul class="tags">
@@ -194,9 +197,6 @@
                     <li>{skill}</li>
                   {/for}
                 </ul>
-              {/if}
-              {#if certification.documents}
-                <p class="documents">{certification.documents}</p>
               {/if}
               {#if certification.site}
                 <ul class="button-list">
