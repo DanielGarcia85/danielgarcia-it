@@ -82,7 +82,7 @@
   transform: translateY(-8px);
 }
 
-/* The Open button stays at the bottom right, aligned from one card to the next */
+/* The Details button stays at the bottom right, aligned from one card to the next */
 .card > [aria-haspopup="dialog"] {
   align-self: flex-end;
   margin-top: auto;

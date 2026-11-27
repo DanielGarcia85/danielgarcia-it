@@ -2,7 +2,7 @@
 // danielgarcia.it — Opens the dialog of a card: a project or a career entry
 // ─────────────────────────────────────────────────────────────────────────────
 // The dialog and all its content are already in the HTML: this script only
-// opens it, from the Open button or from a click anywhere on the card, except
+// opens it, from the Details button or from a click anywhere on the card, except
 // on a link or a button. The browser closes it with Escape or the cross; a
 // click on the dimmed page around it closes it too. It also tells the CSS
 // where the facts column must stop: once its last button is in view, at the

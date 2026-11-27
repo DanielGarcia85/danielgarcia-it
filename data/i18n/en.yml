@@ -45,7 +45,7 @@ code: "Code"
 site: "Website"
 
 # Labels of the details of a project, shown in its dialog
-open: "Open"
+open: "Details"
 close: "Close"
 frame: "Context"
 client: "Client"

@@ -5,7 +5,7 @@
   Rules of docs/visual-direction.md ("Home page", 3. Career). Three parts,
   each a list of lines, most recent first, separated by a thin rule: the
   dates in the accent and in bold, the position in bold, the employer in
-  the muted color, the summary, and the Open button on the right. A click
+  the muted color, the summary, and the Details button on the right. A click
   anywhere on a line opens its large card (web/dialogs.js), styled by
   web/_cards.scss. Markup: templates/partials/career.html.
 */
@@ -67,7 +67,7 @@
   align-self: center;
 }
 
-/* On a phone: the dates above the position, the Open button under the summary, on the right */
+/* On a phone: the dates above the position, the Details button under the summary, on the right */
 @media (max-width: 640px) {
   .timeline-entry {
     grid-template-columns: minmax(0, 1fr);
