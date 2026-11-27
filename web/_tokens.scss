@@ -21,6 +21,7 @@
   --accent: #4BA0AF;
   --close: #FF8A80;
   --shadow: rgba(0, 0, 0, 0.55);
+  --code-chip: #0E1418;
 }
 
 :root {
@@ -59,6 +60,9 @@
   --console-ok: #7FE0A0;
   --console-dim: #A7B4BC;
   --console-line: #2E3D47;
+
+  /* Background of a word of code in a sentence (main in the About panel): gray in light, black in dark */
+  --code-chip: #3A4852;
 
   /* Grid */
   --max-width: 1320px;
