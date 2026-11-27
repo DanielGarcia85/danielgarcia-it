@@ -311,8 +311,11 @@ dialog::backdrop {
   align-self: start;
   padding: 20px;
   background: var(--surface);
-  /* The thick yellow rule of the cards of the About page */
-  border-left: 6px solid var(--sun);
+  /*
+    A thin accent rule, like the top of the card: the yellow stays for the
+    documents available on request, which then stand out in the column
+  */
+  border-left: 3px solid var(--accent-fill);
 }
 
 .large-card-body aside > * {
@@ -334,6 +337,14 @@ dialog::backdrop {
   border-left: 6px solid var(--sun);
   font-size: 0.9375rem;
   font-weight: 700;
+}
+
+/* The name of a technology in the summary of a card of the archive: the tint of the large cards */
+.card > p em {
+  padding: 0 3px;
+  background: var(--name-tint);
+  color: var(--ink);
+  font-style: normal;
 }
 
 /* The skills of the column: on the light tint of the names, without a frame */

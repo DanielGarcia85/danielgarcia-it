@@ -19,7 +19,7 @@
 {#let t=cdi:i18n.get(page.data.lang)}
 <article class="card" aria-labelledby="project-{project.id}">
   <h3 id="project-{project.id}">{project.title}</h3>
-  <p>{project.summary}</p>
+  {project.summary.markdownify}
   {#if !project.featured}
     <div class="card-columns">
       <dl>
@@ -83,7 +83,7 @@
       <div class="large-card-head">
         <div>
           <h3 id="details-title-{project.id}">{project.title}</h3>
-          <p>{project.summary}</p>
+          {project.summary.markdownify}
         </div>
         <form method="dialog">
           <button class="close-button" aria-label="{t.close}" autofocus>{#include partials/icons/close /}</button>
