@@ -1,0 +1,67 @@
+/*
+  web/_skills.scss
+  danielgarcia.it — The skills of the home page and the spoken languages
+  ───────────────────────────────────────────────────────────────────────────
+  Rules of docs/visual-direction.md ("Home page", 4. Skills). The groups of
+  skills in four columns (two under 900 px, one on a narrow phone), each
+  under its name in the accent with a rule, the skills as tags; then
+  the spoken languages on one row, with their level in the muted color. No
+  level for the skills, no bar, no percentage. Markup:
+  templates/partials/skills.html.
+*/
+
+.skill-groups,
+.languages {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.skill-group > * {
+  margin: 0;
+}
+
+/* Name of a group, and the title of the languages: accent, with a rule across the column */
+.skill-group h3,
+#languages {
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent-fill);
+  color: var(--accent);
+  font-size: 1.25rem;
+}
+
+/* The tags of web/_cards.scss, on the surface color: on the page, not on a card */
+.skill-group .tags li {
+  background: var(--surface);
+}
+
+#languages {
+  margin-top: 48px;
+}
+
+.languages {
+  margin: 0;
+}
+
+.languages dt {
+  font-weight: 700;
+}
+
+.languages dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .skill-groups,
+  .languages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-groups {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
