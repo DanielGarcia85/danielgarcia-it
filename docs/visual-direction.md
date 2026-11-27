@@ -71,10 +71,13 @@ terminal (my DevOps side), never as decoration alone.
 
 ### Footer
 
-Above a thin line, in small text: the version in production ("Live version: commit `ef92dfc`",
-the commit in the mono font, linked to that commit on GitHub), its build date, and a link to the
-source code of the site. No LinkedIn there: the footer is about the site itself; the profiles
-are in the header and in Contact.
+A dark band across the whole width, in the colors of the console, under a thick accent rule,
+in small text, on one line (choice of Daniel, 27.11.2026, in the spirit of MarkeTech): on the
+left, a link to the source code of the site; on the right, the privacy page and the copyright,
+"© <year> Daniel Garcia", the year of the build. Later, the version in production ("Live
+version: commit `ef92dfc`", the commit in the mono font, linked to that commit on GitHub) and
+its build date. No LinkedIn there: the footer is about the site itself; the profiles are in the
+header.
 
 ### Home page, in this order
 
@@ -107,7 +110,7 @@ Every text of the home page comes from `data/contact/<lang>.yml` and `data/caree
    last one alone on its row. Each card has its social preview image (1280 × 640, from
    `public/images/projects/<id>.png`, once it exists), its name, its summary, its stack as tags,
    and its links (Code, Site), only those that exist. On hover, the card lifts slightly; hovering
-   never opens anything. A click anywhere on the card, or on its "Open" button, opens a **large
+   never opens anything. A click anywhere on the card, or on its "Details" button, opens a **large
    card** (a native modal `<dialog>`) on the same page: the description first, then the context
    (team projects always give the size of the team and my exact role), the client, the date
    ("Built"), the grade, the highlights, the skills and the links (Code, Site, Download). It
@@ -118,7 +121,7 @@ Every text of the home page comes from `data/contact/<lang>.yml` and `data/caree
    `--accent-fill` rule on the left, the text in `--accent`. Each part is a list, most recent
    first, separated by thin `--line` rules; each line has its dates (as on the CV, 11/2026),
    always on one line, in `--accent` and in bold, the position, the degree or the certification
-   in bold, the employer, the school or the issuer in `--muted`, the summary, and an "Open"
+   in bold, the employer, the school or the issuer in `--muted`, the summary, and a "Details"
    button on the right. On hover, the line takes `--surface` and an accent rule on the left,
    without animation. A click on a line opens the same large card as the projects: the
    description, the tasks or the highlights and the skills on the left; the period, the place,
