@@ -265,14 +265,23 @@ details.terminal > .console {
 }
 
 /*
-  Emphasis in the text of the sections: the keywords in bold, in the color
-  of the text; a command or a setting in the mono font, in a thin frame.
+  Emphasis in the text of the sections, on three levels: a key idea in bold,
+  in the color of the text; a command or a setting in the mono font, in a
+  thin frame; the name of a product, a service or a protocol on a light
+  tint of the accent, upright (Markdown *italic* in the data).
   Paragraphs, list items and roles of technologies are Markdown, so a list
   item or a role arrives as a paragraph: no margin around it there.
 */
 main > .about-section strong {
   font-weight: 700;
   color: var(--ink);
+}
+
+main > .about-section em {
+  padding: 0 3px;
+  background: var(--name-tint);
+  color: var(--ink);
+  font-style: normal;
 }
 
 main > .about-section :is(p, li) code {

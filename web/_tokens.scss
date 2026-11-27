@@ -64,6 +64,9 @@
   /* Background of a word of code in a sentence (main in the About panel): gray in light, black in dark */
   --code-chip: #3A4852;
 
+  /* Light tint behind the name of a product or a service in the About page; follows the accent of the theme */
+  --name-tint: color-mix(in srgb, var(--accent) 14%, transparent);
+
   /* Grid */
   --max-width: 1320px;
   --gutter: 24px;

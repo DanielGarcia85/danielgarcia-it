@@ -5,7 +5,9 @@
 # sections in the same order, the same number of paragraphs, items and
 # technologies in each, and the same terminals. Paragraphs, items and roles
 # of technologies accept Markdown: **keywords** in bold, `code` for a
-# command or a setting; names of technologies are plain text. A section can end with a
+# command or a setting, *names* of products, services and protocols (shown
+# upright on a tint, the first time in a section); names of technologies
+# are plain text. A section can end with a
 # terminal: a line that starts with "$ " is a command, the same in both
 # languages, and can end with a comment after two spaces; a line that starts
 # with "# " is a comment; comments are translated. folded: true shows the
@@ -79,7 +81,7 @@ sections:
     title: "Source code"
     paragraphs:
       - "All of the site’s code is **public**: templates, data, tests, workflow and Docker configuration, with its full history."
-      - "To run it on your own computer, all you need is **Git** and a **JDK 25**, Eclipse Temurin for example. The wrapper downloads Maven and the dependencies on the first run:"
+      - "To run it on your own computer, all you need is **Git** and a **JDK 25**, *Eclipse Temurin* for example. The wrapper downloads *Maven* and the dependencies on the first run:"
     terminal:
       lines:
         - "$ git clone https://github.com/DanielGarcia85/danielgarcia-it.git"
@@ -92,9 +94,9 @@ sections:
     title: "From commit to production"
     paragraphs:
       - "I work on a `develop` branch. Every `git push` to it runs **the tests** and **builds the Docker image**, to check that it still builds, without publishing it."
-      - "To release, I open a pull request from `develop` to `main`. GitHub **refuses to merge it** until the tests and the image build have passed. The `main` branch is **protected**: nobody can push to it directly, **me included**."
-      - "**My last action is the merge into `main`; everything after it is automatic.** GitHub Actions tests the site one last time, builds the image and publishes it on ghcr.io under two tags: the tag of its commit (`sha-…`), which never changes, and `latest`, which always points to the most recent version. On the server, a **timer** checks **every two minutes** whether `latest` has changed. If it has, it pulls the new image, replaces the container and removes the old image. The site is down for only **a second or two**."
-      - "**Every Monday**, the image is rebuilt with the latest versions of Nginx, the operating system and Java, then tested and published again. The site gets **security fixes** even when I don’t touch it. If the rebuild fails, nothing is published and the site keeps the version in service."
+      - "To release, I open a *pull request* from `develop` to `main`. *GitHub* **refuses to merge it** until the tests and the image build have passed. The `main` branch is **protected**: nobody can push to it directly, **me included**."
+      - "**My last action is the merge into `main`; everything after it is automatic.** *GitHub Actions* tests the site one last time, builds the image and publishes it on *ghcr.io* under two tags: the tag of its commit (`sha-…`), which never changes, and `latest`, which always points to the most recent version. On the server, a **timer** checks **every two minutes** whether `latest` has changed. If it has, it pulls the new image, replaces the container and removes the old image. The site is down for only **a second or two**."
+      - "**Every Monday**, the image is rebuilt with the latest versions of *Nginx*, the operating system and *Java*, then tested and published again. The site gets **security fixes** even when I don’t touch it. If the rebuild fails, nothing is published and the site keeps the version in service."
       - "I usually open and merge the pull request on the GitHub website. Here are the same steps on the command line, from my last commit to production."
     terminal:
       folded: true
@@ -137,8 +139,8 @@ sections:
   - id: "server"
     title: "The server"
     paragraphs:
-      - "The server is **closed by default**. SSH access works **with a key only**: no password (`PasswordAuthentication no`), no direct login as administrator (`PermitRootLogin no`). **Two firewalls**, Infomaniak’s and the system’s (`ufw`), only let SSH and web traffic through. `fail2ban` blocks addresses that make repeated login attempts, and the system’s **security updates** install automatically (`unattended-upgrades`)."
-      - "The site’s container can only be reached from the server itself. The reverse proxy is **the only entry point**: it redirects everything to **HTTPS**, with HSTS. Pages are served with a **strict Content Security Policy** (`Content-Security-Policy`): **no script, font or tracker** is loaded from another site."
+      - "The server is **closed by default**. *SSH* access works **with a key only**: no password (`PasswordAuthentication no`), no direct login as administrator (`PermitRootLogin no`). **Two firewalls**, *Infomaniak*’s and the system’s (`ufw`), only let SSH and web traffic through. `fail2ban` blocks addresses that make repeated login attempts, and the system’s **security updates** install automatically (`unattended-upgrades`)."
+      - "The site’s container can only be reached from the server itself. The reverse proxy is **the only entry point**: it redirects everything to **HTTPS**, with *HSTS*. Pages are served with a **strict Content Security Policy** (`Content-Security-Policy`): **no script, font or tracker** is loaded from another site."
 
   - id: "rollback"
     title: "Rolling back"
@@ -148,31 +150,34 @@ sections:
   - id: "backups"
     title: "Backups"
     paragraphs:
-      - "The server **keeps no copy of the code**. For this site, it only holds the Docker Compose file and the two systemd files of the automatic update. The code and its history are on GitHub, the images on ghcr.io."
-      - "**Every night**, a script backs up the configuration written by hand on the server: these files, the reverse proxy and its certificates. It uses `restic`, which **encrypts the data on the server** before sending it to Swiss Backup, Infomaniak’s storage service, replicated across its data centers in Switzerland. **Neither Infomaniak nor anyone else can read it without the key.**"
-      - "Backups are kept for **14 days**, then **one a week for 8 weeks**, then **one a month for 6 months**. **A backup that has never been restored proves nothing**: I tested the restore on the day it was set up, and I repeat it **every quarter**. Finally, every run reports to Healthchecks.io, an external service. If the signal reports a failure, or never arrives because the server is down, I get **an e-mail**."
+      - "The server **keeps no copy of the code**. For this site, it only holds the *Docker Compose* file and the two *systemd* files of the automatic update. The code and its history are on *GitHub*, the images on *ghcr.io*."
+      - "**Every night**, a script backs up the configuration written by hand on the server: these files, the reverse proxy and its certificates. It uses `restic`, which **encrypts the data on the server** before sending it to *Swiss Backup*, *Infomaniak*’s storage service, replicated across its data centers in Switzerland. **Neither Infomaniak nor anyone else can read it without the key.**"
+      - "Backups are kept for **14 days**, then **one a week for 8 weeks**, then **one a month for 6 months**. **A backup that has never been restored proves nothing**: I tested the restore on the day it was set up, and I repeat it **every quarter**. Finally, every run reports to *Healthchecks.io*, an external service. If the signal reports a failure, or never arrives because the server is down, I get **an e-mail**."
 
   - id: "accessibility"
     title: "Accessibility"
     paragraphs:
       - "I designed the site to work just as well **with a keyboard**, **with a screen reader** or **on a phone**."
     items:
-      - "Text has a contrast ratio of **at least 4.5:1** with its background, in both themes."
       - "A “Skip to content” link jumps past the header, and the whole site can be used **with a keyboard**."
-      - "The menu tells screen readers which section is being read (`aria-current`)."
+      - "Keyboard focus is always visible: a 3 px outline around the active element (`:focus-visible`)."
+      - "Buttons are real buttons (`<button>`), usable with a keyboard; the close button, which only has an icon, has a name for screen readers (`aria-label`)."
       - "The large cards are **native browser dialogs** (`<dialog>`): they close with Escape, with the cross or with a click beside them."
-      - "The light or dark theme follows the system setting, and a button lets you switch it; the browser **remembers the choice**."
+      - "The menu tells screen readers which section is being read (`aria-current`)."
+      - "In the menu, the current page is marked in bold and underlined, not only by a color (`aria-current`)."
       - "Links to other sites open in a new tab, and screen readers announce it."
+      - "Text has a contrast ratio of **at least 4.5:1** with its background, in both themes."
+      - "The typeface, *Atkinson Hyperlegible*, was designed **for legibility**: every character stands apart from the others, even for low vision."
+      - "The light or dark theme follows the system setting, and a button lets you switch it; the browser **remembers the choice**."
       - "Animations stop if the system asks for **reduced motion** (`prefers-reduced-motion`)."
-      - "The typeface was designed **for legibility**: every character stands apart from the others, even for low vision."
 
   - id: "ai"
     title: "Use of AI"
     paragraphs:
-      - "Claude (Anthropic) served as my development assistant: explanations, code suggestions and reviews. I ran every command and made every commit **myself**, and **the technical choices and their validation are mine**. The site itself **uses no AI**."
+      - "*Claude* (*Anthropic*) served as my development assistant: explanations, code suggestions and reviews. I ran every command and made every commit **myself**, and **the technical choices and their validation are mine**. The site itself **uses no AI**."
 
   - id: "credits"
     title: "Credits"
     items:
-      - "Typeface: Atkinson Hyperlegible Next and Atkinson Hyperlegible Mono, by the Braille Institute of America, under the SIL Open Font License 1.1, **hosted on this site**: no request to Google Fonts or any other service."
-      - "GitHub and LinkedIn are trademarks of their respective owners; their logos here point to my profiles."
+      - "Typeface: *Atkinson Hyperlegible Next* and *Atkinson Hyperlegible Mono*, by the *Braille Institute of America*, under the *SIL Open Font License 1.1*, **hosted on this site**: no request to *Google Fonts* or any other service."
+      - "*GitHub* and *LinkedIn* are trademarks of their respective owners; their logos here point to my profiles."
