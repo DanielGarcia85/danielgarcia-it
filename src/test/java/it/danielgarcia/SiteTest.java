@@ -104,6 +104,7 @@ class SiteTest {
                 .body(containsString("id=\"summary\""))
                 .body(containsString("id=\"logs\""))
                 .body(containsString("id=\"email\""))
+                .body(containsString("class=\"updated\""))
                 .body(containsString("href=\"mailto:"));
     }
 
@@ -144,6 +145,8 @@ class SiteTest {
                 .body(containsString("id=\"menu-button\""))
                 .body(containsString("href=\"" + home + "#certifications\""))
                 .body(containsString("<footer>"))
+                .body(containsString("class=\"footer-legal\""))
+                .body(containsString("© 20"))
                 .body(containsString("href=\"" + privacy + "\""))
                 .body(containsString("target=\"_blank\" rel=\"noopener\">"))
                 .body(containsString("class=\"visually-hidden\""));

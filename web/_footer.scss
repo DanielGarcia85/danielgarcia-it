@@ -2,36 +2,41 @@
   web/_footer.scss
   danielgarcia.it — The footer of every page
   ───────────────────────────────────────────────────────────────────────────
-  Rules of docs/visual-direction.md ("Footer"). Above a thin line across the
-  whole width, in small text and in the muted color: the source code of the
-  site and the privacy page; the version in production and its build date
-  come later. Markup: templates/partials/footer.html.
+  Rules of docs/visual-direction.md ("Footer"). A dark band across the whole
+  width, in the colors of the console, under a thick accent rule, in small
+  text, on one line: the source code of the site on the left; the privacy
+  page and the copyright on the right. On a phone, the two parts stack. The version in production
+  and its build date come later. Markup: templates/partials/footer.html.
 */
 
 footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 32px;
   margin-top: 48px;
   padding-block: 24px 32px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
+  background: var(--console);
+  border-top: 4px solid var(--accent-fill);
+  color: var(--console-out);
   font-size: 0.9375rem;
 }
 
-footer ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 32px;
+footer p {
   margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 footer a {
+  color: var(--console-ink);
+}
+
+.footer-source {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--muted);
 }
 
 footer a:hover {
-  color: var(--ink);
+  color: var(--console-command);
 }

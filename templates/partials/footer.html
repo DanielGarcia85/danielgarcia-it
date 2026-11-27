@@ -2,17 +2,18 @@
   templates/partials/footer.html
   danielgarcia.it — Footer shared by every page, in both languages
   ───────────────────────────────────────────────────────────────────────────
-  Included by templates/layouts/page.html. About the site itself: a link to
-  its source code and a link to the privacy page; the version in production
-  and its build date come later, with the real data of the site. The address
-  of the repository comes from the front matter of content/index.html, the
-  labels and the address of the privacy page from data/i18n/<lang>.yml.
+  Included by templates/layouts/page.html. About the site itself: on the
+  left, a link to its source code; on the right, the privacy page and the
+  copyright, with the year of the build (src/main/java/it/danielgarcia/site/
+  Build.java). The version in production and its build date come later. The
+  address of the repository comes from the front matter of
+  content/index.html, the name from data/contact/<lang>.yml, the labels and
+  the address of the privacy page from data/i18n/<lang>.yml. Style:
+  web/_footer.scss.
 !}
-{#let t=cdi:i18n.get(page.data.lang)}
+{#let t=cdi:i18n.get(page.data.lang) contact=cdi:contact.get(page.data.lang)}
 <footer>
-  <ul>
-    <li><a href="{site.data.repository}" target="_blank" rel="noopener">{#include partials/icons/github /} {t.siteSource}{#include partials/new-tab /}</a></li>
-    <li><a href="{t.privacyUrl}">{t.privacy}</a></li>
-  </ul>
+  <a class="footer-source" href="{site.data.repository}" target="_blank" rel="noopener">{#include partials/icons/github /} {t.siteSource}{#include partials/new-tab /}</a>
+  <p class="footer-legal"><a href="{t.privacyUrl}">{t.privacy}</a> <span aria-hidden="true">·</span> © {cdi:build.year} {contact.name}</p>
 </footer>
 {/let}
