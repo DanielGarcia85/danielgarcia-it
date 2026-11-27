@@ -24,8 +24,9 @@ import java.util.List;
  * @param site        the address of the project online, or {@code null} if there is none
  * @param repository  the address of the public source code, or {@code null} if it is not public
  * @param download    the address of the installer or executable to download, or {@code null} if there is none
+ * @param play        the address of a version that plays in the browser, or {@code null} if there is none
  */
-public record Project(String id, String title, String frame, String client, String role, String completed, String grade, boolean featured, String summary, String description, List<String> highlights, List<String> skills, List<String> stack, String site, String repository, String download) {
+public record Project(String id, String title, String frame, String client, String role, String completed, String grade, boolean featured, String summary, String description, List<String> highlights, List<String> skills, List<String> stack, String site, String repository, String download, String play) {
     /**
      * Checks that the month is a valid ISO month and that every address starts with https://,
      * so that a wrong date or a broken link fails the build.
@@ -35,6 +36,7 @@ public record Project(String id, String title, String frame, String client, Stri
         checkAddress(id, "site", site);
         checkAddress(id, "repository", repository);
         checkAddress(id, "download", download);
+        checkAddress(id, "play", play);
     }
 
     /**

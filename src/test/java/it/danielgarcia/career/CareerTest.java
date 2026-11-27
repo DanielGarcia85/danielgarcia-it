@@ -164,7 +164,7 @@ class CareerTest {
     void projectAddressWithoutHttpsIsRejected() {
         assertThrows(IllegalArgumentException.class, () -> new Project("test", "Test", "frame", null, "role",
                 "2026-01", null, false, "summary", "", List.of(), List.of(), List.of(),
-                null, "http://github.com/DanielGarcia85/test", null));
+                null, "http://github.com/DanielGarcia85/test", null, null));
     }
 
     private static void assertSummary(String summary, String entry) {
