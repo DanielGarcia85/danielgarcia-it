@@ -47,15 +47,14 @@ class SiteTest {
                 .body(containsString("id=\"projects\""))
                 .body(containsString("id=\"details-marketech\""))
                 .body(not(containsString("id=\"project-projet-bi-covid\"")))
-                .body(containsString("<a class=\"button button-primary\" href=\"" + projectsPage + "\">"))
+                .body(containsString("<a class=\"button button-highlight\" href=\"" + projectsPage + "\">"))
                 .body(containsString("id=\"career\""))
                 .body(containsString("id=\"education\""))
                 .body(containsString("id=\"certifications\""))
                 .body(containsString("id=\"skills\""))
                 .body(containsString("id=\"languages\""))
                 .body(containsString("id=\"about\""))
-                .body(containsString("<a class=\"button button-primary\" href=\"" + aboutPage + "\">"))
-                .body(containsString("id=\"contact\""))
+                .body(containsString("<a class=\"button button-highlight\" href=\"" + aboutPage + "\">"))
                 .body(containsString("href=\"mailto:"))
                 .body(containsString("/static/bundle/app-"));
     }

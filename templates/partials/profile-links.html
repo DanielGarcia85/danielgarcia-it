@@ -1,15 +1,19 @@
 {!
   templates/partials/profile-links.html
-  danielgarcia.it — GitHub, LinkedIn and CV links, in both languages
+  danielgarcia.it — GitHub, LinkedIn, e-mail and CV links, in both languages
   ───────────────────────────────────────────────────────────────────────────
   Included by templates/partials/profile.html (large profile of the home page)
-  and templates/partials/header.html (compact profile). The addresses come from
-  data/contact/<lang>.yml, the label of the CV link from data/i18n/<lang>.yml.
+  and templates/partials/header.html (compact profile, with compact=true). The
+  e-mail button shows the address in the large profile and "E-mail" in the
+  header, where room is short; it is the only way to contact me on the site.
+  The addresses come from data/contact/<lang>.yml, the labels from
+  data/i18n/<lang>.yml.
 !}
 {#let contact=cdi:contact.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
 <ul class="button-list">
   <li><a class="button" href="{contact.github}" target="_blank" rel="noopener">{#include partials/icons/github /} GitHub{#include partials/new-tab /}</a></li>
   <li><a class="button" href="{contact.linkedin}" target="_blank" rel="noopener">{#include partials/icons/linkedin /} LinkedIn{#include partials/new-tab /}</a></li>
+  <li><a class="button" href="mailto:{contact.email}">{#include partials/icons/email /} {#if compact}{t.email}{#else}{contact.email}{/if}</a></li>
   <li><a class="button button-cv" href="{contact.cv}" type="application/pdf" target="_blank" rel="noopener">{#include partials/icons/document /} {t.cv}{#include partials/new-tab /}</a></li>
 </ul>
 {/let}

@@ -4,7 +4,7 @@
   ───────────────────────────────────────────────────────────────────────────
   Included by content/index.html and content/en/index.html. Every text comes
   from data/contact/<lang>.yml and data/career/<lang>.yml; the GitHub,
-  LinkedIn and CV links from templates/partials/profile-links.html.
+  LinkedIn, e-mail and CV links from templates/partials/profile-links.html.
 !}
 {#let contact=cdi:contact.get(page.data.lang) career=cdi:career.get(page.data.lang)}
 <section id="profile" aria-labelledby="profile-name">
@@ -13,6 +13,6 @@
   {#for paragraph in career.profile}
     {paragraph.markdownify}
   {/for}
-  {#include partials/profile-links /}
+  {#include partials/profile-links compact=false /}
 </section>
 {/let}

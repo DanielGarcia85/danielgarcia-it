@@ -31,6 +31,9 @@ menu: "Menu"
 # Label of the button that opens the CV in PDF
 cv: "CV (PDF)"
 
+# Label of the e-mail button in the compact profile of the header (the large profile shows the address)
+email: "E-mail"
+
 # Read by screen readers after a link that opens in a new tab
 newTab: "(nouvel onglet)"
 
@@ -75,12 +78,8 @@ obtained: "Obtenu"
 training: "Voir la formation"
 languages: "Langues"
 
-# Contact section of the home page
-contact: "Contact"
-rolesSought: "Postes recherchés"
-workMode: "Mode de travail"
+# Label of a place in the facts of a large card of the career
 location: "Lieu"
-nationality: "Nationalité"
 
 # Footer: link to the source code of the site, link to the privacy page
 siteSource: "Code source du site"

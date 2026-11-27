@@ -1,9 +1,9 @@
 # data/contact/fr.yml
 # danielgarcia.it — French contact details
 # ─────────────────────────────────────────────────────────────────────────────
-# Public contact details and the positions sought, read into the Contact
-# record. en.yml has exactly the same keys. No phone number and no postal
-# address here: the phone number only appears in the CV in PDF.
+# Public contact details, read into the Contact record. en.yml has exactly the
+# same keys. No phone number and no postal address here: the phone number
+# only appears in the CV in PDF.
 
 # Full name, as on the CV
 name: "Daniel Garcia"
@@ -14,20 +14,8 @@ title: "Développeur Full Stack & DevOps"
 # Degree, shown under the title on the home page, followed by the location
 degree: "Informaticien de gestion HES"
 
-# Positions sought, from the most wanted to the least
-roles:
-  - "Développeur full stack"
-  - "Ingénieur DevOps"
-  - "Ingénieur logiciel"
-
-# Way of working sought
-workMode: "Sur site ou hybride"
-
 # City only, never the postal address
 location: "Genève"
-
-# Nationality, as on the CV
-nationality: "Suisse"
 
 # Public e-mail address
 email: "contact@danielgarcia.it"

@@ -17,7 +17,7 @@
       <p><a href="{t.homeUrl}">{contact.name}</a></p>
       <p>{contact.title}</p>
     </div>
-    {#include partials/profile-links /}
+    {#include partials/profile-links compact=true /}
   </div>
   <button type="button" id="menu-button" aria-expanded="false" aria-controls="menu">{t.menu}</button>
   <nav id="menu" aria-label="{t.mainMenu}">
@@ -34,7 +34,6 @@
       </li>
       <li><a href="{t.homeUrl}#skills">{t.skills}</a></li>
       <li><a href="{t.homeUrl}#about">{t.about}</a></li>
-      <li><a href="{t.homeUrl}#contact">{t.contact}</a></li>
     </ul>
   </nav>
   <nav class="language-switch" aria-label="{t.languageSwitch}">

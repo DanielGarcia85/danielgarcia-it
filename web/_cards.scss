@@ -333,3 +333,49 @@ dialog::backdrop {
     transform: none;
   }
 }
+
+/*
+  The panel "How this site is built" of the home page: a card that does not
+  open, with a touch of the future console of the profile: the # in yellow,
+  `main` as a command, a line of console, and a yellow button.
+*/
+#about {
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--accent-fill);
+}
+
+#about > h2 {
+  font-size: 1.75rem;
+}
+
+#about > h2::before {
+  color: var(--sun);
+}
+
+#about > p code {
+  padding: 1px 6px;
+  background: var(--console);
+  color: var(--console-command);
+  font-weight: 600;
+}
+
+#about .console {
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  background: var(--console);
+  color: var(--console-ink);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.console-prompt {
+  color: var(--console-prompt);
+  font-weight: 700;
+}
+
+#about > p:last-child {
+  margin-bottom: 0;
+}

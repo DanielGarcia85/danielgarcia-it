@@ -40,7 +40,6 @@ class ContactTest {
         assertEquals(fr.email(), en.email(), "email");
         assertEquals(fr.github(), en.github(), "github");
         assertEquals(fr.linkedin(), en.linkedin(), "linkedin");
-        assertEquals(fr.roles().size(), en.roles().size(), "roles");
     }
 
     @Test
