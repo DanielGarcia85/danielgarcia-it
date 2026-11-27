@@ -795,7 +795,7 @@ projects:
     stack: []
 
 skillGroups:
-  - label: "Languages"
+  - label: "Programming languages"
     skills:
       - "Java"
       - "Python"
