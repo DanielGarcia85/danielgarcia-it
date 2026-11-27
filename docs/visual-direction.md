@@ -31,13 +31,19 @@ terminal (my DevOps side), never as decoration alone.
   Contact, then the FR | EN switch and the light / dark button.
   - Profile goes back to the top of the page. About goes to the section "How this site is
     built", which leads to the About page.
+  - Career opens a small submenu of its three parts (Professional experience, Education,
+    Certifications), just under the header, with the rule of the cards at the top. It closes
+    after a choice, with Escape, with a click outside or when the focus leaves it. In the list
+    of the "Menu" button, it opens in place, indented. Without JavaScript, Career leads to the
+    section.
   - The menu marks the section being read: underline in `--accent` and bold, with
     `aria-current="location"`. An entry that was clicked stays marked as long as its section is
     on screen, even when the section is too short to reach the top.
   - The FR | EN switch is a pair of buttons in one frame; the current language is filled
     (`--accent-fill`, white text, `--accent-edge` border) and bold. It leads to the same page in
-    the other language (the French and English pages, each with its own `lang`). In the mockup,
-    it swaps the texts in place.
+    the other language (the French and English pages, each with its own `lang`), at the same
+    place in the page: the same section, part or project. In the mockup, it swaps the texts in
+    place.
   - The light / dark button names the theme it switches to ("Dark" in the light theme, "Light"
     in the dark one). The buttons have a fixed width, so that nothing moves when the language or
     the theme changes.
@@ -53,8 +59,9 @@ terminal (my DevOps side), never as decoration alone.
      the header (`aria-expanded`).
 
   The photo and the name always stay.
-- The appearance of the compact profile is **the only animation of the site** (a fade of
-  0.2 s), turned off when the visitor asks for reduced motion (`prefers-reduced-motion`).
+- The site has **two animations only**: the appearance of the compact profile (a fade of
+  0.2 s) and the lift of a project card on hover (0.2 s), both turned off when the visitor asks
+  for reduced motion (`prefers-reduced-motion`).
 - Without JavaScript, nothing breaks: the compact profile stays hidden and the menu stays
   reachable.
 - The header never hides the element that has the keyboard focus (WCAG 2.4.11):
@@ -104,19 +111,24 @@ Every text of the home page comes from `data/contact/<lang>.yml` and `data/caree
    card** (a native modal `<dialog>`) on the same page: the description first, then the context
    (team projects always give the size of the team and my exact role), the client, the date
    ("Built"), the grade, the highlights, the skills and the links (Code, Site, Download). It
-   closes with Escape or its "Close" button. SkyBurst gets a filled "Play" button that opens its
+   closes with Escape, its red cross at the top right or a click around it. SkyBurst gets a filled "Play" button that opens its
    player only once its Web build exists. Under the cards, a link to the projects page.
 3. **Career**, in three parts with their own titles: **Professional experience** first, then
-   **Education**, then **Certifications**. Each part is a list, most recent first; each line has
-   its dates (as on the CV, 11/2026) in `--accent` and in bold, the position, the degree or the
-   certification in bold, the employer, the school or the issuer in `--muted`. A click on a line
-   opens the same large card as the projects: the mention, the description, the tasks or the
-   highlights, the skills, the documents available on request and, for a certification, a link
-   to the training. The name of a referee is never shown. One menu entry (Career) leads to all
-   three.
-4. **Skills**: the groups of skills, in their order, as a named list in four columns (two under
-   900 px), then the spoken languages with their level. No levels for the skills, no bars, no
-   percentages.
+   **Education**, then **Certifications**. Each title is a band on `--surface` with a 6 px
+   `--accent-fill` rule on the left, the text in `--accent`. Each part is a list, most recent
+   first, separated by thin `--line` rules; each line has its dates (as on the CV, 11/2026),
+   always on one line, in `--accent` and in bold, the position, the degree or the certification
+   in bold, the employer, the school or the issuer in `--muted`, the summary, and an "Open"
+   button on the right. On hover, the line takes `--surface` and an accent rule on the left,
+   without animation. A click on a line opens the same large card as the projects: the
+   description, the tasks or the highlights and the skills on the left; the period, the place,
+   the mention, the grade, the documents available on request and, for a certification, a link
+   to the training on the right. The name of a referee is never shown. One menu entry (Career)
+   leads to all three, through its submenu.
+4. **Skills**: the groups of skills, in their order, in four columns (two under 900 px, one on
+   a narrow phone), each under its name in `--accent` with a rule, the skills as square tags;
+   then the spoken languages on one row with their level in `--muted`. No levels for the
+   skills, no bars, no percentages.
 5. **How this site is built**: a panel on `--surface`, with the rule of the cards at the top,
    the pipeline in one sentence, and a filled button to the About page.
 6. **Contact**: the positions sought and the way of working, the city and the nationality, then
@@ -161,10 +173,10 @@ Shapes common to both themes:
 - Project cards and the "How this site is built" panel on `--surface`, with a thin `--line`
   border and a 6 px `--accent-fill` rule at the top.
 - Technologies as square tags (14 px, `--line` border), in the normal font.
-- Section titles preceded by `##`, in the mono font and in `--accent`, as a Markdown heading (a
-  nod to the terminal). The `##` is decoration: hidden from screen readers (`aria-hidden`), so
-  that they do not read "hash hash". No section numbers.
-- The mono font only where there is real code: the console, commands, the commit, the `##`.
+- Section titles preceded by `#`, in the mono font and in `--accent`, as a Markdown heading (a
+  nod to the terminal), with a thin `--line` rule under them across the content. The `#` is
+  decoration: hidden from screen readers, so that they do not read "hash". No section numbers.
+- The mono font only where there is real code: the console, commands, the commit, the `#`.
 - Links underlined, with the underline 3 px below the text.
 
 Default theme: the one of the visitor's system (`prefers-color-scheme`); the button overrides it.
@@ -245,10 +257,12 @@ So between the two themes, the accent changes only for the text and the marks
 
 Where each accent token is used, and nowhere else:
 
-- `--accent`: links, the profile title, the `##`, the years of the career, the underline of the
-  current menu entry, the focus indicator.
+- `--accent`: links, the profile title, the `#`, the dates of the career, the titles of its
+  parts and of the groups of skills, the underline of the current menu entry, the focus
+  indicator.
 - `--accent-fill`: filled buttons (main action of a section, current language), the rule at the
-  top of the cards and panels, the border of the large photo.
+  top of the cards and panels, the rule on the left of the career titles, the border of the
+  large photo.
 - `--accent-edge`: the border of filled buttons and of the current language.
 
 Lowest contrast, light / dark:
