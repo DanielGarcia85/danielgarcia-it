@@ -284,6 +284,7 @@ Colors of the style that are not part of the palette, checked against the same t
 | Console: background, text, results | `#0E1418`, `#E4ECF0`, `#C9D4DA` | 15.5, 12.3 |
 | Console: prompt `$`, commands | `#4BA0AF`, `#F2C14E` | 6.1, 11.1 |
 | Console: success, secondary results | `#7FE0A0`, `#A7B4BC` | 11.5, 8.7 |
+| Word of code in a sentence, light theme (yellow on it; black in the dark theme) | `#3A4852` | 5.6 |
 | Console: title bar, separators | `#2E3D47` | decoration |
 
 The console looks the same in both themes.
