@@ -21,7 +21,7 @@ mainMenu: "Menu principal"
 profile: "Profil"
 homeUrl: "/"
 
-# Menu entry of the panel "How this site is built", and address of the About page
+# Menu entry of the panel "About this site", and address of the About page
 about: "À propos"
 aboutUrl: "/a-propos/"
 
@@ -86,3 +86,6 @@ location: "Lieu"
 siteSource: "Code source du site"
 privacy: "Confidentialité"
 privacyUrl: "/confidentialite/"
+
+# Line that opens a folded terminal on the About page
+terminal: "Voir dans le terminal"

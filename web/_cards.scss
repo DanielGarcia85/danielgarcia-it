@@ -341,19 +341,23 @@ dialog::backdrop {
 }
 
 /*
-  The panel "How this site is built" of the home page: a card that does not
+  The panel "About this site" of the home page: a card that does not
   open, with a touch of the future console of the profile: the # in yellow,
-  `main` as a command, a line of console, and a yellow button.
+  `main` as a command, a line of console, and a yellow button. Its title
+  has the size of the other titles of sections, and the card stands as far
+  from the section above as a title of section does.
 */
 #about {
+  margin-block: 48px;
   padding: 32px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-top: 6px solid var(--accent-fill);
 }
 
-#about > h2 {
-  font-size: 1.75rem;
+/* The text takes the whole width of the card, as in the cards of the About page */
+#about > p {
+  max-width: none;
 }
 
 #about > h2::before {

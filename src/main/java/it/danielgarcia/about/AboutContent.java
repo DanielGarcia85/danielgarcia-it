@@ -9,7 +9,7 @@ import java.util.Objects;
  * The texts of the About page and of its panel on the home page, in one language.
  * The link to the repository is not here: the footer of every page gives it.
  *
- * @param panel    the panel "How this site is built" of the home page
+ * @param panel    the panel "About this site" of the home page
  * @param intro    the paragraphs under the title of the About page
  * @param sections the sections of the About page, in display order
  */

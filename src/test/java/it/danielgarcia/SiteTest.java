@@ -84,10 +84,12 @@ class SiteTest {
         given().get(path).then()
                 .statusCode(200)
                 .body(containsString("<html lang=\"" + language + "\">"))
+                .body(containsString("#about\" aria-current=\"page\""))
                 .body(containsString("id=\"technologies\""))
                 .body(containsString("id=\"delivery\""))
                 .body(containsString("id=\"backups\""))
-                .body(containsString("id=\"source-code\""));
+                .body(containsString("id=\"source-code\""))
+                .body(containsString("<details class=\"terminal\">"));
     }
 
     @ParameterizedTest

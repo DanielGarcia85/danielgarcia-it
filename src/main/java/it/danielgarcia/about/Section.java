@@ -7,16 +7,17 @@ import java.util.Objects;
 
 /**
  * One section of a page of text (the About page, the privacy page): a title, then
- * paragraphs, a list, or groups of technologies, in that order. A section has at
- * least one of the three.
+ * paragraphs, a list, or groups of technologies, in that order, and at the end,
+ * if it has one, a terminal. A section has at least paragraphs, a list or groups.
  *
  * @param id         the anchor of the section, in lower case, words joined by hyphens
  * @param title      the title of the section
  * @param paragraphs the paragraphs (Markdown), or none
  * @param items      the items of a list (plain text), or none
  * @param groups     the groups of technologies, or none
+ * @param terminal   the terminal under the text, or {@code null}
  */
-public record Section(String id, String title, List<String> paragraphs, List<String> items, List<TechnologyGroup> groups) {
+public record Section(String id, String title, List<String> paragraphs, List<String> items, List<TechnologyGroup> groups, Terminal terminal) {
     /**
      * Checks the anchor and the title, replaces a missing list by an empty one, and
      * rejects an empty section.

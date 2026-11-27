@@ -2,15 +2,19 @@
 # danielgarcia.it — French texts of the About page and of its panel on the home page
 # ─────────────────────────────────────────────────────────────────────────────
 # Read into the About record. en.yml has exactly the same keys, the same
-# sections in the same order, and the same number of paragraphs, items and
-# technologies in each. Paragraphs accept Markdown (`code`); items and
-# technologies are plain text. Never a server name, address or port here.
+# sections in the same order, the same number of paragraphs, items and
+# technologies in each, and the same terminals. Paragraphs accept Markdown
+# (`code`); items and technologies are plain text. A section can end with a
+# terminal: a line that starts with "$ " is a command, the same in both
+# languages, and can end with a comment after two spaces; a line that starts
+# with "# " is a comment; comments are translated. folded: true shows the
+# terminal closed. Never a server name, address or port here.
 
-# Panel "How this site is built" on the home page, before the contact section
+# Panel "About this site" on the home page, the last section
 panel:
-  title: "Comment ce site est construit"
+  title: "À propos de ce site"
   text: "Ce site se déploie tout seul avec une simple fusion dans la branche `main` du dépôt GitHub. Le code y est testé, puis l’image Docker est construite et publiée sur ghcr.io par GitHub Actions ; mon VPS Infomaniak la déploie automatiquement. Le site est généré par Roq sur Quarkus et construit avec Maven, et Dependabot me propose chaque semaine les mises à jour des dépendances."
-  button: "Tout le détail"
+  button: "Comment il est construit"
 
 # Introduction of the About page, under its title
 intro:
@@ -27,22 +31,6 @@ sections:
   - id: "technologies"
     title: "Les technologies"
     groups:
-      - title: "Génération du site"
-        technologies:
-          - name: "Roq"
-            role: "générateur de sites statiques construit sur Quarkus ; il transforme les gabarits et les données en pages HTML."
-          - name: "Quarkus et Java"
-            role: "le moteur du build, et les records qui lisent et vérifient les données."
-          - name: "Qute"
-            role: "les gabarits des pages, découpés en morceaux réutilisables (en-tête, cartes de projet, pied de page)."
-          - name: "Maven"
-            role: "une seule commande de build, identique sur mon poste, dans la CI et dans Docker."
-      - title: "Interface"
-        technologies:
-          - name: "HTML et CSS"
-            role: "écrits à la main, sans framework."
-          - name: "JavaScript"
-            role: "quelques petits scripts (grandes cartes, en-tête, menu), assemblés par le Web Bundler de Quarkus, sans Node. Sans JavaScript, tout le contenu reste lisible."
       - title: "Livraison"
         technologies:
           - name: "GitHub Actions"
@@ -52,7 +40,7 @@ sections:
           - name: "GitHub Container Registry (ghcr.io)"
             role: "le registre où chaque version de l’image est publiée et conservée."
           - name: "Dependabot"
-            role: "me propose chaque semaine les mises à jour des dépendances ; je relis chacune avant de la fusionner."
+            role: "me propose chaque lundi les mises à jour des dépendances ; je relis chacune avant de la fusionner."
       - title: "Serveur et exploitation"
         technologies:
           - name: "VPS Infomaniak sous Ubuntu"
@@ -67,32 +55,94 @@ sections:
             role: "la sauvegarde chiffrée, chaque nuit, hors du serveur."
           - name: "Healthchecks.io"
             role: "m’alerte par e-mail si une sauvegarde échoue ou n’a pas lieu."
+      - title: "Génération du site"
+        technologies:
+          - name: "Roq"
+            role: "générateur de sites statiques construit sur Quarkus ; il transforme les gabarits et les données en pages HTML."
+          - name: "Quarkus et Java"
+            role: "le moteur du build, et les records qui lisent et vérifient les données."
+          - name: "Qute"
+            role: "les gabarits des pages, découpés en morceaux réutilisables (en-tête, cartes de projet, pied de page)."
+          - name: "Maven"
+            role: "une seule commande de build, ./mvnw clean verify, identique sur mon poste, dans la CI et dans Docker."
+      - title: "Interface"
+        technologies:
+          - name: "HTML et Sass (SCSS)"
+            role: "écrits à la main, sans framework. Le style est découpé en fichiers par partie de page (en-tête, cartes, parcours…), puis compilé en un seul fichier CSS pendant le build."
+          - name: "JavaScript"
+            role: "quelques petits scripts sans bibliothèque : grandes cartes, en-tête, menu et sous-menu, thème, liens externes, changement de langue. Sans JavaScript, tout le contenu reste lisible."
+          - name: "Web Bundler de Quarkus"
+            role: "compile le Sass, assemble les scripts et copie les polices pendant le build Maven, sans Node ni npm."
 
-  - id: "tests"
-    title: "Les tests"
+  - id: "source-code"
+    title: "Le code source"
     paragraphs:
-      - "Chaque build lance les tests. Ils génèrent le site entier, le servent comme en production et vérifient chaque page dans les deux langues : la présence de chaque section, les liens vers le CV et entre les pages, l’en-tête et le pied de page."
-      - "D’autres tests contrôlent les données : les deux langues existent et ont les mêmes entrées, dans le même ordre, avec les mêmes coordonnées. Un dernier test parcourt tous les liens internes du site généré : un lien cassé bloque la mise en production."
-      - "Les tests vérifient la structure, jamais le texte. Je peux réécrire une phrase sans toucher à un test, mais une section qui disparaît est repérée."
+      - "Tout le code du site est public : gabarits, données, tests, workflow et configuration Docker, avec son historique complet."
+      - "Pour le lancer chez soi, il suffit de Git et d’un JDK 25, par exemple Eclipse Temurin. Le wrapper télécharge Maven et les dépendances au premier lancement :"
+    terminal:
+      lines:
+        - "$ git clone https://github.com/DanielGarcia85/danielgarcia-it.git"
+        - "$ cd danielgarcia-it"
+        - "$ ./mvnw quarkus:dev       # Linux, macOS"
+        - "$ .\\mvnw.cmd quarkus:dev   # Windows (PowerShell)"
+        - "# le site tourne sur http://localhost:8080"
 
   - id: "delivery"
     title: "Du commit à la production"
     paragraphs:
       - "Je travaille sur une branche `develop`. Chaque push y lance les tests et construit l’image Docker, pour vérifier qu’elle se construit toujours, sans la publier."
       - "Pour mettre en ligne, j’ouvre une pull request de `develop` vers `main`. GitHub refuse de la fusionner tant que les tests et la construction de l’image n’ont pas réussi. La branche `main` est protégée : personne ne peut y pousser directement, moi compris."
-      - "La fusion dans `main` est le seul geste manuel. GitHub Actions teste le site une dernière fois, construit l’image et la publie sur ghcr.io sous deux étiquettes : celle de son commit, qui ne change jamais, et `latest`, qui désigne toujours la version la plus récente. Sur le serveur, une minuterie vérifie toutes les deux minutes si `latest` a changé. Si c’est le cas, elle télécharge la nouvelle image, remplace le conteneur et supprime l’ancienne. Le site n’est interrompu qu’une ou deux secondes."
+      - "Ma dernière action est la fusion dans `main` ; tout ce qui suit est automatique. GitHub Actions teste le site une dernière fois, construit l’image et la publie sur ghcr.io sous deux étiquettes : celle de son commit (`sha-…`), qui ne change jamais, et `latest`, qui désigne toujours la version la plus récente. Sur le serveur, une minuterie vérifie toutes les deux minutes si `latest` a changé. Si c’est le cas, elle télécharge la nouvelle image, remplace le conteneur et supprime l’ancienne. Le site n’est interrompu qu’une ou deux secondes."
       - "Chaque lundi, l’image est reconstruite avec les dernières versions de Nginx, du système et de Java, puis testée et republiée. Le site reçoit ainsi les correctifs de sécurité même quand je n’y touche pas. Si la reconstruction échoue, rien n’est publié et le site garde la version en service."
+      - "D’habitude, j’ouvre et je fusionne la pull request sur le site de GitHub. Voici les mêmes étapes en ligne de commande, de mon dernier commit jusqu’à la production."
+    terminal:
+      folded: true
+      lines:
+        - "# 1. sur develop, à jour avec GitHub"
+        - "$ git switch develop"
+        - "$ git pull origin develop"
+        - "# … le travail, puis les tests en local"
+        - "$ ./mvnw clean verify"
+        - "$ git add -A"
+        - "$ git commit -m \"feat(site): …\""
+        - "$ git push origin develop"
+        - "# → develop : tests ✓ → image ✓ (non publiée)"
+        - "# 2. la pull request vers main"
+        - "$ gh pr create --base main --head develop --fill"
+        - "$ gh pr merge --merge --auto   # ← ma décision de mettre en ligne"
+        - "$ gh pr checks --watch"
+        - "# → la PR se fusionne seule une fois les vérifications passées"
+        - "# 3. la production, sans aucune commande"
+        - "# → main : tests ✓ → image publiée sur ghcr.io (sha-…, latest)"
+        - "# → VPS : toutes les 2 minutes, la minuterie lance"
+        - "#     docker compose pull --quiet            (ghcr.io/danielgarcia85/danielgarcia-it:latest)"
+        - "#     docker compose up --detach --no-build  (nouveau conteneur si latest a changé)"
+        - "#     docker image prune --force             (l’ancienne image est supprimée)"
+        - "# → le site est en ligne, interrompu une ou deux secondes"
 
-  - id: "rollback"
-    title: "Revenir en arrière"
+  - id: "tests"
+    title: "Les tests"
     paragraphs:
-      - "Aucune version n’est jamais écrasée : chaque image publiée reste dans le registre sous l’étiquette de son commit. Si une mise en production pose problème, il me suffit d’une ligne sur le serveur pour lui demander une version précise au lieu de `latest`. Au passage suivant de la minuterie, l’ancienne version est en ligne. Le serveur ignore alors les nouvelles publications jusqu’à ce que je retire cette ligne, une fois la correction publiée."
+      - "Chaque build lance les tests. Ils génèrent le site entier, le servent comme en production et vérifient chaque page dans les deux langues : la présence de chaque section, les liens vers le CV et entre les pages, l’en-tête, le menu et le pied de page."
+      - "D’autres tests contrôlent les données : les deux langues existent et ont les mêmes entrées, dans le même ordre, avec les mêmes coordonnées. Un dernier test parcourt tous les liens internes du site généré : un lien cassé bloque la mise en production."
+      - "Les tests vérifient la structure, jamais le texte. Je peux réécrire une phrase sans toucher à un test, mais une section qui disparaît est repérée."
+    terminal:
+      folded: true
+      lines:
+        - "$ ./mvnw clean verify"
+        - "[INFO] Tests run: 39, Failures: 0, Errors: 0, Skipped: 1"
+        - "[INFO] BUILD SUCCESS"
 
   - id: "server"
     title: "Le serveur"
     paragraphs:
       - "Le serveur est fermé par défaut. On s’y connecte en SSH avec une clé uniquement : ni mot de passe, ni connexion directe en administrateur. Deux pare-feu, celui d’Infomaniak et celui du système, ne laissent passer que SSH et le web. fail2ban bloque les adresses qui multiplient les tentatives de connexion, et les mises à jour de sécurité du système s’installent automatiquement."
       - "Le conteneur du site n’est joignable que depuis le serveur lui-même. Le reverse proxy est le seul point d’entrée : il redirige tout vers HTTPS, avec HSTS. Les pages sont servies avec une politique de sécurité de contenu stricte : aucun script, aucune police et aucun traqueur ne sont chargés depuis un autre site."
+
+  - id: "rollback"
+    title: "Revenir en arrière"
+    paragraphs:
+      - "Aucune version n’est jamais écrasée : chaque image publiée reste dans le registre sous l’étiquette de son commit. Si une mise en production pose problème, il me suffit d’une ligne sur le serveur pour lui demander une version précise au lieu de `latest`. Au passage suivant de la minuterie, l’ancienne version est en ligne. Le serveur ignore alors les nouvelles publications jusqu’à ce que je retire cette ligne, une fois la correction publiée."
 
   - id: "backups"
     title: "Sauvegardes"
@@ -109,8 +159,10 @@ sections:
       - "Les textes ont un contraste d’au moins 4,5:1 avec leur fond, dans les deux thèmes."
       - "Un lien « Aller au contenu » permet de sauter l’en-tête, et tout le site se parcourt au clavier."
       - "Le menu annonce la section en cours de lecture aux lecteurs d’écran."
-      - "Les grandes cartes sont des fenêtres natives du navigateur : elles se ferment avec Échap et rendent le focus à la carte d’origine."
-      - "Le thème clair ou sombre suit le réglage du système, et un bouton permet de le changer."
+      - "Les grandes cartes sont des fenêtres natives du navigateur : elles se ferment avec Échap, avec la croix ou d’un clic à côté."
+      - "Le thème clair ou sombre suit le réglage du système, et un bouton permet de le changer ; le navigateur retient le choix."
+      - "Les liens vers d’autres sites s’ouvrent dans un nouvel onglet, et les lecteurs d’écran l’annoncent."
+      - "Les animations s’arrêtent si le système demande moins de mouvement."
       - "La police a été dessinée pour la lisibilité : chaque caractère se distingue des autres, même pour une vue faible."
 
   - id: "ai"
@@ -121,10 +173,5 @@ sections:
   - id: "credits"
     title: "Crédits"
     items:
-      - "Police : Atkinson Hyperlegible Next et Atkinson Hyperlegible Mono, du Braille Institute of America, sous licence SIL Open Font License 1.1, hébergées sur ce site."
+      - "Police : Atkinson Hyperlegible Next et Atkinson Hyperlegible Mono, du Braille Institute of America, sous licence SIL Open Font License 1.1, hébergées sur ce site : aucune requête vers Google Fonts ou un autre service."
       - "GitHub et LinkedIn sont des marques de leurs propriétaires ; leurs logos désignent ici mes profils."
-
-  - id: "source-code"
-    title: "Le code source"
-    paragraphs:
-      - "Tout le code du site est public : gabarits, données, tests, workflow et configuration Docker, avec son historique complet."

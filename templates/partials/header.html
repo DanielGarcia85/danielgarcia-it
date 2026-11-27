@@ -5,9 +5,12 @@
   Included by templates/layouts/page.html. A link that skips to the content,
   then the compact profile (name, title, GitHub, LinkedIn, CV), the menu of
   the sections of the home page, the language switch and the theme button
-  (public/theme.js). Career opens a submenu of its three parts
-  (web/submenu.js); without JavaScript, it leads to the section. Texts come
-  from data/contact/<lang>.yml and data/i18n/<lang>.yml.
+  (public/theme.js). On the projects page and on the About page, their menu
+  entry is marked as the current page (menu in their front matter; the
+  other pages have no menu key, hence the or). Career
+  opens a submenu of its three parts (web/submenu.js); without JavaScript,
+  it leads to the section. Texts come from data/contact/<lang>.yml and
+  data/i18n/<lang>.yml.
 !}
 {#let contact=cdi:contact.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
 <a class="skip-link" href="#content">{t.skipLink}</a>
@@ -23,7 +26,7 @@
   <nav id="menu" aria-label="{t.mainMenu}">
     <ul>
       <li><a href="{t.homeUrl}#profile">{t.profile}</a></li>
-      <li><a href="{t.homeUrl}#projects">{t.projects}</a></li>
+      <li><a href="{t.homeUrl}#projects"{#if page.data.menu.or('') == 'projects'} aria-current="page"{/if}>{t.projects}</a></li>
       <li class="submenu">
         <a href="{t.homeUrl}#career" aria-controls="career-menu">{t.career}</a>
         <ul id="career-menu">
@@ -33,7 +36,7 @@
         </ul>
       </li>
       <li><a href="{t.homeUrl}#skills">{t.skills}</a></li>
-      <li><a href="{t.homeUrl}#about">{t.about}</a></li>
+      <li><a href="{t.homeUrl}#about"{#if page.data.menu.or('') == 'about'} aria-current="page"{/if}>{t.about}</a></li>
     </ul>
   </nav>
   <nav class="language-switch" aria-label="{t.languageSwitch}">

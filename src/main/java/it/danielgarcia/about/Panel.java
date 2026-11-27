@@ -5,7 +5,7 @@ package it.danielgarcia.about;
 import java.util.Objects;
 
 /**
- * The panel "How this site is built" of the home page, which leads to the About page.
+ * The panel "About this site" of the home page, which leads to the About page.
  *
  * @param title  the title of the panel
  * @param text   the delivery pipeline in a few sentences (Markdown)

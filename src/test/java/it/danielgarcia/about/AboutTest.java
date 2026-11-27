@@ -20,7 +20,8 @@ import io.quarkus.test.junit.QuarkusTest;
  * <p>
  * Each record already checks its own fields when Roq builds it. These tests check
  * what a single file cannot see: both languages, the same sections in the same
- * order, the same shape in each section, and anchors that appear only once.
+ * order, the same shape in each section, the same commands in the terminals, and
+ * anchors that appear only once.
  */
 @QuarkusTest
 class AboutTest {
@@ -50,6 +51,24 @@ class AboutTest {
             for (int j = 0; j < a.groups().size(); j++) {
                 assertEquals(a.groups().get(j).technologies().size(), b.groups().get(j).technologies().size(),
                         a.id() + ": group " + j);
+            }
+        }
+    }
+
+    @Test
+    void terminalsAreTheSameInBothLanguages() {
+        List<Section> fr = about.get("fr").sections();
+        List<Section> en = about.get("en").sections();
+
+        for (int i = 0; i < fr.size(); i++) {
+            Terminal a = fr.get(i).terminal();
+            Terminal b = en.get(i).terminal();
+            String id = fr.get(i).id();
+            assertEquals(a == null, b == null, id + ": terminal in one language only");
+            if (a != null) {
+                assertEquals(a.folded(), b.folded(), id + ": folded");
+                assertEquals(a.lines().size(), b.lines().size(), id + ": terminal lines");
+                assertEquals(a.commands(), b.commands(), id + ": commands");
             }
         }
     }

@@ -1,0 +1,265 @@
+/*
+  web/_about.scss
+  danielgarcia.it — The About page
+  ───────────────────────────────────────────────────────────────────────────
+  Every section of the page is a card on the surface color, with a thick
+  yellow rule on the left and its number in large, faint figures at the top
+  right (a CSS counter, hidden from screen readers). The section of the
+  technologies is not a card: its four groups are cards in the look of the
+  console of the home page, on two columns. The text takes the whole width
+  of its card, and the introduction is larger. Markup:
+  templates/partials/about-page.html.
+*/
+
+/* The introduction: close to the title, larger, across the whole width */
+main > h1:has(+ .about-intro) {
+  margin-bottom: 16px;
+}
+
+.about-intro p {
+  max-width: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.about-intro p:first-child {
+  margin-top: 0;
+}
+
+.about-intro p:last-child {
+  margin-bottom: 32px;
+}
+
+main {
+  counter-reset: about-section;
+}
+
+main > .about-section {
+  position: relative;
+  counter-increment: about-section;
+}
+
+/* The number of the section: 01, 02… decoration only */
+main > .about-section::after {
+  content: counter(about-section, decimal-leading-zero) / "";
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  color: var(--accent);
+  font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.25;
+}
+
+/* The text of a section takes the whole width of its card */
+main > .about-section > p {
+  max-width: none;
+}
+
+main > .about-section > h2 {
+  padding-right: 80px;
+  font-size: 1.75rem;
+}
+
+/* A section of text: a card with the yellow rule on the left */
+main > .about-section:not(.about-technologies) {
+  margin-bottom: 24px;
+  padding: 28px 32px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--sun);
+}
+
+main > .about-section:not(.about-technologies) > p:last-child,
+main > .about-section:not(.about-technologies) > ul:last-child {
+  margin-bottom: 0;
+}
+
+/* Lists: square yellow markers */
+main > .about-section > ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+main > .about-section > ul li {
+  position: relative;
+  margin-top: 6px;
+  padding-left: 18px;
+}
+
+main > .about-section > ul li::before {
+  content: "";
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--sun);
+}
+
+/* The technologies: no card around them; their number sits beside the title */
+main > .about-technologies {
+  padding-block: 24px 48px;
+}
+
+/* Its number lines up with the numbers of the cards: their padding plus their border */
+main > .about-technologies::after {
+  top: 24px;
+  right: 29px;
+}
+
+.technology-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* A group of technologies: a console, ## before its name, $ before each tool */
+.technology-group {
+  padding: 20px 24px;
+  background: var(--console);
+  border: 1px solid var(--console-line);
+  border-top: 6px solid var(--accent-fill);
+  color: var(--console-ink);
+}
+
+.technology-group h3 {
+  margin: 0 0 12px;
+  color: var(--console-ink);
+  font-size: 1.25rem;
+}
+
+.technology-group h3::before {
+  content: "## " / "";
+  color: var(--console-command);
+  font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
+}
+
+.technology-group dl {
+  margin: 0;
+}
+
+.technology-group dt {
+  margin-top: 14px;
+  color: var(--console-command);
+  font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
+  font-weight: 600;
+}
+
+.technology-group dt:first-child {
+  margin-top: 0;
+}
+
+.technology-group dt::before {
+  content: "$ " / "";
+  color: var(--console-prompt);
+}
+
+.technology-group dd {
+  margin: 2px 0 0;
+  color: var(--console-out);
+}
+
+@media (max-width: 760px) {
+  .technology-groups {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  main > .about-section:not(.about-technologies) {
+    padding: 24px 20px;
+  }
+
+  main > .about-section::after {
+    right: 16px;
+    font-size: 2rem;
+  }
+
+  main > .about-technologies::after {
+    right: 17px;
+  }
+}
+
+/*
+  The terminal under the text of a section: the console of the home page,
+  one line per command or output. A folded terminal opens from a line in
+  the look of a command, with a yellow triangle that turns when it opens.
+*/
+main > .about-section .console {
+  margin: 8px 0 0;
+  padding: 14px 18px;
+  background: var(--console);
+  border: 1px solid var(--console-line);
+  color: var(--console-out);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* One line per command or output; only here, not in the console of the home page */
+main > .about-section .console > code > span {
+  display: block;
+}
+
+.terminal-command {
+  color: var(--console-command);
+  font-weight: 600;
+}
+
+.terminal-comment {
+  color: var(--console-dim);
+  font-weight: 400;
+}
+
+.terminal-success {
+  color: var(--console-ok);
+  font-weight: 600;
+}
+
+details.terminal {
+  margin-top: 8px;
+}
+
+details.terminal > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background: var(--console);
+  color: var(--console-ink);
+  font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+details.terminal > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.terminal > summary::before {
+  content: "▸" / "";
+  color: var(--sun);
+  transition: transform 0.15s;
+}
+
+details.terminal[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+details.terminal > summary:hover {
+  color: var(--console-command);
+}
+
+details.terminal > .console {
+  margin-top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details.terminal > summary::before {
+    transition: none;
+  }
+}

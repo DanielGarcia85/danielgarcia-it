@@ -5,15 +5,21 @@
   Included by content/a-propos/index.html and content/en/about/index.html.
   Every text comes from data/about/<lang>.yml: the introduction, then each
   section in the order of the file, with its paragraphs, its list and its
-  groups of technologies. The link to the repository is in the footer.
+  groups of technologies, then its terminal: open, or folded under a line
+  that opens it (a native details element, which needs no JavaScript). The
+  link to the repository is in the footer. Every section is a numbered
+  card; the technologies are cards in the look of the console of the home
+  page. Style: web/_about.scss.
 !}
-{#let about=cdi:about.get(page.data.lang)}
+{#let about=cdi:about.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
 <h1>{page.title}</h1>
-{#for paragraph in about.intro}
-  {paragraph.markdownify}
-{/for}
+<div class="about-intro">
+  {#for paragraph in about.intro}
+    {paragraph.markdownify}
+  {/for}
+</div>
 {#for section in about.sections}
-  <section id="{section.id}" aria-labelledby="{section.id}-title">
+  <section id="{section.id}" class="about-section{#if section.groups} about-technologies{/if}" aria-labelledby="{section.id}-title">
     <h2 id="{section.id}-title">{section.title}</h2>
     {#for paragraph in section.paragraphs}
       {paragraph.markdownify}
@@ -25,15 +31,31 @@
         {/for}
       </ul>
     {/if}
-    {#for group in section.groups}
-      <h3>{group.title}</h3>
-      <dl>
-        {#for technology in group.technologies}
-          <dt>{technology.name}</dt>
-          <dd>{technology.role}</dd>
+    {#if section.groups}
+      <div class="technology-groups">
+        {#for group in section.groups}
+          <div class="technology-group">
+            <h3>{group.title}</h3>
+            <dl>
+              {#for technology in group.technologies}
+                <dt>{technology.name}</dt>
+                <dd>{technology.role}</dd>
+              {/for}
+            </dl>
+          </div>
         {/for}
-      </dl>
-    {/for}
+      </div>
+    {/if}
+    {#if section.terminal}
+      {#if section.terminal.folded}
+        <details class="terminal">
+          <summary>{t.terminal}</summary>
+          <pre class="console"><code>{#for line in section.terminal.output}<span class="terminal-{line.kind}">{#if line.kind == 'command'}<span class="console-prompt">$</span> {/if}{line.text}{#if line.comment}<span class="terminal-comment">{line.comment}</span>{/if}</span>{/for}</code></pre>
+        </details>
+      {#else}
+        <pre class="console terminal"><code>{#for line in section.terminal.output}<span class="terminal-{line.kind}">{#if line.kind == 'command'}<span class="console-prompt">$</span> {/if}{line.text}{#if line.comment}<span class="terminal-comment">{line.comment}</span>{/if}</span>{/for}</code></pre>
+      {/if}
+    {/if}
   </section>
 {/for}
 {/let}
