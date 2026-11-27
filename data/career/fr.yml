@@ -5,8 +5,9 @@
 # education, certifications, projects, skill groups and languages. Read by Roq
 # into the CareerContent record (it.danielgarcia.career); the file name is the
 # language code. A key that does not match a record component fails the build.
-# Descriptions, tasks, highlights and the summaries of the projects accept
-# Markdown, shown as on the About page: **a key fact** in bold, *the name of a
+# Descriptions, tasks, highlights, and the summaries, roles and clients of
+# the projects accept Markdown (a role in several parts is a list, one part
+# per item), shown as on the About page: **a key fact** in bold, *the name of a
 # technology or a tool* on a tint (in a description, its first mention; in a
 # list, in each item), `a name from the code` in a frame. Not too much: only
 # what shows a skill.
@@ -454,14 +455,17 @@ projects:
   - id: "marketech"
     title: "MarkeTech"
     frame: "Réécriture personnelle, à partir d’un projet inter-écoles HEG en équipe de quatre"
-    role: "Dans le projet d’équipe : Scrum Master ; mise en place des environnements, inscription, connexion, profils, contrôle d’accès et affichage des offres. La réécriture est entièrement de moi."
+    role: |-
+      - Projet d’équipe : Scrum Master
+      - Projet d’équipe : mise en place des environnements, inscription, connexion, profils, contrôle d’accès et affichage des offres
+      - Réécriture : entièrement de moi
     completed: "2026-11"
     grade: "5,6/6 (projet d’équipe d’origine)"
     featured: true
     summary: "Plateforme d’emploi en informatique pour étudiants et jeunes diplômés, réécrite du code au déploiement : Django, Vue, temps réel, Docker et déploiement continu."
-    description: "MarkeTech part d’un projet d’équipe du module inter-écoles de la HEG Genève, de la HEG Arc Neuchâtel et de la HES-SO Valais, au printemps 2025 : à quatre étudiants des trois écoles, en anglais et à distance, nous devions réaliser en *Scrum* une plateforme d’emploi en *Vue.js* et *Django REST*, à partir d’un cahier des charges fourni par les enseignants. J’étais le *Scrum* Master de l’équipe. En octobre 2026, j’ai repris ce cahier des charges et réécrit entièrement la plateforme dans un nouveau dépôt, sans l’équipe d’origine et sans reprendre son code, du code jusqu’au déploiement. J’y ai ajouté tout ce que le projet scolaire n’avait pas : le serveur, les conteneurs, le reverse proxy et le HTTPS, la publication des images, la mise à jour automatique, les sauvegardes, le temps réel et une interface en deux langues. La plateforme est en ligne, avec deux comptes de démonstration ouverts à tous et remis à zéro chaque nuit."
+    description: "MarkeTech part d’un projet d’équipe du module inter-écoles de la HEG Genève, de la HEG Arc Neuchâtel et de la HES-SO Valais, au printemps 2025 : à quatre étudiants des trois écoles, en anglais et à distance, nous devions réaliser en *Scrum* une plateforme d’emploi en *Vue.js* et *Django REST*, à partir d’un cahier des charges fourni par les enseignants. J’étais le Scrum Master de l’équipe. En octobre 2026, j’ai repris ce cahier des charges et réécrit entièrement la plateforme dans un nouveau dépôt, sans l’équipe d’origine et sans reprendre son code, du code jusqu’au déploiement. J’y ai ajouté tout ce que le projet scolaire n’avait pas : le serveur, les conteneurs, le reverse proxy et le HTTPS, la publication des images, la mise à jour automatique, les sauvegardes, le temps réel et une interface en deux langues. La plateforme est en ligne, avec deux comptes de démonstration ouverts à tous et remis à zéro chaque nuit."
     highlights:
-      - "**Gestion de projet, dans le projet d’équipe** : *Scrum* Master d’une équipe de quatre étudiants de trois écoles ; product backlog avec critères d’acceptation et story points, sprints conclus par une revue avec l’enseignant dans le rôle de Product Owner."
+      - "**Gestion de projet, dans le projet d’équipe** : Scrum Master d’une équipe de quatre étudiants de trois écoles ; product backlog avec critères d’acceptation et story points, sprints conclus par une revue avec l’enseignant dans le rôle de Product Owner."
       - "**Fonctionnalités** : offres avec filtres et pagination côté serveur, candidatures avec suivi de statut et historique, messagerie par candidature, rendez-vous dans un calendrier exportables en .ics, avis, favoris, modération, e-mails de notification dans la langue de chaque utilisateur."
       - "**Back-end** : API REST avec *Django REST Framework*, une application Django par domaine (onze) ; authentification par cookie de session et jeton CSRF (*django-allauth* en mode headless), aucun jeton stocké dans le navigateur."
       - "**Temps réel** : *WebSocket* avec *Channels* et *Redis* ; le serveur n’envoie qu’un signal, et la page relit les données par l’API, qui reste seule juge des droits d’accès."
@@ -557,15 +561,21 @@ projects:
   - id: "zebra-girafe"
     title: "Zebra-Girafe"
     frame: "Projet sur mandat, HEG Genève, en équipe de quatre"
-    client: "Métier : Dr Dany Minetto, cardiologue, Centre de Cardiologie des Nations. Technique : Julien Ribon, CTO, Airel Consulting Sàrl."
-    role: "Scrum Master et responsable de la communication avec les mandants et le comité de pilotage ; auteur de l’architecture applicative et de l’infrastructure ; développement de l’interface, de l’intégration du moteur Excel du mandant, de la licence et de l’archivage ; pipeline CI/CD et packaging de l’exécutable."
+    client: |-
+      Métier : Dr Dany Minetto, cardiologue, Centre de Cardiologie des Nations.\
+      Technique : Julien Ribon, CTO, Airel Consulting Sàrl.
+    role: |-
+      - Scrum Master et responsable de la communication avec les mandants et le comité de pilotage
+      - Auteur de l’architecture applicative et de l’infrastructure
+      - Développement de l’interface, de l’intégration du moteur Excel du mandant, de la licence et de l’archivage
+      - Pipeline CI/CD et packaging de l’exécutable
     completed: "2026-05"
     grade: "5,9/6"
     featured: true
     summary: "Logiciel de bureau pour un cabinet de cardiologie : import des examens DICOM ou CSV, calculs du cardiologue et rapport Word automatique ; mandat réel en équipe de quatre."
     description: "Projet sur mandat de la HEG Genève, mené par quatre étudiants de septembre 2025 à mai 2026, en *Scrum* sur six sprints. Le cardiologue mandant rédigeait ses comptes-rendus d’échocardiographie avec un prototype *Excel* et *VBA* qu’il avait développé lui-même, difficile à maintenir et à diffuser. Nous l’avons remplacé par une application Windows qui lit les examens exportés par l’échographe (*DICOM* ou CSV), fait calculer les mesures par son moteur *Excel* et produit un rapport Word qu’il relit et signe. Les données des patients restent sur le poste du cabinet ; seules la licence et les statistiques d’usage passent par le serveur du mandant. La version 1.0.0 a été livrée avec son installateur, ses guides et ses notes de version."
     highlights:
-      - "**Gestion de projet** : *Scrum* Master ; responsable de la communication avec les mandants et le comité de pilotage (sprint reviews, procès-verbaux) ; responsable de 11 user stories sur 32 et de 43 sous-tâches sur 126 au product backlog."
+      - "**Gestion de projet** : Scrum Master ; responsable de la communication avec les mandants et le comité de pilotage (sprint reviews, procès-verbaux) ; responsable de 11 user stories sur 32 et de 43 sous-tâches sur 126 au product backlog."
       - "**Documentation** : auteur de l’architecture applicative et de l’infrastructure, puis de la méthodologie, de la planification et du document de projet."
       - "**Mes développements** : architecture de l’interface et navigation, écran d’import ; intégration du moteur *Excel* fourni par le mandant, piloté par COM (*xlwings*) avec une lecture groupée des résultats ; système de licence relié à un serveur *MariaDB*, avec mode hors ligne et synchronisation différée ; archivage des examens avec export XLSX."
       - "**CI/CD et livraison** : pipeline *Bitbucket Pipelines* conçu par moi ; tests à chaque pull request, puis, à chaque fusion, installateur Windows construit depuis Linux dans une image *Docker* référencée par son empreinte SHA-256 (*Wine*, *Inno Setup*) ; exécutable *PyInstaller* testé sur des postes vierges."
@@ -772,7 +782,9 @@ projects:
   - id: "registre-traitements-cff"
     title: "Registre des activités de traitement : simulation pour les CFF"
     frame: "Projet en groupe de trois, HEG Genève"
-    role: "Rédaction de trois des dix fiches de registre (facturation et paiements, programmes de fidélité, objets trouvés) ; description et justification des activités menées à trois."
+    role: |-
+      - Rédaction de trois des dix fiches de registre (facturation et paiements, programmes de fidélité, objets trouvés)
+      - Description et justification des activités, menées à trois
     completed: "2023-11"
     featured: false
     summary: "Simulation du registre des activités de traitement des CFF selon la *LPD* : dix activités décrites et justifiées, avec une fiche de registre par activité."
@@ -787,7 +799,9 @@ projects:
   - id: "recherche-lpd-entreprise"
     title: "Travail de recherche : la nouvelle LPD en entreprise"
     frame: "Projet en groupe de trois, HEG Genève"
-    role: "Choix de l’entreprise, prise de contact et organisation des entretiens ; entretiens, analyse et rapport menés à trois."
+    role: |-
+      - Choix de l’entreprise, prise de contact et organisation des entretiens
+      - Entretiens, analyse et rapport menés à trois
     completed: "2025-06"
     featured: false
     summary: "Analyse des pratiques de traitement des données personnelles d’une entreprise du commerce de détail au regard de la nouvelle *LPD* : deux entretiens, risques et recommandations."
