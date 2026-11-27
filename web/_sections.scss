@@ -40,7 +40,7 @@ section > h2::before {
   Certifications): a band on the surface color with a thick accent rule on
   the left, like the facts of a large card, the title in the accent.
 */
-#career > h3 {
+#career .career-part > h3 {
   margin: 0 0 16px;
   padding: 10px 16px;
   background: var(--surface);
@@ -53,7 +53,8 @@ section > h2::before {
   Sticky titles on the home page: the title of a section stays under the
   header until the end of its section, and the title of a part of the
   career stays under it until the end of its part. Position sticky keeps
-  each title inside its parent, so it leaves with it. The title gets the
+  each title inside its parent (the section, or the block of the part in
+  templates/partials/career.html), so it leaves with it. The title gets the
   background of the page and covers the content that passes under it.
   Not on a phone, where they would take too much of the screen, nor when
   the header scrolls with the page (low screen, strong zoom, or no
@@ -82,7 +83,7 @@ section > h2::before {
     background: var(--paper);
   }
 
-  .js #career > h3 {
+  .js #career .career-part > h3 {
     position: sticky;
     top: calc(var(--header-height) + var(--title-height));
     z-index: 4;
@@ -96,13 +97,16 @@ section > h2::before {
     title, so the section moves up by the title, the 16 px of the padding
     and the 36 px of padding above its title (48 px, less the 12 px of the
     title itself). A link to a part of the career puts its title where it
-    sticks, right under the title of the section.
+    sticks, right under the title of the section. The anchor of a part is
+    its block, not its title: a sticky title is no longer in its place in the
+    page once the page has scrolled past it, and a link to it would stop at
+    the wrong place.
   */
   .js:has(#profile) main > section {
     scroll-margin-top: calc(-1 * (var(--title-height) + 16px + 36px));
   }
 
-  .js #career > h3 {
+  .js #career .career-part {
     scroll-margin-top: -16px;
   }
 
