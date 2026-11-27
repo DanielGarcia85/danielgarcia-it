@@ -5,6 +5,11 @@
 # education, certifications, projects, skill groups and languages. Read by Roq
 # into the CareerContent record (it.danielgarcia.career); the file name is the
 # language code. A key that does not match a record component fails the build.
+# Descriptions, tasks, highlights and the summaries of the projects accept
+# Markdown, shown as on the About page: **a key fact** in bold, *the name of a
+# technology or a tool* on a tint (in a description, its first mention; in a
+# list, in each item), `a name from the code` in a frame. Not too much: only
+# what shows a skill.
 
 profile:
   - "I have been working in IT for more than ten years. I progressed to system and network administration, then went back to studying to move into software engineering, alongside an IT support position at the University of Geneva."
@@ -17,18 +22,18 @@ experience:
     place: "Geneva"
     started: "2023-09"
     summary: "IT support: helpdesk, Windows and macOS workstations, Active Directory, Intune, VMware virtual machines, automated renewal of a certificate in production."
-    description: "I provide IT support to staff and lecturers, remotely and on site: I handle their requests and incidents through to closure, install and maintain Windows and macOS workstations, peripherals and printers, and support users. Within my delegated scope, I manage computers, accounts, access rights and group policies in *Active Directory*, device enrolment and configuration profiles in *Microsoft Intune*, and IP address reservations and assignments through DHCP. I use *BMC Client Management* for fleet management and maintain virtual desktops on *VMware vSphere*. I also **automated, in production**, the renewal of a *Let’s Encrypt* certificate on a Windows application server, with *PowerShell* scripts that I documented."
+    description: "I provide IT support to staff and lecturers, remotely and on site: I handle their requests and incidents through to closure, install and maintain Windows and macOS workstations, peripherals and printers, and support users. Within my delegated scope, I manage computers, accounts, access rights and group policies in *Active Directory*, device enrolment and configuration profiles in *Microsoft Intune*, and IP address reservations and assignments through *DHCP*. I use *BMC Client Management* for fleet management and maintain virtual desktops on *VMware vSphere*. I also **automated, in production**, the renewal of a *Let’s Encrypt* certificate on a Windows application server, with *PowerShell* scripts that I documented."
     tasks:
       - "Helpdesk for staff and lecturers: request handling, incident resolution, installations."
       - "User training and support."
       - "Setup and maintenance of Windows and macOS workstations, peripherals and printers."
-      - "Active Directory, within my delegated scope: computers, accounts and access rights."
-      - "Group policies (GPO): creation and editing on the organisational units delegated to me."
-      - "Microsoft Intune: device enrolment and configuration profiles."
-      - "Fleet management with BMC Client Management."
-      - "DHCP: IP address assignment for workstations and reservations for peripherals."
-      - "Maintenance of virtual desktops on VMware vSphere."
-      - "Automated renewal, in production, of a Let’s Encrypt certificate on a Windows application server (PowerShell scripts and documentation)."
+      - "*Active Directory*, within my delegated scope: computers, accounts and access rights."
+      - "Group policies (*GPO*): creation and editing on the organisational units delegated to me."
+      - "*Microsoft Intune*: device enrolment and configuration profiles."
+      - "Fleet management with *BMC Client Management*."
+      - "*DHCP*: IP address assignment for workstations and reservations for peripherals."
+      - "Maintenance of virtual desktops on *VMware vSphere*."
+      - "Automated renewal, in production, of a *Let’s Encrypt* certificate on a Windows application server (*PowerShell* scripts and documentation)."
     skills:
       - "Technical Support"
       - "Microsoft Office"
@@ -58,11 +63,11 @@ experience:
     ended: "2024-09"
     mention: "Temporary assignment via Academic Work"
     summary: "PowerShell script auditing print events across several State servers, documentation of the Nagios monitoring scripts ahead of their migration to SCCM."
-    description: "During a temporary assignment in the Windows, VMware and x86 sector of OCSIN, I developed a *PowerShell* script that searches and collects events from the print logs of several State print servers at once, for one or more *Active Directory* users and over a given period, with error handling and automatic reports (CSV, logs, SHA-512 hashes). I also analysed and documented in detail the team’s PowerShell monitoring scripts for *Nagios*, ahead of their migration to *SCCM*."
+    description: "During a temporary assignment in the Windows, VMware and x86 sector of OCSIN, I developed a *PowerShell* script that searches and collects events from the print logs of several State print servers at once, for one or more *Active Directory* users and over a given period, with error handling and automatic reports (CSV, logs, SHA-512 hashes). I also analysed and documented in detail the team’s *PowerShell* monitoring scripts for *Nagios*, ahead of their migration to *SCCM*."
     tasks:
-      - "Development of a PowerShell script that searches and collects print events across several State print servers at once, filtered by Active Directory user and by period."
+      - "Development of a *PowerShell* script that searches and collects print events across several State print servers at once, filtered by *Active Directory* user and by period."
       - "Error handling and automatic reports: CSV, logs, SHA-512 hashes."
-      - "Detailed analysis and documentation of the PowerShell monitoring scripts for Nagios, ahead of their migration to SCCM."
+      - "Detailed analysis and documentation of the *PowerShell* monitoring scripts for *Nagios*, ahead of their migration to *SCCM*."
     skills:
       - "Windows PowerShell"
       - "Active Directory"
@@ -75,15 +80,15 @@ experience:
     started: "2022-04"
     ended: "2023-08"
     summary: "Corporate infrastructure: Windows servers, Nutanix virtualisation, MPLS network and Fortinet firewalls, VPN, SCCM deployment, telephony migration to Microsoft Teams."
-    description: "At the Lausanne branch, I managed and maintained the company’s IT infrastructure, virtualised on *Nutanix AHV*. I installed and supported *Windows Server* 2012 to 2019 servers (DNS, DHCP, GPO, RDSH), managed the MPLS network equipment (*Cisco* and Alcatel switching) and its security with *Fortinet* firewalls, and administered the VPN (Pulse Secure, VASCO) and Wi-Fi (Alcatel, ClearPass) solutions. I also managed the telephony migration project from Skype for Business to *Microsoft Teams*, and handled the packaging and deployment of client workstations with *Microsoft SCCM*, with ticket tracking in Ivanti and *ServiceNow*."
+    description: "At the Lausanne branch, I managed and maintained the company’s IT infrastructure, virtualised on *Nutanix AHV*. I installed and supported *Windows Server* 2012 to 2019 servers (*DNS*, *DHCP*, *GPO*, *RDSH*), managed the *MPLS* network equipment (*Cisco* and Alcatel switching) and its security with *Fortinet* firewalls, and administered the VPN (*Pulse Secure*, *VASCO*) and Wi-Fi (Alcatel, *ClearPass*) solutions. I also managed the telephony migration project from *Skype for Business* to *Microsoft Teams*, and handled the packaging and deployment of client workstations with *Microsoft SCCM*, with ticket tracking in *Ivanti* and *ServiceNow*."
     tasks:
-      - "Management and maintenance of the company infrastructure (Nutanix AHV)."
-      - "Installation and support of Windows Server 2012 to 2019 servers: DNS, DHCP, GPO, RDSH."
-      - "Management of the MPLS network equipment (Cisco and Alcatel switching) and security (Fortinet firewalls)."
-      - "Administration of the VPN (Pulse Secure, VASCO) and Wi-Fi (Alcatel, ClearPass) solutions."
-      - "Management of the telephony migration project from Skype for Business to Microsoft Teams."
-      - "Packaging and deployment of client workstations with Microsoft SCCM."
-      - "Ticket tracking (Ivanti, ServiceNow)."
+      - "Management and maintenance of the company infrastructure (*Nutanix AHV*)."
+      - "Installation and support of *Windows Server* 2012 to 2019 servers: *DNS*, *DHCP*, *GPO*, *RDSH*."
+      - "Management of the *MPLS* network equipment (*Cisco* and Alcatel switching) and security (*Fortinet* firewalls)."
+      - "Administration of the VPN (*Pulse Secure*, *VASCO*) and Wi-Fi (Alcatel, *ClearPass*) solutions."
+      - "Management of the telephony migration project from *Skype for Business* to *Microsoft Teams*."
+      - "Packaging and deployment of client workstations with *Microsoft SCCM*."
+      - "Ticket tracking (*Ivanti*, *ServiceNow*)."
     skills:
       - "IT Infrastructure Management"
       - "Nutanix"
@@ -117,17 +122,17 @@ experience:
     started: "2016-07"
     ended: "2022-03"
     summary: "In charge of maintenance across Switzerland, team of two technicians: video surveillance and security for B2B clients, Cisco networks, servers."
-    description: "In charge of maintenance across Switzerland, I **led a team of two technicians**, reporting to the head of department. I ensured the maintenance of video surveillance and security installations for B2B clients, working with local partner companies for on-site work, and steered system upgrades in line with the Securitas group’s national strategy, while managing maintenance costs. On the technical side, I configured servers and their RAID architecture, designed networks (IP addressing, layers 2 and 3) and configured *Cisco* routers (spoke to spoke, NAT, VPN), virtualised the video analytics server and configured *Milestone VMS* and InnoVi. I also managed accounts and rights in *Active Directory* and provided phone and ticket support."
+    description: "In charge of maintenance across Switzerland, I **led a team of two technicians**, reporting to the head of department. I ensured the maintenance of video surveillance and security installations for B2B clients, working with local partner companies for on-site work, and steered system upgrades in line with the Securitas group’s national strategy, while managing maintenance costs. On the technical side, I configured servers and their *RAID* architecture, designed networks (IP addressing, layers 2 and 3) and configured *Cisco* routers (spoke to spoke, *NAT*, *VPN*), virtualised the video analytics server and configured *Milestone VMS* and *InnoVi*. I also managed accounts and rights in *Active Directory* and provided phone and ticket support."
     tasks:
       - "Leading a team of two technicians, reporting to the head of department."
       - "Maintenance of video surveillance and security installations for B2B clients across Switzerland; partnerships with local companies for on-site work."
       - "System upgrades in line with the Securitas group’s national strategy; maintenance cost management and control."
-      - "Server configuration and implementation of RAID architecture."
-      - "Network design: IPAM, TCP/IP, layers 2 and 3; configuration of Cisco routers (spoke to spoke, NAT, VPN)."
-      - "Virtualisation of the video analytics server; configuration of Milestone VMS (interconnections, federated servers) and InnoVi (video analytics)."
-      - "Active Directory management: accounts, access rights, groups."
-      - "Phone and ticket support (Jira, Ask4)."
-      - "Support of Windows servers and cloud services (Azure, Bosch), intrusion detection and access control."
+      - "Server configuration and implementation of *RAID* architecture."
+      - "Network design: *IPAM*, *TCP/IP*, layers 2 and 3; configuration of *Cisco* routers (spoke to spoke, *NAT*, *VPN*)."
+      - "Virtualisation of the video analytics server; configuration of *Milestone VMS* (interconnections, federated servers) and *InnoVi* (video analytics)."
+      - "*Active Directory* management: accounts, access rights, groups."
+      - "Phone and ticket support (*Jira*, Ask4)."
+      - "Support of Windows servers and cloud services (*Azure*, Bosch), intrusion detection and access control."
     skills:
       - "Team Management"
       - "IP Video Surveillance"
@@ -158,9 +163,9 @@ experience:
     started: "2014-02"
     ended: "2016-06"
     summary: "Installation, configuration and maintenance of IP video surveillance systems, customer support, 24/7 on-call duty."
-    description: "I installed and configured customers’ IP video surveillance systems, on the hardware side (*Axis*, Dell, Cisco) as on the software side (*Milestone*, Bosch, AgentVi), and ran the tests for the formal approval of the projects. I provided first- and second-level support to customers and operators, remote and on-site maintenance to keep the systems available in line with contractual commitments (SLA), and 24/7 technical on-call duty. I also supported the project team in setting up new sites across Switzerland, wrote technical documentation and managed the stock, working with the helpdesk team in Sweden and external partners."
+    description: "I installed and configured customers’ IP video surveillance systems, on the hardware side (*Axis*, *Dell*, *Cisco*) as on the software side (*Milestone*, *Bosch*, *AgentVi*), and ran the tests for the formal approval of the projects. I provided first- and second-level support to customers and operators, remote and on-site maintenance to keep the systems available in line with contractual commitments (SLA), and 24/7 technical on-call duty. I also supported the project team in setting up new sites across Switzerland, wrote technical documentation and managed the stock, working with the helpdesk team in Sweden and external partners."
     tasks:
-      - "Installation and configuration of IP video surveillance systems: hardware (Axis, Dell, Cisco) and software (Milestone, Bosch, AgentVi)."
+      - "Installation and configuration of IP video surveillance systems: hardware (*Axis*, *Dell*, *Cisco*) and software (*Milestone*, *Bosch*, *AgentVi*)."
       - "Support to the project team in setting up new sites across Switzerland; tests for the formal approval of the projects."
       - "Technical troubleshooting; remote and on-site maintenance, in line with customers’ contractual commitments (SLA)."
       - "First- and second-level support to customers and operators; request and ticket tracking."
@@ -191,10 +196,10 @@ experience:
     started: "2013-03"
     ended: "2014-01"
     summary: "Remote monitoring: handling of intrusion, fire and video alarms on Horus, phone and video verification (Milestone, Bosch), dispatch of response teams."
-    description: "As an operator in the remote monitoring centre, on rotating shifts including nights and weekends, I handled intrusion, fire and video alarms for private and business customers. Alarms were received and processed on *Horus* (Azur Soft), the centre’s monitoring software. For each event, I carried out the alarm verification by phone or by video on *Milestone* or Bosch, then applied the site instructions: contacting the customer, dispatching the response team or alerting the police. I also provided remote video monitoring of the sites and answered calls for the call centres that the centre operated on behalf of its customers."
+    description: "As an operator in the remote monitoring centre, on rotating shifts including nights and weekends, I handled intrusion, fire and video alarms for private and business customers. Alarms were received and processed on *Horus* (Azur Soft), the centre’s monitoring software. For each event, I carried out the alarm verification by phone or by video on *Milestone* or *Bosch*, then applied the site instructions: contacting the customer, dispatching the response team or alerting the police. I also provided remote video monitoring of the sites and answered calls for the call centres that the centre operated on behalf of its customers."
     tasks:
-      - "Handling of intrusion, fire and video alarms on Horus (Azur Soft), for private and business customers."
-      - "Alarm verification by phone or by video (Milestone, Bosch)."
+      - "Handling of intrusion, fire and video alarms on *Horus* (Azur Soft), for private and business customers."
+      - "Alarm verification by phone or by video (*Milestone*, *Bosch*)."
       - "Application of the site instructions: contacting the customer, dispatching the response team, alerting the police."
       - "Remote video monitoring of customer sites."
       - "Answering calls for the call centres operated on behalf of customers."
@@ -234,7 +239,7 @@ experience:
     description: "For my final internship at ESIG, I joined New Access, a banking software publisher in Geneva. There I learned the *.NET* platform, the *C#* language and *SQL Server*, which were not part of my programme. I researched database replication methods, with results that the company found useful, then contributed to the development of a bidirectional database replication using these technologies."
     tasks:
       - "Research and comparison of database replication methods."
-      - "Contribution to the development of a bidirectional database replication in C# on .NET with SQL Server."
+      - "Contribution to the development of a bidirectional database replication in *C#* on *.NET* with *SQL Server*."
     skills:
       - "C#"
       - ".NET Framework"
@@ -252,15 +257,15 @@ education:
       Bachelor thesis 5.7/6\
       Client project 5.9/6
     summary: "Bachelor in business information technology: development, architecture, service integration and industrialisation, data, project management."
-    description: "I completed this Bachelor part-time, alongside my job. The programme covers information systems, management and communication, and information technologies: analysing, designing, implementing, integrating and operating an organisation’s information system, in collaboration with the client. I delivered several projects from analysis through to production, on my own or in a team, including a real client project for a cardiology practice and my Bachelor thesis, Ge-Trouve."
+    description: "I completed this Bachelor part-time, alongside my job. The programme covers information systems, management and communication, and information technologies: analysing, designing, implementing, integrating and operating an organisation’s information system, in collaboration with the client. I delivered several projects from analysis through to production, on my own or in a team, including a real client project for a cardiology practice and my Bachelor thesis, *Ge-Trouve*."
     highlights:
-      - "Hands-on work in DevOps: *Docker*, GitLab CI/CD, *Kubernetes*, *Ansible*, Prometheus and Grafana."
-      - "Hands-on work in Java: JPA and Hibernate, JDBC, servlets, *Spring Boot* and Spring Data JPA, Spring AI, *Quarkus*, *JUnit* tests."
-      - "Bachelor thesis (5.7/6): Ge-Trouve, a French RAG chatbot for administrative procedures in the canton of Geneva, with a locally run language model."
-      - "Client project (5.9/6): Zebra-Girafe, desktop medical software for a cardiology practice, in a team of four; Scrum Master and CI/CD pipeline."
-      - "Inter-school project (5.6/6): MarkeTech, a job platform, in a team of four; Scrum Master."
-      - "Individual projects: ReserveCut (Architecture module, 5.8/6) and SkyBurst (Video Game Programming module, 6.0/6)."
-      - "Key modules: Architecture, Integration and Development Lifecycle, Service Industrialisation, Data Valorisation, Emerging Technologies, Math for Machine Learning, IT Ethics and Law."
+      - "**Hands-on work in DevOps**: *Docker*, *GitLab* CI/CD, *Kubernetes*, *Ansible*, *Prometheus* and *Grafana*."
+      - "**Hands-on work in Java**: *JPA* and *Hibernate*, *JDBC*, servlets, *Spring Boot* and *Spring Data JPA*, *Spring AI*, *Quarkus*, *JUnit* tests."
+      - "**Bachelor thesis (5.7/6)**: *Ge-Trouve*, a French RAG chatbot for administrative procedures in the canton of Geneva, with a locally run language model."
+      - "**Client project (5.9/6)**: *Zebra-Girafe*, desktop medical software for a cardiology practice, in a team of four; Scrum Master and CI/CD pipeline."
+      - "**Inter-school project (5.6/6)**: *MarkeTech*, a job platform, in a team of four; Scrum Master."
+      - "**Individual projects**: *ReserveCut* (Architecture module, 5.8/6) and *SkyBurst* (Video Game Programming module, 6.0/6)."
+      - "**Key modules**: Architecture, Integration and Development Lifecycle, Service Industrialisation, Data Valorisation, Emerging Technologies, Math for Machine Learning, IT Ethics and Law."
     skills:
       - "Java"
       - "Python"
@@ -319,9 +324,9 @@ education:
     summary: "IT technician training: ITIL, hardware, networks, Windows domain, security, web development."
     description: "I took this course alongside my job: 124 lessons on *ITIL*, hardware, networks, the Windows domain, security and web development, concluded by a project. For the final project, NUBEM, I produced the detailed technical study of the IT infrastructure of a fictitious twelve-employee SME, from the choice of hardware through to the budget and the maintenance contract."
     highlights:
-      - "Final project NUBEM: choice of hardware (servers, NAS, network, workstations), network diagram and IP addressing plan (*Packet Tracer*), *Active Directory*, DNS, DHCP, RAID, backup and restore, budget and schedule, ITIL processes and maintenance contract (SLA)."
-      - "Content: introduction to ITIL, hardware knowledge and management, network fundamentals and practice, Windows domain, security, web development."
-      - "Results: project 5.0, lab 6.0, website 5.6, multiple-choice test 6.0."
+      - "**Final project NUBEM**: choice of hardware (servers, *NAS*, network, workstations), network diagram and IP addressing plan (*Packet Tracer*), *Active Directory*, *DNS*, *DHCP*, *RAID*, backup and restore, budget and schedule, *ITIL* processes and maintenance contract (SLA)."
+      - "**Content**: introduction to *ITIL*, hardware knowledge and management, network fundamentals and practice, Windows domain, security, web development."
+      - "**Results**: project 5.0, lab 6.0, website 5.6, multiple-choice test 6.0."
     skills:
       - "Active Directory"
       - "Group Policy"
@@ -351,7 +356,7 @@ education:
       - "IT: analysis and design of information systems, databases, software engineering, algorithms and procedural, modular and object-oriented programming, operating systems, telecommunications and networks, project management."
       - "Business management: business economics, quantitative management methods, organisation, political economy, law."
       - "Team project."
-      - "Diploma work: internship at New Access, in C# on .NET with SQL Server."
+      - "Diploma work: internship at New Access, in *C#* on *.NET* with *SQL Server*."
     skills:
       - "Java"
       - "C#"
@@ -391,9 +396,9 @@ certifications:
     description: "Third and final CCNAv7 module of the Cisco continuing education course at HEG Geneva. This hands-on, lab-oriented course, validated by a theory and practical exam, covers enterprise networking, security and automation."
     highlights:
       - "Configuration of single-area *OSPFv2* in point-to-point and multi-access networks."
-      - "Network security: IPv4 access control lists to filter traffic and secure administrator access."
+      - "Network security: *IPv4 access control lists* to filter traffic and secure administrator access."
       - "Configuration of *NAT* services on the edge router."
-      - "Address scalability and secure remote access for WAN networks."
+      - "Address scalability and secure remote access for *WAN* networks."
       - "Optimisation, monitoring and troubleshooting of scalable network architectures; *QoS*; network management protocols."
       - "Impact of virtualisation, software-defined networking and automation on networks."
     skills:
@@ -413,11 +418,11 @@ certifications:
     description: "Second CCNAv7 module of the Cisco continuing education course at HEG Geneva. This hands-on, lab-oriented course, validated by a theory and practical exam, covers switching, routing and wireless networks."
     highlights:
       - "Configuration of *VLANs* and inter-VLAN routing following security best practices, and troubleshooting on layer 3 devices."
-      - "Redundancy in a switched network with *STP* and *EtherChannel*, and EtherChannel troubleshooting."
-      - "Available and reliable networks: dynamic addressing and first-hop redundancy protocols; dynamic address allocation in IPv6."
-      - "Configuration of WLANs with a controller (WLC) and layer 2 security."
+      - "Redundancy in a switched network with *STP* and *EtherChannel*, and *EtherChannel* troubleshooting."
+      - "Available and reliable networks: dynamic addressing and first-hop redundancy protocols; dynamic address allocation in *IPv6*."
+      - "Configuration of *WLANs* with a controller (*WLC*) and layer 2 security."
       - "Switch security against LAN attacks."
-      - "IPv4 and IPv6 static routing."
+      - "*IPv4* and *IPv6* static routing."
     skills:
       - "CCNA"
       - "Cisco Networking"
@@ -437,7 +442,7 @@ certifications:
       - "How *Ethernet* works in a switched network: physical and data link layers."
       - "Configuration of routers for end-to-end connectivity."
       - "*IPv4* and *IPv6* addressing schemes, and connectivity checks."
-      - "Upper layers of the OSI model and network applications."
+      - "Upper layers of the *OSI* model and network applications."
       - "Secure configuration and troubleshooting of a small network."
     skills:
       - "CCNA"
@@ -454,16 +459,16 @@ projects:
     grade: "5.6/6 (original team project)"
     featured: true
     summary: "IT job platform for students and recent graduates, rewritten from the code to the deployment: Django, Vue, real time, Docker and continuous deployment."
-    description: "MarkeTech started as a team project in the inter-school module of HEG Geneva, HEG Arc Neuchâtel and HES-SO Valais, in spring 2025: four students from the three schools, working in English and remotely, had to build a job platform in *Vue.js* and *Django REST* with *Scrum*, from specifications provided by the lecturers. I was the team’s Scrum Master. In October 2026, I took up these specifications again and fully rewrote the platform in a new repository, without the original team and without reusing its code, from the code to the deployment. I added everything the school project did not have: the server, the containers, the reverse proxy and HTTPS, image publishing, automatic updates, backups, real time and a bilingual interface. The platform is online, with two demo accounts open to everyone and reset every night."
+    description: "MarkeTech started as a team project in the inter-school module of HEG Geneva, HEG Arc Neuchâtel and HES-SO Valais, in spring 2025: four students from the three schools, working in English and remotely, had to build a job platform in *Vue.js* and *Django REST* with *Scrum*, from specifications provided by the lecturers. I was the team’s *Scrum* Master. In October 2026, I took up these specifications again and fully rewrote the platform in a new repository, without the original team and without reusing its code, from the code to the deployment. I added everything the school project did not have: the server, the containers, the reverse proxy and HTTPS, image publishing, automatic updates, backups, real time and a bilingual interface. The platform is online, with two demo accounts open to everyone and reset every night."
     highlights:
-      - "**Project management, in the team project**: Scrum Master of a team of four students from three schools; product backlog with acceptance criteria and story points, sprints closed by a review with the lecturer acting as Product Owner."
+      - "**Project management, in the team project**: *Scrum* Master of a team of four students from three schools; product backlog with acceptance criteria and story points, sprints closed by a review with the lecturer acting as Product Owner."
       - "**Features**: job offers with server-side filters and pagination, applications with status tracking and history, messaging for each application, appointments in a calendar exportable as .ics, reviews, favourites, moderation, notification e-mails in each user’s language."
-      - "**Back end**: REST API with Django REST Framework, one Django app per domain (eleven); authentication by session cookie and CSRF token (django-allauth in headless mode), no token stored in the browser."
-      - "**Real time**: WebSocket with *Channels* and *Redis*; the server only sends a signal, and the page fetches the data again through the API, which remains the sole judge of access rights."
-      - "**Front end**: Vue 3 application in strict *TypeScript* (*Vite*), with no component or state management library, in French and English."
-      - "**Security**: access denied by default, ownership checked in the query itself, private files never served by a direct address, WebSocket origin checked, writes rate-limited per account."
+      - "**Back end**: REST API with *Django REST Framework*, one Django app per domain (eleven); authentication by session cookie and CSRF token (*django-allauth* in headless mode), no token stored in the browser."
+      - "**Real time**: *WebSocket* with *Channels* and *Redis*; the server only sends a signal, and the page fetches the data again through the API, which remains the sole judge of access rights."
+      - "**Front end**: *Vue 3* application in strict *TypeScript* (*Vite*), with no component or state management library, in French and English."
+      - "**Security**: access denied by default, ownership checked in the query itself, private files never served by a direct address, *WebSocket* origin checked, writes rate-limited per account."
       - "**Quality**: **162 back-end tests**; all dependencies pinned to an exact version, *GitHub Actions* pinned by commit."
-      - "**CI/CD**: GitHub Actions tests and then builds the two images, published to *ghcr.io* from main only; the server checks for new images every two minutes and restarts what changed, without GitHub ever connecting to it; rollback in one line."
+      - "**CI/CD**: *GitHub Actions* tests and then builds the two images, published to *ghcr.io* from main only; the server checks for new images every two minutes and restarts what changed, without GitHub ever connecting to it; rollback in one line."
       - "**Operations**: Linux server at Infomaniak in Switzerland, four *Docker Compose* containers on three networks, *Nginx* reverse proxy with HTTPS; encrypted nightly backups to *Swiss Backup* with *restic*, monitored, with a restore tested every quarter."
     skills:
       - "Python"
@@ -558,14 +563,14 @@ projects:
     grade: "5.9/6"
     featured: true
     summary: "Desktop software for a cardiology practice: import of DICOM or CSV exams, the cardiologist’s calculations and an automatic Word report; a real client project in a team of four."
-    description: "Client project at HEG Geneva, run by four students from September 2025 to May 2026, with *Scrum* over six sprints. The client cardiologist wrote his echocardiography reports with an *Excel* and *VBA* prototype he had built himself, hard to maintain and to share. We replaced it with a Windows application that reads the exams exported by the ultrasound machine (*DICOM* or CSV), has the measurements calculated by his Excel engine and produces a Word report that he reviews and signs. Patient data stays on the practice’s computer; only the licence and usage statistics go through the client’s server. Version 1.0.0 was delivered with its installer, guides and release notes."
+    description: "Client project at HEG Geneva, run by four students from September 2025 to May 2026, with *Scrum* over six sprints. The client cardiologist wrote his echocardiography reports with an *Excel* and *VBA* prototype he had built himself, hard to maintain and to share. We replaced it with a Windows application that reads the exams exported by the ultrasound machine (*DICOM* or CSV), has the measurements calculated by his *Excel* engine and produces a Word report that he reviews and signs. Patient data stays on the practice’s computer; only the licence and usage statistics go through the client’s server. Version 1.0.0 was delivered with its installer, guides and release notes."
     highlights:
-      - "**Project management**: Scrum Master; in charge of communication with the clients and the steering committee (sprint reviews, minutes); responsible for 11 of the 32 user stories and 43 of the 126 subtasks in the product backlog."
+      - "**Project management**: *Scrum* Master; in charge of communication with the clients and the steering committee (sprint reviews, minutes); responsible for 11 of the 32 user stories and 43 of the 126 subtasks in the product backlog."
       - "**Documentation**: author of the application architecture and the infrastructure, then of the methodology, the planning and the project document."
-      - "**My development work**: interface architecture and navigation, CSV import screen; integration of the Excel engine provided by the client, driven through COM (*xlwings*) with a grouped read of the results; licence system linked to a *MariaDB* server, with an offline mode and deferred synchronisation; exam archiving with XLSX export."
-      - "**CI/CD and delivery**: *Bitbucket Pipelines* pipeline designed by me; tests on every pull request, then, on every merge, a Windows installer built from Linux in a *Docker* image referenced by its SHA-256 digest (Wine, *Inno Setup*); *PyInstaller* executable tested on clean machines."
+      - "**My development work**: interface architecture and navigation, CSV import screen; integration of the *Excel* engine provided by the client, driven through COM (*xlwings*) with a grouped read of the results; licence system linked to a *MariaDB* server, with an offline mode and deferred synchronisation; exam archiving with XLSX export."
+      - "**CI/CD and delivery**: *Bitbucket Pipelines* pipeline designed by me; tests on every pull request, then, on every merge, a Windows installer built from Linux in a *Docker* image referenced by its SHA-256 digest (*Wine*, *Inno Setup*); *PyInstaller* executable tested on clean machines."
       - "**Quality**: strict layered architecture, **780 automated tests** (*pytest*), all passing; one pull request and one DoR/DoD checklist per user story."
-      - "**Application delivered as version 1.0.0**: DICOM viewer in a 2×2 layout with cine loop playback, live report preview, separation between the ultrasound measurements and the cardiologist’s interpretations, report history and archiving."
+      - "**Application delivered as version 1.0.0**: *DICOM* viewer in a 2×2 layout with cine loop playback, live report preview, separation between the ultrasound measurements and the cardiologist’s interpretations, report history and archiving."
       - "Source code in a private Bitbucket repository owned by the client; live demonstration of the application at the final presentation."
     skills:
       - "Python"
@@ -611,7 +616,7 @@ projects:
       - "**Architecture in decoupled systems, 18 C# scripts**: plane control, engine damage and repair, oxygen, altitude, bird spawning, camera, background scrolling, score, sound, game over; all settings kept in a single `GameConfig` singleton."
       - "**Progressive difficulty**: birds appear more and more often and faster, special birds arrive after twenty seconds, and a spawning band guards the way to space."
       - "**Mechanics**: a dodge loop with invulnerability and a cooldown, an engine that can be recovered with a repair item, an oxygen gauge in space, a score based on flight time."
-      - "Development tracked on a Trello board of 21 tasks, all completed."
+      - "Development tracked on a *Trello* board of 21 tasks, all completed."
     skills:
       - "Unity"
       - "C#"
@@ -635,9 +640,9 @@ projects:
     summary: "Booking system for a hair salon: a REST API in Laravel, secured by tokens and roles, used by a C# (.NET) desktop client."
     description: "Individual project for the architecture module at HEG Geneva. ReserveCut runs the activity of a hair salon: customers, stylists and their absences, services, bookings and user accounts. The back end is a REST API in *Laravel*, built in layers and protected by tokens and roles. The front end is a *C#* desktop client that authenticates against the API and uses its data."
     highlights:
-      - "REST API in Laravel 11 over six resources (users, stylists, absences, services, customers, bookings), built in layers: controllers, services, resources and middleware."
+      - "REST API in *Laravel 11* over six resources (users, stylists, absences, services, customers, bookings), built in layers: controllers, services, resources and middleware."
       - "**Security**: token authentication with *Laravel Sanctum*; two roles, administrator and user, and eleven permissions managed with `spatie/laravel-permission`, checked on every route."
-      - "**Database modelling**: logical model, then physical model and SQL script, later turned into Laravel migrations."
+      - "**Database modelling**: logical model, then physical model and SQL script, later turned into *Laravel* migrations."
       - "**C# *WinForms* desktop client (*.NET 8*), 16 windows**: token login, data browsing and full management of the six resources through the API (bookings, customers, stylists and their absences, services, users)."
       - "API documented and tested with a *Postman* collection of **76 requests**; demo data generated by factories and a seeder."
       - "**Five successive deliverables**: a flyer presenting the idea, data modelling, a horizontal prototype of the interface, the API, then the final application."
@@ -671,7 +676,7 @@ projects:
     role: "Design and implementation of the whole business intelligence pipeline, from ETL to reports."
     completed: "2026-01"
     featured: false
-    summary: "Business intelligence pipeline on the Swiss COVID-19 data of the FOPH: ETL with Pentaho, Oracle star-schema data warehouse, OLAP cube in Analysis Services and Excel reports."
+    summary: "Business intelligence pipeline on the Swiss COVID-19 data of the FOPH: ETL with *Pentaho*, *Oracle* star-schema data warehouse, OLAP cube in *Analysis Services* and *Excel* reports."
     description: ""
     highlights: []
     skills:
@@ -693,7 +698,7 @@ projects:
     role: "Database modelling, creation of the SAP objects and development of the entry screens in ABAP."
     completed: "2025-05"
     featured: false
-    summary: "SAP extension for a restaurant (case study): three tables, entry screens for classes, participants and registrations, and business checks written in ABAP."
+    summary: "*SAP* extension for a restaurant (case study): three tables, entry screens for classes, participants and registrations, and business checks written in *ABAP*."
     description: ""
     highlights: []
     skills:
@@ -712,7 +717,7 @@ projects:
     role: "SQL queries and visualisations of the daily average price and of the slippage by trade size."
     completed: "2025-12"
     featured: false
-    summary: "Analysis of the Uniswap V2 ETH/USDC pool from raw Ethereum data: DuneSQL queries and a public dashboard with four visualisations."
+    summary: "Analysis of the *Uniswap V2* ETH/USDC pool from raw *Ethereum* data: *DuneSQL* queries and a public dashboard with four visualisations."
     description: ""
     highlights: []
     skills:
@@ -733,7 +738,7 @@ projects:
     role: "Work carried out together, from the state of the art to the recommendations: technical audit of the website, preparation and conduct of an interview with the cooperative, comparative analysis."
     completed: "2026-06"
     featured: false
-    summary: "Audit of the digital accessibility and usability of a Geneva housing cooperative for its senior users: WCAG tools, an interview and prioritised recommendations."
+    summary: "Audit of the digital accessibility and usability of a Geneva housing cooperative for its senior users: *WCAG* tools, an interview and prioritised recommendations."
     description: ""
     highlights: []
     skills:
@@ -752,7 +757,7 @@ projects:
     role: "Work carried out together: BPMN modelling of the current and target processes, SWOT analysis, functional capability map, comparison of solutions and profitability calculation."
     completed: "2025-05"
     featured: false
-    summary: "Automation of stock tracking for a restaurant (case study): current and target processes in BPMN, SWOT analysis, capability map and a costed choice of software."
+    summary: "Automation of stock tracking for a restaurant (case study): current and target processes in *BPMN*, *SWOT* analysis, capability map and a costed choice of software."
     description: ""
     highlights: []
     skills:
@@ -770,7 +775,7 @@ projects:
     role: "Wrote three of the ten record sheets (billing and payments, loyalty programmes, lost property); description and justification of the activities done as a group of three."
     completed: "2023-11"
     featured: false
-    summary: "Simulated record of processing activities for the Swiss Federal Railways under the Swiss data protection act: ten activities described, justified and documented."
+    summary: "Simulated record of processing activities for the Swiss Federal Railways under the *Swiss data protection act*: ten activities described, justified and documented."
     description: ""
     highlights: []
     skills:
@@ -785,7 +790,7 @@ projects:
     role: "Choice of the company, first contact and organisation of the interviews; interviews, analysis and report done as a group of three."
     completed: "2025-06"
     featured: false
-    summary: "Analysis of how a retail company processes personal data under the new Swiss data protection act: two interviews, a risk assessment and recommendations."
+    summary: "Analysis of how a retail company processes personal data under the new *Swiss data protection act*: two interviews, a risk assessment and recommendations."
     description: ""
     highlights: []
     skills:

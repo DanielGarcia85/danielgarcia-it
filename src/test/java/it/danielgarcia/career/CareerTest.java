@@ -170,7 +170,9 @@ class CareerTest {
     private static void assertSummary(String summary, String entry) {
         assertNotNull(summary, entry + ": no summary");
         assertFalse(summary.isBlank(), entry + ": empty summary");
-        assertTrue(summary.length() <= SUMMARY_MAX_LENGTH,
+        // The length the reader sees: without the Markdown signs (*, `) of a summary that highlights a tool
+        String visible = summary.replaceAll("[*`]", "");
+        assertTrue(visible.length() <= SUMMARY_MAX_LENGTH,
                 entry + ": summary longer than " + SUMMARY_MAX_LENGTH + " characters");
     }
 
