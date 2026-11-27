@@ -50,6 +50,53 @@ section > h2::before {
 }
 
 /*
+  Sticky titles on the home page: the title of a section stays under the
+  header until the end of its section, and the title of a part of the
+  career stays under it until the end of its part. Position sticky keeps
+  each title inside its parent, so it leaves with it. The title gets the
+  background of the page and covers the content that passes under it.
+  Not on a phone, where they would take too much of the screen, nor when
+  the header scrolls with the page (low screen, strong zoom, or no
+  JavaScript on a narrow screen: the class js of public/theme.js), nor for
+  the panel About this site, a short card. A link to an anchor, or the
+  focus, stops under the titles too (WCAG 2.4.11): the scroll padding
+  counts the title of the section, and the elements of the career the
+  title of their part.
+*/
+:root {
+  /* Height of a sticky section title: padding, one line of 40 px at 1.2, padding, rule */
+  --title-height: calc(12px + 2.5rem * 1.2 + 12px + 1px);
+}
+
+@media (min-width: 761px) and (min-height: 501px) {
+  html.js:has(#profile) {
+    scroll-padding-top: calc(var(--header-height) + var(--title-height) + 16px);
+  }
+
+  .js :is(#projects, #career, #skills) > h2 {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 5;
+    margin-top: -12px;
+    padding-top: 12px;
+    background: var(--paper);
+  }
+
+  .js #career > h3 {
+    position: sticky;
+    top: calc(var(--header-height) + var(--title-height));
+    z-index: 4;
+    /* The page color over its bottom margin: the text that passes under stops cleanly, 16 px lower */
+    box-shadow: 0 16px 0 var(--paper);
+  }
+
+  /* Under the title of the section and the title of the part: the height of a band */
+  .js #career .timeline-entry {
+    scroll-margin-top: calc(1.75rem * 1.2 + 20px);
+  }
+}
+
+/*
   Profile of the home page. The right part of the band (the halo) stays free
   for the console: 512 px at most, 40 % of the screen on smaller ones, so
   that it narrows smoothly with the screen. The gradient starts a little
