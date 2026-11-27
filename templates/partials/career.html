@@ -6,9 +6,9 @@
   position, per degree and per certification of data/career/<lang>.yml, most
   recent first: the dates, the position in bold, the employer, the summary
   and an Open button. A click on the line opens its large card (a dialog,
-  web/dialogs.js), in the style of the projects: the description, the tasks
-  or the highlights and the skills on the left, the facts on the right. The
-  name of the referee is never shown. Style: web/_career.scss and
+  web/dialogs.js), in the style of the projects: the description and the
+  tasks or the highlights on the left, the facts and the skills on the
+  right. The name of the referee is never shown. Style: web/_career.scss and
   web/_cards.scss.
 !}
 {#let career=cdi:career.get(page.data.lang) t=cdi:i18n.get(page.data.lang)}
@@ -49,14 +49,6 @@
                   {/for}
                 </ul>
               {/if}
-              {#if experience.skills}
-                <h5>{t.skills}</h5>
-                <ul class="tags">
-                  {#for skill in experience.skills}
-                    <li>{skill}</li>
-                  {/for}
-                </ul>
-              {/if}
             </div>
             <aside>
               <dl>
@@ -69,6 +61,14 @@
                   <dd>{experience.mention}</dd>
                 {/if}
               </dl>
+              {#if experience.skills}
+                <h5>{t.skills}</h5>
+                <ul class="tags">
+                  {#for skill in experience.skills}
+                    <li>{skill}</li>
+                  {/for}
+                </ul>
+              {/if}
               {#if experience.documents}
                 <p class="documents">{experience.documents}</p>
               {/if}
@@ -113,14 +113,6 @@
                   {/for}
                 </ul>
               {/if}
-              {#if education.skills}
-                <h5>{t.skills}</h5>
-                <ul class="tags">
-                  {#for skill in education.skills}
-                    <li>{skill}</li>
-                  {/for}
-                </ul>
-              {/if}
             </div>
             <aside>
               <dl>
@@ -137,6 +129,14 @@
                   <dd>{education.grade.markdownify}</dd>
                 {/if}
               </dl>
+              {#if education.skills}
+                <h5>{t.skills}</h5>
+                <ul class="tags">
+                  {#for skill in education.skills}
+                    <li>{skill}</li>
+                  {/for}
+                </ul>
+              {/if}
               {#if education.documents}
                 <p class="documents">{education.documents}</p>
               {/if}
@@ -181,6 +181,12 @@
                   {/for}
                 </ul>
               {/if}
+            </div>
+            <aside>
+              <dl>
+                <dt>{t.obtained}</dt>
+                <dd>{certification.obtainedLabel}</dd>
+              </dl>
               {#if certification.skills}
                 <h5>{t.skills}</h5>
                 <ul class="tags">
@@ -189,12 +195,6 @@
                   {/for}
                 </ul>
               {/if}
-            </div>
-            <aside>
-              <dl>
-                <dt>{t.obtained}</dt>
-                <dd>{certification.obtainedLabel}</dd>
-              </dl>
               {#if certification.documents}
                 <p class="documents">{certification.documents}</p>
               {/if}

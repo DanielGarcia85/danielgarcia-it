@@ -245,11 +245,6 @@ dialog::backdrop {
   color: var(--accent);
 }
 
-/* The skills of a career entry, under its highlights: they can be many */
-.large-card-body > div > .tags {
-  margin: 0;
-}
-
 /* markdownify puts each highlight in a paragraph */
 .highlights p {
   margin: 0;
@@ -281,7 +276,7 @@ dialog::backdrop {
   margin: 0;
 }
 
-.large-card-body aside h4 {
+.large-card-body aside :is(h4, h5) {
   font-size: 1rem;
 }
 
