@@ -17,7 +17,7 @@ experience:
     place: "Genève"
     started: "2023-09"
     summary: "Support informatique : helpdesk, postes Windows et macOS, Active Directory, Intune, machines virtuelles VMware, automatisation d’un certificat en production."
-    description: "J’assure le support informatique des collaborateurs et des enseignants, à distance comme sur place : je prends en charge leurs demandes et leurs incidents jusqu’à leur clôture, j’installe et j’entretiens les postes Windows et macOS, les périphériques et les imprimantes, et j’accompagne les utilisateurs. Dans le périmètre qui m’est délégué, je gère les ordinateurs, les comptes, les droits d’accès et les stratégies de groupe dans Active Directory, l’enrôlement des postes et leurs profils de configuration dans Microsoft Intune, et les réservations et attributions d’adresses IP par DHCP. J’utilise BMC Client Management pour la gestion du parc et j’entretiens les postes virtuels sur VMware vSphere. J’ai aussi automatisé, en production, le renouvellement d’un certificat Let’s Encrypt sur un serveur applicatif Windows, avec des scripts PowerShell que j’ai documentés."
+    description: "J’assure le support informatique des collaborateurs et des enseignants, à distance comme sur place : je prends en charge leurs demandes et leurs incidents jusqu’à leur clôture, j’installe et j’entretiens les postes Windows et macOS, les périphériques et les imprimantes, et j’accompagne les utilisateurs. Dans le périmètre qui m’est délégué, je gère les ordinateurs, les comptes, les droits d’accès et les stratégies de groupe dans *Active Directory*, l’enrôlement des postes et leurs profils de configuration dans *Microsoft Intune*, et les réservations et attributions d’adresses IP par DHCP. J’utilise *BMC Client Management* pour la gestion du parc et j’entretiens les postes virtuels sur *VMware vSphere*. J’ai aussi **automatisé, en production**, le renouvellement d’un certificat *Let’s Encrypt* sur un serveur applicatif Windows, avec des scripts *PowerShell* que j’ai documentés."
     tasks:
       - "Helpdesk pour les collaborateurs et les enseignants : gestion des demandes, résolution d’incidents, installations."
       - "Formation et accompagnement des utilisateurs."
@@ -58,7 +58,7 @@ experience:
     ended: "2024-09"
     mention: "Mission temporaire via Academic Work"
     summary: "Script PowerShell d’audit des impressions sur plusieurs serveurs de l’État, documentation des scripts de supervision Nagios avant leur migration vers SCCM."
-    description: "Lors d’une mission temporaire au sein du secteur Windows, VMware et x86 de l’OCSIN, j’ai développé un script PowerShell qui recherche et collecte les événements des journaux d’impression sur plusieurs serveurs d’impression de l’État à la fois, pour un ou plusieurs utilisateurs Active Directory et sur une période donnée, avec gestion des erreurs et rapports automatiques (CSV, journaux, empreintes SHA-512). J’ai aussi analysé et documenté en détail les scripts PowerShell de supervision Nagios de l’équipe, en vue de leur migration vers SCCM."
+    description: "Lors d’une mission temporaire au sein du secteur Windows, VMware et x86 de l’OCSIN, j’ai développé un script *PowerShell* qui recherche et collecte les événements des journaux d’impression sur plusieurs serveurs d’impression de l’État à la fois, pour un ou plusieurs utilisateurs *Active Directory* et sur une période donnée, avec gestion des erreurs et rapports automatiques (CSV, journaux, empreintes SHA-512). J’ai aussi analysé et documenté en détail les scripts PowerShell de supervision *Nagios* de l’équipe, en vue de leur migration vers *SCCM*."
     tasks:
       - "Développement d’un script PowerShell qui recherche et collecte les événements d’impression sur plusieurs serveurs d’impression de l’État à la fois, filtrés par utilisateur Active Directory et par période."
       - "Gestion des erreurs et rapports automatiques : CSV, journaux, empreintes SHA-512."
@@ -75,7 +75,7 @@ experience:
     started: "2022-04"
     ended: "2023-08"
     summary: "Infrastructure d’entreprise : serveurs Windows, virtualisation Nutanix, réseau MPLS et pare-feu Fortinet, VPN, déploiement SCCM, migration de la téléphonie vers Microsoft Teams."
-    description: "À la succursale de Lausanne, j’ai géré et maintenu l’infrastructure informatique de l’entreprise, virtualisée sur Nutanix AHV. J’ai installé et supporté les serveurs Windows Server 2012 à 2019 (DNS, DHCP, GPO, RDSH), géré les équipements du réseau MPLS (commutation Cisco et Alcatel) et sa sécurité avec les pare-feu Fortinet, et administré les solutions VPN (Pulse Secure, VASCO) et Wi-Fi (Alcatel, ClearPass). J’ai aussi géré le projet de migration de la téléphonie de Skype for Business vers Microsoft Teams, et assuré le packaging et le déploiement des postes clients avec Microsoft SCCM, avec un suivi des tickets dans Ivanti et ServiceNow."
+    description: "À la succursale de Lausanne, j’ai géré et maintenu l’infrastructure informatique de l’entreprise, virtualisée sur *Nutanix AHV*. J’ai installé et supporté les serveurs *Windows Server* 2012 à 2019 (DNS, DHCP, GPO, RDSH), géré les équipements du réseau MPLS (commutation *Cisco* et Alcatel) et sa sécurité avec les pare-feu *Fortinet*, et administré les solutions VPN (Pulse Secure, VASCO) et Wi-Fi (Alcatel, ClearPass). J’ai aussi géré le projet de migration de la téléphonie de Skype for Business vers *Microsoft Teams*, et assuré le packaging et le déploiement des postes clients avec *Microsoft SCCM*, avec un suivi des tickets dans Ivanti et *ServiceNow*."
     tasks:
       - "Gestion et maintenance de l’infrastructure de l’entreprise (Nutanix AHV)."
       - "Installation et support des serveurs Windows Server 2012 à 2019 : DNS, DHCP, GPO, RDSH."
@@ -117,7 +117,7 @@ experience:
     started: "2016-07"
     ended: "2022-03"
     summary: "Responsable de la maintenance pour toute la Suisse, équipe de deux techniciens : vidéosurveillance et sécurité des clients B2B, réseaux Cisco, serveurs."
-    description: "Responsable de la maintenance pour toute la Suisse, j’ai dirigé une équipe de deux techniciens, rattaché au chef du département. J’ai assuré la maintenance des installations de vidéosurveillance et de sécurité des clients B2B, avec des entreprises partenaires locales pour les interventions sur site, et piloté la mise à niveau des systèmes selon la stratégie nationale du groupe Securitas, en gérant les coûts de maintenance. Sur le plan technique, j’ai configuré les serveurs et leur architecture RAID, conçu les réseaux (adressage IP, couches 2 et 3) et configuré les routeurs Cisco (spoke to spoke, NAT, VPN), virtualisé le serveur d’analyse vidéo et configuré Milestone VMS et InnoVi. J’ai aussi géré les comptes et les droits dans Active Directory et assuré le support par téléphone et par tickets."
+    description: "Responsable de la maintenance pour toute la Suisse, j’ai **dirigé une équipe de deux techniciens**, rattaché au chef du département. J’ai assuré la maintenance des installations de vidéosurveillance et de sécurité des clients B2B, avec des entreprises partenaires locales pour les interventions sur site, et piloté la mise à niveau des systèmes selon la stratégie nationale du groupe Securitas, en gérant les coûts de maintenance. Sur le plan technique, j’ai configuré les serveurs et leur architecture RAID, conçu les réseaux (adressage IP, couches 2 et 3) et configuré les routeurs *Cisco* (spoke to spoke, NAT, VPN), virtualisé le serveur d’analyse vidéo et configuré *Milestone VMS* et InnoVi. J’ai aussi géré les comptes et les droits dans *Active Directory* et assuré le support par téléphone et par tickets."
     tasks:
       - "Encadrement d’une équipe de deux techniciens, rattaché au chef du département."
       - "Maintenance des installations de vidéosurveillance et de sécurité des clients B2B dans toute la Suisse ; partenariats avec des entreprises locales pour les interventions sur site."
@@ -158,7 +158,7 @@ experience:
     started: "2014-02"
     ended: "2016-06"
     summary: "Installation, paramétrage et maintenance de systèmes de vidéosurveillance IP, support aux clients, service de piquet 24 h sur 24."
-    description: "J’ai installé et paramétré les systèmes de vidéosurveillance IP des clients, côté matériel (Axis, Dell, Cisco) comme côté logiciel (Milestone, Bosch, AgentVi), et réalisé les tests pour l’approbation formelle des projets. J’ai assuré le support de premier et de deuxième niveau aux clients et aux opérateurs, la maintenance à distance et sur site pour garantir la disponibilité des dispositifs selon les engagements contractuels (SLA), et le service de piquet technique 24 h sur 24, 7 jours sur 7. J’ai aussi soutenu l’équipe de projet dans la réalisation de nouveaux sites en Suisse, rédigé la documentation technique et géré le stock, en lien avec l’équipe helpdesk de Suède et les partenaires externes."
+    description: "J’ai installé et paramétré les systèmes de vidéosurveillance IP des clients, côté matériel (*Axis*, Dell, Cisco) comme côté logiciel (*Milestone*, Bosch, AgentVi), et réalisé les tests pour l’approbation formelle des projets. J’ai assuré le support de premier et de deuxième niveau aux clients et aux opérateurs, la maintenance à distance et sur site pour garantir la disponibilité des dispositifs selon les engagements contractuels (SLA), et le service de piquet technique **24 h sur 24, 7 jours sur 7**. J’ai aussi soutenu l’équipe de projet dans la réalisation de nouveaux sites en Suisse, rédigé la documentation technique et géré le stock, en lien avec l’équipe helpdesk de Suède et les partenaires externes."
     tasks:
       - "Installation et paramétrage des systèmes de vidéosurveillance IP : matériel (Axis, Dell, Cisco) et logiciel (Milestone, Bosch, AgentVi)."
       - "Soutien à l’équipe de projet pour la réalisation de nouveaux sites en Suisse ; tests pour l’approbation formelle des projets."
@@ -191,7 +191,7 @@ experience:
     started: "2013-03"
     ended: "2014-01"
     summary: "Télésurveillance : traitement des alarmes intrusion, incendie et vidéo sur Horus, levée de doute téléphonique et vidéo (Milestone, Bosch), engagement des interventions."
-    description: "Opérateur de la centrale de télésurveillance, en rotation d’équipe, nuits et week-ends compris, j’ai traité les alarmes intrusion, incendie et vidéo de clients particuliers et entreprises. Les alarmes étaient reçues et traitées sur Horus (Azur Soft), le logiciel de télésurveillance de la centrale. Pour chaque événement, je réalisais la levée de doute par téléphone ou par vidéo sur Milestone ou Bosch, puis j’appliquais les consignes du site : contact du client, engagement du service d’intervention ou alerte des forces de l’ordre. J’assurais également la surveillance vidéo à distance des installations et la réception des appels pour les centres d’appels que la centrale opérait pour le compte de ses clients."
+    description: "Opérateur de la centrale de télésurveillance, en rotation d’équipe, nuits et week-ends compris, j’ai traité les alarmes intrusion, incendie et vidéo de clients particuliers et entreprises. Les alarmes étaient reçues et traitées sur *Horus* (Azur Soft), le logiciel de télésurveillance de la centrale. Pour chaque événement, je réalisais la levée de doute par téléphone ou par vidéo sur *Milestone* ou Bosch, puis j’appliquais les consignes du site : contact du client, engagement du service d’intervention ou alerte des forces de l’ordre. J’assurais également la surveillance vidéo à distance des installations et la réception des appels pour les centres d’appels que la centrale opérait pour le compte de ses clients."
     tasks:
       - "Traitement des alarmes intrusion, incendie et vidéo sur Horus (Azur Soft), pour des clients particuliers et entreprises."
       - "Levée de doute par téléphone ou par vidéo (Milestone, Bosch)."
@@ -231,7 +231,7 @@ experience:
     ended: "2008-06"
     mention: "Stage de fin d’études ESIG"
     summary: "Réplication bidirectionnelle de bases de données en C# sur .NET avec SQL Server : recherche des méthodes et participation au développement."
-    description: "Pour mon stage de fin d’études à l’ESIG, j’ai rejoint New Access, éditeur de logiciels bancaires à Genève. J’y ai appris la plateforme .NET, le langage C# et SQL Server, qui ne faisaient pas partie de ma formation. J’ai mené une recherche sur les méthodes de réplication de bases de données, dont les résultats ont été jugés utiles par l’entreprise, puis participé au développement d’une réplication bidirectionnelle de bases de données avec ces technologies."
+    description: "Pour mon stage de fin d’études à l’ESIG, j’ai rejoint New Access, éditeur de logiciels bancaires à Genève. J’y ai appris la plateforme *.NET*, le langage *C#* et *SQL Server*, qui ne faisaient pas partie de ma formation. J’ai mené une recherche sur les méthodes de réplication de bases de données, dont les résultats ont été jugés utiles par l’entreprise, puis participé au développement d’une réplication bidirectionnelle de bases de données avec ces technologies."
     tasks:
       - "Recherche et comparaison des méthodes de réplication de bases de données."
       - "Participation au développement d’une réplication bidirectionnelle de bases de données en C# sur .NET avec SQL Server."
@@ -254,8 +254,8 @@ education:
     summary: "Bachelor en informatique de gestion : développement, architecture, intégration et industrialisation des services, données, gestion de projet."
     description: "J’ai suivi ce Bachelor à temps partiel, en parallèle de mon emploi. La formation porte sur les systèmes d’information, la gestion et la communication, et les technologies informatiques : analyser, concevoir, mettre en œuvre, intégrer et exploiter le système d’information d’une organisation, en collaboration avec le client. J’y ai mené plusieurs projets de l’analyse jusqu’à la mise en production, seul ou en équipe, dont un mandat réel pour un cabinet de cardiologie et mon Travail de Bachelor, Ge-Trouve."
     highlights:
-      - "Travaux pratiques en DevOps : Docker, CI/CD GitLab, Kubernetes, Ansible, Prometheus et Grafana."
-      - "Travaux pratiques en Java : JPA et Hibernate, JDBC, servlets, Spring Boot et Spring Data JPA, Spring AI, Quarkus, tests JUnit."
+      - "Travaux pratiques en DevOps : *Docker*, CI/CD GitLab, *Kubernetes*, *Ansible*, Prometheus et Grafana."
+      - "Travaux pratiques en Java : JPA et Hibernate, JDBC, servlets, *Spring Boot* et Spring Data JPA, Spring AI, *Quarkus*, tests *JUnit*."
       - "Travail de Bachelor (5,7/6) : Ge-Trouve, assistant conversationnel (chatbot) RAG en français sur les démarches administratives du canton de Genève, avec un modèle de langage exécuté localement."
       - "Projet sur mandat (5,9/6) : Zebra-Girafe, logiciel médical de bureau pour un cabinet de cardiologie, en équipe de quatre ; Scrum Master et pipeline CI/CD."
       - "Projet inter-écoles (5,6/6) : MarkeTech, plateforme d’emploi, en équipe de quatre ; Scrum Master."
@@ -317,9 +317,9 @@ education:
     mention: "En parallèle de mon emploi"
     grade: "Note finale 5,7/6"
     summary: "Formation de technicien en informatique : ITIL, matériel, réseaux, domaine Windows, sécurité, développement web."
-    description: "J’ai suivi cette formation en parallèle de mon emploi : 124 périodes de cours sur ITIL, le matériel, les réseaux, le domaine Windows, la sécurité et le développement web, conclues par un projet. Pour le projet final, NUBEM, j’ai réalisé l’étude technique détaillée de l’infrastructure informatique d’une PME fictive de douze employés, du choix du matériel jusqu’au budget et au contrat de maintenance."
+    description: "J’ai suivi cette formation en parallèle de mon emploi : 124 périodes de cours sur *ITIL*, le matériel, les réseaux, le domaine Windows, la sécurité et le développement web, conclues par un projet. Pour le projet final, NUBEM, j’ai réalisé l’étude technique détaillée de l’infrastructure informatique d’une PME fictive de douze employés, du choix du matériel jusqu’au budget et au contrat de maintenance."
     highlights:
-      - "Projet final NUBEM : choix du matériel (serveurs, NAS, réseau, postes), schéma réseau et plan d’adressage IP (Packet Tracer), Active Directory, DNS, DHCP, RAID, sauvegarde et restauration, budget et planning, processus ITIL et contrat de maintenance (SLA)."
+      - "Projet final NUBEM : choix du matériel (serveurs, NAS, réseau, postes), schéma réseau et plan d’adressage IP (*Packet Tracer*), *Active Directory*, DNS, DHCP, RAID, sauvegarde et restauration, budget et planning, processus ITIL et contrat de maintenance (SLA)."
       - "Contenu : introduction à ITIL, connaissance et gestion du matériel, notions et pratiques fondamentales des réseaux, domaine Windows, sécurité, développement web."
       - "Résultats : projet 5,0, laboratoire 6,0, site web 5,6, QCM 6,0."
     skills:
@@ -346,7 +346,7 @@ education:
       Moyenne générale 5,0/6\
       Mention Bien
     summary: "Formation d’informaticien de gestion ES : systèmes d’information, bases de données, génie logiciel, programmation, réseaux."
-    description: "Formation à plein temps de deux ans, reconnue à hauteur de 60 crédits ECTS dans mon Bachelor à la HEG Genève. Elle couvre l’analyse et la conception de systèmes d’information, les bases de données, le génie logiciel, l’algorithmique et la programmation procédurale, modulaire et orientée objet, les systèmes d’exploitation, les télécommunications et réseaux, ainsi que la gestion de projet et la gestion d’entreprise. Mon travail de diplôme était un stage chez New Access, éditeur de logiciels bancaires, en C# sur .NET avec SQL Server."
+    description: "Formation à plein temps de deux ans, reconnue à hauteur de 60 crédits ECTS dans mon Bachelor à la HEG Genève. Elle couvre l’analyse et la conception de systèmes d’information, les bases de données, le génie logiciel, l’algorithmique et la programmation procédurale, modulaire et orientée objet, les systèmes d’exploitation, les télécommunications et réseaux, ainsi que la gestion de projet et la gestion d’entreprise. Mon travail de diplôme était un stage chez New Access, éditeur de logiciels bancaires, en *C#* sur *.NET* avec *SQL Server*."
     highlights:
       - "Informatique : analyse et conception de systèmes d’information, bases de données, génie logiciel, algorithmique et programmation procédurale, modulaire et orientée objet, systèmes d’exploitation, télécommunications et réseaux, gestion de projet."
       - "Gestion d’entreprise : économie d’entreprise, techniques quantitatives de gestion, organisation, économie politique, droit."
@@ -390,11 +390,11 @@ certifications:
     summary: "Réseaux d’entreprise : OSPF, listes de contrôle d’accès, NAT, WAN et VPN, QoS, gestion du réseau, virtualisation et automatisation."
     description: "Troisième et dernier module CCNAv7 de la formation continue Cisco de la HEG Genève. Ce cours pratique, axé sur les laboratoires et validé par un examen théorique et pratique, porte sur la mise en réseau, la sécurité et l’automatisation des réseaux d’entreprise."
     highlights:
-      - "Configuration d’OSPFv2 en zone unique, sur des réseaux point à point et multi-accès."
+      - "Configuration d’*OSPFv2* en zone unique, sur des réseaux point à point et multi-accès."
       - "Sécurité du réseau : listes de contrôle d’accès IPv4 pour filtrer le trafic et sécuriser l’accès des administrateurs."
-      - "Configuration des services NAT sur le routeur de périphérie."
+      - "Configuration des services *NAT* sur le routeur de périphérie."
       - "Évolutivité des adresses et accès à distance sécurisé pour les réseaux WAN."
-      - "Optimisation, surveillance et dépannage d’architectures réseau évolutives ; QoS ; protocoles de gestion du réseau."
+      - "Optimisation, surveillance et dépannage d’architectures réseau évolutives ; *QoS* ; protocoles de gestion du réseau."
       - "Effets de la virtualisation, de la mise en réseau définie par logiciel et de l’automatisation sur les réseaux."
     skills:
       - "CCNA"
@@ -412,8 +412,8 @@ certifications:
     summary: "Commutation, routage et sans-fil : VLAN et routage inter-VLAN, STP et EtherChannel, routage statique, WLAN, sécurité des commutateurs."
     description: "Deuxième module CCNAv7 de la formation continue Cisco de la HEG Genève. Ce cours pratique, axé sur les laboratoires et validé par un examen théorique et pratique, porte sur la commutation, le routage et les réseaux sans fil."
     highlights:
-      - "Configuration des VLAN et du routage inter-VLAN selon les bonnes pratiques de sécurité, et dépannage sur les équipements de couche 3."
-      - "Redondance d’un réseau commuté avec STP et EtherChannel, et dépannage d’EtherChannel."
+      - "Configuration des *VLAN* et du routage inter-VLAN selon les bonnes pratiques de sécurité, et dépannage sur les équipements de couche 3."
+      - "Redondance d’un réseau commuté avec *STP* et *EtherChannel*, et dépannage d’EtherChannel."
       - "Réseaux disponibles et fiables : adressage dynamique et protocoles de redondance de premier saut ; allocation dynamique d’adresses IPv6."
       - "Configuration de WLAN avec un contrôleur (WLC) et sécurité de couche 2."
       - "Sécurité des commutateurs contre les attaques du réseau local."
@@ -434,9 +434,9 @@ certifications:
     description: "Premier module CCNAv7 de la formation continue Cisco de la HEG Genève. Ce cours pratique, axé sur les laboratoires et validé par un examen théorique et pratique, pose les bases des réseaux, de la couche physique jusqu’aux applications."
     highlights:
       - "Configuration des commutateurs et des périphériques finaux pour l’accès aux ressources locales et distantes."
-      - "Fonctionnement d’Ethernet dans un réseau commuté : couches physique et liaison de données."
+      - "Fonctionnement d’*Ethernet* dans un réseau commuté : couches physique et liaison de données."
       - "Configuration des routeurs pour la connectivité de bout en bout."
-      - "Plans d’adressage IPv4 et IPv6, et vérification de la connectivité."
+      - "Plans d’adressage *IPv4* et *IPv6*, et vérification de la connectivité."
       - "Couches supérieures du modèle OSI et applications réseau."
       - "Configuration sécurisée et dépannage d’un petit réseau."
     skills:
@@ -454,17 +454,17 @@ projects:
     grade: "5,6/6 (projet d’équipe d’origine)"
     featured: true
     summary: "Plateforme d’emploi en informatique pour étudiants et jeunes diplômés, réécrite du code au déploiement : Django, Vue, temps réel, Docker et déploiement continu."
-    description: "MarkeTech part d’un projet d’équipe du module inter-écoles de la HEG Genève, de la HEG Arc Neuchâtel et de la HES-SO Valais, au printemps 2025 : à quatre étudiants des trois écoles, en anglais et à distance, nous devions réaliser en Scrum une plateforme d’emploi en Vue.js et Django REST, à partir d’un cahier des charges fourni par les enseignants. J’étais le Scrum Master de l’équipe. En octobre 2026, j’ai repris ce cahier des charges et réécrit entièrement la plateforme dans un nouveau dépôt, sans l’équipe d’origine et sans reprendre son code, du code jusqu’au déploiement. J’y ai ajouté tout ce que le projet scolaire n’avait pas : le serveur, les conteneurs, le reverse proxy et le HTTPS, la publication des images, la mise à jour automatique, les sauvegardes, le temps réel et une interface en deux langues. La plateforme est en ligne, avec deux comptes de démonstration ouverts à tous et remis à zéro chaque nuit."
+    description: "MarkeTech part d’un projet d’équipe du module inter-écoles de la HEG Genève, de la HEG Arc Neuchâtel et de la HES-SO Valais, au printemps 2025 : à quatre étudiants des trois écoles, en anglais et à distance, nous devions réaliser en *Scrum* une plateforme d’emploi en *Vue.js* et *Django REST*, à partir d’un cahier des charges fourni par les enseignants. J’étais le Scrum Master de l’équipe. En octobre 2026, j’ai repris ce cahier des charges et réécrit entièrement la plateforme dans un nouveau dépôt, sans l’équipe d’origine et sans reprendre son code, du code jusqu’au déploiement. J’y ai ajouté tout ce que le projet scolaire n’avait pas : le serveur, les conteneurs, le reverse proxy et le HTTPS, la publication des images, la mise à jour automatique, les sauvegardes, le temps réel et une interface en deux langues. La plateforme est en ligne, avec deux comptes de démonstration ouverts à tous et remis à zéro chaque nuit."
     highlights:
       - "**Gestion de projet, dans le projet d’équipe** : Scrum Master d’une équipe de quatre étudiants de trois écoles ; product backlog avec critères d’acceptation et story points, sprints conclus par une revue avec l’enseignant dans le rôle de Product Owner."
       - "**Fonctionnalités** : offres avec filtres et pagination côté serveur, candidatures avec suivi de statut et historique, messagerie par candidature, rendez-vous dans un calendrier exportables en .ics, avis, favoris, modération, e-mails de notification dans la langue de chaque utilisateur."
       - "**Back-end** : API REST avec Django REST Framework, une application Django par domaine (onze) ; authentification par cookie de session et jeton CSRF (django-allauth en mode headless), aucun jeton stocké dans le navigateur."
-      - "**Temps réel** : WebSocket avec Channels et Redis ; le serveur n’envoie qu’un signal, et la page relit les données par l’API, qui reste seule juge des droits d’accès."
-      - "**Front-end** : application Vue 3 en TypeScript strict (Vite), sans bibliothèque de composants ni de gestion d’état, en français et en anglais."
+      - "**Temps réel** : WebSocket avec *Channels* et *Redis* ; le serveur n’envoie qu’un signal, et la page relit les données par l’API, qui reste seule juge des droits d’accès."
+      - "**Front-end** : application Vue 3 en *TypeScript* strict (*Vite*), sans bibliothèque de composants ni de gestion d’état, en français et en anglais."
       - "**Sécurité** : accès refusé par défaut, propriété vérifiée dans la requête elle-même, fichiers privés jamais servis par une adresse directe, origine du WebSocket contrôlée, écritures limitées par compte."
-      - "**Qualité** : 162 tests du back-end ; toutes les dépendances épinglées à une version exacte, actions GitHub épinglées par commit."
-      - "**CI/CD** : GitHub Actions teste puis construit les deux images, publiées sur ghcr.io depuis main seulement ; le serveur vérifie les nouvelles images toutes les deux minutes et redémarre ce qui a changé, sans que GitHub ne s’y connecte jamais ; retour en arrière en une ligne."
-      - "**Exploitation** : serveur Linux chez Infomaniak en Suisse, quatre conteneurs Docker Compose sur trois réseaux, reverse proxy Nginx avec HTTPS ; sauvegardes chiffrées chaque nuit vers Swiss Backup avec restic, surveillées, et restauration testée chaque trimestre."
+      - "**Qualité** : **162 tests du back-end** ; toutes les dépendances épinglées à une version exacte, actions GitHub épinglées par commit."
+      - "**CI/CD** : *GitHub Actions* teste puis construit les deux images, publiées sur *ghcr.io* depuis main seulement ; le serveur vérifie les nouvelles images toutes les deux minutes et redémarre ce qui a changé, sans que GitHub ne s’y connecte jamais ; retour en arrière en une ligne."
+      - "**Exploitation** : serveur Linux chez Infomaniak en Suisse, quatre conteneurs *Docker Compose* sur trois réseaux, reverse proxy *Nginx* avec HTTPS ; sauvegardes chiffrées chaque nuit vers *Swiss Backup* avec *restic*, surveillées, et restauration testée chaque trimestre."
     skills:
       - "Python"
       - "Django"
@@ -512,13 +512,13 @@ projects:
     summary: "Chatbot RAG en français sur les démarches administratives genevoises, fondé sur les pages officielles, avec un modèle de langage exécuté localement."
     description: "Pour mon Travail de Bachelor, j’ai conçu, développé, déployé et évalué un assistant (chatbot) qui répond en français courant aux questions sur les démarches administratives du canton de Genève. Ge-Trouve s’appuie uniquement sur les pages officielles de l’État ([ge.ch](https://www.ge.ch)) et de la Ville de Genève ([geneve.ch](https://www.geneve.ch)), et cite ses sources pour que chacun puisse vérifier. Tout s’exécute sur un serveur en Suisse, avec des modèles open source : aucune question ne part vers un service d’intelligence artificielle externe. Chaque composant a été choisi après une comparaison sur sources primaires : quatre frameworks, cinq modèles de langage, trois modèles d’embeddings et trois bases vectorielles. J’ai ensuite construit le système sur un corpus pilote, dimensionné le serveur à partir de mesures, puis évalué la qualité des réponses sur vingt questions écrites à la main. Le site est en ligne, et le code, les journaux de décisions et le mémoire sont publics."
     highlights:
-      - "**Corpus** : inventaire de 4 322 pages officielles, dont 4 304 récupérées dans le respect des règles des sites (robots.txt, robot identifié, deux secondes entre les requêtes) ; les 18 manquantes sont une page supprimée et des pages d’accès restreint, non contournées. Texte extrait avec Trafilatura et découpé en 9 651 fragments de 200 mots."
+      - "**Corpus** : inventaire de 4 322 pages officielles, dont 4 304 récupérées dans le respect des règles des sites (`robots.txt`, robot identifié, deux secondes entre les requêtes) ; les 18 manquantes sont une page supprimée et des pages d’accès restreint, non contournées. Texte extrait avec *Trafilatura* et découpé en 9 651 fragments de 200 mots."
       - "**Ingestion reproductible** : l’identifiant de chaque fragment est une empreinte de son contenu, si bien qu’une réindexation remplace au lieu de dupliquer."
-      - "**Recherche et génération** : pipeline Haystack explicite, vectorisation par Qwen3-Embedding-0.6B, base vectorielle Chroma ; les cinq fragments les plus proches sont transmis à Gemma 4 12B, qui rédige la réponse à partir de ces seuls extraits."
+      - "**Recherche et génération** : pipeline *Haystack* explicite, vectorisation par *Qwen3-Embedding-0.6B*, base vectorielle *Chroma* ; les cinq fragments les plus proches sont transmis à *Gemma 4 12B*, qui rédige la réponse à partir de ces seuls extraits."
       - "Consigne de génération mise au point par variantes successives, rejouées à conditions égales sur un jeu de questions distinct de celui de l’évaluation."
       - "**Dimensionnement mesuré** : les deux modèles chargés occupent 11,3 Go, ce qui exclut un serveur de 12 Go ; j’ai retenu 18 Go de mémoire et 6 processeurs virtuels, sans carte graphique."
-      - "**Évaluation** : RAGAS en local sur 20 questions, dont 4 volontairement hors périmètre, avec un modèle juge d’une autre famille et un contrôle humain à l’aveugle d’un quart des réponses. Moyennes sur les 16 questions qui ont une réponse : précision du contexte 0,92, rappel du contexte 0,93, fidélité 0,85, pertinence de la réponse 0,71. Aucune invention pure relevée ; la pertinence pâtit de réponses trop longues."
-      - "**Production** : quatre conteneurs Docker Compose sur un serveur Infomaniak en Suisse, HTTPS automatique avec Caddy, application exécutée sans privilèges ; redéploiement automatique à chaque push sur main par un runner GitHub Actions auto-hébergé."
+      - "**Évaluation** : *RAGAS* en local sur 20 questions, dont 4 volontairement hors périmètre, avec un modèle juge d’une autre famille et un contrôle humain à l’aveugle d’un quart des réponses. Moyennes sur les 16 questions qui ont une réponse : précision du contexte 0,92, rappel du contexte 0,93, fidélité 0,85, pertinence de la réponse 0,71. **Aucune invention pure relevée** ; la pertinence pâtit de réponses trop longues."
+      - "**Production** : quatre conteneurs *Docker Compose* sur un serveur Infomaniak en Suisse, HTTPS automatique avec *Caddy*, application exécutée sans privilèges ; redéploiement automatique à chaque push sur main par un runner *GitHub Actions* auto-hébergé."
       - "Réponse affichée mot à mot pendant sa génération, pour réduire l’attente perçue ; ni compte ni historique, la question n’est enregistrée nulle part."
       - "**Limites assumées** : sans carte graphique, le premier mot d’une réponse arrive après 90 à 120 secondes ; une seule question à la fois, sans mémoire de la conversation."
     skills:
@@ -558,13 +558,13 @@ projects:
     grade: "5,9/6"
     featured: true
     summary: "Logiciel de bureau pour un cabinet de cardiologie : import des examens DICOM ou CSV, calculs du cardiologue et rapport Word automatique ; mandat réel en équipe de quatre."
-    description: "Projet sur mandat de la HEG Genève, mené par quatre étudiants de septembre 2025 à mai 2026, en Scrum sur six sprints. Le cardiologue mandant rédigeait ses comptes-rendus d’échocardiographie avec un prototype Excel et VBA qu’il avait développé lui-même, difficile à maintenir et à diffuser. Nous l’avons remplacé par une application Windows qui lit les examens exportés par l’échographe (DICOM ou CSV), fait calculer les mesures par son moteur Excel et produit un rapport Word qu’il relit et signe. Les données des patients restent sur le poste du cabinet ; seules la licence et les statistiques d’usage passent par le serveur du mandant. La version 1.0.0 a été livrée avec son installateur, ses guides et ses notes de version."
+    description: "Projet sur mandat de la HEG Genève, mené par quatre étudiants de septembre 2025 à mai 2026, en *Scrum* sur six sprints. Le cardiologue mandant rédigeait ses comptes-rendus d’échocardiographie avec un prototype *Excel* et *VBA* qu’il avait développé lui-même, difficile à maintenir et à diffuser. Nous l’avons remplacé par une application Windows qui lit les examens exportés par l’échographe (*DICOM* ou CSV), fait calculer les mesures par son moteur Excel et produit un rapport Word qu’il relit et signe. Les données des patients restent sur le poste du cabinet ; seules la licence et les statistiques d’usage passent par le serveur du mandant. La version 1.0.0 a été livrée avec son installateur, ses guides et ses notes de version."
     highlights:
       - "**Gestion de projet** : Scrum Master ; responsable de la communication avec les mandants et le comité de pilotage (sprint reviews, procès-verbaux) ; responsable de 11 user stories sur 32 et de 43 sous-tâches sur 126 au product backlog."
       - "**Documentation** : auteur de l’architecture applicative et de l’infrastructure, puis de la méthodologie, de la planification et du document de projet."
-      - "**Mes développements** : architecture de l’interface et navigation, écran d’import ; intégration du moteur Excel fourni par le mandant, piloté par COM (xlwings) avec une lecture groupée des résultats ; système de licence relié à un serveur MariaDB, avec mode hors ligne et synchronisation différée ; archivage des examens avec export XLSX."
-      - "**CI/CD et livraison** : pipeline Bitbucket Pipelines conçu par moi ; tests à chaque pull request, puis, à chaque fusion, installateur Windows construit depuis Linux dans une image Docker référencée par son empreinte SHA-256 (Wine, Inno Setup) ; exécutable PyInstaller testé sur des postes vierges."
-      - "**Qualité** : architecture en couches stricte, 780 tests automatisés (pytest), tous réussis ; une pull request et une checklist DoR/DoD par user story."
+      - "**Mes développements** : architecture de l’interface et navigation, écran d’import ; intégration du moteur Excel fourni par le mandant, piloté par COM (*xlwings*) avec une lecture groupée des résultats ; système de licence relié à un serveur *MariaDB*, avec mode hors ligne et synchronisation différée ; archivage des examens avec export XLSX."
+      - "**CI/CD et livraison** : pipeline *Bitbucket Pipelines* conçu par moi ; tests à chaque pull request, puis, à chaque fusion, installateur Windows construit depuis Linux dans une image *Docker* référencée par son empreinte SHA-256 (Wine, *Inno Setup*) ; exécutable *PyInstaller* testé sur des postes vierges."
+      - "**Qualité** : architecture en couches stricte, **780 tests automatisés** (*pytest*), tous réussis ; une pull request et une checklist DoR/DoD par user story."
       - "**Application livrée en version 1.0.0** : visualiseur DICOM en vue 2×2 avec lecture des boucles ciné, aperçu du rapport en temps réel, séparation entre les mesures de l’échographe et les interprétations du cardiologue, historique et archivage des rapports."
       - "Code source dans un dépôt Bitbucket privé, propriété du mandant ; démonstration en direct de l’application à la soutenance."
     skills:
@@ -604,11 +604,11 @@ projects:
     grade: "6,0/6"
     featured: true
     summary: "Jeu d’arcade 2D en défilement horizontal sous Unity : un avion bimoteur soumis à la physique, des oiseaux qui détruisent ses moteurs et l’oxygène qui s’épuise en altitude."
-    description: "Projet individuel du module Programmation de jeux vidéo de la HEG Genève. SkyBurst est un jeu d’arcade en défilement horizontal : le joueur pilote un avion léger à deux moteurs et doit survivre le plus longtemps possible à des oiseaux de plus en plus nombreux et rapides. Chaque moteur est une vie : un oiseau aspiré le détruit et rend l’avion plus difficile à tenir. En montant vers l’espace, l’avion échappe aux oiseaux, mais son oxygène s’épuise. J’ai d’abord rédigé le document de conception du jeu, puis développé le jeu en C# sous Unity, en suivant l’avancement sur un tableau Trello, jusqu’à un exécutable Windows autonome."
+    description: "Projet individuel du module Programmation de jeux vidéo de la HEG Genève. SkyBurst est un jeu d’arcade en défilement horizontal : le joueur pilote un avion léger à deux moteurs et doit survivre le plus longtemps possible à des oiseaux de plus en plus nombreux et rapides. Chaque moteur est une vie : un oiseau aspiré le détruit et rend l’avion plus difficile à tenir. En montant vers l’espace, l’avion échappe aux oiseaux, mais son oxygène s’épuise. J’ai d’abord rédigé le document de conception du jeu, puis développé le jeu en *C#* sous *Unity*, en suivant l’avancement sur un tableau *Trello*, jusqu’à un exécutable Windows autonome."
     highlights:
       - "**Game design** : document de conception (caméra, personnage, contrôles, mécaniques, plateforme) rédigé avant le développement."
-      - "**Vol entièrement physique** : l’avion n’est déplacé que par des forces appliquées à son Rigidbody2D ; la gravité augmente jusqu’à dix fois quand la vitesse tombe sous celle du défilement, pour simuler la perte de portance, et disparaît dans l’espace."
-      - "**Architecture en systèmes découplés, 18 scripts C#** : contrôle de l’avion, dommages et réparation des moteurs, oxygène, altitude, apparition des oiseaux, caméra, défilement du décor, score, son, fin de partie ; tous les réglages regroupés dans un singleton GameConfig."
+      - "**Vol entièrement physique** : l’avion n’est déplacé que par des forces appliquées à son `Rigidbody2D` ; la gravité augmente jusqu’à dix fois quand la vitesse tombe sous celle du défilement, pour simuler la perte de portance, et disparaît dans l’espace."
+      - "**Architecture en systèmes découplés, 18 scripts C#** : contrôle de l’avion, dommages et réparation des moteurs, oxygène, altitude, apparition des oiseaux, caméra, défilement du décor, score, son, fin de partie ; tous les réglages regroupés dans un singleton `GameConfig`."
       - "**Difficulté progressive** : les oiseaux apparaissent de plus en plus souvent et de plus en plus vite, des oiseaux spéciaux arrivent après vingt secondes, et une bande d’apparition protège l’accès à l’espace."
       - "**Mécaniques** : looping d’esquive avec invulnérabilité et temps de recharge, moteur récupérable grâce à un objet de réparation, jauge d’oxygène dans l’espace, score au temps de vol."
       - "Suivi du développement sur un tableau Trello de 21 tâches, toutes terminées."
@@ -633,13 +633,13 @@ projects:
     grade: "5,8/6"
     featured: true
     summary: "Système de réservation pour salon de coiffure : une API REST en Laravel, sécurisée par jeton et par rôles, consommée par un client de bureau en C# (.NET)."
-    description: "Projet individuel du module Architecture de la HEG Genève. ReserveCut gère l’activité d’un salon de coiffure : clients, coiffeurs et leurs absences, prestations, réservations et comptes utilisateurs. Le back-end est une API REST en Laravel, organisée en couches et protégée par jeton et par rôles. Le front-end est un client de bureau en C# qui s’authentifie auprès de l’API et en consomme les données."
+    description: "Projet individuel du module Architecture de la HEG Genève. ReserveCut gère l’activité d’un salon de coiffure : clients, coiffeurs et leurs absences, prestations, réservations et comptes utilisateurs. Le back-end est une API REST en *Laravel*, organisée en couches et protégée par jeton et par rôles. Le front-end est un client de bureau en *C#* qui s’authentifie auprès de l’API et en consomme les données."
     highlights:
       - "API REST en Laravel 11 sur six ressources (utilisateurs, coiffeurs, absences, prestations, clients, réservations), organisée en couches : contrôleurs, services, ressources et middleware."
-      - "**Sécurité** : authentification par jeton avec Laravel Sanctum ; deux rôles, administrateur et utilisateur, et onze permissions gérées avec spatie/laravel-permission, vérifiées sur chaque route."
+      - "**Sécurité** : authentification par jeton avec *Laravel Sanctum* ; deux rôles, administrateur et utilisateur, et onze permissions gérées avec `spatie/laravel-permission`, vérifiées sur chaque route."
       - "**Modélisation de la base de données** : modèle logique, puis modèle physique et script SQL, repris ensuite en migrations Laravel."
-      - "**Client de bureau en C# WinForms (.NET 8), 16 fenêtres** : connexion par jeton, consultation des données et gestion complète des six ressources par l’API (réservations, clients, coiffeurs et leurs absences, prestations, utilisateurs)."
-      - "API documentée et testée avec une collection Postman de 76 requêtes ; données de démonstration générées par des factories et un seeder."
+      - "**Client de bureau en C# *WinForms* (*.NET 8*), 16 fenêtres** : connexion par jeton, consultation des données et gestion complète des six ressources par l’API (réservations, clients, coiffeurs et leurs absences, prestations, utilisateurs)."
+      - "API documentée et testée avec une collection *Postman* de **76 requêtes** ; données de démonstration générées par des factories et un seeder."
       - "**Démarche en cinq rendus successifs** : flyer de présentation de l’idée, modélisation, prototype horizontal de l’interface, API, puis application finale."
       - "Client de bureau terminé après le module, sur la base de la version rendue."
     skills:
