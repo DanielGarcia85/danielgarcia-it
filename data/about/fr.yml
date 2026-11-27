@@ -3,8 +3,9 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # Read into the About record. en.yml has exactly the same keys, the same
 # sections in the same order, the same number of paragraphs, items and
-# technologies in each, and the same terminals. Paragraphs accept Markdown
-# (`code`); items and technologies are plain text. A section can end with a
+# technologies in each, and the same terminals. Paragraphs, items and roles
+# of technologies accept Markdown: **keywords** in bold, `code` for a
+# command or a setting; names of technologies are plain text. A section can end with a
 # terminal: a line that starts with "$ " is a command, the same in both
 # languages, and can end with a comment after two spaces; a line that starts
 # with "# " is a comment; comments are translated. folded: true shows the
@@ -25,8 +26,8 @@ sections:
   - id: "principle"
     title: "Le principe"
     paragraphs:
-      - "Le site est statique : toutes les pages sont générées une seule fois, au moment du build, puis servies telles quelles. Il n’y a ni base de données ni code exécuté à chaque visite. Le site a donc très peu de surface d’attaque, et ses pages s’affichent tout de suite."
-      - "Mon parcours, mes projets et mes coordonnées ne sont pas écrits dans les pages. Ils vivent dans des fichiers YAML, un par langue, que des records Java lisent et contrôlent pendant le build. Une date manquante, un lien sans HTTPS ou une traduction oubliée font échouer la construction, avant que l’erreur n’arrive en ligne."
+      - "Le site est **statique** : toutes les pages sont générées **une seule fois, au moment du build**, puis servies telles quelles. Il n’y a **ni base de données ni code exécuté à chaque visite**. Le site a donc très peu de surface d’attaque, et ses pages s’affichent tout de suite."
+      - "Mon parcours, mes projets et mes coordonnées ne sont pas écrits dans les pages. Ils vivent dans des **fichiers YAML**, un par langue, que des **records Java** lisent et contrôlent pendant le build. Une date manquante, un lien sans HTTPS ou une traduction oubliée **font échouer la construction**, avant que l’erreur n’arrive en ligne."
 
   - id: "technologies"
     title: "Les technologies"
@@ -64,7 +65,7 @@ sections:
           - name: "Qute"
             role: "les gabarits des pages, découpés en morceaux réutilisables (en-tête, cartes de projet, pied de page)."
           - name: "Maven"
-            role: "une seule commande de build, ./mvnw clean verify, identique sur mon poste, dans la CI et dans Docker."
+            role: "une seule commande de build, `./mvnw clean verify`, identique sur mon poste, dans la CI et dans Docker."
       - title: "Interface"
         technologies:
           - name: "HTML et Sass (SCSS)"
@@ -77,8 +78,8 @@ sections:
   - id: "source-code"
     title: "Le code source"
     paragraphs:
-      - "Tout le code du site est public : gabarits, données, tests, workflow et configuration Docker, avec son historique complet."
-      - "Pour le lancer chez soi, il suffit de Git et d’un JDK 25, par exemple Eclipse Temurin. Le wrapper télécharge Maven et les dépendances au premier lancement :"
+      - "Tout le code du site est **public** : gabarits, données, tests, workflow et configuration Docker, avec son historique complet."
+      - "Pour le lancer chez soi, il suffit de **Git** et d’un **JDK 25**, par exemple Eclipse Temurin. Le wrapper télécharge Maven et les dépendances au premier lancement :"
     terminal:
       lines:
         - "$ git clone https://github.com/DanielGarcia85/danielgarcia-it.git"
@@ -90,10 +91,10 @@ sections:
   - id: "delivery"
     title: "Du commit à la production"
     paragraphs:
-      - "Je travaille sur une branche `develop`. Chaque push y lance les tests et construit l’image Docker, pour vérifier qu’elle se construit toujours, sans la publier."
-      - "Pour mettre en ligne, j’ouvre une pull request de `develop` vers `main`. GitHub refuse de la fusionner tant que les tests et la construction de l’image n’ont pas réussi. La branche `main` est protégée : personne ne peut y pousser directement, moi compris."
-      - "Ma dernière action est la fusion dans `main` ; tout ce qui suit est automatique. GitHub Actions teste le site une dernière fois, construit l’image et la publie sur ghcr.io sous deux étiquettes : celle de son commit (`sha-…`), qui ne change jamais, et `latest`, qui désigne toujours la version la plus récente. Sur le serveur, une minuterie vérifie toutes les deux minutes si `latest` a changé. Si c’est le cas, elle télécharge la nouvelle image, remplace le conteneur et supprime l’ancienne. Le site n’est interrompu qu’une ou deux secondes."
-      - "Chaque lundi, l’image est reconstruite avec les dernières versions de Nginx, du système et de Java, puis testée et republiée. Le site reçoit ainsi les correctifs de sécurité même quand je n’y touche pas. Si la reconstruction échoue, rien n’est publié et le site garde la version en service."
+      - "Je travaille sur une branche `develop`. Chaque `git push` y lance **les tests** et **construit l’image Docker**, pour vérifier qu’elle se construit toujours, sans la publier."
+      - "Pour mettre en ligne, j’ouvre une pull request de `develop` vers `main`. GitHub **refuse de la fusionner** tant que les tests et la construction de l’image n’ont pas réussi. La branche `main` est **protégée** : personne ne peut y pousser directement, **moi compris**."
+      - "**Ma dernière action est la fusion dans `main` ; tout ce qui suit est automatique.** GitHub Actions teste le site une dernière fois, construit l’image et la publie sur ghcr.io sous deux étiquettes : celle de son commit (`sha-…`), qui ne change jamais, et `latest`, qui désigne toujours la version la plus récente. Sur le serveur, une **minuterie** vérifie **toutes les deux minutes** si `latest` a changé. Si c’est le cas, elle télécharge la nouvelle image, remplace le conteneur et supprime l’ancienne. Le site n’est interrompu qu’**une ou deux secondes**."
+      - "**Chaque lundi**, l’image est reconstruite avec les dernières versions de Nginx, du système et de Java, puis testée et republiée. Le site reçoit ainsi les **correctifs de sécurité** même quand je n’y touche pas. Si la reconstruction échoue, rien n’est publié et le site garde la version en service."
       - "D’habitude, j’ouvre et je fusionne la pull request sur le site de GitHub. Voici les mêmes étapes en ligne de commande, de mon dernier commit jusqu’à la production."
     terminal:
       folded: true
@@ -123,9 +124,9 @@ sections:
   - id: "tests"
     title: "Les tests"
     paragraphs:
-      - "Chaque build lance les tests. Ils génèrent le site entier, le servent comme en production et vérifient chaque page dans les deux langues : la présence de chaque section, les liens vers le CV et entre les pages, l’en-tête, le menu et le pied de page."
-      - "D’autres tests contrôlent les données : les deux langues existent et ont les mêmes entrées, dans le même ordre, avec les mêmes coordonnées. Un dernier test parcourt tous les liens internes du site généré : un lien cassé bloque la mise en production."
-      - "Les tests vérifient la structure, jamais le texte. Je peux réécrire une phrase sans toucher à un test, mais une section qui disparaît est repérée."
+      - "**Chaque build lance les tests** (`./mvnw clean verify`). Ils génèrent **le site entier**, le servent comme en production et vérifient **chaque page dans les deux langues** : la présence de chaque section, les liens vers le CV et entre les pages, l’en-tête, le menu et le pied de page."
+      - "D’autres tests contrôlent les données : les deux langues existent et ont les mêmes entrées, dans le même ordre, avec les mêmes coordonnées. Un dernier test parcourt tous les liens internes du site généré : **un lien cassé bloque la mise en production**."
+      - "Les tests vérifient **la structure, jamais le texte**. Je peux réécrire une phrase sans toucher à un test, mais une section qui disparaît est repérée."
     terminal:
       folded: true
       lines:
@@ -136,42 +137,42 @@ sections:
   - id: "server"
     title: "Le serveur"
     paragraphs:
-      - "Le serveur est fermé par défaut. On s’y connecte en SSH avec une clé uniquement : ni mot de passe, ni connexion directe en administrateur. Deux pare-feu, celui d’Infomaniak et celui du système, ne laissent passer que SSH et le web. fail2ban bloque les adresses qui multiplient les tentatives de connexion, et les mises à jour de sécurité du système s’installent automatiquement."
-      - "Le conteneur du site n’est joignable que depuis le serveur lui-même. Le reverse proxy est le seul point d’entrée : il redirige tout vers HTTPS, avec HSTS. Les pages sont servies avec une politique de sécurité de contenu stricte : aucun script, aucune police et aucun traqueur ne sont chargés depuis un autre site."
+      - "Le serveur est **fermé par défaut**. On s’y connecte en SSH **avec une clé uniquement** : ni mot de passe (`PasswordAuthentication no`), ni connexion directe en administrateur (`PermitRootLogin no`). **Deux pare-feu**, celui d’Infomaniak et celui du système (`ufw`), ne laissent passer que SSH et le web. `fail2ban` bloque les adresses qui multiplient les tentatives de connexion, et les **mises à jour de sécurité** du système s’installent automatiquement (`unattended-upgrades`)."
+      - "Le conteneur du site n’est joignable que depuis le serveur lui-même. Le reverse proxy est **le seul point d’entrée** : il redirige tout vers **HTTPS**, avec HSTS. Les pages sont servies avec une **politique de sécurité de contenu stricte** (`Content-Security-Policy`) : **aucun script, aucune police et aucun traqueur** ne sont chargés depuis un autre site."
 
   - id: "rollback"
     title: "Revenir en arrière"
     paragraphs:
-      - "Aucune version n’est jamais écrasée : chaque image publiée reste dans le registre sous l’étiquette de son commit. Si une mise en production pose problème, il me suffit d’une ligne sur le serveur pour lui demander une version précise au lieu de `latest`. Au passage suivant de la minuterie, l’ancienne version est en ligne. Le serveur ignore alors les nouvelles publications jusqu’à ce que je retire cette ligne, une fois la correction publiée."
+      - "**Aucune version n’est jamais écrasée** : chaque image publiée reste dans le registre sous l’étiquette de son commit. Si une mise en production pose problème, il me suffit d’**une ligne** sur le serveur (`IMAGE_TAG=sha-…`) pour lui demander une version précise au lieu de `latest`. Au passage suivant de la minuterie, **l’ancienne version est en ligne**. Le serveur ignore alors les nouvelles publications jusqu’à ce que je retire cette ligne, une fois la correction publiée."
 
   - id: "backups"
     title: "Sauvegardes"
     paragraphs:
-      - "Le serveur ne garde aucune copie du code. Pour ce site, il ne contient que le fichier Docker Compose et les deux fichiers systemd de la mise à jour automatique. Le code et son historique sont sur GitHub, les images sur ghcr.io."
-      - "Chaque nuit, un script sauvegarde la configuration écrite à la main sur le serveur : ces fichiers, le reverse proxy et ses certificats. Il utilise restic, qui chiffre les données sur le serveur avant de les envoyer vers Swiss Backup, le stockage d’Infomaniak répliqué dans ses centres de données en Suisse. Ni Infomaniak ni personne d’autre ne peut les lire sans la clé."
-      - "Les sauvegardes sont gardées 14 jours, puis une par semaine pendant 8 semaines, puis une par mois pendant 6 mois. Une sauvegarde qui n’a jamais été restaurée ne prouve rien : j’ai testé la restauration le jour de la mise en place, et je la refais chaque trimestre. Enfin, chaque passage se signale à Healthchecks.io, un service extérieur. Si le signal annonce un échec, ou s’il n’arrive pas parce que le serveur est arrêté, je reçois un e-mail."
+      - "Le serveur **ne garde aucune copie du code**. Pour ce site, il ne contient que le fichier Docker Compose et les deux fichiers systemd de la mise à jour automatique. Le code et son historique sont sur GitHub, les images sur ghcr.io."
+      - "**Chaque nuit**, un script sauvegarde la configuration écrite à la main sur le serveur : ces fichiers, le reverse proxy et ses certificats. Il utilise `restic`, qui **chiffre les données sur le serveur** avant de les envoyer vers Swiss Backup, le stockage d’Infomaniak répliqué dans ses centres de données en Suisse. **Ni Infomaniak ni personne d’autre ne peut les lire sans la clé.**"
+      - "Les sauvegardes sont gardées **14 jours**, puis **une par semaine pendant 8 semaines**, puis **une par mois pendant 6 mois**. **Une sauvegarde qui n’a jamais été restaurée ne prouve rien** : j’ai testé la restauration le jour de la mise en place, et je la refais **chaque trimestre**. Enfin, chaque passage se signale à Healthchecks.io, un service extérieur. Si le signal annonce un échec, ou s’il n’arrive pas parce que le serveur est arrêté, je reçois **un e-mail**."
 
   - id: "accessibility"
     title: "Accessibilité"
     paragraphs:
-      - "J’ai conçu le site pour qu’il se lise aussi bien au clavier, avec un lecteur d’écran ou sur un téléphone."
+      - "J’ai conçu le site pour qu’il se lise aussi bien **au clavier**, **avec un lecteur d’écran** ou **sur un téléphone**."
     items:
-      - "Les textes ont un contraste d’au moins 4,5:1 avec leur fond, dans les deux thèmes."
-      - "Un lien « Aller au contenu » permet de sauter l’en-tête, et tout le site se parcourt au clavier."
-      - "Le menu annonce la section en cours de lecture aux lecteurs d’écran."
-      - "Les grandes cartes sont des fenêtres natives du navigateur : elles se ferment avec Échap, avec la croix ou d’un clic à côté."
-      - "Le thème clair ou sombre suit le réglage du système, et un bouton permet de le changer ; le navigateur retient le choix."
+      - "Les textes ont un contraste d’**au moins 4,5:1** avec leur fond, dans les deux thèmes."
+      - "Un lien « Aller au contenu » permet de sauter l’en-tête, et tout le site se parcourt **au clavier**."
+      - "Le menu annonce la section en cours de lecture aux lecteurs d’écran (`aria-current`)."
+      - "Les grandes cartes sont des **fenêtres natives** du navigateur (`<dialog>`) : elles se ferment avec Échap, avec la croix ou d’un clic à côté."
+      - "Le thème clair ou sombre suit le réglage du système, et un bouton permet de le changer ; le navigateur **retient le choix**."
       - "Les liens vers d’autres sites s’ouvrent dans un nouvel onglet, et les lecteurs d’écran l’annoncent."
-      - "Les animations s’arrêtent si le système demande moins de mouvement."
-      - "La police a été dessinée pour la lisibilité : chaque caractère se distingue des autres, même pour une vue faible."
+      - "Les animations s’arrêtent si le système demande **moins de mouvement** (`prefers-reduced-motion`)."
+      - "La police a été dessinée **pour la lisibilité** : chaque caractère se distingue des autres, même pour une vue faible."
 
   - id: "ai"
     title: "Usage de l’IA"
     paragraphs:
-      - "Claude (Anthropic) m’a servi d’assistant de développement : explications, propositions de code et relectures. J’ai lancé moi-même chaque commande et chaque commit, et les choix techniques et leur validation sont les miens. Le site lui-même n’utilise aucune IA."
+      - "Claude (Anthropic) m’a servi d’assistant de développement : explications, propositions de code et relectures. J’ai lancé **moi-même** chaque commande et chaque commit, et **les choix techniques et leur validation sont les miens**. Le site lui-même **n’utilise aucune IA**."
 
   - id: "credits"
     title: "Crédits"
     items:
-      - "Police : Atkinson Hyperlegible Next et Atkinson Hyperlegible Mono, du Braille Institute of America, sous licence SIL Open Font License 1.1, hébergées sur ce site : aucune requête vers Google Fonts ou un autre service."
+      - "Police : Atkinson Hyperlegible Next et Atkinson Hyperlegible Mono, du Braille Institute of America, sous licence SIL Open Font License 1.1, **hébergées sur ce site** : aucune requête vers Google Fonts ou un autre service."
       - "GitHub et LinkedIn sont des marques de leurs propriétaires ; leurs logos désignent ici mes profils."

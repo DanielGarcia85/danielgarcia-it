@@ -263,3 +263,36 @@ details.terminal > .console {
     transition: none;
   }
 }
+
+/*
+  Emphasis in the text of the sections: the keywords in bold, in the color
+  of the text; a command or a setting in the mono font, in a thin frame.
+  Paragraphs, list items and roles of technologies are Markdown, so a list
+  item or a role arrives as a paragraph: no margin around it there.
+*/
+main > .about-section strong {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+main > .about-section :is(p, li) code {
+  padding: 0 5px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.92em;
+}
+
+main > .about-section li > p,
+main > .about-section dd > p {
+  margin: 0;
+  max-width: none;
+}
+
+/* In the console of the technologies, a command is simply in the color of a command */
+main > .about-section dd > p > code {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--console-command);
+}
