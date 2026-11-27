@@ -140,6 +140,40 @@
   margin: 0 0 14px;
 }
 
+/*
+  The role and the client are Markdown: a paragraph, two lines (the client of
+  Zebra-Girafe), or a list, one part of the role per item, with small square
+  markers in the accent (the yellow stays for the documents)
+*/
+:is(.card-columns, .large-card-body aside) dd > p {
+  margin: 0;
+}
+
+:is(.card-columns, .large-card-body aside) dd > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:is(.card-columns, .large-card-body aside) dd li {
+  position: relative;
+  padding-left: 14px;
+}
+
+:is(.card-columns, .large-card-body aside) dd li + li {
+  margin-top: 6px;
+}
+
+:is(.card-columns, .large-card-body aside) dd li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+}
+
 /* Large card: a native modal dialog, closed with Escape, the cross or a click around it */
 dialog {
   width: min(1000px, 100% - 2 * var(--gutter));
@@ -176,9 +210,10 @@ dialog::backdrop {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
 }
 
+/* The summary of a project, the employer or the school under the title: a little darker than muted */
 .large-card-head p {
   margin: 4px 0 0;
-  color: var(--muted);
+  color: var(--muted-strong);
 }
 
 .large-card-head form {

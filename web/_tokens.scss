@@ -67,6 +67,9 @@
   /* Light tint behind the name of a product or a service in the About page; follows the accent of the theme */
   --name-tint: color-mix(in srgb, var(--accent) 14%, transparent);
 
+  /* Between the muted text and the text: the line under the title of a large card; follows the theme */
+  --muted-strong: color-mix(in srgb, var(--ink) 45%, var(--muted));
+
   /* Grid */
   --max-width: 1320px;
   --gutter: 24px;

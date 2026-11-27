@@ -27,10 +27,10 @@
         <dd>{project.frame}</dd>
         {#if project.client}
           <dt>{t.client}</dt>
-          <dd>{project.client}</dd>
+          <dd>{project.client.markdownify}</dd>
         {/if}
         <dt>{t.role}</dt>
-        <dd>{project.role}</dd>
+        <dd>{project.role.markdownify}</dd>
         <dt>{t.completed}</dt>
         <dd>{project.completedLabel}</dd>
       </dl>
@@ -106,10 +106,10 @@
             <dd>{project.frame}</dd>
             {#if project.client}
               <dt>{t.client}</dt>
-              <dd>{project.client}</dd>
+              <dd>{project.client.markdownify}</dd>
             {/if}
             <dt>{t.role}</dt>
-            <dd>{project.role}</dd>
+            <dd>{project.role.markdownify}</dd>
             <dt>{t.completed}</dt>
             <dd>{project.completedLabel}</dd>
             {#if project.grade}
