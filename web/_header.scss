@@ -83,9 +83,14 @@ header {
 }
 
 #compact-profile .button {
-  gap: 6px;
-  padding: 3px 10px;
-  font-size: 0.9375rem;
+  gap: 4px;
+  padding: 2px 8px;
+  font-size: 0.8125rem;
+}
+
+#compact-profile .button svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* Menu: pushed to the right; the section being read is underlined and bold */

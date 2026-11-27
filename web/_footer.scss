@@ -1,0 +1,37 @@
+/*
+  web/_footer.scss
+  danielgarcia.it — The footer of every page
+  ───────────────────────────────────────────────────────────────────────────
+  Rules of docs/visual-direction.md ("Footer"). Above a thin line across the
+  whole width, in small text and in the muted color: the source code of the
+  site and the privacy page; the version in production and its build date
+  come later. Markup: templates/partials/footer.html.
+*/
+
+footer {
+  margin-top: 48px;
+  padding-block: 24px 32px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+}
+
+footer a:hover {
+  color: var(--ink);
+}
