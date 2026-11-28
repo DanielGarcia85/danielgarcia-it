@@ -28,7 +28,8 @@ terminal (my DevOps side), never as decoration alone.
 - One header for the whole site, always at the top of the screen, 68 px high, separated from
   the page by a thin line (`--line`) across the whole width. It always stays on one line.
 - **On the right, the menu, which never moves**: Profile, Projects, Career, Skills, About,
-  Contact, then the FR | EN switch and the light / dark button.
+  then the FR | EN switch and the light / dark button. On the projects page and the About page,
+  the entry of the page is bold and underlined (`aria-current="page"`).
   - Profile goes back to the top of the page. About goes to the panel "About this site", the
     same name as the About page it leads to.
   - Career opens a small submenu of its three parts (Professional experience, Education,
@@ -132,10 +133,20 @@ Every text of the home page comes from `data/contact/<lang>.yml` and `data/caree
    a narrow phone), each under its name in `--accent` with a rule, the skills as square tags;
    then the spoken languages on one row with their level in `--muted`. No levels for the
    skills, no bars, no percentages.
-5. **About this site**: a panel on `--surface`, with the rule of the cards at the top,
-   the pipeline in one sentence, and a filled button to the About page.
-6. **Contact**: the positions sought and the way of working, the city and the nationality, then
-   the e-mail address, LinkedIn, GitHub and the CV (PDF). No phone number, no postal address.
+5. **About this site**: a panel on `--surface`, with the rule of the cards at the top, as far
+   from the section above as a section title, its title at the size of the other titles and its
+   text across the whole width: the pipeline in a few sentences (`main` in yellow on a gray chip,
+   black in the dark theme), one console line with the release command, and a yellow button "How
+   it's built" to the About page.
+
+There is no Contact section: the e-mail address is a button of the profile, next to GitHub,
+LinkedIn and the CV. No phone number, no postal address.
+
+**Sticky titles**: on screens wider than 760 px, while the header is sticky, the titles of
+Projects, Career and Skills stay under the header until the end of their section, and the
+titles of the three parts of the career under the title of Career until the end of their part,
+on the color of the page. A link of the menu stops a section with its title right under the
+header. Not on a phone, where two stacked titles would take too much of the screen.
 
 ### Projects page
 
@@ -145,8 +156,18 @@ Every text of the home page comes from `data/contact/<lang>.yml` and `data/caree
 - **Other projects**, in their order of importance: compact cards, without a large card, with
   the context, the role, the date, then the skills and the stack under their own headings.
 
-Later, after the CSS: a filter by technology at the top of the page. Later still: one detailed
-page per project (screenshots, videos, quotes), opened from a "More" button in its large card.
+Next: a filter by technology at the top of the page. No detailed page per project (choice of
+Daniel, 27.11.2026): the large cards are enough, and get the project image and screenshots with
+the media.
+
+### About and privacy pages
+
+Every section is a card on `--surface` with a thick yellow rule on the left and its number
+(01, 02…) in large, faint figures at the top right, decoration only. The About page opens with a
+larger introduction across the whole width; its technologies are four cards in the look of the
+console; some sections end with a terminal, open (the source code) or folded under a line "Show
+in the terminal" (a native `<details>`, with a yellow triangle). The privacy page shows the date
+of its last update in muted text under its title.
 
 ## Style
 
@@ -175,6 +196,20 @@ Shapes common to both themes:
   mark and the document icon take the color of the text (`currentColor`).
 - Project cards and the "About this site" panel on `--surface`, with a thin `--line`
   border and a 6 px `--accent-fill` rule at the top.
+- **Large cards**, in the style of the About page: the line under the title (summary, employer,
+  school) in `--muted-strong`; their titles (Overview, Highlights, Tasks) preceded by a `#` in
+  `--accent`, in the color of the text over a thin `--line` rule; square yellow markers; leads
+  in bold in the color of the text; the facts column on `--surface` with a 3 px `--accent-fill`
+  rule on the left, its skills on the tint of the names, a role in several parts as a list with
+  small square markers in `--accent`. Yellow, in the column, only for the documents available on
+  request (a 6 px yellow rule).
+- **Emphasis**, on three levels, written in Markdown in the data (About and privacy pages, large
+  cards, summaries of the other projects): a key idea or fact in **bold**, in the color of the
+  text, one or two per card; a command, a setting or a name from the code in the mono font in a
+  thin frame (in the consoles of the technologies: yellow, without a frame); the name of a
+  technology, a product, a service or a protocol upright on a light tint of the accent, at its
+  first mention in a text and in every item of a list. Not too much: only what shows a skill.
+- **Footer**: see "Footer" above.
 - Technologies as square tags (14 px, `--line` border), in the normal font.
 - Section titles preceded by `#`, in the mono font and in `--accent`, as a Markdown heading (a
   nod to the terminal), with a thin `--line` rule under them across the content. The `#` is
@@ -288,7 +323,8 @@ Colors of the style that are not part of the palette, checked against the same t
 | Console: prompt `$`, commands | `#4BA0AF`, `#F2C14E` | 6.1, 11.1 |
 | Console: success, secondary results | `#7FE0A0`, `#A7B4BC` | 11.5, 8.7 |
 | Word of code in a sentence, light theme (yellow on it; black in the dark theme) | `#3A4852` | 5.6 |
-| Name of a product or a service on the About page: tint behind the text | accent at 14 %, on the card | text keeps its own contrast |
+| Name of a product, a service or a technology (About, privacy, large cards): tint behind the text | accent at 14 %, on the card | text keeps its own contrast |
+| Line under the title of a large card (`--muted-strong`) | between `--muted` and `--ink` | higher than `--muted` |
 | Console: title bar, separators | `#2E3D47` | decoration |
 
 The console looks the same in both themes.
